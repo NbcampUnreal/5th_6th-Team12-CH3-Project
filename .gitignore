@@ -335,6 +335,5 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-
-
-
+# 251022_mpyi 추가
+*CrashReportClient.ini
