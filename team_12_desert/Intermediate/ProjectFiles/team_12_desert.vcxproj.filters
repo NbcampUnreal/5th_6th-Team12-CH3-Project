@@ -11,6 +11,7 @@
     <None Include="..\..\Source\team_12_desertEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +38,30 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\team_12_desert.h">
       <Filter>Source\team_12_desert</Filter>
+    </ClCompile>
+    <Filter Include="Source\team_12_desert\Private">
+      <UniqueIdentifier>{5C0273D8-231C-32A1-9452-B5D6D019744D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\DefaultGameMode.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacter.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacterHunter.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\team_12_desert\Public">
+      <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\DefaultGameMode.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacter.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacterHunter.h">
+      <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
