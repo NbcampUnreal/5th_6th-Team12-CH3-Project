@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "team_12_desert",
+			"Path": "..\\Source\\team_12_desert.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "team_12_desertEditor",
+			"Path": "..\\Source\\team_12_desertEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
