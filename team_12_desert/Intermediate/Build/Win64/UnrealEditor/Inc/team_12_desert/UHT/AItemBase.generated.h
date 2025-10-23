@@ -9,21 +9,30 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef TEAM_12_DESERT_AItemBase_generated_h
 #error "AItemBase.generated.h already included, missing '#pragma once' in AItemBase.h"
 #endif
 #define TEAM_12_DESERT_AItemBase_generated_h
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnItemEndOverlap); \
+	DECLARE_FUNCTION(execOnItemOverlap);
+
+
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAAItemBase(); \
 	friend struct Z_Construct_UClass_AAItemBase_Statics; \
 public: \
 	DECLARE_CLASS(AAItemBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/team_12_desert"), NO_API) \
-	DECLARE_SERIALIZER(AAItemBase)
+	DECLARE_SERIALIZER(AAItemBase) \
+	virtual UObject* _getUObject() const override { return const_cast<AAItemBase*>(this); }
 
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AAItemBase(AAItemBase&&); \
@@ -35,12 +44,13 @@ public: \
 	NO_API virtual ~AAItemBase();
 
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_11_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_14_GENERATED_BODY \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_10_PROLOG
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
