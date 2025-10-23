@@ -9,7 +9,7 @@
 struct FInputActionValue;
 
 /**
- * 
+ *
  */
 UCLASS()
 class TEAM_12_DESERT_API AMainCharacterHunter : public AMainCharacter
@@ -18,9 +18,9 @@ class TEAM_12_DESERT_API AMainCharacterHunter : public AMainCharacter
 
 public:
 	AMainCharacterHunter();
-	
+
 	virtual void BeginPlay() override;
-	
+
 	virtual void MeleeAttack() override;
 	virtual void RangeAttack() override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -57,7 +57,7 @@ private:
 
 	/// 변수 Zone
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Hunter_Property")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hunter_Property")
 	float MaxDashSpeed = 1.5f;
 	TObjectPtr<class UCharacterMovementComponent> MovementComponent;
 
@@ -66,4 +66,6 @@ private:
 	float DefaultDashSpeed = 1.f;
 	TObjectPtr<class APlayerController> PC; // 플레이어 컨트롤러
 
+
+	/// 스태미너 만들기
 };

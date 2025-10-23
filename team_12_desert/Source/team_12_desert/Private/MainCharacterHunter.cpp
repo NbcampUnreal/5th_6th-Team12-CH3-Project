@@ -26,7 +26,7 @@ AMainCharacterHunter::AMainCharacterHunter()
 	{
 		DefaultDashSpeed = MovementComponent->MaxWalkSpeed;
 	}
-	
+
 }
 
 void AMainCharacterHunter::BeginPlay()
@@ -37,7 +37,7 @@ void AMainCharacterHunter::BeginPlay()
 	if (IsValid(PC))
 	{
 		ULocalPlayer* Player = PC->GetLocalPlayer();
-		if(UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(Player))
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(Player))
 		{
 			Subsystem->AddMappingContext(InputMappingContext, 0);
 		}
@@ -61,7 +61,7 @@ void AMainCharacterHunter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	if(UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(MoveInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::MoveAction);
 		EnhancedInputComponent->BindAction(LookInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::LookAction);
@@ -77,7 +77,7 @@ void AMainCharacterHunter::Hit(int32 Damage, AActor* ByWho)
 {
 	Super::Hit(Damage, ByWho);
 
-	if(CurrentHP > 0)
+	if (CurrentHP > 0)
 	{
 		return;
 	}
@@ -91,7 +91,7 @@ void AMainCharacterHunter::Hit(int32 Damage, AActor* ByWho)
 void AMainCharacterHunter::MoveAction(const FInputActionValue& Value)
 {
 	FVector2D MovementVector = Value.Get<FVector2D>();
-	if(Controller != nullptr)
+	if (Controller != nullptr)
 	{
 		AddMovementInput(GetActorForwardVector(), MovementVector.X);
 		AddMovementInput(GetActorRightVector(), MovementVector.Y);
