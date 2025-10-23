@@ -42,6 +42,9 @@
     <Filter Include="Source\team_12_desert\Private">
       <UniqueIdentifier>{5C0273D8-231C-32A1-9452-B5D6D019744D}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\AItemBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\DefaultGameMode.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -54,6 +57,9 @@
     <Filter Include="Source\team_12_desert\Public">
       <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\AItemBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\DefaultGameMode.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
