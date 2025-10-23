@@ -5,30 +5,50 @@
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
-CurrentLevel(1),
-MaxHP(100),
-CharacterDamage(10),
-CharacterArmor(0),
-CurrentExperience(0),
-KillCount(0),
-MeleeAttackCount(0),
-RangeAttackCount(0),
-CharacterName(TEXT("Default Name"))
+    CurrentLevel(1),
+    MaxHP(100),
+    CharacterDamage(10),
+    CharacterArmor(0),
+    CurrentExperience(0),
+    KillCount(0),
+    MeleeAttackCount(0),
+    RangeAttackCount(0),
+    CharacterName(TEXT("Default Name"))
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+    // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+    PrimaryActorTick.bCanEverTick = true;
 
 }
 
 // Called when the game starts or when spawned
 void AMainCharacter::BeginPlay()
 {
-	Super::BeginPlay();
-	SpawnDefaultController();
-	this->CurrentHP = this->MaxHP;
-	KillCount = 0;
-	MeleeAttackCount = 0;
-	RangeAttackCount = 0;	
+    Super::BeginPlay();
+    SpawnDefaultController();
+    this->CurrentHP = this->MaxHP;
+    KillCount = 0;
+    MeleeAttackCount = 0;
+    RangeAttackCount = 0;
+}
+
+//외부에서 체력 회복시킬 때
+void AMainCharacter::HealHP(int32 HealAmount)
+{
+    this->CurrentHP += HealAmount;
+    if (CurrentHP > MaxHP)
+    {
+        CurrentHP = MaxHP;
+    }
+}
+
+// 외부에서 스태미나 회복시킬 때
+void AMainCharacter::HealStamina(int32 HealAmount)
+{
+    this->CurrentStamina += HealAmount;
+    if (CurrentStamina > MaxStamina)
+    {
+        CurrentStamina = MaxStamina;
+    }
 }
 
 void AMainCharacter::MeleeAttack()
@@ -43,13 +63,13 @@ void AMainCharacter::RangeAttack()
 
 void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
 {
-	int32 EffectiveDamage = Damage - CharacterArmor;
-    
+    int32 EffectiveDamage = Damage - CharacterArmor;
+
     /// 방어력이 아무리 높아도 최소 대미지는 입도록 설정
-    if(EffectiveDamage <= 0)
+    if (EffectiveDamage <= 0)
     {
         EffectiveDamage = 1;
-	}
+    }
 
     CurrentHP -= EffectiveDamage;
     if (CurrentHP <= 0)
@@ -59,7 +79,7 @@ void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
 }
 
 void AMainCharacter::IncreaseExperience(int32 Experience)
-{	
+{
     CurrentExperience += Experience;
 
     //if (CurrentExperience >= CurrentLevel * 100)

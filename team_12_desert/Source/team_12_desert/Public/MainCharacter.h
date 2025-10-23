@@ -25,7 +25,23 @@ public:
 	void IncreaseExperience(int32 Experience);
 	void IncreaseKillCount();
 	void IncreaseAttackCount(ATTACK_TYPE AttackType);
-	
+
+	int32 getCurrentLevel() const { return CurrentLevel; }
+	int32 getMaxHP() const { return MaxHP; }
+	int32 getMaxStamina() const { return MaxStamina; }
+	int32 getCurrentHP() const { return CurrentHP; }
+	int32 getCurrentStamina() const { return CurrentStamina; }
+	int32 getCurrentExperience() const { return CurrentExperience; }
+	int32 getCharacterDamage() const { return CharacterDamage; }
+	int32 getCharacterArmor() const { return CharacterArmor; }
+	int32 getMeleeAttackCount() const { return MeleeAttackCount; }
+	int32 getRangeAttackCount() const { return RangeAttackCount; }
+	int32 getKillCount() const { return KillCount; }
+
+	UFUNCTION()
+	void HealHP(int32 HealAmount);
+	UFUNCTION()
+	void HealStamina(int32 HealAmount);
 protected:
 	virtual void BeginPlay() override;
 
@@ -36,6 +52,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
 	int32 MaxHP;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
+	int32 MaxStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
 	int32 CharacterDamage;
@@ -49,10 +67,12 @@ public:
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
 	int32 CurrentHP;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
+	int32 CurrentStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
 	int32 CurrentExperience;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
 	FString CharacterName;
 
