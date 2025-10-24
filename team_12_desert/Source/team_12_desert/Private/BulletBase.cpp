@@ -19,6 +19,8 @@ ABulletBase::ABulletBase()
 	ProjectileMovementComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComp"));
 	ProjectileMovementComp->SetUpdatedComponent(StaticMeshComp);
 
+	StaticMeshComp->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);
+
 	/// 투사체 속도는 여기서 조절하지 말고
 	/// 블루프린트의 발사체 -> 초기속도, 최대속도로 조절할 것(그게 더 범용성 있음)
 

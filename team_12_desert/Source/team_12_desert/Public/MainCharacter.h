@@ -38,6 +38,9 @@ public:
 	int32 getRangeAttackCount() const { return RangeAttackCount; }
 	int32 getKillCount() const { return KillCount; }
 
+	void setMeleeAttackCount(int32 Count) { MeleeAttackCount = Count; }
+	void setRangeAttackCount(int32 Count) { RangeAttackCount = Count; }
+
 	UFUNCTION()
 	void HealHP(int32 HealAmount);
 	UFUNCTION()
