@@ -2,6 +2,7 @@
 
 
 #include "MainCharacter.h"
+#include "WeaponBase.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -29,6 +30,15 @@ void AMainCharacter::BeginPlay()
     KillCount = 0;
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
+
+    WeaponActor = GetWorld()->SpawnActor<AWeaponBase>(Weapon);
+    if(Weapon)
+    {
+        FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+		WeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
+        WeaponActor->SetOwner(this);
+        WeaponActor->SetInstigator(this);
+	}
 }
 
 //외부에서 체력 회복시킬 때
