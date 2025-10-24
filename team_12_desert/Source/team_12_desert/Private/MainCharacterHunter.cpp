@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputMappingContext.h"
+#include "WeaponBase.h"
 
 AMainCharacterHunter::AMainCharacterHunter()
 {
@@ -141,4 +142,6 @@ void AMainCharacterHunter::RangeAttackAction(const FInputActionValue& Value)
 	UE_LOG(LogTemp, Warning, TEXT("Range Attack"));
 
 	this->RangeAttack();
+
+	WeaponActor->Attack();
 }

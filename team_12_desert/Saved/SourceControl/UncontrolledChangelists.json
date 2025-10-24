@@ -5,6 +5,13 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/BP_Weapon_FlareGun.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_Weapon_FlareGun.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_FlareGunBullet.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacterHunter.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/main_character/Mesh/Hunter.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Level/lv_test.umap",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/main_character/Mesh/Hunter_Skeleton.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_ItemBase.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SpeedUpItem.uasset",

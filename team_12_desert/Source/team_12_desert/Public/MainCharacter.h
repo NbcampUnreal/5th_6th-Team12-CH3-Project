@@ -80,4 +80,11 @@ protected:
 	int32 MeleeAttackCount;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyCharacter")
 	int32 RangeAttackCount;
+
+	// ¹«±â
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class AWeaponBase> Weapon;
+	UPROPERTY()
+	TObjectPtr<class AWeaponBase> WeaponActor;
+
 };
