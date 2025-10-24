@@ -44,6 +44,7 @@ void AMainCharacterHunter::BeginPlay()
 		}
 	}
 
+
 }
 
 void AMainCharacterHunter::MeleeAttack()

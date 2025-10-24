@@ -39,6 +39,8 @@ void AWeapon_FlareGun::Attack()
 		FActorSpawnParameters SpawnParams;
 		SpawnParams.Owner = this;
 
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
 		AMainCharacter* MC = Cast<AMainCharacter>(GetOwner());
 		if (!IsValid(MC))
 		{
