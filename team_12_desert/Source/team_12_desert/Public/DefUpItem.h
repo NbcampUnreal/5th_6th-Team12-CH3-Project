@@ -13,5 +13,13 @@ UCLASS()
 class TEAM_12_DESERT_API ADefUpItem : public AAItemBase
 {
 	GENERATED_BODY()
-	
+public:
+	ADefUpItem();
+
+	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
+
+	~ADefUpItem();
+
+private:
+	int32 DefAmount;
 };

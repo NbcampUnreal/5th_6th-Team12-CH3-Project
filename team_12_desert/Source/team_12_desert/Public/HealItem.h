@@ -17,7 +17,7 @@ class TEAM_12_DESERT_API AHealItem : public AAItemBase
 public:
 	AHealItem();
 
-	virtual void ActivateItem(TObjectPtr<AActor> Actor);
+	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
 
 	~AHealItem();
 private:

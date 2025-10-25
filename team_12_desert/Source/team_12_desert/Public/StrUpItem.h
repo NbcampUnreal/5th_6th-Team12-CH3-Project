@@ -17,7 +17,7 @@ class TEAM_12_DESERT_API AStrUpItem : public AAItemBase
 public:
 	AStrUpItem();
 
-	virtual void ActivateItem(TObjectPtr<AActor> Actor);
+	virtual void ActivateItem(TObjectPtr<AActor> Actor)override;
 
 private:
 	int32 StrupAmount;

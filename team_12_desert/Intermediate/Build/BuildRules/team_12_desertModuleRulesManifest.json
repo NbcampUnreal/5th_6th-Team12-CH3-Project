@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert.Target.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
+		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
+		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desert.Target.cs",
+		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.4"
 }

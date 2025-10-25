@@ -84,6 +84,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\SpeedUpItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\StaminaItem.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\StrUpItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -136,6 +139,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SpeedUpItem.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\StaminaItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\StrUpItem.h">
