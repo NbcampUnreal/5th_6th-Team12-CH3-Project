@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\AItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\BulletBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\DefaultGameMode.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -63,7 +66,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacter.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacterAniminstance.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacterHunter.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterAICharacter.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterAIController.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\MyAItemBase.cpp">
@@ -75,10 +87,19 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\StrUpItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\WeaponBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\Weapon_FlareGun.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\team_12_desert\Public">
       <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\team_12_desert\Public\AItemBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\BulletBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\DefaultGameMode.h">
@@ -99,7 +120,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacter.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacterAniminstance.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacterHunter.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterAICharacter.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterAIController.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MyAItemBase.h">
@@ -109,6 +139,12 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\StrUpItem.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\WeaponBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\Weapon_FlareGun.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
   </ItemGroup>
