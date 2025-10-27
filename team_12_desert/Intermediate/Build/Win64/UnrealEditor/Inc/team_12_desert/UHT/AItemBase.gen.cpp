@@ -190,6 +190,10 @@ struct Z_Construct_UClass_AAItemBase_Statics
 		{ "IncludePath", "AItemBase.h" },
 		{ "ModuleRelativePath", "Public/AItemBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemType_MetaData[] = {
+		{ "Category", "ItemTypeName" },
+		{ "ModuleRelativePath", "Public/AItemBase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Scene_MetaData[] = {
 		{ "Category", "Item" },
 #if !UE_BUILD_SHIPPING
@@ -212,6 +216,7 @@ struct Z_Construct_UClass_AAItemBase_Statics
 		{ "ModuleRelativePath", "Public/AItemBase.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FNamePropertyParams NewProp_ItemType;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scene;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Collision;
@@ -228,10 +233,12 @@ struct Z_Construct_UClass_AAItemBase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AAItemBase_Statics::NewProp_ItemType = { "ItemType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAItemBase, ItemType), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemType_MetaData), NewProp_ItemType_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAItemBase_Statics::NewProp_Scene = { "Scene", nullptr, (EPropertyFlags)0x012408000008000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAItemBase, Scene), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scene_MetaData), NewProp_Scene_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAItemBase_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x012408000008000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAItemBase, StaticMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StaticMesh_MetaData), NewProp_StaticMesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAItemBase_Statics::NewProp_Collision = { "Collision", nullptr, (EPropertyFlags)0x012408000008000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAItemBase, Collision), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Collision_MetaData), NewProp_Collision_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAItemBase_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAItemBase_Statics::NewProp_ItemType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAItemBase_Statics::NewProp_Scene,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAItemBase_Statics::NewProp_StaticMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAItemBase_Statics::NewProp_Collision,
@@ -280,10 +287,10 @@ AAItemBase::~AAItemBase() {}
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAItemBase, AAItemBase::StaticClass, TEXT("AAItemBase"), &Z_Registration_Info_UClass_AAItemBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAItemBase), 4188103016U) },
+		{ Z_Construct_UClass_AAItemBase, AAItemBase::StaticClass, TEXT("AAItemBase"), &Z_Registration_Info_UClass_AAItemBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAItemBase), 2967259887U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_4025879645(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_78290658(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_AItemBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

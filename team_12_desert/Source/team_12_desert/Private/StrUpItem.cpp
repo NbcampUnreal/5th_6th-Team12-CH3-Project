@@ -9,6 +9,7 @@ AStrUpItem::AStrUpItem()
 	StrupAmount = 30;
 	Duration = 3;
 	PlayerCharacter = nullptr;
+	ItemType = "StrUp";
 }
 
 void AStrUpItem::ActivateItem(TObjectPtr<AActor> Actor)

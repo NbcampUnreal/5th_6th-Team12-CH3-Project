@@ -17,7 +17,7 @@ void AStaminaItem::ActivateItem(TObjectPtr<AActor> Actor)
 		{
 			UE_LOG(LogTemp, Display, TEXT("Player befor Current: %d, Max : %d"), PlayerCharacter->getCurrentStamina(), PlayerCharacter->getMaxStamina());
 			PlayerCharacter->HealStamina(PlayerCharacter->getMaxStamina());
-			UE_LOG(LogTemp, Display, TEXT("Player befor Level: %d, Exp : %d"), PlayerCharacter->getCurrentStamina(), PlayerCharacter->getMaxStamina());
+			UE_LOG(LogTemp, Display, TEXT("Player befor Current: %d, Max : %d"), PlayerCharacter->getCurrentStamina(), PlayerCharacter->getMaxStamina());
 		}
 	}
 	Destroy();
