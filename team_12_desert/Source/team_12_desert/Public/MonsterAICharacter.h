@@ -18,7 +18,7 @@ public:
 	void SetMovementSpeed(float NewSpeed);
 
 	UPROPERTY(EditAnywhere, Category = "AI")
-	float WalkSpeed = 300.0f;                    //이동 속도
+	float WalkSpeed = 200.0f;                    //이동 속도
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

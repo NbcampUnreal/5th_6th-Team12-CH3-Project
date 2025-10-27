@@ -21,10 +21,14 @@ private:
 
 	// 공격 관련 변수들
 	UPROPERTY(EditAnywhere, Category = "AI")
-	float AttackRange = 50.0f;     //공격 거리
+	float AttackRange = 50.0f;     //기본 공격 거리
 
 	UPROPERTY(EditAnywhere, Category = "AI")
-	float AttackCooldown = 2.0f;   // 공격 쿨타임 (초)
+	float AttackCooldown = 2.0f;   //기본 공격 쿨타임 (초)
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	float AttackDamage = 20.0f;   //기본 공격 쿨타임 (초)
+
 
 	bool bCanAttack = true;        // 현재 공격 가능한 상태인지 여부
 
@@ -33,6 +37,7 @@ private:
 
 	// 쿨타임 타이머
 	FTimerHandle AttackTimerHandle;
+
 
 	// 쿨타임 리셋 함수
 	void ResetAttack();            //쿨타임 리셋
