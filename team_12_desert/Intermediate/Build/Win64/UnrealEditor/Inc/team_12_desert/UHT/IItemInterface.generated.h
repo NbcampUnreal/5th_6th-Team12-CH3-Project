@@ -14,15 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_IItemInterface_generated_h
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	TEAM_12_DESERT_API UIItemInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -36,15 +28,7 @@ public: \
 	TEAM_12_DESERT_API virtual ~UIItemInterface();
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
->>>>>>> Monster
 private: \
 	static void StaticRegisterNativesUIItemInterface(); \
 	friend struct Z_Construct_UClass_UIItemInterface_Statics; \
@@ -53,37 +37,15 @@ public: \
 	DECLARE_SERIALIZER(UIItemInterface)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_BODY \
-	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_BODY \
-	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Monster
 protected: \
 	virtual ~IIItemInterface() {} \
 public: \
@@ -92,27 +54,11 @@ public: \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_10_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_10_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_21_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_10_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_21_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> Monster
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -120,15 +66,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class UIItemInterface>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_IItemInterface_h
-=======
-#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_IItemInterface_h
->>>>>>> Item_pcy
-=======
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h
->>>>>>> Monster
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

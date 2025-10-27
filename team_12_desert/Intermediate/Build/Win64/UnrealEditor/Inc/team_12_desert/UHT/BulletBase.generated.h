@@ -17,27 +17,11 @@ struct FHitResult;
 #endif
 #define TEAM_12_DESERT_BulletBase_generated_h
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnHit);
 
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnHit);
-
-
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnHit);
-
-
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
->>>>>>> Monster
 private: \
 	static void StaticRegisterNativesABulletBase(); \
 	friend struct Z_Construct_UClass_ABulletBase_Statics; \
@@ -46,15 +30,7 @@ public: \
 	DECLARE_SERIALIZER(ABulletBase)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABulletBase(ABulletBase&&); \
@@ -66,8 +42,6 @@ public: \
 	NO_API virtual ~ABulletBase();
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_9_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -75,24 +49,6 @@ public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_9_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_9_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_12_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -100,15 +56,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ABulletBase>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_BulletBase_h
-=======
-#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_BulletBase_h
->>>>>>> Item_pcy
-=======
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h
->>>>>>> Monster
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
