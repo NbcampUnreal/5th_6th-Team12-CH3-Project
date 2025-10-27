@@ -70,7 +70,7 @@ private:
 
 	/// 스태미너 만들기
 	FTimerHandle StaminaTimerHandle;
-	void ManageStamina();	// 대쉬 하면 초당 10씩 깎임, 가만 있으면 회복을 관리
+	void ManageStamina();	// 대쉬 하면 초당 40씩 깎임, 가만 있으면 회복을 관리
 	void StartStaminaDrainTimer();
 
 	bool isDash = false;
