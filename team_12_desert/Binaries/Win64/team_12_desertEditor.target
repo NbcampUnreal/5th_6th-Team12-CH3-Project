@@ -5654,6 +5654,7 @@
 			"Type": "RequiredResource"
 		},
 		{
+<<<<<<< HEAD
 			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/Binaries/Win64/UnrealEditor-MDLImporter.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -5666,6 +5667,8 @@
 			"Type": "RequiredResource"
 		},
 		{
+=======
+>>>>>>> Item_pcy
 			"Path": "$(EngineDir)/Plugins/Enterprise/VariantManagerContent/Binaries/Win64/UnrealEditor-VariantManagerContent.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -6398,6 +6401,7 @@
 			"Type": "RequiredResource"
 		},
 		{
+<<<<<<< HEAD
 			"Path": "$(EngineDir)/Plugins/Importers/USDImporter/Binaries/Win64/UnrealEditor-GeometryCacheUSD.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -6474,6 +6478,8 @@
 			"Type": "RequiredResource"
 		},
 		{
+=======
+>>>>>>> Item_pcy
 			"Path": "$(EngineDir)/Plugins/Interchange/Editor/Binaries/Win64/UnrealEditor-InterchangeEditor.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -6591,26 +6597,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/Binaries/Win64/UnrealEditor-FabLauncher.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/Binaries/Win64/UnrealEditor-FabLauncher.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/Binaries/Win64/UnrealEditor-FabLauncherQuixelDependencies.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/Binaries/Win64/UnrealEditor-FabLauncherQuixelDependencies.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -7102,6 +7088,7 @@
 			"Type": "RequiredResource"
 		},
 		{
+<<<<<<< HEAD
 			"Path": "$(EngineDir)/Plugins/Runtime/Analytics/AnalyticsBlueprintLibrary/Binaries/Win64/UnrealEditor-AnalyticsBlueprintLibrary.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -7114,6 +7101,8 @@
 			"Type": "RequiredResource"
 		},
 		{
+=======
+>>>>>>> Item_pcy
 			"Path": "$(EngineDir)/Plugins/Runtime/AndroidDeviceProfileSelector/Binaries/Win64/UnrealEditor-AndroidDeviceProfileCommandlets.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -33344,26 +33333,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/Binaries/ThirdParty/MDL/Win64/dds.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/Binaries/ThirdParty/MDL/Win64/libmdl_sdk.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/Binaries/ThirdParty/MDL/Win64/mdl_distiller.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/Binaries/ThirdParty/MDL/Win64/nv_freeimage.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/MDLImporter/MDLImporter.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Enterprise/VariantManagerContent/VariantManagerContent.uplugin",
 			"Type": "UFS"
 		},
@@ -33512,10 +33481,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Importers/USDImporter/USDImporter.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Assets/InterchangeAssets.uplugin",
 			"Type": "UFS"
 		},
@@ -33525,10 +33490,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Interchange.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/FabLauncher/FabLauncher.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -33645,10 +33606,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/Analytics/AnalyticsBlueprintLibrary/AnalyticsBlueprintLibrary.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -33843,7 +33800,6 @@
 		"ActorSequence",
 		"AdvancedRenamer",
 		"AlembicImporter",
-		"AnalyticsBlueprintLibrary",
 		"AndroidDeviceProfileSelector",
 		"AndroidFileServer",
 		"AndroidMedia",
@@ -33913,7 +33869,6 @@
 		"EnvironmentQueryEditor",
 		"ExampleDeviceProfileSelector",
 		"Fab",
-		"FabLauncher",
 		"FacialAnimation",
 		"FastBuildController",
 		"Fracture",
@@ -33947,7 +33902,6 @@
 		"LiveLink",
 		"LocalizableMessage",
 		"LocationServicesBPLibrary",
-		"MDLImporter",
 		"MacGraphicsSwitching",
 		"MaterialAnalyzer",
 		"MediaCompositing",
@@ -34021,7 +33975,6 @@
 		"UMGWidgetPreview",
 		"UObjectPlugin",
 		"USDCore",
-		"USDImporter",
 		"UVEditor",
 		"UbaController",
 		"UdpMessaging",

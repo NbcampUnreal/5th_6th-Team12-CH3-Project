@@ -17,11 +17,13 @@ class TEAM_12_DESERT_API AStrUpItem : public AAItemBase
 public:
 	AStrUpItem();
 
-	virtual void ActivateItem(TObjectPtr<AActor> Actor);
+	virtual void ActivateItem(TObjectPtr<AActor> Actor)override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	float Duration;
 private:
 	int32 StrupAmount;
-	float Duration;
+
 
 	FTimerHandle TimerHandle;
 
