@@ -5,6 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/BP_Flare_gun.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/Cube.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/Cube_001.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/Cube_002.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/Cube_004.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/weapon/gun/Cylinder.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Test.umap"
 			]
