@@ -45,6 +45,9 @@ void AMainCharacterHunter::BeginPlay()
 	}
 
 
+	// 스태미너 감소 시스템 시작
+	StartStaminaDrainTimer();
+
 }
 
 void AMainCharacterHunter::MeleeAttack()
@@ -119,14 +122,23 @@ void AMainCharacterHunter::JumpAction(const FInputActionValue& Value)
 // 대쉬 시작시 이동속도 증가 기본값 1.5배(BP에서 조절가능)
 void AMainCharacterHunter::DashStartAction(const FInputActionValue& Value)
 {
+	if(CurrentStamina <= 20) // 스태미너 20 이하일때 대쉬 불가
+	{
+		return;
+	}
+
 	UE_LOG(LogTemp, Warning, TEXT("Dash Start"));
 	MovementComponent->MaxWalkSpeed = DefaultDashSpeed * MaxDashSpeed;
+	
+	isDash = true;
 }
 
 void AMainCharacterHunter::DashEndAction(const FInputActionValue& Value)
 {
 	UE_LOG(LogTemp, Warning, TEXT("Dash End"));
 	MovementComponent->MaxWalkSpeed = DefaultDashSpeed;
+
+	isDash = false;
 }
 
 // 근접 공격
@@ -145,4 +157,47 @@ void AMainCharacterHunter::RangeAttackAction(const FInputActionValue& Value)
 	this->RangeAttack();
 
 	WeaponActor->Attack();
+}
+
+
+
+void AMainCharacterHunter::ManageStamina()
+{
+	// UE_LOG(LogTemp, Warning, TEXT("Managing Stamina. isDash: %s, CurrentStamina: %d"), isDash ? TEXT("true") : TEXT("false"), CurrentStamina);
+	if (isDash)
+	{
+		this->CurrentStamina -= 8;
+		if (CurrentStamina < 0)
+		{
+			CurrentStamina = 0;
+			DashEndAction(0); // 스태미너가 0이 되면 대쉬 종료
+		}
+	}
+	else
+	{
+		/// 이미 스태미너 full이면 리턴
+		if (CurrentStamina >= MaxStamina) return;
+
+		this->CurrentStamina += 4;
+		if (CurrentStamina > MaxStamina)
+		{
+			CurrentStamina = MaxStamina;
+		}
+	}
+}
+
+void AMainCharacterHunter::StartStaminaDrainTimer()
+{
+	if (UWorld* World = GetWorld())
+	{
+		World->GetTimerManager().SetTimer(
+			StaminaTimerHandle,
+			this,
+			&AMainCharacterHunter::ManageStamina,   // 호출할 함수
+			0.2f,                               // 시간 간격 (0.2초)
+			true                                // 반복 여부 (반복)
+		);
+
+		UE_LOG(LogTemp, Warning, TEXT("Stamina Drain Timer Started."));
+	}
 }

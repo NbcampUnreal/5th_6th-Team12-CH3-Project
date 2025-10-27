@@ -58,7 +58,7 @@ private:
 	/// 변수 Zone
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hunter_Property")
-	float MaxDashSpeed = 1.5f;
+	float MaxDashSpeed = 3.0f; // 대쉬에 제약을 건 대신 맥스 스피드를 올림
 	TObjectPtr<class UCharacterMovementComponent> MovementComponent;
 
 
@@ -67,5 +67,11 @@ private:
 	TObjectPtr<class APlayerController> PC; // 플레이어 컨트롤러
 
 
+
 	/// 스태미너 만들기
+	FTimerHandle StaminaTimerHandle;
+	void ManageStamina();	// 대쉬 하면 초당 10씩 깎임, 가만 있으면 회복을 관리
+	void StartStaminaDrainTimer();
+
+	bool isDash = false;
 };

@@ -90,4 +90,5 @@ protected:
 	UPROPERTY()
 	TObjectPtr<class AWeaponBase> WeaponActor;
 
+
 };
