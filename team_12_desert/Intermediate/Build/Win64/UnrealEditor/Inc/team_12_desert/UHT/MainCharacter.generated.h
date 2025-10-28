@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TEAM_12_DESERT_MainCharacter_generated_h
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execEquipWeapon); \
 	DECLARE_FUNCTION(execHealStamina); \
 	DECLARE_FUNCTION(execHealHP);
 

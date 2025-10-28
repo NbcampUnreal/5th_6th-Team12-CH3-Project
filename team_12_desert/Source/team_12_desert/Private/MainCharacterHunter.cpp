@@ -147,6 +147,8 @@ void AMainCharacterHunter::MeleeAttackAction(const FInputActionValue& Value)
 	UE_LOG(LogTemp, Warning, TEXT("Melee Attack"));
 
 	this->MeleeAttack();
+	if (IsValid(MeleeWeaponActor))
+		MeleeWeaponActor->Attack();
 
 }
 
@@ -155,8 +157,8 @@ void AMainCharacterHunter::RangeAttackAction(const FInputActionValue& Value)
 	UE_LOG(LogTemp, Warning, TEXT("Range Attack"));
 
 	this->RangeAttack();
-
-	WeaponActor->Attack();
+	if (IsValid(RangeWeaponActor))
+		RangeWeaponActor->Attack();
 }
 
 

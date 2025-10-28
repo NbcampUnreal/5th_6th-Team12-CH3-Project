@@ -105,6 +105,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\Weapon_FlareGun.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\Weapon_Sword.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\team_12_desert\Public">
       <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
     </Filter>
@@ -166,6 +169,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\Weapon_FlareGun.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\Weapon_Sword.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
   </ItemGroup>

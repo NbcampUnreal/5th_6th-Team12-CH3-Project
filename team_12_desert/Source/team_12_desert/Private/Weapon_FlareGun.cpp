@@ -18,6 +18,9 @@ AWeapon_FlareGun::AWeapon_FlareGun()
 	FlareGunMesh_1->SetupAttachment(RootComponent);
 	FlareGunMesh_2->SetupAttachment(RootComponent);
 	FlareGunMesh_3->SetupAttachment(RootComponent);
+
+	MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
+	MuzzleLocation->SetupAttachment(SceneComp);
 }
 
 void AWeapon_FlareGun::Attack()

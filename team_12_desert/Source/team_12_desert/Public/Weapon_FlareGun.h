@@ -20,6 +20,15 @@ public:
 
 	virtual void Attack() override;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
+	TObjectPtr<class USceneComponent> MuzzleLocation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
+	TObjectPtr<class UAnimMontage> FireMontage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
+	TSubclassOf<class ABulletBase> Bullet;
+
 private:
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UStaticMeshComponent> FlareGunMesh_0;
@@ -29,5 +38,6 @@ private:
 	TObjectPtr<UStaticMeshComponent> FlareGunMesh_2;
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UStaticMeshComponent> FlareGunMesh_3;
+
 
 };

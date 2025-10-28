@@ -86,9 +86,15 @@ protected:
 
 	// ¹«±â
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<class AWeaponBase> Weapon;
-	UPROPERTY()
-	TObjectPtr<class AWeaponBase> WeaponActor;
+	TSubclassOf<class AWeaponBase> RangeWeapon;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class AWeaponBase> MeleeWeapon;
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<class AWeaponBase> RangeWeaponActor;
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<class AWeaponBase> MeleeWeaponActor;
 
+	UFUNCTION()
+	void EquipWeapon();
 
 };

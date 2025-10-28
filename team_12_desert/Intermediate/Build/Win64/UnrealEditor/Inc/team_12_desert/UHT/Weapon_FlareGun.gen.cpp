@@ -10,7 +10,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeWeapon_FlareGun() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_ABulletBase_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeapon_FlareGun();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeapon_FlareGun_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeaponBase();
@@ -36,6 +40,19 @@ struct Z_Construct_UClass_AWeapon_FlareGun_Statics
 		{ "IncludePath", "Weapon_FlareGun.h" },
 		{ "ModuleRelativePath", "Public/Weapon_FlareGun.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MuzzleLocation_MetaData[] = {
+		{ "Category", "WeaponSetting" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Weapon_FlareGun.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireMontage_MetaData[] = {
+		{ "Category", "WeaponSetting" },
+		{ "ModuleRelativePath", "Public/Weapon_FlareGun.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Bullet_MetaData[] = {
+		{ "Category", "WeaponSetting" },
+		{ "ModuleRelativePath", "Public/Weapon_FlareGun.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FlareGunMesh_0_MetaData[] = {
 		{ "Category", "Weapon_FlareGun" },
 		{ "EditInline", "true" },
@@ -57,6 +74,9 @@ struct Z_Construct_UClass_AWeapon_FlareGun_Statics
 		{ "ModuleRelativePath", "Public/Weapon_FlareGun.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MuzzleLocation;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FireMontage;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_Bullet;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FlareGunMesh_0;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FlareGunMesh_1;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FlareGunMesh_2;
@@ -68,11 +88,17 @@ struct Z_Construct_UClass_AWeapon_FlareGun_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_MuzzleLocation = { "MuzzleLocation", nullptr, (EPropertyFlags)0x01140000000a000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, MuzzleLocation), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MuzzleLocation_MetaData), NewProp_MuzzleLocation_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FireMontage = { "FireMontage", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, FireMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FireMontage_MetaData), NewProp_FireMontage_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_Bullet = { "Bullet", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, Bullet), Z_Construct_UClass_UClass, Z_Construct_UClass_ABulletBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Bullet_MetaData), NewProp_Bullet_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_0 = { "FlareGunMesh_0", nullptr, (EPropertyFlags)0x0144000000080009, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, FlareGunMesh_0), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FlareGunMesh_0_MetaData), NewProp_FlareGunMesh_0_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_1 = { "FlareGunMesh_1", nullptr, (EPropertyFlags)0x0144000000080009, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, FlareGunMesh_1), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FlareGunMesh_1_MetaData), NewProp_FlareGunMesh_1_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_2 = { "FlareGunMesh_2", nullptr, (EPropertyFlags)0x0144000000080009, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, FlareGunMesh_2), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FlareGunMesh_2_MetaData), NewProp_FlareGunMesh_2_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_3 = { "FlareGunMesh_3", nullptr, (EPropertyFlags)0x0144000000080009, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeapon_FlareGun, FlareGunMesh_3), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FlareGunMesh_3_MetaData), NewProp_FlareGunMesh_3_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeapon_FlareGun_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_MuzzleLocation,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FireMontage,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_Bullet,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_0,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_1,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeapon_FlareGun_Statics::NewProp_FlareGunMesh_2,
@@ -119,10 +145,10 @@ AWeapon_FlareGun::~AWeapon_FlareGun() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeapon_FlareGun, AWeapon_FlareGun::StaticClass, TEXT("AWeapon_FlareGun"), &Z_Registration_Info_UClass_AWeapon_FlareGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon_FlareGun), 51426718U) },
+		{ Z_Construct_UClass_AWeapon_FlareGun, AWeapon_FlareGun::StaticClass, TEXT("AWeapon_FlareGun"), &Z_Registration_Info_UClass_AWeapon_FlareGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeapon_FlareGun), 2626067571U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_2611240021(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_975817741(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -26,14 +26,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
 	TObjectPtr<class USkeletalMeshComponent> WeaponMesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
-	TObjectPtr<class USceneComponent> MuzzleLocation;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
-	TObjectPtr<class UAnimMontage> FireMontage;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
-	TSubclassOf<class ABulletBase> Bullet;
 	
 
 

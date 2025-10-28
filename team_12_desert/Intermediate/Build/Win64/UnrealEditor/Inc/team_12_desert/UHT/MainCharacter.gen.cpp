@@ -18,6 +18,35 @@ TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
 
+// Begin Class AMainCharacter Function EquipWeapon
+struct Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "EquipWeapon", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMainCharacter_EquipWeapon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMainCharacter::execEquipWeapon)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->EquipWeapon();
+	P_NATIVE_END;
+}
+// End Class AMainCharacter Function EquipWeapon
+
 // Begin Class AMainCharacter Function HealHP
 struct Z_Construct_UFunction_AMainCharacter_HealHP_Statics
 {
@@ -107,6 +136,7 @@ void AMainCharacter::StaticRegisterNativesAMainCharacter()
 {
 	UClass* Class = AMainCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "EquipWeapon", &AMainCharacter::execEquipWeapon },
 		{ "HealHP", &AMainCharacter::execHealHP },
 		{ "HealStamina", &AMainCharacter::execHealStamina },
 	};
@@ -173,7 +203,7 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "Category", "MyCharacter" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Weapon_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RangeWeapon_MetaData[] = {
 		{ "Category", "MainCharacter" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
@@ -183,7 +213,16 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponActor_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MeleeWeapon_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RangeWeaponActor_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MeleeWeaponActor_MetaData[] = {
+		{ "Category", "MainCharacter" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
 	};
 #endif // WITH_METADATA
@@ -199,11 +238,14 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FStrPropertyParams NewProp_CharacterName;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MeleeAttackCount;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_RangeAttackCount;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_Weapon;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponActor;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_RangeWeapon;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_MeleeWeapon;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RangeWeaponActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MeleeWeaponActor;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMainCharacter_EquipWeapon, "EquipWeapon" }, // 3913378975
 		{ &Z_Construct_UFunction_AMainCharacter_HealHP, "HealHP" }, // 2501563374
 		{ &Z_Construct_UFunction_AMainCharacter_HealStamina, "HealStamina" }, // 3492705922
 	};
@@ -225,8 +267,10 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMainCharacter_St
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_CharacterName = { "CharacterName", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, CharacterName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CharacterName_MetaData), NewProp_CharacterName_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeAttackCount = { "MeleeAttackCount", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeAttackCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeAttackCount_MetaData), NewProp_MeleeAttackCount_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeAttackCount = { "RangeAttackCount", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, RangeAttackCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangeAttackCount_MetaData), NewProp_RangeAttackCount_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_Weapon = { "Weapon", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, Weapon), Z_Construct_UClass_UClass, Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Weapon_MetaData), NewProp_Weapon_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_WeaponActor = { "WeaponActor", nullptr, (EPropertyFlags)0x0124080000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, WeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponActor_MetaData), NewProp_WeaponActor_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeapon = { "RangeWeapon", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, RangeWeapon), Z_Construct_UClass_UClass, Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangeWeapon_MetaData), NewProp_RangeWeapon_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeapon = { "MeleeWeapon", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeWeapon), Z_Construct_UClass_UClass, Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeWeapon_MetaData), NewProp_MeleeWeapon_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeaponActor = { "RangeWeaponActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, RangeWeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangeWeaponActor_MetaData), NewProp_RangeWeaponActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor = { "MeleeWeaponActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeWeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeWeaponActor_MetaData), NewProp_MeleeWeaponActor_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainCharacter_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentLevel,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxHP,
@@ -240,8 +284,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CharacterName,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeAttackCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeAttackCount,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_Weapon,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_WeaponActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeapon,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeapon,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeaponActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons[])() = {
@@ -284,10 +330,10 @@ AMainCharacter::~AMainCharacter() {}
 struct Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 2998255352U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 1103080068U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_1497664727(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_1960027536(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -35,14 +35,34 @@ void AMainCharacter::BeginPlay()
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
 
-    WeaponActor = GetWorld()->SpawnActor<AWeaponBase>(Weapon);
-    if(Weapon)
+    EquipWeapon();
+}
+
+void AMainCharacter::EquipWeapon()
+{
+    if (IsValid(RangeWeapon))
     {
-        FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-		WeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
-        WeaponActor->SetOwner(this);
-        WeaponActor->SetInstigator(this);
-	}
+        RangeWeaponActor = GetWorld()->SpawnActor<AWeaponBase>(RangeWeapon);
+        if (RangeWeapon)
+        {
+            FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+            RangeWeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
+            RangeWeaponActor->SetOwner(this);
+            RangeWeaponActor->SetInstigator(this);
+        }
+    }
+
+    if (IsValid(MeleeWeapon))
+    {
+        MeleeWeaponActor = GetWorld()->SpawnActor<AWeaponBase>(MeleeWeapon);
+        if (MeleeWeapon)
+        {
+            FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+            MeleeWeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
+            MeleeWeaponActor->SetOwner(this);
+            MeleeWeaponActor->SetInstigator(this);
+        }
+    }
 }
 
 //외부에서 체력 회복시킬 때
