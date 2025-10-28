@@ -31,7 +31,7 @@ void AAItemBase::OnItemOverlap(UPrimitiveComponent* OverlapPendComp,
 	bool bFromSweep,
 	const FHitResult& SweepResult)
 {
-	if (OtherActor) // 캐릭터에 태그같은걸 달아서 캐릭터에만 반응하도록 추후 변경
+	if (OtherActor && OtherActor->ActorHasTag(TEXT("Player"))) // 캐릭터에 태그같은걸 달아서 캐릭터에만 반응하도록 추후 변경
 	{
 		ActivateItem(OtherActor);
 	}

@@ -6,6 +6,7 @@
 
 AStaminaItem::AStaminaItem()
 {
+	ItemType = "Stamina";
 }
 
 void AStaminaItem::ActivateItem(TObjectPtr<AActor> Actor)

@@ -72,6 +72,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\IItemInterface.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ItemRandomBox.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\ItemSpawnRow.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -136,6 +139,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\IItemInterface.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ItemRandomBox.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ItemSpawnRow.h">

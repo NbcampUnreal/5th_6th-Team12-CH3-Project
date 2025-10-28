@@ -10,6 +10,7 @@ ASpeedUpItem::ASpeedUpItem()
 {
 	Duration = 3.0f;
 	PlayerCharacter = nullptr;
+	ItemType = "SpeedUp";
 }
 
 void ASpeedUpItem::ActivateItem(TObjectPtr<AActor> Actor)

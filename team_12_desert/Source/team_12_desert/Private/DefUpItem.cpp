@@ -7,6 +7,7 @@
 ADefUpItem::ADefUpItem()
 {
 	DefAmount = 30;
+	ItemType = "DefUp";
 }
 
 void ADefUpItem::ActivateItem(TObjectPtr<AActor> Actor)

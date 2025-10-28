@@ -7,6 +7,7 @@
 AExpUpItem::AExpUpItem()
 {
 	ExpAmount = 100;
+	ItemType = "ExpUp";
 }
 
 void AExpUpItem::ActivateItem(TObjectPtr<AActor> Actor)

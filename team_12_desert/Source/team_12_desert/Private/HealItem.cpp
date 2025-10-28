@@ -7,6 +7,7 @@
 AHealItem::AHealItem()
 {
 	HealAmount = 30;
+	ItemType = "Healing";
 }
 
 void AHealItem::ActivateItem(TObjectPtr<AActor> Actor)
