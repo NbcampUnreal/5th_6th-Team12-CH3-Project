@@ -22,9 +22,7 @@ ASkillBook::ASkillBook()
 
 	Collision->OnComponentBeginOverlap.AddDynamic(this, &ASkillBook::OnItemOverlap);
 	Collision->OnComponentEndOverlap.AddDynamic(this, &ASkillBook::OnItemEndOverlap);
-	SetActorHiddenInGame(true);
-	SetActorEnableCollision(false);
-	SetActorTickEnabled(false);
+
 }
 
 void ASkillBook::OnItemOverlap(UPrimitiveComponent* OverlapPendComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -78,7 +76,6 @@ void ASkillBook::ActionSkill(TArray<AActor*> Actors, float time)
 			}
 		}
 	}
-
 }
 
 void ASkillBook::AddSkill(TObjectPtr<ASkillBase> NewSkill)
