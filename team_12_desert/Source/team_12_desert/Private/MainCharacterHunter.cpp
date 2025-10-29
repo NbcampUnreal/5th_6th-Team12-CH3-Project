@@ -9,6 +9,9 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputMappingContext.h"
 #include "WeaponBase.h"
+#include "Animation/AnimMontage.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Animation/AnimInstance.h"
 
 AMainCharacterHunter::AMainCharacterHunter()
 {
@@ -144,21 +147,108 @@ void AMainCharacterHunter::DashEndAction(const FInputActionValue& Value)
 // 근접 공격
 void AMainCharacterHunter::MeleeAttackAction(const FInputActionValue& Value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Melee Attack"));
+	//UE_LOG(LogTemp, Warning, TEXT("Melee Attack"));
 
-	this->MeleeAttack();
-	if (IsValid(MeleeWeaponActor))
-		MeleeWeaponActor->Attack();
+	//this->MeleeAttack();
+	//if (IsValid(MeleeWeaponActor))
+	//	MeleeWeaponActor->Attack();
+
+	// 이미 공격 중이라면 함수를 바로 종료하여 재공격을 막음
+	if (bIsAttacking)
+	{
+		return;
+	}
+
+	// 재생할 몽타주가 유효하고, 몽타주가 설정되어 있는지 확인
+	if (IsValid(MeleeAttackMontage) && IsValid(GetMesh()))
+	{
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		if (IsValid(AnimInstance))
+		{
+			float Duration = AnimInstance->Montage_Play(MeleeAttackMontage, 1.0f); // 2.0f로 해서 속도 두배 빠르게
+			UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
+			if (Duration > 0.0f)
+			{
+				bIsAttacking = true; // 공격 시작, 플래그 설정
+
+				if (IsValid(MeleeWeaponActor))
+					MeleeWeaponActor->Attack();
+
+
+				// 몽타주 재생이 끝났을 때 호출될 델리게이트 바인딩
+				FOnMontageEnded MontageDelegate;
+				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnRangeAttackMontageFinished);
+				AnimInstance->Montage_SetEndDelegate(MontageDelegate, MeleeAttackMontage);
+			}
+		}
+	}
 
 }
 
 void AMainCharacterHunter::RangeAttackAction(const FInputActionValue& Value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Range Attack"));
+	// UE_LOG(LogTemp, Warning, TEXT("Range Attack"));
 
+	//this->RangeAttack();
+	//if (IsValid(RangeWeaponActor))
+	//	RangeWeaponActor->Attack();
+
+
+	// 이미 공격 중이라면 함수를 바로 종료하여 재공격을 막음
+	if (bIsAttacking)
+	{
+		return;
+	}
+
+	// 재생할 몽타주가 유효하고, 몽타주가 설정되어 있는지 확인
+	if (IsValid(RangeAttackMontage) && IsValid(GetMesh()))
+	{
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		if (IsValid(AnimInstance))
+		{
+			float Duration = AnimInstance->Montage_Play(RangeAttackMontage, 2.0f); // 2.0f로 해서 속도 두배 빠르게
+			UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
+			if (Duration > 0.0f)
+			{
+				bIsAttacking = true; // 공격 시작, 플래그 설정
+
+				// 몽타주 재생이 끝났을 때 호출될 델리게이트 바인딩
+				FOnMontageEnded MontageDelegate;
+				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnRangeAttackMontageFinished);
+				AnimInstance->Montage_SetEndDelegate(MontageDelegate, RangeAttackMontage);
+			}
+		}
+	}
+}
+
+void AMainCharacterHunter::OnRangeAttackMontageFinished(UAnimMontage* Montage, bool bInterrupted)
+{
+	// 몽타주 재생이 끝났으므로, 공격 가능 상태로 리셋
+	bIsAttacking = false;
+	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
+}
+
+void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, bool bInterrupted)
+{
+	// 몽타주 재생이 끝났으므로, 공격 가능 상태로 리셋
+	bIsAttacking = false;
+
+	if (IsValid(MeleeWeaponActor))
+		MeleeWeaponActor->AttackEnd();
+
+	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
+}
+
+void AMainCharacterHunter::ShootProjectile()
+{
 	this->RangeAttack();
 	if (IsValid(RangeWeaponActor))
 		RangeWeaponActor->Attack();
+
+}
+
+void AMainCharacterHunter::SlashSword()
+{
 }
 
 

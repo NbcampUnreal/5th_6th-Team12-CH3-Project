@@ -21,6 +21,7 @@ protected:
 
 public:	
 	virtual void Attack();
+	virtual void AttackEnd();
 	TObjectPtr<class USceneComponent> SceneComp;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponSetting")

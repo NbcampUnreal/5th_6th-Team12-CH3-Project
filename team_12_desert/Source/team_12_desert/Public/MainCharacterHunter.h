@@ -26,6 +26,16 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void Hit(int32 Damage, AActor* ByWho) override;
 
+	// 공격 중인지 확인하는 변수 (재공격 방지용)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
+	bool bIsAttacking = false;
+
+	// 재생할 애니메이션 몽타주 애셋
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	TObjectPtr<class UAnimMontage> RangeAttackMontage;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat")
+	TObjectPtr<class UAnimMontage> MeleeAttackMontage;
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class USpringArmComponent> CameraBoom;
@@ -61,6 +71,19 @@ protected:
 	float MaxDashSpeed = 3.0f; // 대쉬에 제약을 건 대신 맥스 스피드를 올림
 	TObjectPtr<class UCharacterMovementComponent> MovementComponent;
 
+
+	// 몽타주 재생이 끝났을 때 호출될 함수
+	UFUNCTION()
+	void OnRangeAttackMontageFinished(UAnimMontage* Montage, bool bInterrupted);
+	UFUNCTION()
+	void OnMeleeAttackMontageFinished(UAnimMontage* Montage, bool bInterrupted);
+
+	// 애님 노티파이에 연결하여 투사체를 발사할 함수
+	// '실제' 공격이 이루어지는건 아래 두 함수다!!!!!!
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	void ShootProjectile();
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	void SlashSword();
 
 private:
 	float DefaultDashSpeed = 1.f;
