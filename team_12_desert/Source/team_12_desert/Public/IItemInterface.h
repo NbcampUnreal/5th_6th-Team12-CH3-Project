@@ -19,7 +19,6 @@ class UIItemInterface : public UInterface
 class TEAM_12_DESERT_API IIItemInterface
 {
 	GENERATED_BODY()
-public:
 
 	virtual void OnItemOverlap(
 		UPrimitiveComponent* OverlapPendComp,
@@ -29,13 +28,16 @@ public:
 		bool bFromSweep,
 		const FHitResult& SweepResult
 	)=0;
+
 	virtual void OnItemEndOverlap(
 		UPrimitiveComponent* OverlapPendComp,
 		AActor* OtherActor,
 		UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex) = 0;
 
-	virtual void ActivateItem(TObjectPtr<AActor> Actor) = 0;
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+
+	virtual void ActivateItem(TObjectPtr<AActor> Actor) = 0;
+	virtual void DeactivateItem(TObjectPtr<AActor> Actor) = 0;
+	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 };
