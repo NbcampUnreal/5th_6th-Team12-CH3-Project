@@ -89,14 +89,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR(AStrUpItem);
 // End Class AStrUpItem
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics
+>>>>>>> Level-Design
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AStrUpItem, AStrUpItem::StaticClass, TEXT("AStrUpItem"), &Z_Registration_Info_UClass_AStrUpItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AStrUpItem), 3197040365U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_4120950472(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_4120950472(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_Statics::ClassInfo),
+>>>>>>> Level-Design
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

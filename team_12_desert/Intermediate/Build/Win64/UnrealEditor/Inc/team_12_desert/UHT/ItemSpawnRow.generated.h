@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_ItemSpawnRow_generated_h
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_14_GENERATED_BODY \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_14_GENERATED_BODY \
+>>>>>>> Level-Design
 	friend struct Z_Construct_UScriptStruct_FItemSpawnRow_Statics; \
 	TEAM_12_DESERT_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -23,7 +27,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UScriptStruct* StaticStruct<struct FItemSpawnRow>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

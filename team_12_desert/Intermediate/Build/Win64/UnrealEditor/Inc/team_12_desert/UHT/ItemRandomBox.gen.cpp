@@ -97,14 +97,23 @@ AItemRandomBox::~AItemRandomBox() {}
 // End Class AItemRandomBox
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics
+>>>>>>> Level-Design
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AItemRandomBox, AItemRandomBox::StaticClass, TEXT("AItemRandomBox"), &Z_Registration_Info_UClass_AItemRandomBox, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItemRandomBox), 4194225154U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_2222468896(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_2222468896(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo),
+>>>>>>> Level-Design
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

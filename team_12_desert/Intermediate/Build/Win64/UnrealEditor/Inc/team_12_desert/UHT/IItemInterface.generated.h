@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_IItemInterface_generated_h
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	TEAM_12_DESERT_API UIItemInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -28,7 +32,11 @@ public: \
 	TEAM_12_DESERT_API virtual ~UIItemInterface();
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
+>>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesUIItemInterface(); \
 	friend struct Z_Construct_UClass_UIItemInterface_Statics; \
@@ -37,15 +45,26 @@ public: \
 	DECLARE_SERIALIZER(UIItemInterface)
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_BODY \
+	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+	FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
+	FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
+>>>>>>> Level-Design
 protected: \
 	virtual ~IIItemInterface() {} \
 public: \
@@ -54,11 +73,19 @@ public: \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_10_PROLOG
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_10_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_21_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
+>>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -66,7 +93,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class UIItemInterface>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_IItemInterface_h
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_IItemInterface_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

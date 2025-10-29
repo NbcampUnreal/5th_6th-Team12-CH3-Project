@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_DefUpItem_generated_h
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
+>>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesADefUpItem(); \
 	friend struct Z_Construct_UClass_ADefUpItem_Statics; \
@@ -23,7 +27,11 @@ public: \
 	DECLARE_SERIALIZER(ADefUpItem)
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ADefUpItem(ADefUpItem&&); \
@@ -34,12 +42,21 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ADefUpItem)
 
 
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_12_PROLOG
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_12_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -47,7 +64,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ADefUpItem>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_DefUpItem_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
