@@ -17,20 +17,12 @@ struct FHitResult;
 #endif
 #define TEAM_12_DESERT_AItemBase_generated_h
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
->>>>>>> Level-Design
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnItemEndOverlap); \
 	DECLARE_FUNCTION(execOnItemOverlap);
 
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
->>>>>>> Level-Design
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAAItemBase(); \
 	friend struct Z_Construct_UClass_AAItemBase_Statics; \
@@ -40,11 +32,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AAItemBase*>(this); }
 
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AAItemBase(AAItemBase&&); \
@@ -56,23 +44,13 @@ public: \
 	NO_API virtual ~AAItemBase();
 
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_10_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_GENERATED_BODY \
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_10_PROLOG
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_10_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -80,11 +58,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AAItemBase>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_AItemBase_h
-=======
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_AItemBase_h
->>>>>>> Level-Design
+#define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_AItemBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

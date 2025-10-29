@@ -17,19 +17,11 @@ struct FHitResult;
 #endif
 #define TEAM_12_DESERT_Weapon_Sword_generated_h
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnMeleeOverlap);
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnMeleeOverlap);
-
-
-#define FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> Level-Design
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeapon_Sword(); \
 	friend struct Z_Construct_UClass_AWeapon_Sword_Statics; \
@@ -38,11 +30,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon_Sword)
 
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AWeapon_Sword(AWeapon_Sword&&); \
@@ -54,23 +42,13 @@ public: \
 	NO_API virtual ~AWeapon_Sword();
 
 
-<<<<<<< HEAD
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_12_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_GENERATED_BODY \
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_12_PROLOG
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_12_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -78,11 +56,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AWeapon_Sword>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h
-=======
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h
->>>>>>> Level-Design
+#define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_Sword_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

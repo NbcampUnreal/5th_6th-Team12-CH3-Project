@@ -1,14 +1,8 @@
 {
 	"SourceFiles": [
-<<<<<<< HEAD
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert.Target.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
-=======
-		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
-		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desert.Target.cs",
-		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
->>>>>>> Level-Design
+		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
+		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desert.Target.cs",
+		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.4"
 }
