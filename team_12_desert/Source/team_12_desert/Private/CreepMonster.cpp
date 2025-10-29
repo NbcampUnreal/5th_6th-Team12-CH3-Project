@@ -1,35 +1,89 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "CreepMonster.h"
 #include "MonsterAIController.h"
+#include "Kismet/GameplayStatics.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "TimerManager.h"
 
-// Sets default values
-ACreepMonster::ACreepMonster()                   //클래스 생성자
+ACreepMonster::ACreepMonster()
 {
-	AIControllerClass = AMonsterAIController::StaticClass(); //AI컨트롤러 클래스를 AMonsterAIController로 지정
-	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;	 //월드 배치, 스폰될 때 자동으로 AI가 소유
+	PrimaryActorTick.bCanEverTick = true;
 
-	UCharacterMovementComponent* Movement = GetCharacterMovement();  //캐릭터 이동 컴포넌트
-	Movement->MaxWalkSpeed = WalkSpeed;                       // 이동속도
-	Movement->bOrientRotationToMovement = true;               //이동 방향으로 바라보도록 회전
-	Movement->RotationRate = FRotator(0.0f, 540.0f, 0.0f);    //회전 속도
+	// 기본 스탯
+	MaxHealth = 200.f;
+	CurrentHealth = MaxHealth;
+
+	WalkSpeed = 500.f;
+	RotationRateYaw = 720.f;
+
+	AttackRange = 100.f;
+	AttackCooldown = 2.0f;
+	AttackDamage = 20.f;
+
+	bCanAttack = true;
+
+	// AIController 설정
+	AIControllerClass = AMonsterAIController::StaticClass();
+	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+
+	//태그
+	Tags.Add(FName("Monster"));
 }
 
-// Called when the game starts or when spawned
 void ACreepMonster::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Warning, TEXT("[Monster] AI character has been spawned."));     //생성
+	CurrentHealth = MaxHealth;
 
-}
-
-void ACreepMonster::SetMovementSpeed(float NewSpeed)              //이동 속도 변경 로직
-{
-	if (UCharacterMovementComponent* Movement = GetCharacterMovement()) //실시간 이동속도 변경
+	if (UCharacterMovementComponent* Move = GetCharacterMovement())
 	{
-		Movement->MaxWalkSpeed = NewSpeed;
+		Move->MaxWalkSpeed = WalkSpeed;
+		Move->bOrientRotationToMovement = true;
+		Move->RotationRate = FRotator(0.f, RotationRateYaw, 0.f);
 	}
 }
 
+void ACreepMonster::AttackPlayer()
+{
+	bCanAttack = false;
+	UE_LOG(LogTemp, Warning, TEXT("[CreepMonster] Attack! Damage: %.1f"), AttackDamage);
+
+	GetWorld()->GetTimerManager().SetTimer(
+		AttackTimerHandle, this, &ACreepMonster::ResetAttack, AttackCooldown, false);
+}
+
+void ACreepMonster::ResetAttack()
+{
+	bCanAttack = true;
+}
+
+void ACreepMonster::ApplyDamage(float DamageAmount)
+{
+	CurrentHealth -= DamageAmount;
+
+	if (CurrentHealth <= 0.f)
+	{
+		DropItem();
+		// 주으면 템 떨구고 180도 회전
+		FRotator CurrentRotation = GetActorRotation();
+		FRotator TargetRotation = CurrentRotation + FRotator(0.f, 180.f, 0.f);
+		SetActorRotation(TargetRotation);
+		// 잠시 후 사라짐
+		GetWorld()->GetTimerManager().SetTimer(
+			AttackTimerHandle, this, &ACreepMonster::DestroyMonster, 0.5f, false);
+	}
+}
+
+void ACreepMonster::DropItem()
+{
+	if (!DropItemClass) return;
+
+	const FVector Loc = GetActorLocation();
+	const FRotator Rot = FRotator::ZeroRotator;
+	GetWorld()->SpawnActor<AActor>(DropItemClass, Loc, Rot);
+}
+
+void ACreepMonster::DestroyMonster()
+{
+	Destroy();
+}
