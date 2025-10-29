@@ -19,6 +19,8 @@ public:
 	void BeginPlay() override;
 	virtual void Attack() override;
 
+	void AttackEnd() override;
+
 private:
 	UPROPERTY(EditAnywhere)
 	TObjectPtr<UStaticMeshComponent> SwordMesh;
