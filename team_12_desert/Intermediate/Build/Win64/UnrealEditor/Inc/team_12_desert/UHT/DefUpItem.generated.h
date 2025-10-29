@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_DefUpItem_generated_h
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADefUpItem(); \
 	friend struct Z_Construct_UClass_ADefUpItem_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ADefUpItem)
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ADefUpItem(); \
 private: \
@@ -37,12 +37,12 @@ public: \
 	NO_API virtual ~ADefUpItem();
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_12_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_GENERATED_BODY \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_12_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -50,7 +50,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ADefUpItem>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_DefUpItem_h
+#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_DefUpItem_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
