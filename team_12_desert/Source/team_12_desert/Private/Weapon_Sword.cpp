@@ -40,8 +40,13 @@ void AWeapon_Sword::Attack()
 	MeleeCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	HitMonsters.Empty();
 
+}
 
-    // 공격 애니메이션이 끝날 때 이 아래가 실행될 수 있도록 개선해야 함.
+void AWeapon_Sword::AttackEnd()
+{
+
+    Super::AttackEnd();
+    // 공격이 끝나면 콜리전 없앰
     MeleeCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 

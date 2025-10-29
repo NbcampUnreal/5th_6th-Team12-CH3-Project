@@ -9,16 +9,28 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UAnimMontage;
 #ifdef TEAM_12_DESERT_MainCharacterHunter_generated_h
 #error "MainCharacterHunter.generated.h already included, missing '#pragma once' in MainCharacterHunter.h"
 #endif
 #define TEAM_12_DESERT_MainCharacterHunter_generated_h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 =======
 #define FID_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 >>>>>>> Level-Design
+=======
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSlashSword); \
+	DECLARE_FUNCTION(execShootProjectile); \
+	DECLARE_FUNCTION(execOnMeleeAttackMontageFinished); \
+	DECLARE_FUNCTION(execOnRangeAttackMontageFinished);
+
+
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
+>>>>>>> dev_mpyi
 private: \
 	static void StaticRegisterNativesAMainCharacterHunter(); \
 	friend struct Z_Construct_UClass_AMainCharacterHunter_Statics; \
@@ -48,6 +60,7 @@ public: \
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+<<<<<<< HEAD
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_ENHANCED_CONSTRUCTORS \
 =======
@@ -58,6 +71,11 @@ public: \
 	FID_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 	FID_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_ENHANCED_CONSTRUCTORS \
 >>>>>>> Level-Design
+=======
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_ENHANCED_CONSTRUCTORS \
+>>>>>>> dev_mpyi
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

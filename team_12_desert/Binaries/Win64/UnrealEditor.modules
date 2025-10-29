@@ -3,9 +3,13 @@
 	"Modules": 
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"team_12_desert": "UnrealEditor-team_12_desert.dll"
 =======
 		"team_12_desert": "UnrealEditor-team_12_desert-7823.dll"
 >>>>>>> Level-Design
+=======
+		"team_12_desert": "UnrealEditor-team_12_desert-9098.dll"
+>>>>>>> dev_mpyi
 	}
 }
