@@ -1,8 +1,14 @@
 {
 	"SourceFiles": [
+<<<<<<< HEAD
 		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
 		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desert.Target.cs",
 		"D:\\Unreal Projects\\TeamProject\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
+=======
+		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
+		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert.Target.cs",
+		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
+>>>>>>> Monster
 	],
 	"EngineVersion": "5.5.4"
 }

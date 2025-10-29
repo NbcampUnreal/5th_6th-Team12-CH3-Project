@@ -1,38 +1,54 @@
 #include "MonsterAIController.h"
-#include "Kismet/GameplayStatics.h" //UGameplayStatics::GetPlayerPawn() 함수를 사용하기 위해 포함
+#include "ItemRandomBox.h"
+#include "MyGameInstance.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "TimerManager.h"
 
 AMonsterAIController::AMonsterAIController()
 {
-	PrimaryActorTick.bCanEverTick = true; // Tick 활성화
+	PrimaryActorTick.bCanEverTick = true;
+	CurrentHealth = MaxHealth;                       //현재 체력을 초기 최대 체력으로 지정.
 }
 
 void AMonsterAIController::BeginPlay()
 {
 	Super::BeginPlay();
-
-	PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);   //현재 월드에서 플레이어의 Pawn 객체를 가져옮, 0은 첫번쨰 플레이어 의미-> 결과는 playerpawn에 저장
-
+	PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);    //AI가 추적할 대상 지정.
 }
 
-void AMonsterAIController::Tick(float DeltaTime)
+void AMonsterAIController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+
+	if (ACharacter* Char = Cast<ACharacter>(InPawn))     //
+	{
+		if (UCharacterMovementComponent* Move = Char->GetCharacterMovement())
+		{
+			Move->MaxWalkSpeed = WalkSpeed;                            //이동속도 설정
+			Move->bOrientRotationToMovement = true;                    //자동회전 설정
+			Move->RotationRate = FRotator(0.f, RotationRateYaw, 0.f);  //회전속도 설정
+		}
+	}
+
+	CurrentHealth = MaxHealth;                                         //스폰 시 체력 리셋
+}
+
+void AMonsterAIController::Tick(float DeltaTime)                       //플레이어에게 이동 후 공격
 {
 	Super::Tick(DeltaTime);
 
-	if (!PlayerPawn) return;
+	if (!PlayerPawn || !GetPawn()) return;
 
-	// 거리 계산
-	float DistanceToPlayer = FVector::Dist(PlayerPawn->GetActorLocation(), GetPawn()->GetActorLocation());
-
-	if (DistanceToPlayer > AttackRange)
+	const float Dist = FVector::Dist(PlayerPawn->GetActorLocation(), GetPawn()->GetActorLocation());
+	if (Dist > AttackRange)
 	{
-		// 사거리 밖이면 계속 추적
-		MoveToActor(PlayerPawn, 5.0f);  //(누구에게,얼마나 가깝게 접근)
+		MoveToActor(PlayerPawn, 5.0f);
 	}
 	else
 	{
-		// 사거리 안이면 이동 멈추고 공격 시도
 		StopMovement();
-
 		if (bCanAttack)
 		{
 			AttackPlayer();
@@ -40,20 +56,50 @@ void AMonsterAIController::Tick(float DeltaTime)
 	}
 }
 
-void AMonsterAIController::AttackPlayer()
-{
+void AMonsterAIController::AttackPlayer()                           //공격 쿨타임 설정
+{ 
 	bCanAttack = false;
+	UE_LOG(LogTemp, Warning, TEXT("[MonsterAI] Attack! Damage: %.1f"), AttackDamage);
 
-	// 간단한 공격 로그
-	UE_LOG(LogTemp, Warning, TEXT("[MonsterAI] Monster attacks the player!"));
-
-
-	// 공격 쿨타임 타이머 설정
-	GetWorld()->GetTimerManager().SetTimer(AttackTimerHandle, this, &AMonsterAIController::ResetAttack, AttackCooldown, false);
-	//            타이머 핸들,                               이 객체                                      쿨타임         반복X
+	GetWorld()->GetTimerManager().SetTimer(
+		AttackTimerHandle, this, &AMonsterAIController::ResetAttack, AttackCooldown, false);
 }
 
-void AMonsterAIController::ResetAttack()
+void AMonsterAIController::ResetAttack()                            //이후 다시 공격 가능
 {
-	bCanAttack = true; //쿨타임 이후 다시 공격 가능
+	bCanAttack = true;
+}
+
+void AMonsterAIController::ApplyDamage(float DamageAmount)          //공격 받을 때 호출.
+{
+	CurrentHealth -= DamageAmount;                                  //데미지 양만큼 감소.
+	if (CurrentHealth <= 0.f)
+	{
+		Cast<UMyGameInstance>(GetGameInstance())->AddMonsterCount(-1);  //병권님 요청.
+		DropItem();
+
+		if (APawn* P = GetPawn())                                   //0되면 제거.
+		{
+			P->DetachFromControllerPendingDestroy();
+			P->Destroy();
+		}
+	}
+}
+
+void AMonsterAIController::DropItem()                                //현재 위치에 아이템 스폰.(바닥에 아이템 떨굼).
+{
+	if (!DropItemClass) return;
+	
+	if (APawn* P = GetPawn())                                    //ai가 플레이하는 pawn호출.
+	{
+		const FVector Loc = P->GetActorLocation();               //pawn의 현재 위치 호출.
+		const FRotator Rot = FRotator::ZeroRotator;              //아이템 회전값 초기화.
+
+		// 월드에 ItemRandomBox 스폰
+		if (AItemRandomBox* Box = GetWorld()->SpawnActor<AItemRandomBox>(ItemRandomBoxClass, Loc, Rot)) //loc = 위치, rot = 회전
+		{
+			// 랜덤 아이템 스폰 함수 호출
+			Box->SpawnRandomItem(Loc);
+		}
+	}
 }
