@@ -29,3 +29,10 @@ void AWeaponBase::Attack()
 	// 공통 구현사항 있다면 넣을것
 
 }
+
+
+void AWeaponBase::AttackEnd()
+{
+	// 공통 구현사항 있다면 넣을것
+
+}

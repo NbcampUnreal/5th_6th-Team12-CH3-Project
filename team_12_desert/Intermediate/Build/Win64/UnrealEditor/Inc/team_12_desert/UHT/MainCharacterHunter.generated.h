@@ -9,10 +9,18 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UAnimMontage;
 #ifdef TEAM_12_DESERT_MainCharacterHunter_generated_h
 #error "MainCharacterHunter.generated.h already included, missing '#pragma once' in MainCharacterHunter.h"
 #endif
 #define TEAM_12_DESERT_MainCharacterHunter_generated_h
+
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSlashSword); \
+	DECLARE_FUNCTION(execShootProjectile); \
+	DECLARE_FUNCTION(execOnMeleeAttackMontageFinished); \
+	DECLARE_FUNCTION(execOnRangeAttackMontageFinished);
+
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 private: \
@@ -39,6 +47,7 @@ public: \
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterHunter_h_17_ENHANCED_CONSTRUCTORS \
 private: \
