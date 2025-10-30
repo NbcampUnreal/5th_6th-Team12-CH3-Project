@@ -177,7 +177,7 @@ void AMainCharacterHunter::MeleeAttackAction(const FInputActionValue& Value)
 
 				// 몽타주 재생이 끝났을 때 호출될 델리게이트 바인딩
 				FOnMontageEnded MontageDelegate;
-				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnRangeAttackMontageFinished);
+				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnMeleeAttackMontageFinished);
 				AnimInstance->Montage_SetEndDelegate(MontageDelegate, MeleeAttackMontage);
 			}
 		}
@@ -234,7 +234,9 @@ void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, b
 	bIsAttacking = false;
 
 	if (IsValid(MeleeWeaponActor))
+	{
 		MeleeWeaponActor->AttackEnd();
+	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
 }
