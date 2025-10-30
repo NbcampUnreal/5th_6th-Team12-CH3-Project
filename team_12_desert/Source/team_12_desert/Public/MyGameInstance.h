@@ -16,6 +16,9 @@ class TEAM_12_DESERT_API UMyGameInstance : public UGameInstance
 public:
 	UMyGameInstance();
 
+	void PlayerStatSave();
+	void PlayerStatLoad();
+
 	int GetMonsterCount() { return MonsterCount; }
 	void AddMonsterCount(int a) { MonsterCount += a; }
 	void SetMonsterCount(int a) { MonsterCount = a; }

@@ -19,6 +19,9 @@ public:
 	// Sets default values for this actor's properties
 	ASpawner();
 
+    virtual void Tick(float DeltaTime) override;
+
+
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spawning")
     USceneComponent* Scene;
     // 스폰 영역을 담당할 박스 컴포넌트
@@ -30,4 +33,13 @@ public:
     // 특정 아이템 클래스를 스폰하는 함수
     UFUNCTION(BlueprintCallable, Category = "Spawning")
     void SpawnEnemy();
+
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool Infinity;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float InfinityRespawnTime=3.0f;
+
+    float time;
 };

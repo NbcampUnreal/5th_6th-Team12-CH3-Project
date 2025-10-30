@@ -14,19 +14,28 @@
 AMyGameState::AMyGameState()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Start"));
-
+	PrimaryActorTick.bStartWithTickEnabled = true;
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 //레벨바뀔때마다 호출
 void AMyGameState::BeginPlay()
 {
 	Super::BeginPlay();
-	PrimaryActorTick.bCanEverTick = true;
-
+	
 	//Cast<UMyGameInstance>(GetGameInstance())->SetLevelMap(LevelMapNames);
 
 
 	//플레이어 정보 로딩 함수호출
+}
+void AMyGameState::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (Cast<UMyGameInstance>(GetGameInstance())->GetMonsterCount()==0) {
+		//Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
+	}
+
 }
 
 void AMyGameState::StartLevel()
@@ -56,12 +65,7 @@ void AMyGameState::OnLevelTimeUp()
 {
 }
 
-void AMyGameState::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
 
-	
-}
 
 //void AMyGameState::OnCoinCollected()
 //{

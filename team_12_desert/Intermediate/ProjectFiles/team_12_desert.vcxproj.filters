@@ -93,16 +93,7 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterAIController.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\Source\team_12_desert\Private\SpeedUpItem.cpp">
-      <Filter>Source\team_12_desert\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\StaminaItem.cpp">
-=======
     <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterSpawnRow.cpp">
-      <Filter>Source\team_12_desert\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\MyAItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\MyGameInstance.cpp">
@@ -115,7 +106,9 @@
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SpeedUpItem.cpp">
->>>>>>> UI
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\StaminaItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\StrUpItem.cpp">
@@ -181,16 +174,7 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterAIController.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\Source\team_12_desert\Public\SpeedUpItem.h">
-      <Filter>Source\team_12_desert\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\StaminaItem.h">
-=======
     <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterSpawnRow.h">
-      <Filter>Source\team_12_desert\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\MyAItemBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MyGameInstance.h">
@@ -203,7 +187,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SpeedUpItem.h">
->>>>>>> UI
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\StaminaItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\StrUpItem.h">

@@ -11,7 +11,7 @@
 ASpawner::ASpawner()
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 	// 박스 컴포넌트를 생성하고, 이 액터의 루트로 설정
 	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
@@ -19,6 +19,21 @@ ASpawner::ASpawner()
 
 	SpawningBox = CreateDefaultSubobject<UBoxComponent>(TEXT("SpawningEnemy"));
 	SpawningBox->SetupAttachment(Scene);
+
+}
+
+void ASpawner::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (Infinity) {
+		time += DeltaTime;
+
+		if (time >= InfinityRespawnTime) {
+			SpawnEnemy();
+			time = 0;
+		}
+	}
 
 }
 

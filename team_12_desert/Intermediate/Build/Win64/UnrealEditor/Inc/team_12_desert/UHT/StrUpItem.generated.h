@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_StrUpItem_generated_h
 
-<<<<<<< HEAD
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_INCLASS_NO_PURE_DECLS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> UI
 private: \
 	static void StaticRegisterNativesAStrUpItem(); \
 	friend struct Z_Construct_UClass_AStrUpItem_Statics; \
@@ -27,11 +23,7 @@ public: \
 	DECLARE_SERIALIZER(AStrUpItem)
 
 
-<<<<<<< HEAD
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AStrUpItem(AStrUpItem&&); \
@@ -42,21 +34,12 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AStrUpItem)
 
 
-<<<<<<< HEAD
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_12_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_12_PROLOG
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_INCLASS_NO_PURE_DECLS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -64,11 +47,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AStrUpItem>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_StrUpItem_h
-=======
 #define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_StrUpItem_h
->>>>>>> UI
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
