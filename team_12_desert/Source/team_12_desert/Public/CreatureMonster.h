@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Monster.h"  
 #include "CreatureMonster.generated.h"
 
