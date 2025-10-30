@@ -32,11 +32,19 @@ public:
 	int32 getCurrentHP() const { return CurrentHP; }
 	int32 getCurrentStamina() const { return CurrentStamina; }
 	int32 getCurrentExperience() const { return CurrentExperience; }
-	int32 getCharacterDamage() const { return CharacterDamage; }
-	int32 getCharacterArmor() const { return CharacterArmor; }
+	int32 getCharacterDamage() const { return BaseDamage * MulDamage; }
+	int32 getCharacterArmor() const { return BaseArmor * MulArmor; }
 	int32 getMeleeAttackCount() const { return MeleeAttackCount; }
 	int32 getRangeAttackCount() const { return RangeAttackCount; }
 	int32 getKillCount() const { return KillCount; }
+
+	bool getIsDashSkill() const { return bIsDashSkill; }
+	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
+
+	void setBaseDamage(int32 Damage) { BaseDamage = Damage; }
+	void setMulDamage(float Damage) { MulDamage = Damage; }
+	void setBaseArmor(int32 Armor) { BaseArmor = Armor; }
+	void setMulArmor(float Armor) { MulArmor = Armor; }
 
 	void setMeleeAttackCount(int32 Count) { MeleeAttackCount = Count; }
 	void setRangeAttackCount(int32 Count) { RangeAttackCount = Count; }
@@ -59,10 +67,14 @@ public:
 	int32 MaxStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	int32 CharacterDamage;
+	int32 BaseDamage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
+	float MulDamage;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	int32 CharacterArmor;
+	int32 BaseArmor;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
+	float MulArmor;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyCharacter")
 	int32 KillCount;
@@ -96,5 +108,8 @@ protected:
 
 	UFUNCTION()
 	void EquipWeapon();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyCharacter")
+	bool bIsDashSkill;
 
 };

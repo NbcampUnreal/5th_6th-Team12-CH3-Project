@@ -258,7 +258,9 @@ void AMainCharacterHunter::ManageStamina()
 	// UE_LOG(LogTemp, Warning, TEXT("Managing Stamina. isDash: %s, CurrentStamina: %d"), isDash ? TEXT("true") : TEXT("false"), CurrentStamina);
 	if (isDash)
 	{
-		this->CurrentStamina -= 8;
+		/// 대시 스킬사용중이 아닐때만 -8씩 감소
+		if(!getIsDashSkill())
+			this->CurrentStamina -= 8;
 		if (CurrentStamina < 0)
 		{
 			CurrentStamina = 0;

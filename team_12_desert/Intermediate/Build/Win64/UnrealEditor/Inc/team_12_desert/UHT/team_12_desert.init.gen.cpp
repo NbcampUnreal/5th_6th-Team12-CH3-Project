@@ -17,39 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeteam_12_desert_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-				0x8FE6425A,
-=======
-				0x105F642A,
->>>>>>> UI
-				0x938C86F0,
-=======
-				0x6AE9808F,
-				0x44042256,
->>>>>>> Monster
-=======
-				0xF6D09DD1,
+				0x8D370215,
 				0xCEB2B050,
->>>>>>> Monster
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_team_12_desert.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_team_12_desert.OuterSingleton;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x8FE6425A, 0x938C86F0));
-=======
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6AE9808F, 0x44042256));
->>>>>>> Monster
-=======
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x105F642A, 0x938C86F0));
->>>>>>> UI
-=======
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xF6D09DD1, 0xCEB2B050));
->>>>>>> Monster
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x8D370215, 0xCEB2B050));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

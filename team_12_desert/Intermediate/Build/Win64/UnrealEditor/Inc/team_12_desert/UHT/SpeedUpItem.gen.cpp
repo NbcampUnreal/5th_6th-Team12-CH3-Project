@@ -78,23 +78,14 @@ DEFINE_VTABLE_PTR_HELPER_CTOR(ASpeedUpItem);
 // End Class ASpeedUpItem
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics
->>>>>>> Monster
+struct Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ASpeedUpItem, ASpeedUpItem::StaticClass, TEXT("ASpeedUpItem"), &Z_Registration_Info_UClass_ASpeedUpItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpeedUpItem), 2723948683U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_2169451519(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_2169451519(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo),
->>>>>>> Monster
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_2169451519(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
