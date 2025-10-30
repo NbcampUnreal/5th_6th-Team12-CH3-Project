@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\CreepMonster.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\DarkMonster.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\DefaultGameMode.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -108,6 +111,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\SpeedUpItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SpiderMonster.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\StaminaItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -136,6 +142,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\CreepMonster.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\DarkMonster.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\DefaultGameMode.h">
@@ -187,6 +196,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SpeedUpItem.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SpiderMonster.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\StaminaItem.h">

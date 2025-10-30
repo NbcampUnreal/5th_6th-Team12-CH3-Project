@@ -64,9 +64,9 @@ void ACreepMonster::ApplyDamage(float DamageAmount)
 	if (CurrentHealth <= 0.f)
 	{
 		DropItem();
-		// 주으면 템 떨구고 180도 회전
+		// 주으면 템 떨구고 90도 회전
 		FRotator CurrentRotation = GetActorRotation();
-		FRotator TargetRotation = CurrentRotation + FRotator(0.f, 180.f, 0.f);
+		FRotator TargetRotation = CurrentRotation + FRotator(0.f, 90.f, 0.f);
 		SetActorRotation(TargetRotation);
 		// 잠시 후 사라짐
 		GetWorld()->GetTimerManager().SetTimer(
