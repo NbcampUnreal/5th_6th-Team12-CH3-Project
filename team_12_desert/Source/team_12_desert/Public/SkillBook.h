@@ -24,8 +24,6 @@ public:
 
 	TObjectPtr<class AMainCharacter> MainCharacter;
 
-	void setOwnerCharacter(TObjectPtr<class AMainCharacter> Character);
-
 protected:
 
 	TArray<TObjectPtr<class ASkillBase>> SkillList;

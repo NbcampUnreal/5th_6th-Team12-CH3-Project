@@ -4,6 +4,7 @@
 #include "SkillBook.h"
 #include "Components/SphereComponent.h"
 #include "SkillBase.h"
+#include "MainCharacter.h"
 
 
 // Sets default values
@@ -22,13 +23,11 @@ ASkillBook::ASkillBook()
 
 	Collision->OnComponentBeginOverlap.AddDynamic(this, &ASkillBook::OnItemOverlap);
 	Collision->OnComponentEndOverlap.AddDynamic(this, &ASkillBook::OnItemEndOverlap);
-
-	MainCharacter = nullptr;
-}
-
-void ASkillBook::setOwnerCharacter(TObjectPtr<class AMainCharacter> Character)
-{
-	MainCharacter = Character;
+	if (IsValid(GetOwner()))
+	{
+		MainCharacter = Cast<AMainCharacter>(GetOwner());
+	}
+	else MainCharacter = nullptr;
 }
 
 void ASkillBook::OnItemOverlap(UPrimitiveComponent* OverlapPendComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -93,7 +92,7 @@ void ASkillBook::AddSkill(TObjectPtr<ASkillBase> NewSkill)
 	}
 }
 
-void ASkillBook::DeleteSkill(TObjectPtr<class ASkillBase> SkillToDelete)
+void ASkillBook::DeleteSkill(TObjectPtr<ASkillBase> SkillToDelete)
 {
 	SkillList.Remove(SkillToDelete);
 	if (GetOwner() != nullptr)
