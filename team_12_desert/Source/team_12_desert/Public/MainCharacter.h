@@ -41,6 +41,11 @@ public:
 	bool getIsDashSkill() const { return bIsDashSkill; }
 	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
 
+	int32 getBaseDamage() const { return BaseDamage; }
+	int32 getMulDamage() const { return MulDamage; }
+	int32 getBaseArmor() const { return BaseArmor; }
+	int32 getMulArmor() const { return MulArmor; }
+
 	void setBaseDamage(int32 Damage) { BaseDamage = Damage; }
 	void setMulDamage(float Damage) { MulDamage = Damage; }
 	void setBaseArmor(int32 Armor) { BaseArmor = Armor; }
@@ -67,14 +72,14 @@ public:
 	int32 MaxStamina;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	int32 BaseDamage;
+	int32 BaseDamage = 10;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	float MulDamage;
+	float MulDamage = 1.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	int32 BaseArmor;
+	int32 BaseArmor = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MyCharacter")
-	float MulArmor;
+	float MulArmor = 1.f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyCharacter")
 	int32 KillCount;
@@ -105,6 +110,11 @@ protected:
 	TObjectPtr<class AWeaponBase> RangeWeaponActor;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class AWeaponBase> MeleeWeaponActor;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class ASkillBook> mySkillBook;
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<class ASkillBook> mySkillBookActor;
+
 
 	UFUNCTION()
 	void EquipWeapon();

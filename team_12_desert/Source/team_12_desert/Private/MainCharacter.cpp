@@ -3,6 +3,7 @@
 
 #include "MainCharacter.h"
 #include "WeaponBase.h"
+#include "SkillBook.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -64,6 +65,18 @@ void AMainCharacter::EquipWeapon()
             MeleeWeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
             MeleeWeaponActor->SetOwner(this);
             MeleeWeaponActor->SetInstigator(this);
+        }
+    }
+
+    if (IsValid(mySkillBook))
+    {
+        mySkillBookActor = GetWorld()->SpawnActor<ASkillBook>(mySkillBook);
+        if (mySkillBook)
+        {
+            FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+            mySkillBookActor->AttachToComponent(GetMesh(), TransformRules, TEXT("SkillSocket"));
+            mySkillBookActor->SetOwner(this);
+            mySkillBookActor->SetInstigator(this);
         }
     }
 }

@@ -14,27 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MainCharacterAniminstance_generated_h
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execAnimNotify_Attack);
 
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execAnimNotify_Attack);
-
-
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> Monster
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execAnimNotify_Attack);
-
-
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> Item_pcy
 private: \
 	static void StaticRegisterNativesUMainCharacterAniminstance(); \
 	friend struct Z_Construct_UClass_UMainCharacterAniminstance_Statics; \
@@ -43,15 +27,7 @@ public: \
 	DECLARE_SERIALIZER(UMainCharacterAniminstance)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UMainCharacterAniminstance(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -65,8 +41,6 @@ public: \
 	NO_API virtual ~UMainCharacterAniminstance();
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_12_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -74,24 +48,6 @@ public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_12_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
-=======
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_12_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -99,15 +55,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class UMainCharacterAniminstance>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h
-=======
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h
->>>>>>> Monster
-=======
-#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h
->>>>>>> Item_pcy
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

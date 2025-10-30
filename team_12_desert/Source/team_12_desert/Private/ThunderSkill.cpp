@@ -5,6 +5,7 @@
 #include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
 #include "MonsterAIController.h"
+#include "Monster.h"
 
 AThunderSkill::AThunderSkill()
 {
@@ -35,7 +36,7 @@ void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Loca
 					true                    // 이펙트를 활성화할지 여부
 				);
 			}
-			if (TObjectPtr<AMonsterAIController> MonsterAI = Cast<AMonsterAIController>(Actor->GetInstigatorController()))
+			if (TObjectPtr<AMonster> MonsterAI = Cast<AMonster>(Actor->GetInstigatorController()))
 			{
 				MonsterAI->ApplyDamage(Damage);
 			}

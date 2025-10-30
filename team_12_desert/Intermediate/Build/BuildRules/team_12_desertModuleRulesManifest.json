@@ -1,20 +1,8 @@
 {
 	"SourceFiles": [
-<<<<<<< HEAD
-<<<<<<< HEAD
 		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
 		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desert.Target.cs",
 		"C:\\Unreal_Project\\git\\team_12_girl_nono\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
-=======
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desert.Target.cs",
-		"C:\\Sourcetree\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
->>>>>>> Monster
-=======
-		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desert\\team_12_desert.Build.cs",
-		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desert.Target.cs",
-		"C:\\Users\\lod21\\Documents\\Unreal Projects\\5th_6th-Team12-CH3-Project\\team_12_desert\\Source\\team_12_desertEditor.Target.cs"
->>>>>>> Item_pcy
 	],
 	"EngineVersion": "5.5.4"
 }
