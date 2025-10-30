@@ -56,13 +56,11 @@ void ASpawner::SpawnEnemy()
 	//if (!EnemyClass) return;
 
 	TArray<FMonsterSpawnRow*> AllRows;
-	static const FString ContextString(TEXT("ItemSpawnContext"));
+	static const FString ContextString(TEXT("MonsterSpawnContext"));
 	SpawnDataTable->GetAllRows(ContextString, AllRows);
 
 	for (FMonsterSpawnRow* Row : AllRows)
 	{
-		TSubclassOf<AActor> EnemyClass;
-
 		for (int i = 0; i < Row->SpawnCount; i++) {
 			GetWorld()->SpawnActor<AActor>(
 				Row->MonsterClass,
@@ -71,9 +69,6 @@ void ASpawner::SpawnEnemy()
 			);
 			Cast<UMyGameInstance>(GetGameInstance())->AddMonsterCount(1);
 		}
-
-		UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance());
-
 	}
 
 	UE_LOG(LogTemp, Warning, TEXT("monster count is %d"), Cast<UMyGameInstance>(GetGameInstance())->GetMonsterCount());
