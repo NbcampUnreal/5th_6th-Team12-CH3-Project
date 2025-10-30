@@ -3,6 +3,7 @@
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
+#include "MyGameState.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "TimerManager.h"
 
@@ -75,7 +76,8 @@ void AMonsterAIController::ApplyDamage(float DamageAmount)          //공격 받을 
 	CurrentHealth -= DamageAmount;                                  //데미지 양만큼 감소.
 	if (CurrentHealth <= 0.f)
 	{
-		Cast<UMyGameInstance>(GetGameInstance())->AddMonsterCount(-1);  //병권님 요청.
+		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1); //병권님 요청.
+	
 		DropItem();
 
 		if (APawn* P = GetPawn())                                   //0되면 제거.

@@ -33,8 +33,7 @@ void ASpawner::Tick(float DeltaTime)
 			SpawnEnemy();
 			time = 0;
 		}
-	}
-
+	}	
 }
 
 FVector ASpawner::GetRandomPointInVolume() const
@@ -67,11 +66,12 @@ void ASpawner::SpawnEnemy()
 				GetRandomPointInVolume(),
 				FRotator::ZeroRotator
 			);
-			Cast<UMyGameInstance>(GetGameInstance())->AddMonsterCount(1);
+ 			Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(1);
 		}
 	}
+	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHud();
 
-	UE_LOG(LogTemp, Warning, TEXT("monster count is %d"), Cast<UMyGameInstance>(GetGameInstance())->GetMonsterCount());
+
 }
 
 

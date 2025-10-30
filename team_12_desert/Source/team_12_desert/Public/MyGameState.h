@@ -21,6 +21,11 @@ public:
 	AMyGameState();
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	void AddMonsterCount(int32 a) { MonsterCount += a; }
+	int32 GetMonsterCount() { return MonsterCount; }
+	void SetMonsterCount(int32 a) { MonsterCount = a; }
+	void UpdateHud();
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")
@@ -33,9 +38,10 @@ protected:
 
 	void NextLevel();
 
-
 	TArray<FName> LevelMapNames;
 
+
+	int MonsterCount = 0;
 
 
 };
