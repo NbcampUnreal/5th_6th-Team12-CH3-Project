@@ -96,15 +96,6 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterAIController.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\Source\team_12_desert\Private\QuakeSkill.cpp">
-      <Filter>Source\team_12_desert\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
-      <Filter>Source\team_12_desert\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
-=======
     <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterSpawnRow.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -114,8 +105,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MyGameState.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\QuakeSkill.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\Spawner.cpp">
->>>>>>> main
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SpeedUpItem.cpp">
@@ -193,15 +192,6 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterAIController.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\Source\team_12_desert\Public\QuakeSkill.h">
-      <Filter>Source\team_12_desert\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
-      <Filter>Source\team_12_desert\Public</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
-=======
     <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterSpawnRow.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -211,8 +201,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\MyGameState.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\QuakeSkill.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\Spawner.h">
->>>>>>> main
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SpeedUpItem.h">
