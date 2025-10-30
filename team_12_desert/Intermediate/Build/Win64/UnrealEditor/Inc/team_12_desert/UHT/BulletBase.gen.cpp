@@ -183,14 +183,23 @@ ABulletBase::~ABulletBase() {}
 // End Class ABulletBase
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics
+>>>>>>> Monster
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ABulletBase, ABulletBase::StaticClass, TEXT("ABulletBase"), &Z_Registration_Info_UClass_ABulletBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABulletBase), 3026106943U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_BulletBase_h_1232759408(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_1232759408(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_BulletBase_h_Statics::ClassInfo),
+>>>>>>> Monster
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

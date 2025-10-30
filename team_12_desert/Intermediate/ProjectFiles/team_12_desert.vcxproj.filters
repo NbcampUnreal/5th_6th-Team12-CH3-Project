@@ -90,6 +90,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacterHunter.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\Monster.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\MonsterAICharacter.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -175,6 +178,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacterHunter.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\Monster.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MonsterAICharacter.h">

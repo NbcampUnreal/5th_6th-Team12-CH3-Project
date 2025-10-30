@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MonsterSpawnRow_generated_h
 
+<<<<<<< HEAD
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterSpawnRow_h_12_GENERATED_BODY \
+=======
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterSpawnRow_h_12_GENERATED_BODY \
+>>>>>>> Monster
 	friend struct Z_Construct_UScriptStruct_FMonsterSpawnRow_Statics; \
 	TEAM_12_DESERT_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -23,7 +27,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UScriptStruct* StaticStruct<struct FMonsterSpawnRow>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterSpawnRow_h
+=======
+#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterSpawnRow_h
+>>>>>>> Monster
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
