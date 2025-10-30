@@ -50,7 +50,7 @@ void AMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void AMonster::ApplyDamage(float DamageAmount)
 {
     CurrentHealth -= DamageAmount;
-
+	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
     if (CurrentHealth <= 0.f)
     {
         // GameInstance에서 몬스터 수 감소
