@@ -2,10 +2,6 @@
 	"BuildId": "37670630",
 	"Modules": 
 	{
-<<<<<<< HEAD
-		"team_12_desert": "UnrealEditor-team_12_desert-9862.dll"
-=======
 		"team_12_desert": "UnrealEditor-team_12_desert.dll"
->>>>>>> UI
 	}
 }

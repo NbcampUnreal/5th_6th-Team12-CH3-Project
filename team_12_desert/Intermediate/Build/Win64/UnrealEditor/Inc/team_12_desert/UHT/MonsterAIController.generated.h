@@ -14,15 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MonsterAIController_generated_h
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execApplyDamage);
 
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_10_INCLASS_NO_PURE_DECLS \
->>>>>>> UI
 private: \
 	static void StaticRegisterNativesAMonsterAIController(); \
 	friend struct Z_Construct_UClass_AMonsterAIController_Statics; \
@@ -31,11 +27,7 @@ public: \
 	DECLARE_SERIALIZER(AMonsterAIController)
 
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_10_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMonsterAIController(AMonsterAIController&&); \
@@ -47,7 +39,6 @@ public: \
 	NO_API virtual ~AMonsterAIController();
 
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_8_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -55,14 +46,6 @@ public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_11_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_7_PROLOG
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_10_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_10_INCLASS_NO_PURE_DECLS \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_10_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -70,11 +53,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AMonsterAIController>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h
-=======
-#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h
->>>>>>> UI
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

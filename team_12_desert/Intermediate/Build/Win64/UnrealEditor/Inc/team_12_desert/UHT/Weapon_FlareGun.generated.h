@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_Weapon_FlareGun_generated_h
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> UI
 private: \
 	static void StaticRegisterNativesAWeapon_FlareGun(); \
 	friend struct Z_Construct_UClass_AWeapon_FlareGun_Statics; \
@@ -27,11 +23,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon_FlareGun)
 
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AWeapon_FlareGun(AWeapon_FlareGun&&); \
@@ -43,21 +35,12 @@ public: \
 	NO_API virtual ~AWeapon_FlareGun();
 
 
-<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_12_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_12_PROLOG
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_INCLASS_NO_PURE_DECLS \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> UI
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -65,11 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AWeapon_FlareGun>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h
-=======
-#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Weapon_FlareGun_h
->>>>>>> UI
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
