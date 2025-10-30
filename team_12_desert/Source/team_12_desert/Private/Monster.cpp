@@ -59,8 +59,19 @@ void AMonster::ApplyDamage(float DamageAmount)
             GI->AddMonsterCount(-1);
         }
 
+        // Á×À» ¶§ 90µµ ¾²·¯Áü
+        FRotator DeathRotation = GetActorRotation();
+        DeathRotation.Roll += 90.f; // XÃàÀ¸·Î ¿·À¸·Î ¾²·¯Áü (Roll)
+        SetActorRotation(DeathRotation);
+
         DropItem();
-        Destroy();
+
+        // µô·¹ÀÌ ÈÄ Destroy
+        GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
+            {
+                Destroy();
+            });
+
     }
 }
 
