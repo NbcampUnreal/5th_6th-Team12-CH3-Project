@@ -103,6 +103,14 @@ struct Z_Construct_UClass_UMainCharacterAniminstance_Statics
 		{ "Category", "MainCharacterAniminstance" },
 		{ "ModuleRelativePath", "Public/MainCharacterAniminstance.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DirectionForwardBackward_MetaData[] = {
+		{ "Category", "MainCharacterAniminstance" },
+		{ "ModuleRelativePath", "Public/MainCharacterAniminstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DirectionRightLeft_MetaData[] = {
+		{ "Category", "MainCharacterAniminstance" },
+		{ "ModuleRelativePath", "Public/MainCharacterAniminstance.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MainCharacterRef;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CharacterMovementComp;
@@ -111,6 +119,8 @@ struct Z_Construct_UClass_UMainCharacterAniminstance_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_speed;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MeleeAttackCount;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_RangeAttackCount;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DirectionForwardBackward;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DirectionRightLeft;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -129,6 +139,8 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UMainCharacter
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_speed = { "speed", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainCharacterAniminstance, speed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_speed_MetaData), NewProp_speed_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_MeleeAttackCount = { "MeleeAttackCount", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainCharacterAniminstance, MeleeAttackCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeAttackCount_MetaData), NewProp_MeleeAttackCount_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_RangeAttackCount = { "RangeAttackCount", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainCharacterAniminstance, RangeAttackCount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangeAttackCount_MetaData), NewProp_RangeAttackCount_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_DirectionForwardBackward = { "DirectionForwardBackward", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainCharacterAniminstance, DirectionForwardBackward), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DirectionForwardBackward_MetaData), NewProp_DirectionForwardBackward_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_DirectionRightLeft = { "DirectionRightLeft", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMainCharacterAniminstance, DirectionRightLeft), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DirectionRightLeft_MetaData), NewProp_DirectionRightLeft_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMainCharacterAniminstance_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_MainCharacterRef,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_CharacterMovementComp,
@@ -137,6 +149,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_speed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_MeleeAttackCount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_RangeAttackCount,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_DirectionForwardBackward,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainCharacterAniminstance_Statics::NewProp_DirectionRightLeft,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UMainCharacterAniminstance_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UMainCharacterAniminstance_Statics::DependentSingletons[])() = {
@@ -180,11 +194,16 @@ UMainCharacterAniminstance::~UMainCharacterAniminstance() {}
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMainCharacterAniminstance, UMainCharacterAniminstance::StaticClass, TEXT("UMainCharacterAniminstance"), &Z_Registration_Info_UClass_UMainCharacterAniminstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainCharacterAniminstance), 2044811057U) },
+		{ Z_Construct_UClass_UMainCharacterAniminstance, UMainCharacterAniminstance::StaticClass, TEXT("UMainCharacterAniminstance"), &Z_Registration_Info_UClass_UMainCharacterAniminstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainCharacterAniminstance), 136340353U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_4271610913(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_1699944086(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MainCharacterAniminstance_h_Statics::ClassInfo),
+>>>>>>> main
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

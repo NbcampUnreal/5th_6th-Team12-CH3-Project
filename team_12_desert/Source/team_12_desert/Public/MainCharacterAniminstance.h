@@ -43,5 +43,11 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	int32 RangeAttackCount;
+
+	UPROPERTY(BlueprintReadOnly)
+	float DirectionForwardBackward;
+
+	UPROPERTY(BlueprintReadOnly)
+	float DirectionRightLeft;
 	
 };
