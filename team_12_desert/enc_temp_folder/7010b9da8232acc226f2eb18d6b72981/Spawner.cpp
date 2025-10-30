@@ -26,7 +26,14 @@ void ASpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	UE_LOG(LogTemp, Warning, TEXT("tick test"));
+	if (Infinity) {
+		time += DeltaTime;
+
+		if (time >= InfinityRespawnTime) {
+			SpawnEnemy();
+			time = 0;
+		}
+	}
 
 }
 
