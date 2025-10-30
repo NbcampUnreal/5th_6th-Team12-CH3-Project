@@ -22,8 +22,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 	TObjectPtr<class USphereComponent> Collision;
 
+	TObjectPtr<class AMainCharacter> MainCharacter;
+
+	void setOwnerCharacter(TObjectPtr<class AMainCharacter> Character);
+
 protected:
-	
+
 	TArray<TObjectPtr<class ASkillBase>> SkillList;
 
 	TArray<AActor*> OverlappedActors;

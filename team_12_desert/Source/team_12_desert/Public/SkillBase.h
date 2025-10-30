@@ -25,6 +25,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Delay")
 	float Delay;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Damage")
+	float Damage;
+
 	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location);
+	virtual void AttachSkill(TObjectPtr<class AMainCharacter> Character);
+	virtual void DetachSkill(TObjectPtr<class AMainCharacter> Character);
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FString SkillName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FString SkillExplanation;
+
+	TObjectPtr<class AMainCharacter> MainCharacter;
+
 };
 	

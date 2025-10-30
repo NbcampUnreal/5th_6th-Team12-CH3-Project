@@ -5,7 +5,10 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset"
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SelectSkill.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_SelectSkill.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_SkillSelectWidget.uasset"
 			]
 		}
 	]

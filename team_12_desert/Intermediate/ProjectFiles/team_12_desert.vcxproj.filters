@@ -60,6 +60,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\DefaultGameMode.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\DefMultiplySkill.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\DefUpItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -73,6 +76,9 @@
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\IItemInterface.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\InfiniteSpeedSkill.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\ItemRandomBox.cpp">
@@ -108,10 +114,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\QuakeSkill.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SelectSkill.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillSelectWidget.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\Spawner.cpp">
@@ -156,6 +168,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\DefaultGameMode.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\DefMultiplySkill.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\DefUpItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -169,6 +184,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\IItemInterface.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\InfiniteSpeedSkill.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ItemRandomBox.h">
@@ -204,10 +222,16 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\QuakeSkill.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SelectSkill.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillSelectWidget.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\Spawner.h">

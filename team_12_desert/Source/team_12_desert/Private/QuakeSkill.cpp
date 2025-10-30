@@ -4,12 +4,14 @@
 #include "QuakeSkill.h"
 #include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
+#include "MonsterAIController.h"
 
 
 AQuakeSkill::AQuakeSkill()
 {
 	Delay = 5.f;
 	NiagaraEffect = nullptr;
+	Damage = 0.3f;
 }
 
 void AQuakeSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
@@ -34,7 +36,10 @@ void AQuakeSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Locati
 		}
 		for (AActor* Actor : Actors)
 		{
-			//ToDo : 몬스터에게 데미지 주는 로직 추가
+			if (TObjectPtr<AMonsterAIController> MonsterAI = Cast<AMonsterAIController>(Actor->GetInstigatorController()))
+			{
+				//ToDo : 몬스터에게 데미지 주는 로직 추가
+			}
 		}
 	}
 }

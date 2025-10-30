@@ -8,24 +8,44 @@ ADefUpItem::ADefUpItem()
 {
 	DefAmount = 30;
 	ItemType = "DefUp";
+	PlayerCharacter = nullptr;
 }
 
 void ADefUpItem::ActivateItem(TObjectPtr<AActor> Actor)
 {
-	//UE_LOG(LogTemp, Display, TEXT("overlap"));
-	//if (IsValid(Actor))
-	//{
-	//	if (TObjectPtr<AMainCharacter> PlayerCharacter = Cast<AMainCharacter>(Actor))
-	//	{
-	//		UE_LOG(LogTemp, Display, TEXT("PlayerHp be : %d"), PlayerCharacter->getCurrentHP());
-	//		PlayerCharacter->HealHP(DefAmount);
-	//		UE_LOG(LogTemp, Display, TEXT("PlayerHp After : %d"), PlayerCharacter->getCurrentHP());
-	//	}
-	//}
-	//Destroy();
+	if (IsValid(Actor))
+	{
+		if (PlayerCharacter = Cast<AMainCharacter>(Actor))
+		{
+			UE_LOG(LogTemp, Display, TEXT("PlayerDef Before : %d"), PlayerCharacter->getCharacterArmor());
+			PlayerCharacter->CharacterArmor += DefAmount;
+			UE_LOG(LogTemp, Display, TEXT("PlayerDef After : %d"), PlayerCharacter->getCharacterArmor());
+			SetActorHiddenInGame(true);
+			SetActorEnableCollision(false);
+			SetActorTickEnabled(false);
+
+			GetWorld()->GetTimerManager().SetTimer(
+				TimerHandle,
+				this,
+				&ADefUpItem::BackUpDef,
+				Duration,
+				false);
+		}
+	}
 }
 
 
 ADefUpItem::~ADefUpItem()
 {
+}
+
+void ADefUpItem::BackUpDef()
+{
+	if (IsValid(PlayerCharacter))
+	{
+		UE_LOG(LogTemp, Display, TEXT("PlayerDef Before : %d"), PlayerCharacter->getCharacterArmor());
+		PlayerCharacter->CharacterArmor -= DefAmount;
+		UE_LOG(LogTemp, Display, TEXT("PlayerDef After BackUp : %d"), PlayerCharacter->getCharacterArmor());
+	}
+	Destroy();
 }

@@ -17,4 +17,5 @@ public:
 	AThunderSkill();
 
 	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location) override;
+
 };

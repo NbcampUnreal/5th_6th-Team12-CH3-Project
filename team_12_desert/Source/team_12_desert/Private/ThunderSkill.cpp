@@ -4,11 +4,13 @@
 #include "ThunderSkill.h"
 #include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
+#include "MonsterAIController.h"
 
 AThunderSkill::AThunderSkill()
 {
 	Delay = 3.f;
 	NiagaraEffect = nullptr;
+	Damage = 0.2f;
 }
 
 void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
@@ -32,6 +34,10 @@ void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Loca
 					ENCPoolMethod::AutoRelease,    // 풀링 방법 (선택 사항)
 					true                    // 이펙트를 활성화할지 여부
 				);
+			}
+			if (TObjectPtr<AMonsterAIController> MonsterAI = Cast<AMonsterAIController>(Actor->GetInstigatorController()))
+			{
+				MonsterAI->ApplyDamage(Damage);
 			}
 			//ToDo : 몬스터에게 데미지 주는 로직 추가
 		}
