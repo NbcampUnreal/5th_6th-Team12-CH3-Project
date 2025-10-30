@@ -20,6 +20,13 @@ public:
 
 	~ADefUpItem();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	float Duration;
 private:
 	int32 DefAmount;
+	FTimerHandle TimerHandle;
+
+	TObjectPtr<class AMainCharacter> PlayerCharacter;
+
+	void BackUpDef();
 };

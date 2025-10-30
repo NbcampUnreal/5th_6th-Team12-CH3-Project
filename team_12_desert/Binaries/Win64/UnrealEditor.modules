@@ -3,9 +3,13 @@
 	"Modules": 
 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"team_12_desert": "UnrealEditor-team_12_desert-2453.dll"
 =======
 		"team_12_desert": "UnrealEditor-team_12_desert.dll"
 >>>>>>> Monster
+=======
+		"team_12_desert": "UnrealEditor-team_12_desert.dll"
+>>>>>>> Item_pcy
 	}
 }

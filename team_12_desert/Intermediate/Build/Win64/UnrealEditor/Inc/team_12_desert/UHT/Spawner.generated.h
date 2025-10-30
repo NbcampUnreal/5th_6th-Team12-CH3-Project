@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TEAM_12_DESERT_Spawner_generated_h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSpawnEnemy);
 
@@ -27,6 +28,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_INCLASS_NO_PURE_DECLS \
 >>>>>>> Monster
+=======
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSpawnEnemy);
+
+
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_INCLASS_NO_PURE_DECLS \
+>>>>>>> Item_pcy
 private: \
 	static void StaticRegisterNativesASpawner(); \
 	friend struct Z_Construct_UClass_ASpawner_Statics; \
@@ -36,10 +44,14 @@ public: \
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_ENHANCED_CONSTRUCTORS \
 =======
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_ENHANCED_CONSTRUCTORS \
+>>>>>>> Item_pcy
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASpawner(ASpawner&&); \
@@ -51,6 +63,7 @@ public: \
 	NO_API virtual ~ASpawner();
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Spawner_h_13_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_GENERATED_BODY \
@@ -68,6 +81,15 @@ public: \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_INCLASS_NO_PURE_DECLS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_13_PROLOG
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h_16_ENHANCED_CONSTRUCTORS \
+>>>>>>> Item_pcy
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -76,10 +98,14 @@ template<> TEAM_12_DESERT_API UClass* StaticClass<class ASpawner>();
 
 #undef CURRENT_FILE_ID
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Spawner_h
 =======
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h
 >>>>>>> Monster
+=======
+#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Spawner_h
+>>>>>>> Item_pcy
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

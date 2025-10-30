@@ -6,7 +6,7 @@
 
 AStrUpItem::AStrUpItem()
 {
-	StrupAmount = 30;
+	StrUpAmount = 30;
 	Duration = 3;
 	PlayerCharacter = nullptr;
 	ItemType = "StrUp";
@@ -18,9 +18,10 @@ void AStrUpItem::ActivateItem(TObjectPtr<AActor> Actor)
 	{
 		if (PlayerCharacter = Cast<AMainCharacter>(Actor))
 		{
-			UE_LOG(LogTemp, Display, TEXT("characteroverlap"));
+			UE_LOG(LogTemp, Display, TEXT("PlayerDamage Before BackUp : %d"), PlayerCharacter->getCharacterDamage());
+			PlayerCharacter->CharacterDamage += StrUpAmount;
+			UE_LOG(LogTemp, Display, TEXT("PlayerDamage After BackUp : %d"), PlayerCharacter->getCharacterDamage());
 
-			// PlayerCharacter-> 추후 공격력에 접근이 가능하도록 수정요청 하기
 			SetActorHiddenInGame(true);
 			SetActorEnableCollision(false);
 			SetActorTickEnabled(false);
@@ -40,8 +41,9 @@ void AStrUpItem::BackUpStr()
 {
 	if (IsValid(PlayerCharacter))
 	{
-		UE_LOG(LogTemp, Display, TEXT("BackUpStr"));
-		// ToDo : 공격력을 원복하는 로직 작성
+		UE_LOG(LogTemp, Display, TEXT("PlayerDamage Before BackUp : %d"), PlayerCharacter->getCharacterDamage());
+		PlayerCharacter->CharacterDamage -= StrUpAmount;
+		UE_LOG(LogTemp, Display, TEXT("PlayerDamage After BackUp : %d"), PlayerCharacter->getCharacterDamage());
 	}
 	Destroy();
 }

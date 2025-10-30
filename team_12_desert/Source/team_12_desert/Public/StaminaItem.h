@@ -13,9 +13,12 @@ UCLASS()
 class TEAM_12_DESERT_API AStaminaItem : public AAItemBase
 {
 	GENERATED_BODY()
+public:
 	AStaminaItem();
 
 	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
 
 	~AStaminaItem();
+private:
+	int32 StaminaAmount;
 };
