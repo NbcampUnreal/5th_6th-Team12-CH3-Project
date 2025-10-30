@@ -17,7 +17,11 @@ void EmptyLinkFunctionForGeneratedCodeteam_12_desert_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
+<<<<<<< HEAD
 				0xD41114A4,
+=======
+				0x3ED4F590,
+>>>>>>> UI
 				0x938C86F0,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +29,9 @@ void EmptyLinkFunctionForGeneratedCodeteam_12_desert_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_team_12_desert.OuterSingleton;
 	}
+<<<<<<< HEAD
 	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD41114A4, 0x938C86F0));
+=======
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3ED4F590, 0x938C86F0));
+>>>>>>> UI
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

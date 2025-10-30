@@ -13,10 +13,19 @@ UMyGameInstance::UMyGameInstance()
 
 }
 
+void UMyGameInstance::PlayerStatSave()
+{
+}
+
+void UMyGameInstance::PlayerStatLoad()
+{
+}
+
 void UMyGameInstance::NextLevel()
 {
 	MonsterCount = 0;
 	CurrentLevelIndex++;
+	PlayerStatSave();
 	UGameplayStatics::OpenLevel(GetWorld(), LevelMapNames[CurrentLevelIndex]);
 
 }
