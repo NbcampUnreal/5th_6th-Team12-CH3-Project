@@ -14,16 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_SpiderMonster_generated_h
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_7_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASpiderMonster(); \
 	friend struct Z_Construct_UClass_ASpiderMonster_Statics; \
 public: \
-	DECLARE_CLASS(ASpiderMonster, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/team_12_desert"), NO_API) \
+	DECLARE_CLASS(ASpiderMonster, AMonster, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/team_12_desert"), NO_API) \
 	DECLARE_SERIALIZER(ASpiderMonster)
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_7_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASpiderMonster(ASpiderMonster&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ASpiderMonster();
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_8_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_11_GENERATED_BODY \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_4_PROLOG
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_7_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_11_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_11_ENHANCED_CONSTRUCTORS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_7_INCLASS_NO_PURE_DECLS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpiderMonster_h_7_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

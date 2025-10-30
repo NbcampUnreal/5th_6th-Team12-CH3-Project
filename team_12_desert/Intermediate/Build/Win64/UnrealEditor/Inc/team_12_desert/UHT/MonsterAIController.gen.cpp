@@ -11,63 +11,47 @@ void EmptyLinkFunctionForGeneratedCodeMonsterAIController() {}
 
 // Begin Cross Module References
 AIMODULE_API UClass* Z_Construct_UClass_AAIController();
-COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-TEAM_12_DESERT_API UClass* Z_Construct_UClass_AItemRandomBox_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonsterAIController();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonsterAIController_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
 
-// Begin Class AMonsterAIController Function ApplyDamage
-struct Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics
+// Begin Class AMonsterAIController Function AttackPlayer
+struct Z_Construct_UFunction_AMonsterAIController_AttackPlayer_Statics
 {
-	struct MonsterAIController_eventApplyDamage_Parms
-	{
-		float DamageAmount;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "AI|Damage" },
 		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MonsterAIController_eventApplyDamage_Parms, DamageAmount), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::NewProp_DamageAmount,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonsterAIController, nullptr, "ApplyDamage", nullptr, nullptr, Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::MonsterAIController_eventApplyDamage_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::MonsterAIController_eventApplyDamage_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AMonsterAIController_ApplyDamage()
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonsterAIController_AttackPlayer_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonsterAIController, nullptr, "AttackPlayer", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonsterAIController_AttackPlayer_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonsterAIController_AttackPlayer_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMonsterAIController_AttackPlayer()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonsterAIController_ApplyDamage_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonsterAIController_AttackPlayer_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(AMonsterAIController::execApplyDamage)
+DEFINE_FUNCTION(AMonsterAIController::execAttackPlayer)
 {
-	P_GET_PROPERTY(FFloatProperty,Z_Param_DamageAmount);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->ApplyDamage(Z_Param_DamageAmount);
+	P_THIS->AttackPlayer();
 	P_NATIVE_END;
 }
-// End Class AMonsterAIController Function ApplyDamage
+// End Class AMonsterAIController Function AttackPlayer
 
 // Begin Class AMonsterAIController
 void AMonsterAIController::StaticRegisterNativesAMonsterAIController()
 {
 	UClass* Class = AMonsterAIController::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
-		{ "ApplyDamage", &AMonsterAIController::execApplyDamage },
+		{ "AttackPlayer", &AMonsterAIController::execAttackPlayer },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -84,80 +68,27 @@ struct Z_Construct_UClass_AMonsterAIController_Statics
 		{ "IncludePath", "MonsterAIController.h" },
 		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackRange_MetaData[] = {
-		{ "Category", "AI|Combat" },
-		{ "ClampMin", "0.0" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerPawn_MetaData[] = {
+		{ "Category", "AI" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd, meta = (ClampMin = \"0.0\") = \xef\xbf\xbd\xd6\xbc\xd2\xb0\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd.\n" },
+		{ "Comment", "//-----------------------\n// AI \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n//-----------------------\n" },
 #endif
 		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd, meta = (ClampMin = \"0.0\") = \xef\xbf\xbd\xd6\xbc\xd2\xb0\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd." },
+		{ "ToolTip", "AI \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackCooldown_MetaData[] = {
-		{ "Category", "AI|Combat" },
-		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackDamage_MetaData[] = {
-		{ "Category", "AI|Combat" },
-		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[] = {
-		{ "Category", "AI|Stats" },
-		{ "ClampMin", "1.0" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xcc\xb5\xef\xbf\xbd/\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
-#endif
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xcc\xb5\xef\xbf\xbd/\xc8\xb8\xef\xbf\xbd\xef\xbf\xbd/\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentHealth_MetaData[] = {
-		{ "Category", "AI|Stats" },
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WalkSpeed_MetaData[] = {
-		{ "Category", "AI|Movement" },
-		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RotationRateYaw_MetaData[] = {
-		{ "Category", "AI|Movement" },
-		{ "ClampMin", "0.0" },
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemRandomBoxClass_MetaData[] = {
-		{ "Category", "Item" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xc4\xa1\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ItemRandomBox \xc5\xac\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
-#endif
-		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xc4\xa1\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd ItemRandomBox \xc5\xac\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
-#endif
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DropItemClass_MetaData[] = {
-		{ "Category", "AI|Drop" },
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AcceptanceRadius_MetaData[] = {
+		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/MonsterAIController.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackRange;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackCooldown;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackDamage;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxHealth;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentHealth;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_WalkSpeed;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_RotationRateYaw;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemRandomBoxClass;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_DropItemClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerPawn;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_AcceptanceRadius;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMonsterAIController_ApplyDamage, "ApplyDamage" }, // 823523969
+		{ &Z_Construct_UFunction_AMonsterAIController_AttackPlayer, "AttackPlayer" }, // 4179078220
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -165,25 +96,11 @@ struct Z_Construct_UClass_AMonsterAIController_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackRange = { "AttackRange", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, AttackRange), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackRange_MetaData), NewProp_AttackRange_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackCooldown = { "AttackCooldown", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, AttackCooldown), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackCooldown_MetaData), NewProp_AttackCooldown_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackDamage = { "AttackDamage", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, AttackDamage), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackDamage_MetaData), NewProp_AttackDamage_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_CurrentHealth = { "CurrentHealth", nullptr, (EPropertyFlags)0x0020080000020801, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, CurrentHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentHealth_MetaData), NewProp_CurrentHealth_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_WalkSpeed = { "WalkSpeed", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, WalkSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WalkSpeed_MetaData), NewProp_WalkSpeed_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_RotationRateYaw = { "RotationRateYaw", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, RotationRateYaw), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotationRateYaw_MetaData), NewProp_RotationRateYaw_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_ItemRandomBoxClass = { "ItemRandomBoxClass", nullptr, (EPropertyFlags)0x0024080000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, ItemRandomBoxClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxClass_MetaData), NewProp_ItemRandomBoxClass_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_DropItemClass = { "DropItemClass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, DropItemClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DropItemClass_MetaData), NewProp_DropItemClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_PlayerPawn = { "PlayerPawn", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, PlayerPawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerPawn_MetaData), NewProp_PlayerPawn_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AcceptanceRadius = { "AcceptanceRadius", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonsterAIController, AcceptanceRadius), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AcceptanceRadius_MetaData), NewProp_AcceptanceRadius_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonsterAIController_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackRange,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackCooldown,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AttackDamage,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_MaxHealth,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_CurrentHealth,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_WalkSpeed,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_RotationRateYaw,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_ItemRandomBoxClass,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_DropItemClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_PlayerPawn,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonsterAIController_Statics::NewProp_AcceptanceRadius,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMonsterAIController_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMonsterAIController_Statics::DependentSingletons[])() = {
@@ -223,14 +140,23 @@ AMonsterAIController::~AMonsterAIController() {}
 // End Class AMonsterAIController
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics
+>>>>>>> Monster
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMonsterAIController, AMonsterAIController::StaticClass, TEXT("AMonsterAIController"), &Z_Registration_Info_UClass_AMonsterAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterAIController), 3928593776U) },
+		{ Z_Construct_UClass_AMonsterAIController, AMonsterAIController::StaticClass, TEXT("AMonsterAIController"), &Z_Registration_Info_UClass_AMonsterAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonsterAIController), 3940658813U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_1358574851(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_3496941213(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MonsterAIController_h_Statics::ClassInfo),
+>>>>>>> Monster
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
