@@ -76,7 +76,8 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 	if (HUDWidgetInstance.IsValidIndex(on) && HUDWidgetInstance[on])
 	{
 		HUDWidgetInstance[on]->AddToViewport();
-		PlayerHUDApply();
+		if (on == HudPreset::InGame)
+			PlayerHUDApply();
 		return;
 	}
 
@@ -86,7 +87,8 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 			HUDWidgetInstance[on]->AddToViewport();
 		}
 	}
-	PlayerHUDApply();
+	if (on == HudPreset::InGame)
+		PlayerHUDApply();
 }
 
 UUserWidget* UMyGameInstance::GetHUDWidget(HudPreset preset)
