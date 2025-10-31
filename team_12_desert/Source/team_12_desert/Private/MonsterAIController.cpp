@@ -1,14 +1,5 @@
 #include "MonsterAIController.h"
-<<<<<<< HEAD
 #include "Monster.h"
-=======
-#include "ItemRandomBox.h"
-#include "MyGameInstance.h"
-#include "Kismet/GameplayStatics.h"
-#include "GameFramework/Character.h"
-#include "MyGameState.h"
-#include "GameFramework/CharacterMovementComponent.h"
->>>>>>> UI
 #include "TimerManager.h"
 #include "Navigation/PathFollowingComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -93,44 +84,5 @@ void AMonsterAIController::AttackPlayer()
 
 void AMonsterAIController::ResetAttack()
 {
-<<<<<<< HEAD
     bCanAttack = true;
-=======
-	bCanAttack = true;
-}
-
-void AMonsterAIController::ApplyDamage(float DamageAmount)          //공격 받을 때 호출.
-{
-	CurrentHealth -= DamageAmount;                                  //데미지 양만큼 감소.
-	if (CurrentHealth <= 0.f)
-	{
-		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1); //병권님 요청.
-	
-		DropItem();
-
-		if (APawn* P = GetPawn())                                   //0되면 제거.
-		{
-			P->DetachFromControllerPendingDestroy();
-			P->Destroy();
-		}
-	}
-}
-
-void AMonsterAIController::DropItem()                                //현재 위치에 아이템 스폰.(바닥에 아이템 떨굼).
-{
-	if (!DropItemClass) return;
-	
-	if (APawn* P = GetPawn())                                    //ai가 플레이하는 pawn호출.
-	{
-		const FVector Loc = P->GetActorLocation();               //pawn의 현재 위치 호출.
-		const FRotator Rot = FRotator::ZeroRotator;              //아이템 회전값 초기화.
-
-		// 월드에 ItemRandomBox 스폰
-		if (AItemRandomBox* Box = GetWorld()->SpawnActor<AItemRandomBox>(ItemRandomBoxClass, Loc, Rot)) //loc = 위치, rot = 회전
-		{
-			// 랜덤 아이템 스폰 함수 호출
-			Box->SpawnRandomItem(Loc);
-		}
-	}
->>>>>>> UI
 }

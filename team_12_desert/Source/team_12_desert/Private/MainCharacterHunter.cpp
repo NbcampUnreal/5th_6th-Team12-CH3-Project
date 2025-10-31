@@ -12,8 +12,6 @@
 #include "Animation/AnimMontage.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Animation/AnimInstance.h"
-#include "MyGameState.h"
-#include "MyGameInstance.h"
 
 AMainCharacterHunter::AMainCharacterHunter()
 {
@@ -49,12 +47,9 @@ void AMainCharacterHunter::BeginPlay()
 		}
 	}
 
+
 	// 스태미너 감소 시스템 시작
 	StartStaminaDrainTimer();
-
-	//이전 레벨때 스탯들로 덮어쓰기 (강병권)
-	Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
-	Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
 
 }
 
@@ -285,8 +280,6 @@ void AMainCharacterHunter::ManageStamina()
 			CurrentStamina = MaxStamina;
 		}
 	}
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina, CurrentStamina);
-
 }
 
 void AMainCharacterHunter::StartStaminaDrainTimer()

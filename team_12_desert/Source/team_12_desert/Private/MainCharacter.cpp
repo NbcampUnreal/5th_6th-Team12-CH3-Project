@@ -3,11 +3,7 @@
 
 #include "MainCharacter.h"
 #include "WeaponBase.h"
-<<<<<<< HEAD
 #include "SkillBook.h"
-=======
-#include "MyGameState.h"
->>>>>>> UI
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -44,8 +40,6 @@ void AMainCharacter::BeginPlay()
     RangeAttackCount = 0;
 
     EquipWeapon();
-
-
 }
 
 void AMainCharacter::EquipWeapon()
@@ -95,9 +89,6 @@ void AMainCharacter::HealHP(int32 HealAmount)
     {
         CurrentHP = MaxHP;
     }
-
-    //HP바 ui 업데이트
-    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 // 외부에서 스태미나 회복시킬 때
@@ -135,9 +126,6 @@ void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
     {
         CurrentHP = 0;
     }
-
-    //HP바 ui 업데이트(강병권)
-    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 void AMainCharacter::IncreaseExperience(int32 Experience)
