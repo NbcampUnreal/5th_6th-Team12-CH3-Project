@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ItemRandomBox.generated.h"
 #include "ExpUpItem.h"
+#include "ItemRandomBox.generated.h"
 
 UCLASS()
 class TEAM_12_DESERT_API AItemRandomBox : public AActor

@@ -21,9 +21,6 @@ AWeapon_FlareGun::AWeapon_FlareGun()
 
 	MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
 	MuzzleLocation->SetupAttachment(SceneComp);
-
-	/// 무기 대미지 개발 중엔 200으로 설정
-	this->WeaponDamage = 200;
 }
 
 void AWeapon_FlareGun::Attack()

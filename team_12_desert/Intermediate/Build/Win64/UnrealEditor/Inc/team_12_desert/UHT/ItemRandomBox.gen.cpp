@@ -12,8 +12,8 @@ void EmptyLinkFunctionForGeneratedCodeItemRandomBox() {}
 // Begin Cross Module References
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
-ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_AExpUpItem_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AItemRandomBox();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AItemRandomBox_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
@@ -54,7 +54,7 @@ struct Z_Construct_UClass_AItemRandomBox_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItemRandomBox_Statics::NewProp_ItemDataTable = { "ItemDataTable", nullptr, (EPropertyFlags)0x0114000000000015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemRandomBox, ItemDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemDataTable_MetaData), NewProp_ItemDataTable_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AItemRandomBox_Statics::NewProp_ExpUpItem = { "ExpUpItem", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemRandomBox, ExpUpItem), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ExpUpItem_MetaData), NewProp_ExpUpItem_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AItemRandomBox_Statics::NewProp_ExpUpItem = { "ExpUpItem", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItemRandomBox, ExpUpItem), Z_Construct_UClass_UClass, Z_Construct_UClass_AExpUpItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ExpUpItem_MetaData), NewProp_ExpUpItem_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AItemRandomBox_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItemRandomBox_Statics::NewProp_ItemDataTable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItemRandomBox_Statics::NewProp_ExpUpItem,
@@ -100,10 +100,10 @@ AItemRandomBox::~AItemRandomBox() {}
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AItemRandomBox, AItemRandomBox::StaticClass, TEXT("AItemRandomBox"), &Z_Registration_Info_UClass_AItemRandomBox, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItemRandomBox), 4194225154U) },
+		{ Z_Construct_UClass_AItemRandomBox, AItemRandomBox::StaticClass, TEXT("AItemRandomBox"), &Z_Registration_Info_UClass_AItemRandomBox, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItemRandomBox), 1654111340U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_2222468896(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_3447918208(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemRandomBox_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
