@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MyGameInstance_generated_h
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_15_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_22_INCLASS_NO_PURE_DECLS \
+>>>>>>> UI
 private: \
 	static void StaticRegisterNativesUMyGameInstance(); \
 	friend struct Z_Construct_UClass_UMyGameInstance_Statics; \
@@ -23,7 +27,11 @@ public: \
 	DECLARE_SERIALIZER(UMyGameInstance)
 
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_22_ENHANCED_CONSTRUCTORS \
+>>>>>>> UI
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UMyGameInstance(UMyGameInstance&&); \
@@ -35,12 +43,21 @@ public: \
 	NO_API virtual ~UMyGameInstance();
 
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_12_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_15_INCLASS_NO_PURE_DECLS \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_19_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_22_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_22_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_22_ENHANCED_CONSTRUCTORS \
+>>>>>>> UI
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

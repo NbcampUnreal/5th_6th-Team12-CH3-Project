@@ -9,6 +9,13 @@
 /**
  * 
  */
+
+enum HudPreset
+{
+	MainMenu,
+	InGame,
+	SkillUp,
+};
 UCLASS()
 class TEAM_12_DESERT_API UMyGameInstance : public UGameInstance
 {
@@ -19,11 +26,16 @@ public:
 	void PlayerStatSave();
 	void PlayerStatLoad();
 
-	int GetMonsterCount() { return MonsterCount; }
-	void AddMonsterCount(int a) { MonsterCount += a; }
-	void SetMonsterCount(int a) { MonsterCount = a; }
+	//int GetMonsterCount() { return MonsterCount; }
+	//void AddMonsterCount(int a) { MonsterCount += a; }
+	//void SetMonsterCount(int a) { MonsterCount = a; }
 
+	void TurnOffHud(HudPreset off);
+	void TurnOnHud(HudPreset on);
+	UUserWidget* GetHUDWidget(HudPreset preset);
+	void PlayerHUDApply();
 	void NextLevel();
+	void TestIns();
 
 	int32 GetCurrentLevelIndex() { return CurrentLevelIndex; }
 	void AddCurrentLevelIndex(int a) { CurrentLevelIndex+=a; }
@@ -37,9 +49,25 @@ public:
 
 	//void SetLevelMap(TArray<FName> name);
 
-private:
-	int MonsterCount=0;
-	int32 CurrentLevelIndex=0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="UI")
+	TArray<TSubclassOf<UUserWidget>> HudWidgetClass;
 
-	//todo:플레이어 정보 저장 및 레벨이동시 적용,돈,상점 뜨는 타이밍 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+	TArray<UUserWidget*> HUDWidgetInstance;
+
+private:
+	int32 CurrentLevelIndex=0;
+	//HudPreset CurrentHud;
+
+	//todo:플레이어 정보 저장 및 레벨이동시 적용할것들
+	int32 Hp;
+	int32 MaxHp;
+	int32 Stamina;
+	int32 MaxStamina;
+	int32 Level;
+	int32 CharacterDamage;
+	int32 CharacterArmor;
+	int32 Exp;
+	
+	bool started = false;
 };
