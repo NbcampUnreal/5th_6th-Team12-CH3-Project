@@ -4,14 +4,13 @@
 #include "ThunderSkill.h"
 #include "NiagaraSystem.h"
 #include "NiagaraFunctionLibrary.h"
-#include "MonsterAIController.h"
 #include "Monster.h"
+#include "MainCharacter.h"
 
 AThunderSkill::AThunderSkill()
 {
 	Delay = 3.f;
 	NiagaraEffect = nullptr;
-	Damage = 0.2f;
 }
 
 void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
@@ -38,9 +37,9 @@ void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Loca
 			}
 			if (TObjectPtr<AMonster> MonsterAI = Cast<AMonster>(Actor->GetInstigatorController()))
 			{
-				MonsterAI->ApplyDamage(Damage);
+				if (IsValid(MainCharacter))
+					MonsterAI->ApplyDamage((MainCharacter->getCharacterDamage()  / (int32)2));
 			}
-			//ToDo : 몬스터에게 데미지 주는 로직 추가
 		}
 	}
 }

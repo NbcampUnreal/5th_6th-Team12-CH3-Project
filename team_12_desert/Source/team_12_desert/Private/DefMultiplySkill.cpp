@@ -20,8 +20,5 @@ void ADefMultiplySkill::AttachSkill(TObjectPtr<class AMainCharacter> Character)
 void ADefMultiplySkill::DetachSkill(TObjectPtr<class AMainCharacter> Character)
 {
 		Super::DetachSkill(Character);
-		//ToDo : 캐릭터의 방어력 원상복구 로직 추가
 		Character->setMulArmor(1.f);
-
-		//DefIncreaseValue 만큼 방어력 감소
 }

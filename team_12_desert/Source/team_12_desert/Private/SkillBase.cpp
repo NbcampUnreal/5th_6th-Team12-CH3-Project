@@ -12,7 +12,6 @@ ASkillBase::ASkillBase()
 
 	NiagaraEffect = nullptr;
 	Delay = 0.0f;
-	Damage = 0.0f;
 	SkillName = TEXT("SkillName");
 	SkillExplanation = TEXT("Skillseolmyeong");
 	MainCharacter = nullptr;
