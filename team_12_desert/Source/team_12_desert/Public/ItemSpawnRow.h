@@ -13,8 +13,6 @@ struct FItemSpawnRow : public FTableRowBase
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FName ItemID;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	FName ItemName;
