@@ -3,21 +3,24 @@
 
 #include "MainCharacter.h"
 #include "WeaponBase.h"
-#include "MyGameState.h"
+#include "SkillBook.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
     CurrentLevel(1),
     MaxHP(100),
-    CharacterDamage(10),
-    CharacterArmor(0),
+    BaseDamage(10),
+    BaseArmor(0),
+    MulDamage(1.0f),
+    MulArmor(1.0f),
     CurrentExperience(0),
     MaxStamina(100),
     CurrentStamina(100),
     KillCount(0),
     MeleeAttackCount(0),
     RangeAttackCount(0),
-    CharacterName(TEXT("Default Name"))
+    CharacterName(TEXT("Default Name")),
+    bIsDashSkill(false)
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
@@ -37,8 +40,6 @@ void AMainCharacter::BeginPlay()
     RangeAttackCount = 0;
 
     EquipWeapon();
-
-
 }
 
 void AMainCharacter::EquipWeapon()
@@ -66,6 +67,18 @@ void AMainCharacter::EquipWeapon()
             MeleeWeaponActor->SetInstigator(this);
         }
     }
+
+    if (IsValid(mySkillBook))
+    {
+        mySkillBookActor = GetWorld()->SpawnActor<ASkillBook>(mySkillBook);
+        if (mySkillBook)
+        {
+            FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+            mySkillBookActor->AttachToComponent(GetMesh(), TransformRules, TEXT("SkillSocket"));
+            mySkillBookActor->SetOwner(this);
+            mySkillBookActor->SetInstigator(this);
+        }
+    }
 }
 
 //외부에서 체력 회복시킬 때
@@ -76,9 +89,6 @@ void AMainCharacter::HealHP(int32 HealAmount)
     {
         CurrentHP = MaxHP;
     }
-
-    //HP바 ui 업데이트
-    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 // 외부에서 스태미나 회복시킬 때
@@ -103,7 +113,7 @@ void AMainCharacter::RangeAttack()
 
 void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
 {
-    int32 EffectiveDamage = Damage - CharacterArmor;
+    int32 EffectiveDamage = Damage - getCharacterArmor();
 
     /// 방어력이 아무리 높아도 최소 대미지는 입도록 설정
     if (EffectiveDamage <= 0)
@@ -116,9 +126,6 @@ void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
     {
         CurrentHP = 0;
     }
-
-    //HP바 ui 업데이트(강병권)
-    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 void AMainCharacter::IncreaseExperience(int32 Experience)

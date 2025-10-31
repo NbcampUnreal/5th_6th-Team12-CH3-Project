@@ -22,7 +22,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 	float Duration;
 private:
-	int32 StrupAmount;
+	int32 StrUpAmount;
 
 
 	FTimerHandle TimerHandle;

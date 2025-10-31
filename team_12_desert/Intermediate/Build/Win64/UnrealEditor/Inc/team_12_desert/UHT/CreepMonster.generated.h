@@ -14,16 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_CreepMonster_generated_h
 
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_9_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACreepMonster(); \
 	friend struct Z_Construct_UClass_ACreepMonster_Statics; \
 public: \
-	DECLARE_CLASS(ACreepMonster, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/team_12_desert"), NO_API) \
+	DECLARE_CLASS(ACreepMonster, AMonster, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/team_12_desert"), NO_API) \
 	DECLARE_SERIALIZER(ACreepMonster)
 
 
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ACreepMonster(ACreepMonster&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ACreepMonster();
 
 
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_8_PROLOG
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_11_GENERATED_BODY \
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_6_PROLOG
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_9_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_11_INCLASS_NO_PURE_DECLS \
-	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_11_ENHANCED_CONSTRUCTORS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_9_INCLASS_NO_PURE_DECLS \
+	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ACreepMonster>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreepMonster_h
+#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreepMonster_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

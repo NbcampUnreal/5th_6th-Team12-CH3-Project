@@ -2,9 +2,11 @@
 
 
 #include "DefaultGameMode.h"
+#include "MainCharacter.h"
 
 ADefaultGameMode::ADefaultGameMode()
 {
+	DefaultPawnClass = AMainCharacter::StaticClass();
 }
 
 void ADefaultGameMode::BeginPlay()

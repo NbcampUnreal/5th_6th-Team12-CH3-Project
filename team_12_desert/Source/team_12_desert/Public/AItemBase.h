@@ -49,4 +49,5 @@ protected:
 	)override;
 
 	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
+	virtual void DeactivateItem(TObjectPtr<AActor> Actor) override;
 };

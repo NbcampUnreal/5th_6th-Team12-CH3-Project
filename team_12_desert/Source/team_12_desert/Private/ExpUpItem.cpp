@@ -12,7 +12,6 @@ AExpUpItem::AExpUpItem()
 
 void AExpUpItem::ActivateItem(TObjectPtr<AActor> Actor)
 {
-	UE_LOG(LogTemp, Display, TEXT("overlap"));
 	if (IsValid(Actor))
 	{
 		if (TObjectPtr<AMainCharacter> PlayerCharacter = Cast<AMainCharacter>(Actor))

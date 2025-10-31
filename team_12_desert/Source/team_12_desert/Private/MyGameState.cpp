@@ -7,9 +7,7 @@
 
 #include "EnhancedInputComponent.h"
 #include "GameFramework/PlayerController.h"
-#include "Components/TextBlock.h"
-#include "Components/ProgressBar.h"
-#include "Blueprint/UserWidget.h"
+
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -27,70 +25,63 @@ void AMyGameState::BeginPlay()
 	
 	//Cast<UMyGameInstance>(GetGameInstance())->SetLevelMap(LevelMapNames);
 
-	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
-	UpdateMonsterCountHud();
-	//플레이어 정보 로딩 함수호출
-	//Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
 
+	//플레이어 정보 로딩 함수호출
 }
 void AMyGameState::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//다음레벨조건
-	if (MonsterCount==0) {
+	if (Cast<UMyGameInstance>(GetGameInstance())->GetMonsterCount()==0) {
 		//Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
-	}			
-
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
-		Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); 
 	}
+
 }
 
 void AMyGameState::StartLevel()
 {
 
-	
+	//TArray<AActor*> FoundVolumes;
+	//UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawner::StaticClass(), FoundVolumes);
+
+	//const int32 ItemToSpawn = 40;
+
+	//for (int32 i = 0; i < ItemToSpawn; i++)
+	//{
+	//	if (FoundVolumes.Num() > 0)
+	//	{
+	//		ASpawner* SpawnVolume = Cast<ASpawner>(FoundVolumes[0]);
+	//		if (SpawnVolume)
+	//		{
+	//			SpawnVolume->SpawnEnemy(AMonsterAICharacter::StaticClass(), 20);
+
+	//			MonsterCount++;
+	//		}
+	//	}
+	//}
 }
-
-void AMyGameState::UpdateMonsterCountHud() {
-	if(UMyGameInstance* GI= Cast<UMyGameInstance>(GetGameInstance())){
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UTextBlock* MonsterRemainingText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("MonsterCount")));
-			MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("Count: %d"), MonsterCount)));
-		}
-	}
-
-}
-
-void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
-{
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Stamina = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
-
-			Stamina->SetPercent(CurrentStamina / MaxStamina);
-			
-		}
-	}
-}
-
-void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
-{
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Hp = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
-
-			Hp->SetPercent(CurrentHp / MaxHp);
-
-		}
-	}
-}
-
 
 void AMyGameState::OnLevelTimeUp()
 {
 }
+
+
+
+//void AMyGameState::OnCoinCollected()
+//{
+//	CollectedCoinCount++;
+//
+//	UE_LOG(LogTemp, Warning, TEXT("Coin Collected: %d / %d"),
+//		CollectedCoinCount,
+//		SpawnedCoinCount)
+//
+//		// 현재 레벨에서 스폰된 코인을 전부 주웠다면 즉시 레벨 종료
+//		if (SpawnedCoinCount > 0 && CollectedCoinCount >= SpawnedCoinCount)
+//		{
+//			EndLevel();
+//		}
+//}
+
 
 void AMyGameState::LevelTest()
 {

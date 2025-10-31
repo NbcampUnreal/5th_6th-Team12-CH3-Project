@@ -27,8 +27,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "WeaponSetting")
 	TObjectPtr<class USkeletalMeshComponent> WeaponMesh;
 
-
-	
+	int32 WeaponDamage;
 
 
 

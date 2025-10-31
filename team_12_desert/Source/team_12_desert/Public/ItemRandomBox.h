@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ItemRandomBox.generated.h"
+#include "ExpUpItem.h"
 
 UCLASS()
 class TEAM_12_DESERT_API AItemRandomBox : public AActor
@@ -18,7 +19,7 @@ public:
 	TObjectPtr<UDataTable> ItemDataTable;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "ExpItem")
-	TSubclassOf<AActor> ExpUpItem;
+	TSubclassOf<AExpUpItem> ExpUpItem;
 
 	//아이템을 렌덤으로 받아오며 렌덤하게 아이템을 드랍하도록
 	TObjectPtr<AActor> SpawnRandomItem(FVector Location);

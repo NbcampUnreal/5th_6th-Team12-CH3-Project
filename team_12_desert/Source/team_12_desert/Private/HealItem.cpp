@@ -12,12 +12,11 @@ AHealItem::AHealItem()
 
 void AHealItem::ActivateItem(TObjectPtr<AActor> Actor)
 {
-	UE_LOG(LogTemp, Display, TEXT("overlap"));
 	if (IsValid(Actor))
 	{
 		if (TObjectPtr<AMainCharacter> PlayerCharacter = Cast<AMainCharacter>(Actor))
 		{
-			UE_LOG(LogTemp, Display, TEXT("PlayerHp be : %d"),PlayerCharacter->getCurrentHP());
+			UE_LOG(LogTemp, Display, TEXT("PlayerHp Before : %d"),PlayerCharacter->getCurrentHP());
 			PlayerCharacter->HealHP(HealAmount);
 			UE_LOG(LogTemp, Display, TEXT("PlayerHp After : %d"), PlayerCharacter->getCurrentHP());
 		}

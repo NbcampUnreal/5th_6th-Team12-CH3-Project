@@ -22,6 +22,7 @@ AAItemBase::AAItemBase()
 	Collision->SetupAttachment(Scene);
 
 	Collision->OnComponentBeginOverlap.AddDynamic(this, &AAItemBase::OnItemOverlap);
+	Collision->OnComponentEndOverlap.AddDynamic(this, &AAItemBase::OnItemEndOverlap);
 }
 
 void AAItemBase::OnItemOverlap(UPrimitiveComponent* OverlapPendComp,
@@ -43,9 +44,17 @@ void AAItemBase::OnItemEndOverlap(
 	UPrimitiveComponent* OtherComp,
 	int32 OtherBodyInde)
 {
+	if (OtherActor && OtherActor->ActorHasTag(TEXT("Player"))) // 캐릭터에 태그같은걸 달아서 캐릭터에만 반응하도록 추후 변경
+	{
+		DeactivateItem(OtherActor);
+	}
 }
 
 void AAItemBase::ActivateItem(TObjectPtr<AActor> Actor)
+{
+}
+
+void AAItemBase::DeactivateItem(TObjectPtr<AActor> Actor)
 {
 }
 

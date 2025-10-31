@@ -9,7 +9,7 @@
 /**
  * 
  */
-
+ //폐기된 아이템입니다.  사용하지마세요
 UCLASS()
 class TEAM_12_DESERT_API ASpeedUpItem : public AAItemBase
 {

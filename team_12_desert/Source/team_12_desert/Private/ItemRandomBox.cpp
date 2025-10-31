@@ -15,7 +15,7 @@ AItemRandomBox::AItemRandomBox()
 // 실질적으로 외부에서 사용이되는 함수이며 Location부분에 getLocation과 같은 함수로 몬스터의 현재 location을 인자로 넣어주시면 됩니다
 TObjectPtr<AActor> AItemRandomBox::SpawnRandomItem(FVector Location)
 {
-	if (!ItemDataTable || !ExpUpItem) return nullptr;
+	if (!IsValid(ItemDataTable) || !IsValid(ExpUpItem)) return nullptr;
 	if (FItemSpawnRow* SelectedRow = GetRandomItem())
 	{
 		if (TObjectPtr<UClass> ActualClass = SelectedRow->ItemClass.Get())
