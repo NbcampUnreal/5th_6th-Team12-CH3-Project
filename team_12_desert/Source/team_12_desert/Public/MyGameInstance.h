@@ -33,6 +33,7 @@ public:
 	void TurnOffHud(HudPreset off);
 	void TurnOnHud(HudPreset on);
 	UUserWidget* GetHUDWidget(HudPreset preset);
+	void PlayerHUDApply();
 	void NextLevel();
 	void TestIns();
 
@@ -58,5 +59,15 @@ private:
 	int32 CurrentLevelIndex=0;
 	//HudPreset CurrentHud;
 
-	//todo:플레이어 정보 저장 및 레벨이동시 적용,돈,상점 뜨는 타이밍 
+	//todo:플레이어 정보 저장 및 레벨이동시 적용할것들
+	int32 Hp;
+	int32 MaxHp;
+	int32 Stamina;
+	int32 MaxStamina;
+	int32 Level;
+	int32 CharacterDamage;
+	int32 CharacterArmor;
+	int32 Exp;
+	
+	bool started = false;
 };

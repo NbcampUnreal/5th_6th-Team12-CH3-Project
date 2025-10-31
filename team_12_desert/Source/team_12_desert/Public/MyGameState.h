@@ -24,7 +24,9 @@ public:
 	void AddMonsterCount(int32 a) { MonsterCount += a; }
 	int32 GetMonsterCount() { return MonsterCount; }
 	void SetMonsterCount(int32 a) { MonsterCount = a; }
-	void UpdateHud();
+	void UpdateMonsterCountHud();
+	void UpdateStaminaHud(float MaxStamina, float CurrentStamina);
+	void UpdateHpHud(float MaxHp, float CurrentHp);
 
 protected:
 

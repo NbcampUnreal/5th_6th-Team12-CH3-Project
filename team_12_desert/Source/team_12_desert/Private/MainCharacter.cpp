@@ -36,6 +36,8 @@ void AMainCharacter::BeginPlay()
     RangeAttackCount = 0;
 
     EquipWeapon();
+
+
 }
 
 void AMainCharacter::EquipWeapon()
@@ -73,6 +75,7 @@ void AMainCharacter::HealHP(int32 HealAmount)
     {
         CurrentHP = MaxHP;
     }
+
 }
 
 // 외부에서 스태미나 회복시킬 때

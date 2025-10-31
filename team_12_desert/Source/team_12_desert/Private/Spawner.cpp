@@ -69,7 +69,7 @@ void ASpawner::SpawnEnemy()
  			Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(1);
 		}
 	}
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHud();
+	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
 
 
 }

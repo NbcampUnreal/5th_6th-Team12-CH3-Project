@@ -4,6 +4,7 @@
 #include "MyGameInstance.h"
 #include "MyGameState.h"
 #include "Blueprint/UserWidget.h"
+#include "MainCharacterHunter.h"
 #include "Kismet/GameplayStatics.h"
 
 UMyGameInstance::UMyGameInstance()
@@ -14,10 +15,47 @@ UMyGameInstance::UMyGameInstance()
 
 void UMyGameInstance::PlayerStatSave()
 {
+	APlayerController* PC = GetWorld()->GetFirstPlayerController();
+	if (PC)
+	{
+		AMainCharacterHunter* tempChar = Cast<AMainCharacterHunter>(PC->GetPawn());
+		if (tempChar)
+		{
+			Hp = tempChar->getCurrentHP();
+			MaxHp = tempChar->getMaxHP();
+			Stamina = tempChar->getCurrentStamina();
+			MaxStamina = tempChar->getMaxStamina();
+			Level = tempChar->getCurrentLevel();
+			CharacterDamage = tempChar->getCharacterDamage();
+			CharacterArmor = tempChar->getCharacterArmor();
+			Exp = tempChar->getCurrentExperience();
+		}
+	}
 }
 
+//AMainCharacterHunter나 MainCharacter에서 set필요
 void UMyGameInstance::PlayerStatLoad()
 {
+	if (Hp == 0) {
+		return;
+	}
+	APlayerController* PC = GetWorld()->GetFirstPlayerController();
+	if (PC)
+	{
+		AMainCharacterHunter* tempChar = Cast<AMainCharacterHunter>(PC->GetPawn());
+		if (tempChar)
+		{
+			tempChar->setCurrentHP(Hp);
+			tempChar->setMaxHP(MaxHp);
+			tempChar->setCurrentStamina(Stamina);
+			tempChar->setMaxStamina(MaxStamina);
+			tempChar->setCurrentLevel(Level);
+			tempChar->setCharacterDamage(CharacterDamage);
+			tempChar->setCharacterArmor(CharacterArmor);
+			tempChar->setCurrentExperience(Exp);
+		}
+	}
+
 }
 
 void UMyGameInstance::TurnOffHud(HudPreset off)
@@ -38,8 +76,7 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 	if (HUDWidgetInstance.IsValidIndex(on) && HUDWidgetInstance[on])
 	{
 		HUDWidgetInstance[on]->AddToViewport();
-		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHud();
-
+		PlayerHUDApply();
 		return;
 	}
 
@@ -49,8 +86,7 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 			HUDWidgetInstance[on]->AddToViewport();
 		}
 	}
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHud();
-
+	PlayerHUDApply();
 }
 
 UUserWidget* UMyGameInstance::GetHUDWidget(HudPreset preset)
@@ -59,6 +95,21 @@ UUserWidget* UMyGameInstance::GetHUDWidget(HudPreset preset)
 		return HUDWidgetInstance[preset];
 	}
 	return nullptr;
+
+}
+
+void UMyGameInstance::PlayerHUDApply()
+{	
+	APlayerController* PC = GetWorld()->GetFirstPlayerController();
+	if (PC)
+	{
+		AMainCharacterHunter* tempChar = Cast<AMainCharacterHunter>(PC->GetPawn());
+		if (tempChar)
+		{
+			Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(tempChar->getMaxHP(), tempChar->getCurrentHP());
+			Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(tempChar->getMaxStamina(), tempChar->getCurrentStamina());
+		}
+	}
 
 }
 

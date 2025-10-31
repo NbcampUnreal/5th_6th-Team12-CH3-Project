@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "Components/TextBlock.h"
+#include "Components/ProgressBar.h"
 #include "Blueprint/UserWidget.h"
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
@@ -27,7 +28,7 @@ void AMyGameState::BeginPlay()
 	//Cast<UMyGameInstance>(GetGameInstance())->SetLevelMap(LevelMapNames);
 
 	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
-	UpdateHud();
+	UpdateMonsterCountHud();
 	//플레이어 정보 로딩 함수호출
 	//Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
 
@@ -39,8 +40,7 @@ void AMyGameState::Tick(float DeltaTime)
 	//다음레벨조건
 	if (MonsterCount==0) {
 		//Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
-	}		
-
+	}			
 
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
 		Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); 
@@ -53,7 +53,7 @@ void AMyGameState::StartLevel()
 	
 }
 
-void AMyGameState::UpdateHud() {
+void AMyGameState::UpdateMonsterCountHud() {
 	if(UMyGameInstance* GI= Cast<UMyGameInstance>(GetGameInstance())){
 		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
 			UTextBlock* MonsterRemainingText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("MonsterCount")));
@@ -62,6 +62,31 @@ void AMyGameState::UpdateHud() {
 	}
 
 }
+
+void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
+{
+	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+			UProgressBar* Stamina = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
+
+			Stamina->SetPercent(CurrentStamina / MaxStamina);
+			
+		}
+	}
+}
+
+void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
+{
+	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+			UProgressBar* Hp = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
+
+			Hp->SetPercent(CurrentHp / MaxHp);
+
+		}
+	}
+}
+
 
 void AMyGameState::OnLevelTimeUp()
 {

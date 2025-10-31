@@ -38,6 +38,15 @@ public:
 	int32 getRangeAttackCount() const { return RangeAttackCount; }
 	int32 getKillCount() const { return KillCount; }
 
+	void setCurrentLevel(int32 val)  {  CurrentLevel=val; }
+	void setMaxHP(int32 val)  {  MaxHP = val; }
+	void setMaxStamina(int32 val)  {  MaxStamina = val; }
+	void setCurrentHP(int32 val)  {  CurrentHP = val; }
+	void setCurrentStamina(int32 val)  {  CurrentStamina = val; }
+	void setCurrentExperience(int32 val)  {  CurrentExperience = val; }
+	void setCharacterDamage(int32 val)  {  CharacterDamage = val; }
+	void setCharacterArmor(int32 val)  {  CharacterArmor = val; }
+
 	void setMeleeAttackCount(int32 Count) { MeleeAttackCount = Count; }
 	void setRangeAttackCount(int32 Count) { RangeAttackCount = Count; }
 
