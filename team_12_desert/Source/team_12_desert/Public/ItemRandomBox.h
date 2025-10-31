@@ -30,3 +30,4 @@ private:
 	// 랜덤한 아이템을 스폰할 함수
 	TObjectPtr<AActor> SpawnItem(TSubclassOf<AActor> ItemClass, FVector Location);
 };
+//asdasdasd
