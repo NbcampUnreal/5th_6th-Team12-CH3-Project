@@ -12,8 +12,6 @@
 #include "Animation/AnimMontage.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Animation/AnimInstance.h"
-#include "MyGameState.h"
-#include "MyGameInstance.h"
 
 AMainCharacterHunter::AMainCharacterHunter()
 {
@@ -49,12 +47,9 @@ void AMainCharacterHunter::BeginPlay()
 		}
 	}
 
+
 	// 스태미너 감소 시스템 시작
 	StartStaminaDrainTimer();
-
-	//이전 레벨때 스탯들로 덮어쓰기 (강병권)
-	Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
-	Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
 
 }
 
@@ -182,7 +177,7 @@ void AMainCharacterHunter::MeleeAttackAction(const FInputActionValue& Value)
 
 				// 몽타주 재생이 끝났을 때 호출될 델리게이트 바인딩
 				FOnMontageEnded MontageDelegate;
-				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnMeleeAttackMontageFinished);
+				MontageDelegate.BindUObject(this, &AMainCharacterHunter::OnRangeAttackMontageFinished);
 				AnimInstance->Montage_SetEndDelegate(MontageDelegate, MeleeAttackMontage);
 			}
 		}
@@ -239,9 +234,7 @@ void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, b
 	bIsAttacking = false;
 
 	if (IsValid(MeleeWeaponActor))
-	{
 		MeleeWeaponActor->AttackEnd();
-	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
 }
@@ -285,8 +278,6 @@ void AMainCharacterHunter::ManageStamina()
 			CurrentStamina = MaxStamina;
 		}
 	}
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina, CurrentStamina);
-
 }
 
 void AMainCharacterHunter::StartStaminaDrainTimer()

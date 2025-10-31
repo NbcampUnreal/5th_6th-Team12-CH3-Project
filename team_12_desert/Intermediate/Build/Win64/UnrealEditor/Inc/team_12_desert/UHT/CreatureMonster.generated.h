@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_CreatureMonster_generated_h
 
-<<<<<<< HEAD
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_INCLASS_NO_PURE_DECLS \
-=======
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_INCLASS_NO_PURE_DECLS \
->>>>>>> Item_pcy
 private: \
 	static void StaticRegisterNativesACreatureMonster(); \
 	friend struct Z_Construct_UClass_ACreatureMonster_Statics; \
@@ -27,11 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ACreatureMonster)
 
 
-<<<<<<< HEAD
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ACreatureMonster(ACreatureMonster&&); \
@@ -43,21 +35,12 @@ public: \
 	NO_API virtual ~ACreatureMonster();
 
 
-<<<<<<< HEAD
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_6_PROLOG
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_6_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_INCLASS_NO_PURE_DECLS \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_9_ENHANCED_CONSTRUCTORS \
->>>>>>> Item_pcy
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

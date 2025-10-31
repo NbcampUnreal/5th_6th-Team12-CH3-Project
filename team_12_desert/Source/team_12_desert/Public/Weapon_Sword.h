@@ -38,6 +38,6 @@ private:
 		const FHitResult& SweepResult);
 
 	/** 공격에 이미 감지된 몬스터 리스트 (중복 히트 방지용) */
-	TArray<class AMonster*> HitMonsters;
+	TArray<class AMonsterAICharacter*> HitMonsters;
 	
 };
