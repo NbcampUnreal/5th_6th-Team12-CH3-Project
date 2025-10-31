@@ -13,11 +13,11 @@ class UBoxComponent;
 UCLASS()
 class TEAM_12_DESERT_API ASpawner : public AActor
 {
-	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	ASpawner();
+    GENERATED_BODY()
+
+public:
+    // Sets default values for this actor's properties
+    ASpawner();
 
     virtual void Tick(float DeltaTime) override;
 
@@ -39,7 +39,7 @@ public:
     bool Infinity;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    float InfinityRespawnTime=3.0f;
+    float InfinityRespawnTime = 3.0f;
 
     float time;
 };

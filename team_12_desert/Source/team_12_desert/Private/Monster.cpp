@@ -56,7 +56,7 @@ void AMonster::ApplyDamage(float DamageAmount)
         // GameInstance에서 몬스터 수 감소
         if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance()))
         {
-            GI->AddMonsterCount(-1);
+            //GI->AddMonsterCount(-1);
         }
 
         // 죽을 때 90도 쓰러짐
