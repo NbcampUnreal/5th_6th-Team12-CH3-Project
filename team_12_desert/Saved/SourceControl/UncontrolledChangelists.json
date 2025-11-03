@@ -10,7 +10,13 @@
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/BP_DefMultiplySkill.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/BP_InfiniteSpeedSkill.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_SkillSelectWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SkillBook.uasset"
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SkillBook.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/BP_ItemRandomBox.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/DT_ItemDataTable.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/DT_InventoryData.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/ItemDataTable.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/DT_ItemData.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SelectSkill.uasset"
 			]
 		}
 	]

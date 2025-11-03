@@ -16,6 +16,7 @@ TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMainCharacter();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMainCharacter_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_ASkillBook_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
 
@@ -242,6 +243,12 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "Category", "MainCharacter" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InventoryComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Inventory" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsDashSkill_MetaData[] = {
 		{ "Category", "MyCharacter" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
@@ -267,6 +274,7 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MeleeWeaponActor;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_mySkillBook;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_mySkillBookActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_InventoryComponent;
 	static void NewProp_bIsDashSkill_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDashSkill;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -302,6 +310,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor = { "MeleeWeaponActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeWeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeWeaponActor_MetaData), NewProp_MeleeWeaponActor_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBook = { "mySkillBook", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, mySkillBook), Z_Construct_UClass_UClass, Z_Construct_UClass_ASkillBook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_mySkillBook_MetaData), NewProp_mySkillBook_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBookActor = { "mySkillBookActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, mySkillBookActor), Z_Construct_UClass_ASkillBook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_mySkillBookActor_MetaData), NewProp_mySkillBookActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_InventoryComponent = { "InventoryComponent", nullptr, (EPropertyFlags)0x01240800000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, InventoryComponent), Z_Construct_UClass_UInventoryComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InventoryComponent_MetaData), NewProp_InventoryComponent_MetaData) };
 void Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsDashSkill_SetBit(void* Obj)
 {
 	((AMainCharacter*)Obj)->bIsDashSkill = 1;
@@ -328,6 +337,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBook,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBookActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_InventoryComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsDashSkill,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::PropPointers) < 2048);
@@ -371,10 +381,10 @@ AMainCharacter::~AMainCharacter() {}
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 3392593581U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 2439801297U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_318928616(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_2407741422(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -4,6 +4,7 @@
 #include "MainCharacter.h"
 #include "WeaponBase.h"
 #include "SkillBook.h"
+#include "InventoryComponent.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -38,6 +39,8 @@ void AMainCharacter::BeginPlay()
     KillCount = 0;
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
+
+    InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
     EquipWeapon();
 }

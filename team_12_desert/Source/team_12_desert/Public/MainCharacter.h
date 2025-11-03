@@ -116,6 +116,8 @@ protected:
 	TSubclassOf<class ASkillBook> mySkillBook;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class ASkillBook> mySkillBookActor;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UInventoryComponent> InventoryComponent;
 
 
 	UFUNCTION()
