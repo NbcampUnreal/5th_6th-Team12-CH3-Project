@@ -10,6 +10,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSkillSelectWidget() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_USkillSelectWidget();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_USkillSelectWidget_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
@@ -35,13 +38,31 @@ struct Z_Construct_UClass_USkillSelectWidget_Statics
 		{ "IncludePath", "SkillSelectWidget.h" },
 		{ "ModuleRelativePath", "Public/SkillSelectWidget.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SkillDataTable_MetaData[] = {
+		{ "Category", "SkillSelectWidget" },
+		{ "ModuleRelativePath", "Public/SkillSelectWidget.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SkillBookClass_MetaData[] = {
+		{ "Category", "SkillSelectWidget" },
+		{ "ModuleRelativePath", "Public/SkillSelectWidget.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillDataTable;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_SkillBookClass;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USkillSelectWidget>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USkillSelectWidget_Statics::NewProp_SkillDataTable = { "SkillDataTable", nullptr, (EPropertyFlags)0x0124080000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USkillSelectWidget, SkillDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillDataTable_MetaData), NewProp_SkillDataTable_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_USkillSelectWidget_Statics::NewProp_SkillBookClass = { "SkillBookClass", nullptr, (EPropertyFlags)0x0024080000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(USkillSelectWidget, SkillBookClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillBookClass_MetaData), NewProp_SkillBookClass_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USkillSelectWidget_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillSelectWidget_Statics::NewProp_SkillDataTable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USkillSelectWidget_Statics::NewProp_SkillBookClass,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_USkillSelectWidget_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_USkillSelectWidget_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_UUserWidget,
 	(UObject* (*)())Z_Construct_UPackage__Script_team_12_desert,
@@ -53,11 +74,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_USkillSelectWidget_Stat
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	nullptr,
+	Z_Construct_UClass_USkillSelectWidget_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	0,
+	UE_ARRAY_COUNT(Z_Construct_UClass_USkillSelectWidget_Statics::PropPointers),
 	0,
 	0x00B010A0u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_USkillSelectWidget_Statics::Class_MetaDataParams), Z_Construct_UClass_USkillSelectWidget_Statics::Class_MetaDataParams)
@@ -80,14 +101,14 @@ USkillSelectWidget::~USkillSelectWidget() {}
 // End Class USkillSelectWidget
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_USkillSelectWidget, USkillSelectWidget::StaticClass, TEXT("USkillSelectWidget"), &Z_Registration_Info_UClass_USkillSelectWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USkillSelectWidget), 3243772345U) },
+		{ Z_Construct_UClass_USkillSelectWidget, USkillSelectWidget::StaticClass, TEXT("USkillSelectWidget"), &Z_Registration_Info_UClass_USkillSelectWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USkillSelectWidget), 1225755445U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_2895846349(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_1417265768(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelectWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

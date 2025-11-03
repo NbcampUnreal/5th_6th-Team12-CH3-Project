@@ -32,3 +32,8 @@ void ASkillBase::DetachSkill(TObjectPtr<AMainCharacter> Character)
 	MainCharacter = nullptr;
 }
 
+FName ASkillBase::GetSkillName() const
+{
+	return SkillName;
+}
+
