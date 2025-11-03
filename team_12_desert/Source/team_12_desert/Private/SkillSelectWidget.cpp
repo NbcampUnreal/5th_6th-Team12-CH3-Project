@@ -1,21 +1,32 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "SkillSelectWidget.h"
 #include "Components/TextBlock.h"
 #include "Components/Image.h"
 #include "Components/Button.h"
 #include "SkillSelecteRow.h"
-#include "SkillSelectWidget.h"
 #include "SkillBook.h"
+#include "MainCharacter.h"
 
 
 void USkillSelectWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
+	MainCharacter = nullptr;
+	SkillBookClass = nullptr;
 	if (!SkillDataTable) return;
 	if (!SkillBookClass) return;
+
 	Rowlist = GetRandomSkill();
-	
+	if (IsValid(GetWorld()->GetFirstPlayerController()->GetPawn<AMainCharacter>()))
+	{
+		MainCharacter = GetWorld()->GetFirstPlayerController()->GetPawn<AMainCharacter>();
+		if (SkillBookClass)
+		{
+			SkillBookClass = MainCharacter->getSkillBook();
+		}
+	}
 
 #pragma region // SkillName Text Setting
 	if (TObjectPtr<UTextBlock> SkillNameText = Cast<UTextBlock>(GetWidgetFromName(TEXT("SkillName1"))))
@@ -139,6 +150,7 @@ TArray<FSkillSelecteRow*> USkillSelectWidget::GetRandomSkill() const
 			if (RandomValue < AccumulatedChance)
 			{
 				result[i] = { Row };
+				break;
 			}
 		}
 	}
@@ -165,8 +177,5 @@ void USkillSelectWidget::SetIndex3()
 void USkillSelectWidget::SelectSkill(int32 Index)
 {
 	if (!SkillBookClass) return;
-	if (ASkillBook* SkillBook = Cast<ASkillBook>(SkillBookClass))
-	{
-		SkillBook->AddSkill(Rowlist[Index]->SkillClass);
-	}
+	SkillBookClass->AddSkill(Rowlist[Index]->SkillClass);
 }

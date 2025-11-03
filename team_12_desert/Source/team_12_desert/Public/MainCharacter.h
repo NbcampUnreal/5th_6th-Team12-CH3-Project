@@ -38,6 +38,8 @@ public:
 	int32 getRangeAttackCount() const { return RangeAttackCount; }
 	int32 getKillCount() const { return KillCount; }
 
+	TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
+
 	bool getIsDashSkill() const { return bIsDashSkill; }
 	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
 
