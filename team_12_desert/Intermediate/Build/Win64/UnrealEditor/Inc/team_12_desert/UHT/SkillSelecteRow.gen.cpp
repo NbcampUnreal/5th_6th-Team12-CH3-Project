@@ -10,6 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSkillSelecteRow() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_ASkillBase_NoRegister();
@@ -61,7 +62,7 @@ struct Z_Construct_UScriptStruct_FSkillSelecteRow_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_SkillName;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_SkillClass;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Chance;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_SkillExplanation;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillImage;
@@ -73,7 +74,7 @@ struct Z_Construct_UScriptStruct_FSkillSelecteRow_Statics
 	static const UECodeGen_Private::FStructParams StructParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_SkillName = { "SkillName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, SkillName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillName_MetaData), NewProp_SkillName_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_SkillClass = { "SkillClass", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, SkillClass), Z_Construct_UClass_ASkillBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillClass_MetaData), NewProp_SkillClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_SkillClass = { "SkillClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, SkillClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ASkillBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillClass_MetaData), NewProp_SkillClass_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_Chance = { "Chance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, Chance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Chance_MetaData), NewProp_Chance_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_SkillExplanation = { "SkillExplanation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, SkillExplanation), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillExplanation_MetaData), NewProp_SkillExplanation_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewProp_SkillImage = { "SkillImage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FSkillSelecteRow, SkillImage), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillImage_MetaData), NewProp_SkillImage_MetaData) };
@@ -112,10 +113,10 @@ UScriptStruct* Z_Construct_UScriptStruct_FSkillSelecteRow()
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FSkillSelecteRow::StaticStruct, Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewStructOps, TEXT("SkillSelecteRow"), &Z_Registration_Info_UScriptStruct_SkillSelecteRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSkillSelecteRow), 3417336739U) },
+		{ FSkillSelecteRow::StaticStruct, Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewStructOps, TEXT("SkillSelecteRow"), &Z_Registration_Info_UScriptStruct_SkillSelecteRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSkillSelecteRow), 2474614050U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_1577097527(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_2247201598(TEXT("/Script/team_12_desert"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo),
 	nullptr, 0);

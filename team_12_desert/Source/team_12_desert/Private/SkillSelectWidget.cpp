@@ -177,5 +177,5 @@ void USkillSelectWidget::SetIndex3()
 void USkillSelectWidget::SelectSkill(int32 Index)
 {
 	if (!SkillBookClass) return;
-	SkillBookClass->AddSkill(Rowlist[Index]->SkillClass);
+	SkillBookClass->AddSkill(Rowlist[Index]->Skill);
 }

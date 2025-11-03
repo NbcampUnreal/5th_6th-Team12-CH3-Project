@@ -17,7 +17,9 @@ public:
 	FString SkillName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<ASkillBase> SkillClass;
+	TSubclassOf<ASkillBase> SkillClass;
+
+	TObjectPtr<ASkillBase> Skill = SkillClass.GetDefaultObject();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float Chance;
