@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_QuakeSkill_generated_h
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_INCLASS_NO_PURE_DECLS \
+>>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesAQuakeSkill(); \
 	friend struct Z_Construct_UClass_AQuakeSkill_Statics; \
@@ -23,7 +27,11 @@ public: \
 	DECLARE_SERIALIZER(AQuakeSkill)
 
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AQuakeSkill(AQuakeSkill&&); \
@@ -35,12 +43,21 @@ public: \
 	NO_API virtual ~AQuakeSkill();
 
 
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_12_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_INCLASS_NO_PURE_DECLS \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_12_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_INCLASS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h_15_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +65,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AQuakeSkill>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_QuakeSkill_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

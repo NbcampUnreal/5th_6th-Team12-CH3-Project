@@ -15,20 +15,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TEAM_12_DESERT_Monster_generated_h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
 =======
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+>>>>>>> Level-Design
 	DECLARE_FUNCTION(execDropItem); \
 	DECLARE_FUNCTION(execAttack); \
 	DECLARE_FUNCTION(execApplyDamage);
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_10_INCLASS_NO_PURE_DECLS \
 =======
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h_10_INCLASS_NO_PURE_DECLS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_INCLASS_NO_PURE_DECLS \
+>>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesAMonster(); \
 	friend struct Z_Construct_UClass_AMonster_Statics; \
@@ -38,10 +46,14 @@ public: \
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_10_ENHANCED_CONSTRUCTORS \
 =======
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h_10_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMonster(AMonster&&); \
@@ -53,6 +65,7 @@ public: \
 	NO_API virtual ~AMonster();
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_7_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_10_GENERATED_BODY \
@@ -70,6 +83,15 @@ public: \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h_10_INCLASS_NO_PURE_DECLS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h_10_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_7_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_INCLASS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -78,10 +100,14 @@ template<> TEAM_12_DESERT_API UClass* StaticClass<class AMonster>();
 
 #undef CURRENT_FILE_ID
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h
 =======
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Monster_h
 >>>>>>> Monster
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_Monster_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

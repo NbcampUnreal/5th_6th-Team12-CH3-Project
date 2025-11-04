@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TEAM_12_DESERT_MyGameState_generated_h
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execLevelTest);
 
@@ -27,6 +28,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execLevelTest);
+
+
+#define FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
+>>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesAMyGameState(); \
 	friend struct Z_Construct_UClass_AMyGameState_Statics; \
@@ -36,10 +44,14 @@ public: \
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
 =======
 #define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyGameState(AMyGameState&&); \
@@ -51,6 +63,7 @@ public: \
 	NO_API virtual ~AMyGameState();
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameState_h_15_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_GENERATED_BODY \
@@ -68,6 +81,15 @@ public: \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
 	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
 >>>>>>> Monster
+=======
+#define FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_15_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+>>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -76,10 +98,14 @@ template<> TEAM_12_DESERT_API UClass* StaticClass<class AMyGameState>();
 
 #undef CURRENT_FILE_ID
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MyGameState_h
 =======
 #define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h
 >>>>>>> Monster
+=======
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_MyGameState_h
+>>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
