@@ -5,6 +5,10 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/BP_DefaultGameMode.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacters.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Level/PCY_Test.umap",
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset",
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/Ingame.uasset",
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset",
