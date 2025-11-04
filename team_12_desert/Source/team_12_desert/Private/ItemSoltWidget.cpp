@@ -16,7 +16,7 @@ void UItemSoltWidget::SetItem(const  FItemInventoryData* Item)
 {
 	ItemID = Item->ItemName;
 	Quantity = Item->Quantity;
-	if(IsValid(ItemDataTable))
+	if(ItemDataTable != nullptr)
 	{
 		ItemData = GetItemData();
 		if(ItemData)
@@ -29,6 +29,13 @@ void UItemSoltWidget::SetItem(const  FItemInventoryData* Item)
 			{
 				ItemImage->SetBrushFromTexture(ItemData->ItemIcon);
 			}
+		}
+	}
+	else
+	{
+		if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
+		{
+			ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));
 		}
 	}
 }
