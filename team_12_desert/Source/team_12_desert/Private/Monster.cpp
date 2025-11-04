@@ -4,6 +4,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "TimerManager.h"
 #include "MyGameInstance.h"
+#include "MyGameState.h"
 
 AMonster::AMonster()
 {
@@ -73,6 +74,7 @@ void AMonster::ApplyDamage(float DamageAmount)
             });
 
     }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
 }
 
 void AMonster::Attack()

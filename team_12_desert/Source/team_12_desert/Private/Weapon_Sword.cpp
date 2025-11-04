@@ -6,6 +6,7 @@
 #include "Components/BoxComponent.h"
 #include "MonsterAICharacter.h"
 #include "Monster.h"
+#include "MyGameState.h"
 
 AWeapon_Sword::AWeapon_Sword()
 {

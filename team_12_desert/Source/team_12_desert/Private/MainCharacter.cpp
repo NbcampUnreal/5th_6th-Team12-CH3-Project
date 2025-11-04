@@ -5,6 +5,8 @@
 #include "WeaponBase.h"
 #include "SkillBook.h"
 #include "InventoryComponent.h"
+#include "MyGameState.h"
+#include "MyGameInstance.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -44,6 +46,11 @@ void AMainCharacter::BeginPlay()
     // InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
     EquipWeapon();
+
+    Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
+    Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
+
+
 }
 
 void AMainCharacter::EquipWeapon()
@@ -93,6 +100,7 @@ void AMainCharacter::HealHP(int32 HealAmount)
     {
         CurrentHP = MaxHP;
     }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP,CurrentHP);
 }
 
 // 외부에서 스태미나 회복시킬 때
@@ -103,6 +111,7 @@ void AMainCharacter::HealStamina(int32 HealAmount)
     {
         CurrentStamina = MaxStamina;
     }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina,CurrentStamina);
 }
 
 void AMainCharacter::MeleeAttack()
@@ -130,6 +139,8 @@ void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
     {
         CurrentHP = 0;
     }
+
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 void AMainCharacter::IncreaseExperience(int32 Experience)

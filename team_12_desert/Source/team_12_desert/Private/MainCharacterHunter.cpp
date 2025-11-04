@@ -12,6 +12,7 @@
 #include "Animation/AnimMontage.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Animation/AnimInstance.h"
+#include "MyGameState.h"
 
 AMainCharacterHunter::AMainCharacterHunter()
 {
@@ -261,8 +262,9 @@ void AMainCharacterHunter::ManageStamina()
 	if (isDash)
 	{
 		/// 대시 스킬사용중이 아닐때만 -8씩 감소
-		if(!getIsDashSkill())
+		if(!getIsDashSkill()){
 			this->CurrentStamina -= 8;
+		}
 		if (CurrentStamina < 0)
 		{
 			CurrentStamina = 0;
@@ -280,6 +282,8 @@ void AMainCharacterHunter::ManageStamina()
 			CurrentStamina = MaxStamina;
 		}
 	}
+	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina,CurrentStamina);
+
 }
 
 void AMainCharacterHunter::StartStaminaDrainTimer()

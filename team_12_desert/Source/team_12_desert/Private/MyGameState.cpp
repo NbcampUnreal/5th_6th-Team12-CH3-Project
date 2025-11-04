@@ -38,6 +38,8 @@ void AMyGameState::Tick(float DeltaTime)
 		UpdateHitMarkHud(DeltaTime);
 		//게임 버티기 시간설정
 	}
+
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) { Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); }
 }
 
 void AMyGameState::StartLevel()
@@ -93,7 +95,7 @@ void AMyGameState::UpdateHitMarkHud(float dt)
 	HitMarker->SetRenderOpacity(HitMarkOpa);
 
 	const float FadeDuration = 0.5f;
-	const float FadeSpeed = 1.0f / FadeDuration; // 2.0f per second
+	const float FadeSpeed = 1.0f / FadeDuration;
 
 	HitMarkOpa -= dt * FadeSpeed;
 	HitMarkOpa = FMath::Clamp(HitMarkOpa, 0.0f, 1.0f);

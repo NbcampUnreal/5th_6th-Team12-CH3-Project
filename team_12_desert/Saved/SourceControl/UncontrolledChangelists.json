@@ -5,50 +5,8 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-<<<<<<< HEAD
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/BP_DefaultGameMode.uasset",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacters.uasset",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Level/PCY_Test.umap",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/Ingame.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/Prologue.umap",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/aim.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/hitmark.uasset",
-<<<<<<< HEAD
-=======
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Level/PCY_Test.umap",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/BP_DefaultGameMode.uasset",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_NewMainCharacter.uasset",
-				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
->>>>>>> main
-=======
->>>>>>> 50bf617 (히트박스 추가)
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/DT_SkillData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/BP_DefMultiplySkill.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/BP_InfiniteSpeedSkill.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_SkillSelectWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SkillBook.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/BP_ItemRandomBox.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/DT_ItemDataTable.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/DT_InventoryData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_ItemSoltWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/WBP_InventoryWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_ActiveItemBase.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Skill/WBP_SkillSelectWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Skill/DT_SkillData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Skill/BP_SkillBook.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/BP_ActiveItemBase.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/DT_InventoryData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_ItemSoltWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_InventoryWidget.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/ItemDataTable.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/DT_ItemData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/BP_SelectSkill.uasset"
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/Ingame.uasset"
 			]
 		}
 	]

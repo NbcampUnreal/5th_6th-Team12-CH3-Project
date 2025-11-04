@@ -9,6 +9,7 @@
 #include "Components/BoxComponent.h"
 #include "Monster.h"
 #include "WeaponBase.h"
+#include "MyGameState.h"
 
 // Sets default values
 ABulletBase::ABulletBase()
@@ -76,6 +77,7 @@ void ABulletBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 		UE_LOG(LogTemp, Warning, TEXT("Weapon Owner: %s, Damage: %d"), *GunOwner->GetName(), damage);
 
 		HitMonster->ApplyDamage(damage);
+		Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
 	}
 
 	this->Destroy();

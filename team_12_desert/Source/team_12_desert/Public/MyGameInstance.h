@@ -67,6 +67,8 @@ private:
 	int32 CharacterDamage;
 	int32 CharacterArmor;
 	int32 Exp;
+	float MulDamage;
+	float MulArmor;
 
 	bool started = false;
 };

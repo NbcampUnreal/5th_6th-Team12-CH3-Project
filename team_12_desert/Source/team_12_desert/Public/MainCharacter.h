@@ -38,6 +38,14 @@ public:
 	int32 getRangeAttackCount() const { return RangeAttackCount; }
 	int32 getKillCount() const { return KillCount; }
 
+	void setCurrentHP(int val) { CurrentHP = val; }
+	void setMaxHP(int val) { MaxHP = val; }
+	void setCurrentStamina(int val) { CurrentStamina = val; }
+	void setMaxStamina(int val) { MaxStamina = val; }
+	void setCurrentLevel(int val) { CurrentLevel = val; }
+	void setCurrentExperience(int val) { CurrentExperience = val; };
+
+
 	TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
 
 	bool getIsDashSkill() const { return bIsDashSkill; }

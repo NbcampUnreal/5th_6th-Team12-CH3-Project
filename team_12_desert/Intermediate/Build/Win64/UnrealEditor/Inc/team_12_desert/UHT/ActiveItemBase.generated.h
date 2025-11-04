@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_ActiveItemBase_generated_h
 
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAActiveItemBase(); \
 	friend struct Z_Construct_UClass_AActiveItemBase_Statics; \
@@ -24,7 +24,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AActiveItemBase*>(this); }
 
 
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AActiveItemBase(AActiveItemBase&&); \
@@ -36,12 +36,12 @@ public: \
 	NO_API virtual ~AActiveItemBase();
 
 
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_11_PROLOG
-#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_GENERATED_BODY \
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_11_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -49,7 +49,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AActiveItemBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h
+#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
