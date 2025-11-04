@@ -26,7 +26,8 @@ void AActiveItemBase::ActivateItem(TObjectPtr<AActor> Actor)
 {
     if(Actor->ActorHasTag(TEXT("Player")))
     {
-        if (AMainCharacter* MainCharacter = Cast<AMainCharacter>(Actor))
+        MainCharacter = Cast<AMainCharacter>(Actor);
+        if (MainCharacter)
         {
             InventoryComponent = MainCharacter->getInventoryComponent();
             if (InventoryComponent)
@@ -40,5 +41,10 @@ void AActiveItemBase::ActivateItem(TObjectPtr<AActor> Actor)
 
 void AActiveItemBase::DeactivateItem(TObjectPtr<AActor> Actor)
 {
+}
+
+void AActiveItemBase::Active()
+{
+
 }
 

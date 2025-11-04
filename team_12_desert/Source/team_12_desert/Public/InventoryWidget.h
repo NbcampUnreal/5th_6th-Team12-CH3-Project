@@ -16,7 +16,6 @@ class TEAM_12_DESERT_API UInventoryWidget : public UUserWidget
 
 	virtual void NativeOnInitialized() override;
 
-	TArray<struct FItemInventoryData*> Items;
 	void UpdateInventory();
 public:
 

@@ -18,11 +18,11 @@ void UInventoryWidget::NativeOnInitialized()
 
 void UInventoryWidget::UpdateInventory()
 {
-	Items = InventoryComponent->getItems();
+	TArray<FItemInventory> Items = InventoryComponent->getItems();
 	if (TObjectPtr<UWrapBox> Inven = Cast<UWrapBox>(GetWidgetFromName(TEXT("InventoryCanvas"))))
 	{
 		Inven->ClearChildren();
-		for (const FItemInventoryData* Item : Items)
+		for (const FItemInventory Item : Items)
 		{
 			UItemSoltWidget* ItemSlot = CreateWidget<UItemSoltWidget>(Inven);
 			if (ItemSlot)

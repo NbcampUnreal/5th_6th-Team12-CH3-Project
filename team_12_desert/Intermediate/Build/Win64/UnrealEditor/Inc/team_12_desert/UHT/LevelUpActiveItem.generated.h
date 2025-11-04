@@ -24,8 +24,6 @@ public: \
 
 
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_LevelUpActiveItem_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ALevelUpActiveItem(); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ALevelUpActiveItem(ALevelUpActiveItem&&); \

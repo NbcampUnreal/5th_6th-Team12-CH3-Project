@@ -19,27 +19,20 @@ UInventoryComponent::UInventoryComponent()
 void UInventoryComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	Items.SetNum(InventorySize);
+	FItemInventory emptyItem;
+	Items.Init(emptyItem, InventorySize);
 }
 
 void UInventoryComponent::AddItem(FName ItemID)
 {
 	if (ItemID == NAME_None) return;
 
-	TArray<FItemInventoryData*> AllRows;
-	static const FString ContextString(TEXT("Item Data Table Context"));
-	InvenDataTable->GetAllRows(ContextString, AllRows);
-
-	if (AllRows.IsEmpty()) return;
-	
-
 	// Items배열을 처음부터 끝까지 돕니다.
 	for (int32 i = 0; i < Items.Num(); i++)
 	{
-		if (Items[i]->ItemName == ItemID)
+		if (Items[i].ItemName == ItemID)
 		{
-			Items[i]->Quantity += 1;
+			Items[i].Quantity += 1;
 			return;
 		}
 	}
@@ -47,14 +40,12 @@ void UInventoryComponent::AddItem(FName ItemID)
 	for (int32 i = 0; i < Items.Num(); i++)
 	{
 		// 비어있는 칸이 있는지 찾습니다.
-		if (Items[i] == nullptr)
+		if (Items[i].ItemName == NAME_None)
 		{
-			// 비어있는 칸에 주운 ItemID, Quantity를 대입합니다.
-			if(FItemInventoryData* NewItem = InvenDataTable->FindRow<FItemInventoryData>(ItemID, TEXT("")))
-			{
-				Items[i] = NewItem;
-				Items[i]->Quantity = 1;
-			}
+			FItemInventory temp;
+			temp.ItemName = ItemID;
+			temp.Quantity = 1;
+			Items.Insert(temp, i);
 
 			if (GEngine)
 			{
@@ -70,3 +61,4 @@ void UInventoryComponent::AddItem(FName ItemID)
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("인벤토리가 모두 찼습니다!"));
 	}
 }
+

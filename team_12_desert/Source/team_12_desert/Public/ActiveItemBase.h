@@ -27,15 +27,16 @@ class TEAM_12_DESERT_API AActiveItemBase : public AActor , public IIItemInterfac
 		UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex
 	) override;
-	FName ItemID;
+protected:
 	class UInventoryComponent* InventoryComponent;
-
+	FName ItemID;
+	class AMainCharacter* MainCharacter;
 public:	
 	AActiveItemBase();
 	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
 	virtual void DeactivateItem(TObjectPtr<AActor> Actor) override;
 	// Sets default values for this actor's properties
-
+	virtual void Active(); 
 	FName GetItemID() const { return ItemID; }
 
 };

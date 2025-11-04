@@ -13,5 +13,8 @@ UCLASS()
 class TEAM_12_DESERT_API ALevelUpActiveItem : public AActiveItemBase
 {
 	GENERATED_BODY()
-	
+public:
+	ALevelUpActiveItem();
+	virtual void ActivateItem(TObjectPtr<AActor> Actor) override;
+	virtual void Active()override;
 };

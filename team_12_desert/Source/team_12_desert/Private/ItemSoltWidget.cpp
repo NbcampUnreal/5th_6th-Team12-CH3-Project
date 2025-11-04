@@ -12,10 +12,10 @@ void UItemSoltWidget::NativeOnInitialized()
 	Super::NativeOnInitialized();
 }
 
-void UItemSoltWidget::SetItem(const  FItemInventoryData* Item)
+void UItemSoltWidget::SetItem(const  FItemInventory& Item)
 {
-	ItemID = Item->ItemName;
-	Quantity = Item->Quantity;
+	ItemID = Item.ItemName;
+	Quantity = Item.Quantity;
 	if(ItemDataTable != nullptr)
 	{
 		ItemData = GetItemData();

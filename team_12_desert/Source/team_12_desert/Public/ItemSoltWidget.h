@@ -16,14 +16,14 @@ class TEAM_12_DESERT_API UItemSoltWidget : public UUserWidget
 	virtual void NativeOnInitialized() override;
 public:
 
-	void SetItem(const struct FItemInventoryData* Item);
+	void SetItem(const struct FItemInventory& Item);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Inventory|Data")
 	TObjectPtr<UDataTable> ItemDataTable;
 
 private:
 
-	FItemInventoryData* GetItemData() const;
+	struct FItemInventoryData* GetItemData() const;
 
 	FName ItemID;
 	int32 Quantity;

@@ -7,7 +7,15 @@
 #include "Engine/DataTable.h"
 #include "InventoryComponent.generated.h"
 
+USTRUCT(BlueprintType)
+struct FItemInventory : public FTableRowBase
+{
+	GENERATED_BODY()
+public:
+	FName ItemName;
 
+	int32 Quantity;
+};
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TEAM_12_DESERT_API UInventoryComponent : public UActorComponent
 {
@@ -21,19 +29,18 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	TArray<struct FItemInventoryData*> Items; // 아이템슬롯을 TArray배열로 만들어서 여러 슬롯을 가진 아이템 배열 완성
+	TArray<FItemInventory> Items; // 아이템슬롯을 TArray배열로 만들어서 여러 슬롯을 가진 아이템 배열 완성
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UDataTable> InvenDataTable;
 
-	TArray<FItemInventoryData*> getItems() const { return Items; }
+	TArray<FItemInventory> getItems() const { return Items; }
 
-
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
 	int32 InventorySize = 20;
 
 	UFUNCTION(BlueprintCallable, Category = "Inventory")
 	void AddItem(FName ItemID); // 아이템 줍는 함수, 위젯 블루프린트에서 호출(BlueprintCallable)
-
 };

@@ -74,7 +74,6 @@ template<> TEAM_12_DESERT_API UClass* StaticClass<ALevelUpActiveItem>()
 {
 	return ALevelUpActiveItem::StaticClass();
 }
-ALevelUpActiveItem::ALevelUpActiveItem() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(ALevelUpActiveItem);
 ALevelUpActiveItem::~ALevelUpActiveItem() {}
 // End Class ALevelUpActiveItem

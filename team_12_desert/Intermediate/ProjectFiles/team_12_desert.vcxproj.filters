@@ -51,6 +51,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\AItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ArmorActiveItem.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\BulletBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -79,6 +82,9 @@
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\HealStoneStatue.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\Hot6ActiveItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\IItemInterface.cpp">
@@ -186,6 +192,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\AItemBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ArmorActiveItem.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\BulletBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -214,6 +223,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\HealStoneStatue.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\Hot6ActiveItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\IItemInterface.h">

@@ -12,10 +12,64 @@ void EmptyLinkFunctionForGeneratedCodeInventoryComponent() {}
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
+ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_UInventoryComponent();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
+TEAM_12_DESERT_API UScriptStruct* Z_Construct_UScriptStruct_FItemInventory();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
+
+// Begin ScriptStruct FItemInventory
+static_assert(std::is_polymorphic<FItemInventory>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FItemInventory cannot be polymorphic unless super FTableRowBase is polymorphic");
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_ItemInventory;
+class UScriptStruct* FItemInventory::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_ItemInventory.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_ItemInventory.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FItemInventory, (UObject*)Z_Construct_UPackage__Script_team_12_desert(), TEXT("ItemInventory"));
+	}
+	return Z_Registration_Info_UScriptStruct_ItemInventory.OuterSingleton;
+}
+template<> TEAM_12_DESERT_API UScriptStruct* StaticStruct<FItemInventory>()
+{
+	return FItemInventory::StaticStruct();
+}
+struct Z_Construct_UScriptStruct_FItemInventory_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/InventoryComponent.h" },
+	};
+#endif // WITH_METADATA
+	static void* NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FItemInventory>();
+	}
+	static const UECodeGen_Private::FStructParams StructParams;
+};
+const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FItemInventory_Statics::StructParams = {
+	(UObject* (*)())Z_Construct_UPackage__Script_team_12_desert,
+	Z_Construct_UScriptStruct_FTableRowBase,
+	&NewStructOps,
+	"ItemInventory",
+	nullptr,
+	0,
+	sizeof(FItemInventory),
+	alignof(FItemInventory),
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	EStructFlags(0x00000001),
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FItemInventory_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FItemInventory_Statics::Struct_MetaDataParams)
+};
+UScriptStruct* Z_Construct_UScriptStruct_FItemInventory()
+{
+	if (!Z_Registration_Info_UScriptStruct_ItemInventory.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_ItemInventory.InnerSingleton, Z_Construct_UScriptStruct_FItemInventory_Statics::StructParams);
+	}
+	return Z_Registration_Info_UScriptStruct_ItemInventory.InnerSingleton;
+}
+// End ScriptStruct FItemInventory
 
 // Begin Class UInventoryComponent Function AddItem
 struct Z_Construct_UFunction_UInventoryComponent_AddItem_Statics
@@ -151,13 +205,16 @@ UInventoryComponent::~UInventoryComponent() {}
 // Begin Registration
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics
 {
+	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
+		{ FItemInventory::StaticStruct, Z_Construct_UScriptStruct_FItemInventory_Statics::NewStructOps, TEXT("ItemInventory"), &Z_Registration_Info_UScriptStruct_ItemInventory, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemInventory), 104389310U) },
+	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UInventoryComponent, UInventoryComponent::StaticClass, TEXT("UInventoryComponent"), &Z_Registration_Info_UClass_UInventoryComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventoryComponent), 1942089209U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_3745690243(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_3071764476(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo),
-	nullptr, 0,
+	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
