@@ -17,13 +17,22 @@ void EmptyLinkFunctionForGeneratedCodeteam_12_desert_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
+<<<<<<< HEAD
 				0xD9336D1E,
 				0xA1F26B97,
+=======
+				0x1DEC500C,
+				0xCEB2B050,
+>>>>>>> Monster
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_team_12_desert.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_team_12_desert.OuterSingleton;
 	}
+<<<<<<< HEAD
 	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD9336D1E, 0xA1F26B97));
+=======
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_team_12_desert(Z_Construct_UPackage__Script_team_12_desert, TEXT("/Script/team_12_desert"), Z_Registration_Info_UPackage__Script_team_12_desert, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x1DEC500C, 0xCEB2B050));
+>>>>>>> Monster
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
