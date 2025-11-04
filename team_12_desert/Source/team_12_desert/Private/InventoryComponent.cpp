@@ -32,7 +32,7 @@ void UInventoryComponent::AddItem(FName ItemID)
 	InvenDataTable->GetAllRows(ContextString, AllRows);
 
 	if (AllRows.IsEmpty()) return;
-
+	
 
 	// Items배열을 처음부터 끝까지 돕니다.
 	for (int32 i = 0; i < Items.Num(); i++)

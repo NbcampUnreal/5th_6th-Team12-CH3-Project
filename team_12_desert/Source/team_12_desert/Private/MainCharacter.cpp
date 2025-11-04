@@ -26,6 +26,8 @@ AMainCharacter::AMainCharacter() :
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
+    InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+
     // 25.10.27. mpyi _ 찬영님 요청으로 태그 추가(대소문자 주의)
     Tags.Add(FName("Player"));
 }
@@ -40,7 +42,6 @@ void AMainCharacter::BeginPlay()
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
 
-    InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
     EquipWeapon();
 }

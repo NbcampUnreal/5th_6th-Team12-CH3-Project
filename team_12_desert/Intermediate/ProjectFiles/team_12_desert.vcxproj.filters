@@ -105,6 +105,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\ItemSpawnRow.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\LevelUpActiveItem.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\MainCharacter.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -235,6 +238,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ItemSpawnRow.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\LevelUpActiveItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\MainCharacter.h">

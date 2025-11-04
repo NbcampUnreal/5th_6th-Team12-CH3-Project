@@ -2,6 +2,15 @@
 
 
 #include "ActiveItemBase.h"
+#include "InventoryComponent.h"
+#include "MainCharacter.h"
+
+// Sets default values
+AActiveItemBase::AActiveItemBase()
+{
+    ItemID = "DefaultItem";
+	InventoryComponent = nullptr;
+}
 
 void AActiveItemBase::OnItemOverlap(UPrimitiveComponent* OverlapPendComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -15,17 +24,21 @@ void AActiveItemBase::OnItemEndOverlap(UPrimitiveComponent* OverlapPendComp, AAc
 
 void AActiveItemBase::ActivateItem(TObjectPtr<AActor> Actor)
 {
+    if(Actor->ActorHasTag(TEXT("Player")))
+    {
+        if (AMainCharacter* MainCharacter = Cast<AMainCharacter>(Actor))
+        {
+            InventoryComponent = MainCharacter->getInventoryComponent();
+            if (InventoryComponent)
+            {
+                InventoryComponent->AddItem(ItemID);
+                Destroy();
+            }
+        }
+	}
 }
 
 void AActiveItemBase::DeactivateItem(TObjectPtr<AActor> Actor)
 {
 }
-
-// Sets default values
-AActiveItemBase::AActiveItemBase()
-{
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-
-}
-
 

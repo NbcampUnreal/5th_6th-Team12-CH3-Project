@@ -31,4 +31,5 @@ public:
 
 	int32 Quantity;
 
+
 };

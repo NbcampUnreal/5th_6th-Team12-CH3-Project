@@ -39,6 +39,7 @@ public:
 	int32 getKillCount() const { return KillCount; }
 
 	TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
+	TObjectPtr<class UInventoryComponent> getInventoryComponent() const { return InventoryComponent; }
 
 	bool getIsDashSkill() const { return bIsDashSkill; }
 	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
@@ -116,7 +117,7 @@ protected:
 	TSubclassOf<class ASkillBook> mySkillBook;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class ASkillBook> mySkillBookActor;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInventoryComponent> InventoryComponent;
 
 
