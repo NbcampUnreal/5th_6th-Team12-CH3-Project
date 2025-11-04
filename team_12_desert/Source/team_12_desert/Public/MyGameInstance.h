@@ -52,7 +52,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TArray<TSubclassOf<UUserWidget>> HudWidgetClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TArray<UUserWidget*> HUDWidgetInstance;
 
 private:

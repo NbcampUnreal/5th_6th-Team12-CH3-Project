@@ -45,7 +45,7 @@ void UMyGameInstance::PlayerStatLoad()
 		AMainCharacterHunter* tempChar = Cast<AMainCharacterHunter>(PC->GetPawn());
 		if (tempChar)
 		{
-		/*	tempChar->setCurrentHP(Hp);
+			/*tempChar->setCurrentHP(Hp);
 			tempChar->setMaxHP(MaxHp);
 			tempChar->setCurrentStamina(Stamina);
 			tempChar->setMaxStamina(MaxStamina);
@@ -61,7 +61,7 @@ void UMyGameInstance::PlayerStatLoad()
 void UMyGameInstance::TurnOffHud(HudPreset off)
 {
 	//HUDWidgetInstance = CreateWidget<UUserWidget>(this, HudWidgetClass[off]);
-	if (HUDWidgetInstance[off]) {
+	if (HUDWidgetInstance[off]&&HUDWidgetInstance[off]) {
 		HUDWidgetInstance[off]->RemoveFromViewport();
 	}
 }
@@ -123,6 +123,12 @@ void UMyGameInstance::NextLevel()
 	PlayerStatSave();
 	UGameplayStatics::OpenLevel(GetWorld(), LevelMapNames[CurrentLevelIndex]);
 
+	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
+		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
+			HUDWidgetInstance[i]->RemoveFromViewport();			
+		}
+	}
+	HUDWidgetInstance.Empty();
 }
 
 void UMyGameInstance::TestIns()

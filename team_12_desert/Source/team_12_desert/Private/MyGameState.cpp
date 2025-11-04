@@ -9,6 +9,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Components/TextBlock.h"
 #include "Components/ProgressBar.h"
+#include "Components/Image.h"
 #include "Blueprint/UserWidget.h"
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
@@ -25,25 +26,17 @@ void AMyGameState::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//Cast<UMyGameInstance>(GetGameInstance())->SetLevelMap(LevelMapNames);
-
 	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
 	UpdateMonsterCountHud();
-	//플레이어 정보 로딩 함수호출
-	//Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
-
 }
+
 void AMyGameState::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//다음레벨조건
-	if (MonsterCount == 0) {
-		//Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
-	}
-
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
-		Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
+	if (Pause) {
+		UpdateHitMarkHud(DeltaTime);
+		//게임 버티기 시간설정
 	}
 }
 
@@ -65,26 +58,46 @@ void AMyGameState::UpdateMonsterCountHud() {
 
 void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
 {
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Stamina = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
-
-			Stamina->SetPercent(CurrentStamina / MaxStamina);
-
+	if (Staminabar == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				Staminabar = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
+			}
 		}
 	}
+
+	Staminabar->SetPercent(CurrentStamina / MaxStamina);
 }
 
 void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
 {
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Hp = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
-
-			Hp->SetPercent(CurrentHp / MaxHp);
-
+	if (Hpbar == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				Hpbar = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
+			}
 		}
 	}
+	Hpbar->SetPercent(CurrentHp / MaxHp);
+}
+
+void AMyGameState::UpdateHitMarkHud(float dt)
+{
+	if (HitMarker == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				HitMarker = Cast<UImage>(HUDWidget->GetWidgetFromName(TEXT("Hitmark")));
+			}
+		}
+	}
+	HitMarker->SetRenderOpacity(HitMarkOpa);
+
+	const float FadeDuration = 0.5f;
+	const float FadeSpeed = 1.0f / FadeDuration; // 2.0f per second
+
+	HitMarkOpa -= dt * FadeSpeed;
+	HitMarkOpa = FMath::Clamp(HitMarkOpa, 0.0f, 1.0f);
+	
 }
 
 

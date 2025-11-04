@@ -11,6 +11,8 @@
  */
 
 class MonsterAICharactor;
+class UProgressBar;
+class UImage;
 
 UCLASS()
 class TEAM_12_DESERT_API AMyGameState : public AGameState
@@ -27,6 +29,8 @@ public:
 	void UpdateMonsterCountHud();
 	void UpdateStaminaHud(float MaxStamina, float CurrentStamina);
 	void UpdateHpHud(float MaxHp, float CurrentHp);
+	void UpdateHitMarkHud(float DeltaTime);
+	void ResetHitMark() { HitMarkOpa = 1; }
 
 protected:
 
@@ -42,8 +46,15 @@ protected:
 
 	TArray<FName> LevelMapNames;
 
-
 	int MonsterCount = 0;
 
+	//UI
+	UProgressBar* Hpbar = nullptr;
+	UProgressBar* Staminabar = nullptr;
+	UImage* HitMarker = nullptr;
+
+	float HitMarkOpa = 0.f;
+
+	bool Pause = true;
 
 };
