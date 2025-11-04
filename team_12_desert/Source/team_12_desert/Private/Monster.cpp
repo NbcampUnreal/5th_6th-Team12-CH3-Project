@@ -53,6 +53,8 @@ void AMonster::ApplyDamage(float DamageAmount)
 
     if (CurrentHealth <= 0.f)
     {
+        //Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::SkillUp);
+        //Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1);
         // GameInstance에서 몬스터 수 감소
         if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance()))
         {
