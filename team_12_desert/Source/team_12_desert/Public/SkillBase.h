@@ -28,11 +28,12 @@ public:
 	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location);
 	virtual void AttachSkill(TObjectPtr<class AMainCharacter> Character);
 	virtual void DetachSkill(TObjectPtr<class AMainCharacter> Character);
+	FName GetSkillName() const;
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
-	FString SkillName;
+	FName SkillName;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
-	FString SkillExplanation;
+	FName SkillExplanation;
 
 	TObjectPtr<class AMainCharacter> MainCharacter;
 

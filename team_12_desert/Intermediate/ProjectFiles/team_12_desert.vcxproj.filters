@@ -45,6 +45,9 @@
     <Filter Include="Source\team_12_desert\Private">
       <UniqueIdentifier>{5C0273D8-231C-32A1-9452-B5D6D019744D}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ActiveItemBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\AItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -84,7 +87,19 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\InfiniteSpeedSkill.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\InventoryComponent.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\InventoryWidget.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ItemInventoryData.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\ItemRandomBox.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ItemSoltWidget.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\ItemSpawnRow.cpp">
@@ -120,13 +135,13 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\QuakeSkill.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\SelectSkill.cpp">
-      <Filter>Source\team_12_desert\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillSelecteRow.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillSelectWidget.cpp">
@@ -162,6 +177,9 @@
     <Filter Include="Source\team_12_desert\Public">
       <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ActiveItemBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\AItemBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -201,7 +219,19 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\InfiniteSpeedSkill.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\InventoryComponent.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\InventoryWidget.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ItemInventoryData.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ItemRandomBox.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ItemSoltWidget.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ItemSpawnRow.h">
@@ -237,13 +267,13 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\QuakeSkill.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\SelectSkill.h">
-      <Filter>Source\team_12_desert\Public</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillSelecteRow.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillSelectWidget.h">

@@ -59,8 +59,8 @@ struct Z_Construct_UClass_ASkillBase_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scene;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_NiagaraEffect;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Delay;
-	static const UECodeGen_Private::FStrPropertyParams NewProp_SkillName;
-	static const UECodeGen_Private::FStrPropertyParams NewProp_SkillExplanation;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_SkillName;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_SkillExplanation;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -71,8 +71,8 @@ struct Z_Construct_UClass_ASkillBase_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_Scene = { "Scene", nullptr, (EPropertyFlags)0x011400000008000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, Scene), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scene_MetaData), NewProp_Scene_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_NiagaraEffect = { "NiagaraEffect", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, NiagaraEffect), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NiagaraEffect_MetaData), NewProp_NiagaraEffect_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_Delay = { "Delay", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, Delay), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Delay_MetaData), NewProp_Delay_MetaData) };
-const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillName = { "SkillName", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, SkillName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillName_MetaData), NewProp_SkillName_MetaData) };
-const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillExplanation = { "SkillExplanation", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, SkillExplanation), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillExplanation_MetaData), NewProp_SkillExplanation_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillName = { "SkillName", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, SkillName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillName_MetaData), NewProp_SkillName_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillExplanation = { "SkillExplanation", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASkillBase, SkillExplanation), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillExplanation_MetaData), NewProp_SkillExplanation_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASkillBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_Scene,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_NiagaraEffect,
@@ -118,14 +118,14 @@ ASkillBase::~ASkillBase() {}
 // End Class ASkillBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASkillBase, ASkillBase::StaticClass, TEXT("ASkillBase"), &Z_Registration_Info_UClass_ASkillBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASkillBase), 2033484648U) },
+		{ Z_Construct_UClass_ASkillBase, ASkillBase::StaticClass, TEXT("ASkillBase"), &Z_Registration_Info_UClass_ASkillBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASkillBase), 3124899182U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_276395714(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBase_h_745857675(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
