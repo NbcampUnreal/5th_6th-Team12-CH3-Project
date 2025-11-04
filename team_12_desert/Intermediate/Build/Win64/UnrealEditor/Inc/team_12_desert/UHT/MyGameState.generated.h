@@ -14,11 +14,19 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MyGameState_generated_h
 
+<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execLevelTest);
 
 
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execLevelTest);
+
+
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
+>>>>>>> main
 private: \
 	static void StaticRegisterNativesAMyGameState(); \
 	friend struct Z_Construct_UClass_AMyGameState_Statics; \
@@ -27,7 +35,11 @@ public: \
 	DECLARE_SERIALIZER(AMyGameState)
 
 
+<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+>>>>>>> main
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyGameState(AMyGameState&&); \
@@ -39,6 +51,7 @@ public: \
 	NO_API virtual ~AMyGameState();
 
 
+<<<<<<< HEAD
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_17_PROLOG
 #define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -46,6 +59,15 @@ public: \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_INCLASS_NO_PURE_DECLS \
 	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_20_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_15_PROLOG
+#define FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+>>>>>>> main
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

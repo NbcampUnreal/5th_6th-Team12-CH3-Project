@@ -40,7 +40,11 @@ void AMainCharacter::BeginPlay()
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
 
+<<<<<<< HEAD
     // 런타임오류로 인해 임시 주석(mpyi)
+=======
+    // 런타임 오류로 임시 주석(mpyi)
+>>>>>>> main
     // InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
     EquipWeapon();
