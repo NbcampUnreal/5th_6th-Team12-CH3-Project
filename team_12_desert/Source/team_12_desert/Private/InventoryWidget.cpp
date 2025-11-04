@@ -22,7 +22,7 @@ void UInventoryWidget::UpdateInventory()
 	if (TObjectPtr<UWrapBox> Inven = Cast<UWrapBox>(GetWidgetFromName(TEXT("InventoryCanvas"))))
 	{
 		Inven->ClearChildren();
-		for (const TObjectPtr<FItemInventoryData> Item : Items)
+		for (const FItemInventoryData* Item : Items)
 		{
 			UItemSoltWidget* ItemSlot = CreateWidget<UItemSoltWidget>(Inven);
 			if (ItemSlot)

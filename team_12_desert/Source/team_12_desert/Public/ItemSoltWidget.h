@@ -23,10 +23,10 @@ public:
 
 private:
 
-	TObjectPtr<struct FItemInventoryData> GetItemData() const;
+	FItemInventoryData* GetItemData() const;
 
 	FName ItemID;
 	int32 Quantity;
 
-	TObjectPtr <struct FItemInventoryData> ItemData;
+	FItemInventoryData* ItemData;
 };

@@ -33,7 +33,8 @@ void UItemSoltWidget::SetItem(const  FItemInventoryData* Item)
 	}
 }
 
-TObjectPtr<FItemInventoryData> UItemSoltWidget::GetItemData() const
+FItemInventoryData* UItemSoltWidget::GetItemData() const
 {
+	if (!IsValid(ItemDataTable)) return nullptr;
 	return ItemDataTable->FindRow<FItemInventoryData>(ItemID, TEXT(""));
 }
