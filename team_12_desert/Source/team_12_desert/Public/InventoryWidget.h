@@ -25,6 +25,7 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "InventoryComponent")
 	TObjectPtr<UInventoryComponent> InventoryComponent;
 
-	class UItemSoltWidget* ItemSoltWidgetClass;
+	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
+	TSubclassOf<class UItemSoltWidget> ItemSlotWidgetClass;
 
 };

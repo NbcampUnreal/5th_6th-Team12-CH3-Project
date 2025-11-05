@@ -5,34 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-<<<<<<< HEAD
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_HealItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Test.umap",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_StaminaItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_StrUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_ExpUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_DefUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/BP_Hot6ActiveItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/MyActiveItemBase.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/BP_ArmorActiveItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/DT_InventoryData.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/Hot6.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/Armor.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/LevelUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/BP_LevelUpActiveItem.uasset",
-				"C:/Program Files/Epic Games/UE_5.5/Engine/Content/VREditor/TransformGizmo/TransformGizmoMaterial.uasset",
-				"C:/Program Files/Epic Games/UE_5.5/Engine/Content/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/HealItem.uasset"
-=======
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/BP_Spawner.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_DarkMonster.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset"
->>>>>>> main
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Audio/Collapse01.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Level.umap",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_InventoryWidget.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_ItemSoltWidget.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCT_Level.umap"
 			]
 		}
 	]

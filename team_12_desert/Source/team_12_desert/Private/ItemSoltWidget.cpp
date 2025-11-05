@@ -10,18 +10,13 @@
 void UItemSoltWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
-}
 
-void UItemSoltWidget::SetItem(const  FItemInventory& Item)
-{
-	ItemID = Item.ItemName;
-	Quantity = Item.Quantity;
-	if(ItemDataTable != nullptr)
+	if (ItemDataTable != nullptr)
 	{
 		ItemData = GetItemData();
-		if(ItemData)
+		if (ItemData)
 		{
-			if(TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
+			if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
 			{
 				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT("%d"), Quantity)));
 			}
@@ -38,6 +33,12 @@ void UItemSoltWidget::SetItem(const  FItemInventory& Item)
 			ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));
 		}
 	}
+}
+
+void UItemSoltWidget::SetItem(const  FItemInventory& Item)
+{
+	ItemID = Item.ItemName;
+	Quantity = Item.Quantity;
 }
 
 FItemInventoryData* UItemSoltWidget::GetItemData() const
