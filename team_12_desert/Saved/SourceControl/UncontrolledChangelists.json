@@ -5,6 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_HealItem.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Test.umap",
@@ -24,6 +25,14 @@
 				"C:/Program Files/Epic Games/UE_5.5/Engine/Content/VREditor/TransformGizmo/TransformGizmoMaterial.uasset",
 				"C:/Program Files/Epic Games/UE_5.5/Engine/Content/VREditor/TransformGizmo/TranslucentTransformGizmoMaterial.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/HealItem.uasset"
+=======
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/BP_Spawner.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_DarkMonster.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset"
+>>>>>>> main
 			]
 		}
 	]

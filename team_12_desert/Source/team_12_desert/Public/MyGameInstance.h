@@ -15,6 +15,7 @@ enum HudPreset
 	MainMenu,
 	InGame,
 	SkillUp,
+	Inventory,
 };
 UCLASS()
 class TEAM_12_DESERT_API UMyGameInstance : public UGameInstance
@@ -36,6 +37,7 @@ public:
 	void PlayerHUDApply();
 	void NextLevel();
 	void TestIns();
+	float GetLevelTime();
 
 	int32 GetCurrentLevelIndex() { return CurrentLevelIndex; }
 	void AddCurrentLevelIndex(int a) { CurrentLevelIndex += a; }
@@ -47,12 +49,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
 	TArray<FName> LevelMapNames;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
+	TArray<float> LevelTime;
+
 	//void SetLevelMap(TArray<FName> name);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TArray<TSubclassOf<UUserWidget>> HudWidgetClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TArray<UUserWidget*> HUDWidgetInstance;
 
 private:
@@ -68,6 +72,8 @@ private:
 	int32 CharacterDamage;
 	int32 CharacterArmor;
 	int32 Exp;
+	float MulDamage;
+	float MulArmor;
 
 	bool started = false;
 };

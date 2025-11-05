@@ -20,18 +20,38 @@ ASpawner::ASpawner()
 	SpawningBox = CreateDefaultSubobject<UBoxComponent>(TEXT("SpawningEnemy"));
 	SpawningBox->SetupAttachment(Scene);
 
+
 }
+
+void ASpawner::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (!boss) {
+		SpawnEnemy();
+	}
+}
+
+
 
 void ASpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (Infinity) {
+	if (!boss) {
 		time += DeltaTime;
+		UE_LOG(LogTemp, Warning, TEXT("%f"),time);
 
 		if (time >= InfinityRespawnTime) {
 			SpawnEnemy();
 			time = 0;
+		}
+	}
+
+	if (boss && Cast<AMyGameState>(GetWorld()->GetGameState())->IsFinsh()) {
+		if (!bossSpawnd) {
+			SpawnEnemy();
+			bossSpawnd = true;
 		}
 	}
 }
@@ -54,6 +74,7 @@ void ASpawner::SpawnEnemy()
 {
 	//if (!EnemyClass) return;
 
+
 	TArray<FMonsterSpawnRow*> AllRows;
 	static const FString ContextString(TEXT("MonsterSpawnContext"));
 	SpawnDataTable->GetAllRows(ContextString, AllRows);
@@ -69,6 +90,7 @@ void ASpawner::SpawnEnemy()
 			Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(1);
 		}
 	}
+
 	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
 
 

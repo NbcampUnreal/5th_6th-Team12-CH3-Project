@@ -9,6 +9,7 @@
 #include "GameFramework/PlayerController.h"
 #include "Components/TextBlock.h"
 #include "Components/ProgressBar.h"
+#include "Components/Image.h"
 #include "Blueprint/UserWidget.h"
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
@@ -25,26 +26,33 @@ void AMyGameState::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//Cast<UMyGameInstance>(GetGameInstance())->SetLevelMap(LevelMapNames);
-
 	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
-	UpdateMonsterCountHud();
-	//플레이어 정보 로딩 함수호출
-	//Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
+	CurrentMapName = UGameplayStatics::GetCurrentLevelName(GetWorld());
+	time= Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
 
+	UpdateMonsterCountHud();
 }
+
 void AMyGameState::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//다음레벨조건
-	if (MonsterCount == 0) {
-		//Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
+	if (Pause) {
+		UpdateHitMarkHud(DeltaTime);
+		UpdateTimeHud();
+		//UpdateMonsterCountHud();
+		//게임 버티기 시간설정
+		time -= DeltaTime;
+		if (time <= 0){
+			time = 0;
+			finish = true;
+		}
 	}
 
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
-		Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
-	}
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) { Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); }
+
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+
 }
 
 void AMyGameState::StartLevel()
@@ -54,37 +62,86 @@ void AMyGameState::StartLevel()
 }
 
 void AMyGameState::UpdateMonsterCountHud() {
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UTextBlock* MonsterRemainingText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("MonsterCount")));
-			MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("Count: %d"), MonsterCount)));
+	if (MonsterRemainingText == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				MonsterRemainingText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("MonsterCount")));
+			}
 		}
 	}
 
+	if (GetLevel()) {
+		if (CurrentMapName=="Prologue") {
+			MonsterRemainingText->SetVisibility(ESlateVisibility::Hidden);
+			return;
+		}
+	}
+
+	if (MonsterRemainingText) {
+		MonsterRemainingText->SetVisibility(ESlateVisibility::Visible);
+		MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("Count: %d"), MonsterCount)));
+	}
 }
 
 void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
 {
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Stamina = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
-
-			Stamina->SetPercent(CurrentStamina / MaxStamina);
-
+	if (Staminabar == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				Staminabar = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("StaminaBar")));
+			}
 		}
 	}
+
+	Staminabar->SetPercent(CurrentStamina / MaxStamina);
 }
 
 void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
 {
-	if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
-		if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
-			UProgressBar* Hp = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
-
-			Hp->SetPercent(CurrentHp / MaxHp);
-
+	if (Hpbar == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				Hpbar = Cast<UProgressBar>(HUDWidget->GetWidgetFromName(TEXT("HpBar")));
+			}
 		}
 	}
+	Hpbar->SetPercent(CurrentHp / MaxHp);
+}
+
+void AMyGameState::UpdateHitMarkHud(float dt)
+{
+	if (HitMarker == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				HitMarker = Cast<UImage>(HUDWidget->GetWidgetFromName(TEXT("Hitmark")));
+			}
+		}
+	}
+	HitMarker->SetRenderOpacity(HitMarkOpa);
+
+	const float FadeDuration = 0.5f;
+	const float FadeSpeed = 1.0f / FadeDuration;
+
+	HitMarkOpa -= dt * FadeSpeed;
+	HitMarkOpa = FMath::Clamp(HitMarkOpa, 0.0f, 1.0f);
+
+}
+
+void AMyGameState::UpdateTimeHud()
+{
+	if (RemainingTime == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				RemainingTime = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("Time")));
+			}
+		}
+	}
+	if (CurrentMapName == "Prologue") {
+		RemainingTime->SetVisibility(ESlateVisibility::Hidden);
+		return;
+	}
+	RemainingTime->SetVisibility(ESlateVisibility::Visible);
+	RemainingTime->SetText(FText::FromString(FString::Printf(TEXT("Time: %.2f"), time)));
 }
 
 

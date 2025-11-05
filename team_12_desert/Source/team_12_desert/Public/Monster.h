@@ -4,6 +4,9 @@
 #include "GameFramework/Character.h"
 #include "Monster.generated.h"
 
+class UWidgetComponent;
+class UProgressBar;
+
 UCLASS()
 class TEAM_12_DESERT_API AMonster : public ACharacter
 {
@@ -14,6 +17,13 @@ public:
 
 protected:
     virtual void BeginPlay() override;
+
+    //UI
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+    UWidgetComponent* OverheadWidget;
+
+    UPROPERTY(meta = (BindWidget))
+    UProgressBar* HPBar;
 
 public:
     virtual void Tick(float DeltaTime) override;
@@ -60,4 +70,8 @@ public:
 
     UFUNCTION(BlueprintCallable)
     virtual void DropItem();
+
+    //UI  
+    void HpBarProgress();
+    void HpBarDirUpdate();
 };

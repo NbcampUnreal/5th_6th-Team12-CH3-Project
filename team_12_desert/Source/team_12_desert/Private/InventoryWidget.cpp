@@ -12,8 +12,8 @@ void UInventoryWidget::NativeOnInitialized()
 	if (InventoryComponentClass)
 	{
 		InventoryComponent = Cast<UInventoryComponent>(GetOwningPlayerPawn()->GetComponentByClass(InventoryComponentClass));
+		UpdateInventory();
 	}
-	UpdateInventory();
 }
 
 void UInventoryWidget::UpdateInventory()

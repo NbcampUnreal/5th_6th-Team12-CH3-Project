@@ -18,6 +18,7 @@ class TEAM_12_DESERT_API ASpawner : public AActor
 public:
     // Sets default values for this actor's properties
     ASpawner();
+    virtual void BeginPlay() override;
 
     virtual void Tick(float DeltaTime) override;
 
@@ -34,6 +35,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Spawning")
     void SpawnEnemy();
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool boss;
+    bool bossSpawnd=false;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     bool Infinity;
