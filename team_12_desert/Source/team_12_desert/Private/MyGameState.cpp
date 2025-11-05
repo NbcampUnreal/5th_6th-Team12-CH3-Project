@@ -43,8 +43,10 @@ void AMyGameState::Tick(float DeltaTime)
 		//UpdateMonsterCountHud();
 		//게임 버티기 시간설정
 		time -= DeltaTime;
-		if (time <= 0)
+		if (time <= 0){
 			time = 0;
+			finish = true;
+		}
 	}
 
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) { Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); }

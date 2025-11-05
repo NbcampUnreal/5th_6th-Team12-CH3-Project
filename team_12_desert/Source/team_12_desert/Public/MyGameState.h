@@ -35,6 +35,8 @@ public:
 	void ResetHitMark() { HitMarkOpa = 1; }
 	float GetTime() { return time; }
 
+	bool IsFinsh() { return finish; }
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")
@@ -61,6 +63,8 @@ protected:
 	float HitMarkOpa = 0.f;
 	
 	float time;
+
+	bool finish = false;
 
 	bool Pause = true;
 
