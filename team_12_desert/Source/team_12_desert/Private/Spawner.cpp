@@ -26,13 +26,17 @@ void ASpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (Infinity) {
+	if (Infinity&& !boss) {
 		time += DeltaTime;
 
 		if (time >= InfinityRespawnTime) {
 			SpawnEnemy();
 			time = 0;
 		}
+	}
+
+	if (boss&& Cast<AMyGameState>(GetWorld()->GetGameState())->GetTime()<=0) {
+		SpawnEnemy();
 	}
 }
 

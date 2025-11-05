@@ -36,6 +36,7 @@ public:
 	void PlayerHUDApply();
 	void NextLevel();
 	void TestIns();
+	float GetLevelTime();
 
 	int32 GetCurrentLevelIndex() { return CurrentLevelIndex; }
 	void AddCurrentLevelIndex(int a) { CurrentLevelIndex += a; }
@@ -46,6 +47,9 @@ public:
 	// 실제 레벨 맵 이름 배열. 여기 있는 인덱스를 차례대로 연동
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
 	TArray<FName> LevelMapNames;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
+	TArray<float> LevelTime;
 
 	//void SetLevelMap(TArray<FName> name);
 

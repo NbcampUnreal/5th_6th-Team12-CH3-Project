@@ -6,7 +6,14 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/Ingame.uasset"
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/WBP_HP.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_MonsterAICharacter.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/UI/numhp.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_SpiderMonster.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_CreepMonster.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_CreatureMonster.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset"
 			]
 		}
 	]
