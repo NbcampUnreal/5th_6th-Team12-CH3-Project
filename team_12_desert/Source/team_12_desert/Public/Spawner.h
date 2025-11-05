@@ -34,6 +34,8 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Spawning")
     void SpawnEnemy();
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool boss;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     bool Infinity;

@@ -5,18 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_HealItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Test.umap",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_StaminaItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_StrUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_ExpUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/Item/BP_DefUpItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/BP_Hot6ActiveItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/mpyi/BP_MainCharacter.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/MyActiveItemBase.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Item/ActiveItem/BP_ArmorActiveItem.uasset",
-				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Textures/HealItem.uasset"
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset"
 			]
 		}
 	]

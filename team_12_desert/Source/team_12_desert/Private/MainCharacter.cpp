@@ -5,6 +5,8 @@
 #include "WeaponBase.h"
 #include "SkillBook.h"
 #include "InventoryComponent.h"
+#include "MyGameState.h"
+#include "MyGameInstance.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -26,8 +28,6 @@ AMainCharacter::AMainCharacter() :
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
-    InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
-
     // 25.10.27. mpyi _ 찬영님 요청으로 태그 추가(대소문자 주의)
     Tags.Add(FName("Player"));
 }
@@ -42,8 +42,15 @@ void AMainCharacter::BeginPlay()
     MeleeAttackCount = 0;
     RangeAttackCount = 0;
 
+    // 런타임오류로 인해 임시 주석(mpyi)
+    // InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
     EquipWeapon();
+
+    Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
+    Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
+
+
 }
 
 void AMainCharacter::EquipWeapon()
@@ -93,6 +100,7 @@ void AMainCharacter::HealHP(int32 HealAmount)
     {
         CurrentHP = MaxHP;
     }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP,CurrentHP);
 }
 
 // 외부에서 스태미나 회복시킬 때
@@ -103,6 +111,7 @@ void AMainCharacter::HealStamina(int32 HealAmount)
     {
         CurrentStamina = MaxStamina;
     }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina,CurrentStamina);
 }
 
 void AMainCharacter::MeleeAttack()
@@ -130,6 +139,8 @@ void AMainCharacter::Hit(int32 Damage, AActor* ByWho)
     {
         CurrentHP = 0;
     }
+
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 void AMainCharacter::IncreaseExperience(int32 Experience)
