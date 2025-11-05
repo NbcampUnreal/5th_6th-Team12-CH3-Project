@@ -15,6 +15,7 @@ enum HudPreset
 	MainMenu,
 	InGame,
 	SkillUp,
+	Inventory,
 };
 UCLASS()
 class TEAM_12_DESERT_API UMyGameInstance : public UGameInstance

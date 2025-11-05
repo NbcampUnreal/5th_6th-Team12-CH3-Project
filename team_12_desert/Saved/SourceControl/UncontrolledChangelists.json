@@ -8,7 +8,9 @@
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/BP_Spawner.uasset",
 				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset",
-				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap"
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/AI/BP_DarkMonster.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset"
 			]
 		}
 	]
