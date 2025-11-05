@@ -48,6 +48,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\ActiveItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ActiveItemInterface.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\AItemBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -187,6 +190,9 @@
       <UniqueIdentifier>{A3538156-87DA-3C98-9400-F79C60261B11}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\team_12_desert\Public\ActiveItemBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ActiveItemInterface.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\AItemBase.h">

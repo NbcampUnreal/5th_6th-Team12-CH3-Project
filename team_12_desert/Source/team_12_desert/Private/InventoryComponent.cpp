@@ -47,18 +47,12 @@ void UInventoryComponent::AddItem(FName ItemID)
 			temp.Quantity = 1;
 			Items.Insert(temp, i);
 
-			if (GEngine)
-			{
-				FString const Msg = FString::Printf(TEXT("아이템 저장! [ %d번 ] 슬롯에 [ %s ] 저장!"), i, *ItemID.ToString());
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Msg);
-			}
-
 			return;
 		}
 	}
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("인벤토리가 모두 찼습니다!"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("Inven Full"));
 	}
 }
 

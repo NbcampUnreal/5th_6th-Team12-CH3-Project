@@ -3,6 +3,7 @@
 
 #include "Hot6ActiveItem.h"
 #include "MainCharacter.h"
+#include "InventoryComponent.h"
 
 AHot6ActiveItem::AHot6ActiveItem()
 {
@@ -13,10 +14,24 @@ AHot6ActiveItem::AHot6ActiveItem()
 void AHot6ActiveItem::ActivateItem(TObjectPtr<AActor> Actor)
 {
 	Super::ActivateItem(Actor);
-	if (Actor->ActorHasTag(TEXT("Player")))
-	{
-		MainCharacter = Cast<AMainCharacter>(Actor);
-	}
+    UE_LOG(LogTemp, Display, TEXT("AHot6ActiveItemOverlap"));
+    if (Actor->ActorHasTag(TEXT("Player")))
+    {
+        MainCharacter = Cast<AMainCharacter>(Actor);
+        if (MainCharacter)
+        {
+            InventoryComponent = MainCharacter->getInventoryComponent();
+            if (InventoryComponent)
+            {
+                InventoryComponent->AddItem(ItemID);
+                Destroy();
+            }
+        }
+    }
+	//if (Actor->ActorHasTag(TEXT("Player")))
+	//{
+	//	MainCharacter = Cast<AMainCharacter>(Actor);
+	//}
 }
 
 void AHot6ActiveItem::Active()

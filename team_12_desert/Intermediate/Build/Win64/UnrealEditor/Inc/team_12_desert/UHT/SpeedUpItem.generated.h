@@ -14,15 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_SpeedUpItem_generated_h
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
->>>>>>> Monster
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
->>>>>>> Level-Design
 private: \
 	static void StaticRegisterNativesASpeedUpItem(); \
 	friend struct Z_Construct_UClass_ASpeedUpItem_Statics; \
@@ -31,15 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ASpeedUpItem)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASpeedUpItem(ASpeedUpItem&&); \
@@ -50,30 +34,12 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASpeedUpItem)
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_13_PROLOG
 #define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
 	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_13_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Monster
-=======
-#define FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_13_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_INCLASS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Level-Design
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -81,15 +47,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ASpeedUpItem>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h
-=======
-#define CURRENT_FILE_ID FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h
->>>>>>> Monster
-=======
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_SpeedUpItem_h
->>>>>>> Level-Design
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

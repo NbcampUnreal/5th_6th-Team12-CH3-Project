@@ -105,35 +105,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FItemSpawnRow()
 // End ScriptStruct FItemSpawnRow
 
 // Begin Registration
-<<<<<<< HEAD
-<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics
->>>>>>> Monster
-=======
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics
->>>>>>> Level-Design
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FItemSpawnRow::StaticStruct, Z_Construct_UScriptStruct_FItemSpawnRow_Statics::NewStructOps, TEXT("ItemSpawnRow"), &Z_Registration_Info_UScriptStruct_ItemSpawnRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemSpawnRow), 491260186U) },
 	};
 };
-<<<<<<< HEAD
-<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_1233892033(TEXT("/Script/team_12_desert"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_52110873(TEXT("/Script/team_12_desert"),
-	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo),
->>>>>>> Monster
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_52110873(TEXT("/Script/team_12_desert"),
-	nullptr, 0,
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_Statics::ScriptStructInfo),
->>>>>>> Level-Design
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
