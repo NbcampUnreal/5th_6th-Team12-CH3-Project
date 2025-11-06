@@ -50,8 +50,9 @@ void ASpawner::Tick(float DeltaTime)
 
 	if (boss && Cast<AMyGameState>(GetWorld()->GetGameState())->IsFinsh()) {
 		if (!bossSpawnd) {
-			SpawnEnemy();
+			
 			bossSpawnd = true;
+			SpawnEnemy();
 		}
 	}
 }
@@ -128,6 +129,11 @@ void ASpawner::SpawnEnemy()
 			{
 				Cast<AMyGameState>(World->GetGameState())->AddMonsterCount(1);
 			}
+
+			//지금 이게 보스냐하면 실행
+			/*if (Isboss) {
+
+			}*/
 		}
 	}
 	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();

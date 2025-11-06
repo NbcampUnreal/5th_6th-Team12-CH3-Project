@@ -38,6 +38,8 @@ public:
 
 	bool IsFinsh() { return finish; }
 
+	void PortalsOpen(bool val);
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")
@@ -70,5 +72,8 @@ protected:
 	bool Pause = true;
 
 	FString CurrentMapName;
+
+	TArray<AActor*> Portals;
+
 
 };

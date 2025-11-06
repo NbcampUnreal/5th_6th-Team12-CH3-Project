@@ -4,7 +4,7 @@
 #include "MyGameState.h"
 #include "Spawner.h"
 #include "MonsterAICharacter.h"
-
+#include "Portal.h"
 #include "EnhancedInputComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "Components/TextBlock.h"
@@ -31,6 +31,13 @@ void AMyGameState::BeginPlay()
 	time= Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
 
 	UpdateMonsterCountHud();
+
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Portal", Portals);
+
+
+	UE_LOG(LogTemp, Warning, TEXT("%d"),Portals.Num());
+
+	PortalsOpen(false);
 }
 
 void AMyGameState::Tick(float DeltaTime)
@@ -52,6 +59,8 @@ void AMyGameState::Tick(float DeltaTime)
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) { Cast<UMyGameInstance>(GetGameInstance())->NextLevel(); }
 
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+	
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) { PortalsOpen(true); }
 
 }
 
@@ -147,6 +156,16 @@ void AMyGameState::UpdateTimeHud()
 
 void AMyGameState::OnLevelTimeUp()
 {
+}
+
+void AMyGameState::PortalsOpen(bool val)
+{
+	for (int i = 0; i < Portals.Num(); i++) {
+		if (APortal* Portal = Cast<APortal>(Portals[i]))
+		{
+			Portal->SetPortalActive(val);
+		}
+	}
 }
 
 void AMyGameState::LevelTest()
