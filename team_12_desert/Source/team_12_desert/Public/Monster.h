@@ -6,7 +6,9 @@
 
 class UWidgetComponent;
 class UProgressBar;
-
+class UTextBlock;
+class UDamageText;
+class UDamagePopUpActor;
 UCLASS()
 class TEAM_12_DESERT_API AMonster : public ACharacter
 {
@@ -19,11 +21,20 @@ protected:
 	virtual void BeginPlay() override;
 
 	//UI
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI")
 	UWidgetComponent* OverheadWidget;
+
+	UPROPERTY(EditAnywhere, Category="UI")
+	UWidgetComponent* damageWidget;
+
+	UDamageText* damageTextInstance;
 
 	UPROPERTY(meta = (BindWidget))
 	UProgressBar* HPBar;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+	TSubclassOf<AActor> damagePopUpActor;
+
 
 	bool bIsDeactivated;
 
@@ -79,6 +90,7 @@ public:
 	//UI  
 	void HpBarProgress();
 	void HpBarDirUpdate();
+	void ShowDamage(float dmg);
 
 
 	virtual void ActivateMonster(FVector Location, FRotator Rotation);

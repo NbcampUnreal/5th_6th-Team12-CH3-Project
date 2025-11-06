@@ -10,6 +10,9 @@
 #include "AIController.h"
 #include "BrainComponent.h"
 #include "ObjectPoolSubsystem.h"
+#include "Components/TextBlock.h"
+#include "DamageText.h"
+#include "DamagePopupActor.h"
 
 AMonster::AMonster()
 {
@@ -29,6 +32,15 @@ AMonster::AMonster()
 	OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
 	OverheadWidget->SetupAttachment(GetMesh());
 	OverheadWidget->SetWidgetSpace(EWidgetSpace::World);
+
+	/*OverheadHp = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadHp"));
+	OverheadHp->SetupAttachment(GetMesh());
+	OverheadHp->SetWidgetSpace(EWidgetSpace::World);*/
+
+	if (damageWidget) {
+		UUserWidget* damage = damageWidget->GetUserWidgetObject();
+		damageTextInstance = Cast<UDamageText>(damage);
+	}
 }
 
 void AMonster::BeginPlay()
@@ -59,6 +71,19 @@ void AMonster::BeginPlay()
 
 	}
 
+	/*if (OverheadHp) {
+		UUserWidget* Widget = Cast<UUserWidget>(OverheadHp->GetUserWidgetObject());
+		if (Widget) {
+			UWidget* temp = Widget->GetWidgetFromName(TEXT("Damage"));
+			if (temp) {
+			}
+			DamageText = Cast<UTextBlock>(temp);
+			HpBarProgress();
+
+		}
+
+	}*/
+
 }
 
 void AMonster::Tick(float DeltaTime)
@@ -75,6 +100,7 @@ void AMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMonster::ApplyDamage(float DamageAmount)
 {
+	ShowDamage(DamageAmount);
 	CurrentHealth -= DamageAmount;
 	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
 	if (CurrentHealth <= 0.f)
@@ -98,6 +124,7 @@ void AMonster::ApplyDamage(float DamageAmount)
 			});
 
 	}
+	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
 	HpBarProgress();
 
 	Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
@@ -139,6 +166,23 @@ void AMonster::HpBarDirUpdate()
 			OverheadWidget->SetWorldRotation(LookRot);
 		}
 
+	}
+}
+
+void AMonster::ShowDamage(float dmg)
+{
+	if (!damagePopUpActor) {
+		return;
+	}
+
+	FVector spawnLoc = GetActorLocation() + FVector(0, 0, 140);
+	FRotator spawnRot = FRotator::ZeroRotator;
+
+	ADamagePopupActor* popupActor = GetWorld()->SpawnActor<ADamagePopupActor>(damagePopUpActor, spawnLoc, spawnRot);
+
+	if (popupActor)
+	{
+		popupActor->InitDamage(dmg);
 	}
 }
 
