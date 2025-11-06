@@ -44,12 +44,8 @@ void AActiveItemBase::ActivateItem(TObjectPtr<AActor> OtherActor)
         MainCharacter = Cast<AMainCharacter>(OtherActor);
         if (MainCharacter)
         {
-            InventoryComponent = MainCharacter->getInventoryComponent();
-            if (InventoryComponent)
-            {
-                InventoryComponent->AddItem(ItemID);
-                Destroy();
-            }
+            MainCharacter->getInventoryComponent()->AddItem(ItemID);
+            Destroy();
         }
     }
 }

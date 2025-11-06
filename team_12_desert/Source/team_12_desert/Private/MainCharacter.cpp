@@ -147,12 +147,14 @@ void AMainCharacter::IncreaseExperience(int32 Experience)
 {
     CurrentExperience += Experience;
 
-    //if (CurrentExperience >= CurrentLevel * 100)
-    //{
-    //    CurrentLevel++;
-    //    CurrentExperience = 0;
-
-    //}
+   if (CurrentExperience >= CurrentLevel * 100)
+    {
+        CurrentLevel++;
+        CurrentExperience = 0;
+        APlayerController* PC = GetWorld()->GetFirstPlayerController();
+        PC->SetShowMouseCursor(true);
+        Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::SkillUp);
+    }
 }
 
 void AMainCharacter::IncreaseKillCount()

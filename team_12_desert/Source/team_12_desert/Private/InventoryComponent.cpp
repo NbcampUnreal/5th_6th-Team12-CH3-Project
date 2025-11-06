@@ -42,6 +42,7 @@ void UInventoryComponent::AddItem(FName ItemID)
 		// 비어있는 칸이 있는지 찾습니다.
 		if (Items[i].ItemName == NAME_None)
 		{
+			UE_LOG(LogTemp, Display, TEXT("addItem"));
 			FItemInventory temp;
 			temp.ItemName = ItemID;
 			temp.Quantity = 1;
