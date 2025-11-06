@@ -10,7 +10,6 @@
 void UItemSoltWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
-
 	if (ItemDataTable != nullptr)
 	{
 		ItemData = GetItemData();
@@ -25,14 +24,15 @@ void UItemSoltWidget::NativeOnInitialized()
 				ItemImage->SetBrushFromTexture(ItemData->ItemIcon);
 			}
 		}
-	}
-	else
-	{
-		if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
+		else
 		{
-			ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));
+			if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
+			{
+				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));
+			}
 		}
 	}
+	
 }
 
 void UItemSoltWidget::SetItem(const  FItemInventory& Item)

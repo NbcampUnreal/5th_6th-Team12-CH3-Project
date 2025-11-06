@@ -14,7 +14,7 @@ class TEAM_12_DESERT_API UInventoryWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
-	virtual void NativeOnInitialized() override;
+	virtual void NativeConstruct() override;
 
 	void UpdateInventory();
 public:

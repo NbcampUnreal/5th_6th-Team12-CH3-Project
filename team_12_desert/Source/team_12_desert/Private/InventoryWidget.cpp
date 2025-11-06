@@ -6,13 +6,12 @@
 #include "ItemSoltWidget.h"
 #include "Components/WrapBox.h"
 
-void UInventoryWidget::NativeOnInitialized()
+void UInventoryWidget::NativeConstruct()
 {
-	Super::NativeOnInitialized();
+	Super::NativeConstruct();
+	UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
 	if (InventoryComponentClass)
 	{
-
-		UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
 		InventoryComponent = Cast<UInventoryComponent>(GetOwningPlayerPawn()->GetComponentByClass(InventoryComponentClass));
 		UpdateInventory();
 	}
