@@ -14,6 +14,7 @@ class MonsterAICharactor;
 class UProgressBar;
 class UImage;
 class UTextBlock;
+class AMonster;
 
 UCLASS()
 class TEAM_12_DESERT_API AMyGameState : public AGameState

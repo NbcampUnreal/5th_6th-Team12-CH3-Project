@@ -40,7 +40,7 @@ void AMyGameState::Tick(float DeltaTime)
 	if (Pause) {
 		UpdateHitMarkHud(DeltaTime);
 		UpdateTimeHud();
-		//UpdateMonsterCountHud();
+		
 		//게임 버티기 시간설정
 		time -= DeltaTime;
 		if (time <= 0){
