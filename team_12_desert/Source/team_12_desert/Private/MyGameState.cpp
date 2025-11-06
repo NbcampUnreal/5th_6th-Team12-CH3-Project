@@ -34,9 +34,6 @@ void AMyGameState::BeginPlay()
 
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Portal", Portals);
 
-
-	UE_LOG(LogTemp, Warning, TEXT("%d"),Portals.Num());
-
 	PortalsOpen(false);
 }
 
