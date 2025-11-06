@@ -83,19 +83,12 @@ FVector ASpawner::GetRandomPointInVolume() const
 }
 
 void ASpawner::SpawnEnemy()
-{
-	//if (!EnemyClass) return;
-
-
-	
-	// 풀 서브시스템이 없으면 스폰 불가
+{	
 	if (!PoolSubsystem)
 	{
 		UE_LOG(LogTemp, Error, TEXT("PoolSubsystem is not valid!"));
 		return;
 	}
-
-	//if (!EnemyClass) return; // 이 부분은 데이터 테이블을 쓰므로 필요 없어 보임
 
 	TArray<FMonsterSpawnRow*> AllRows;
 	static const FString ContextString(TEXT("MonsterSpawnContext"));
@@ -112,7 +105,6 @@ void ASpawner::SpawnEnemy()
 			continue;
 		}
 
-		// TSubclassOf<AActor>를 TSubclassOf<AMonster>로 캐스팅
 		TSubclassOf<AMonster> MonsterClass = TSubclassOf<AMonster>(*Row->MonsterClass);
 
 		for (int i = 0; i < Row->SpawnCount; i++)
@@ -120,7 +112,6 @@ void ASpawner::SpawnEnemy()
 			FVector SpawnLocation = GetRandomPointInVolume();
 			FRotator SpawnRotation = FRotator::ZeroRotator;
 
-			// ... (지형 체크 로직은 동일) ...
 			FHitResult HitResult;
 			FVector Start = SpawnLocation;
 			FVector End = Start - FVector(0, 0, 10000);
@@ -132,7 +123,6 @@ void ASpawner::SpawnEnemy()
 			}
 			SpawnLocation.Z += 100.0f; // 지형 위에 살짝 띄우기
 
-			// *** 핵심 변경: World->SpawnActor 대신 PoolSubsystem->GetMonster 사용 ***
 			AMonster* SpawnedMonster = PoolSubsystem->GetMonster(
 				MonsterClass,
 				SpawnLocation,
@@ -161,15 +151,10 @@ void ASpawner::PrewarmMonsterPools()
 	{
 		if (Row && Row->MonsterClass)
 		{
-			// AMonster를 상속받았는지 확인 (안전 장치)
 			if (Row->MonsterClass->IsChildOf(AMonster::StaticClass()))
 			{
-				// TSubclassOf<AActor>를 TSubclassOf<AMonster>로 캐스팅
 				TSubclassOf<AMonster> MonsterClass = TSubclassOf<AMonster>(*Row->MonsterClass);
 
-				// 해당 몬스터 타입에 대해 (Row->SpawnCount * 여유분) 만큼 미리 생성
-				// Infinity 모드라면 더 많이 생성해야 할 수 있습니다.
-				// 여기서는 InitialPoolSize를 사용합니다.
 				int32 CountToWarm = Infinity ? InitialPoolSize : Row->SpawnCount;
 
 				PoolSubsystem->PrewarmPool(MonsterClass, CountToWarm);

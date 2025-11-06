@@ -27,7 +27,6 @@ protected:
 
 	bool bIsDeactivated;
 
-	// 이 몬스터를 관리하는 풀 매니저 (Spawner가 설정해줄 수 있음)
 	UPROPERTY()
 	class UObjectPoolSubsystem* OwningPoolSubsystem;
 
@@ -82,13 +81,10 @@ public:
 	void HpBarDirUpdate();
 
 
-	// 몬스터를 활성화할 때 호출 (스탯, 위치 등 초기화)
 	virtual void ActivateMonster(FVector Location, FRotator Rotation);
 
-	// 몬스터를 비활성화할 때 호출 (풀에 반납)
 	virtual void DeactivateMonster();
 
-	// 풀 매니저 설정
 	void SetOwningPoolSubsystem(class UObjectPoolSubsystem* InSubsystem);
 
 };

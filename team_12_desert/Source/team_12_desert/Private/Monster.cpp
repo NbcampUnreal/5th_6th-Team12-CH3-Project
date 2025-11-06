@@ -8,6 +8,8 @@
 #include "Components/WidgetComponent.h"
 #include "Components/ProgressBar.h"
 #include "AIController.h"
+#include "BrainComponent.h"
+#include "ObjectPoolSubsystem.h"
 
 AMonster::AMonster()
 {
@@ -161,13 +163,12 @@ void AMonster::ActivateMonster(FVector Location, FRotator Rotation)
 	{
 		OverheadWidget->SetHiddenInGame(false);
 	}
-	HpBarProgress(); // HP바 업데이트 (100%로)
+	HpBarProgress(); 
 
-	// AI 시작
 	AAIController* AIController = Cast<AAIController>(GetController());
-	if (AIController)
+	if (AIController && AIController->GetBrainComponent()) // BrainComponent가 있는지 확인
 	{
-		//AIController->RestartLogic();
+		AIController->GetBrainComponent()->RestartLogic();
 	}
 }
 //
@@ -176,22 +177,19 @@ void AMonster::DeactivateMonster()
 	if (bIsDeactivated) return; // 중복 호출 방지
 	bIsDeactivated = true;
 
-	// 비활성화
 	SetActorHiddenInGame(true);
 	SetActorEnableCollision(false);
 	SetActorTickEnabled(false);
 
-	// UI 숨기기
 	if (OverheadWidget)
 	{
 		OverheadWidget->SetHiddenInGame(true);
 	}
 
-	// AI 중지
 	AAIController* AIController = Cast<AAIController>(GetController());
-	if (AIController)
+	if (AIController && AIController->GetBrainComponent()) 
 	{
-//		AIController->StopLogic(TEXT("Deactivated"));
+		AIController->GetBrainComponent()->StopLogic(TEXT("Deactivated"));
 	}
 
 	// 드랍 아이템 로직 (필요하다면)
@@ -200,7 +198,7 @@ void AMonster::DeactivateMonster()
 	// 풀 매니저에게 반납
 	if (OwningPoolSubsystem)
 	{
-		//OwningPoolSubsystem->ReturnMonster(this);
+		OwningPoolSubsystem->ReturnMonster(this);
 	}
 	else
 	{
