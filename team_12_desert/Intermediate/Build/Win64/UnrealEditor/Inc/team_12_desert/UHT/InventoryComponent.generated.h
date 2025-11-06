@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_InventoryComponent_generated_h
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_13_GENERATED_BODY \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_13_GENERATED_BODY \
->>>>>>> uitemp
 	friend struct Z_Construct_UScriptStruct_FItemInventory_Statics; \
 	TEAM_12_DESERT_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -26,19 +22,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> TEAM_12_DESERT_API UScriptStruct* StaticStruct<struct FItemInventory>();
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execAddItem);
-
-
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_INCLASS_NO_PURE_DECLS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execAddItem);
 
 
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_INCLASS_NO_PURE_DECLS \
->>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesUInventoryComponent(); \
 	friend struct Z_Construct_UClass_UInventoryComponent_Statics; \
@@ -47,11 +35,7 @@ public: \
 	DECLARE_SERIALIZER(UInventoryComponent)
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UInventoryComponent(UInventoryComponent&&); \
@@ -63,15 +47,6 @@ public: \
 	NO_API virtual ~UInventoryComponent();
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_19_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_INCLASS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_19_PROLOG
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -79,7 +54,6 @@ public: \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_INCLASS_NO_PURE_DECLS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_22_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -87,11 +61,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class UInventoryComponent>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h
-=======
 #define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h
->>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -118,23 +118,14 @@ ASkillBase::~ASkillBase() {}
 // End Class ASkillBase
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics
-=======
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics
->>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ASkillBase, ASkillBase::StaticClass, TEXT("ASkillBase"), &Z_Registration_Info_UClass_ASkillBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASkillBase), 3124899182U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_745857675(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo),
-=======
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_745857675(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_Statics::ClassInfo),
->>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

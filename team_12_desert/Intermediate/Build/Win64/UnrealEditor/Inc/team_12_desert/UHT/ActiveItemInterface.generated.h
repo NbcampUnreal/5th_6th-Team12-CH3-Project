@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_ActiveItemInterface_generated_h
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	TEAM_12_DESERT_API UActiveItemInterface(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -32,11 +28,7 @@ public: \
 	TEAM_12_DESERT_API virtual ~UActiveItemInterface();
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
->>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesUActiveItemInterface(); \
 	friend struct Z_Construct_UClass_UActiveItemInterface_Statics; \
@@ -45,26 +37,15 @@ public: \
 	DECLARE_SERIALIZER(UActiveItemInterface)
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_BODY \
-	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_GENERATED_UINTERFACE_BODY() \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> uitemp
 protected: \
 	virtual ~IActiveItemInterface() {} \
 public: \
@@ -73,19 +54,11 @@ public: \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_10_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_21_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_10_PROLOG
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_13_INCLASS_IINTERFACE_NO_PURE_DECLS \
->>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -93,11 +66,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class UActiveItemInterface>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h
-=======
 #define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h
->>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
