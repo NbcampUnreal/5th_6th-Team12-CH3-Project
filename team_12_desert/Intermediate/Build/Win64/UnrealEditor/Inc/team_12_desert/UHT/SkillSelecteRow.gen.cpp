@@ -110,25 +110,15 @@ UScriptStruct* Z_Construct_UScriptStruct_FSkillSelecteRow()
 // End ScriptStruct FSkillSelecteRow
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics
-=======
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics
->>>>>>> uitemp
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FSkillSelecteRow::StaticStruct, Z_Construct_UScriptStruct_FSkillSelecteRow_Statics::NewStructOps, TEXT("SkillSelecteRow"), &Z_Registration_Info_UScriptStruct_SkillSelecteRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSkillSelecteRow), 2474614050U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_2247201598(TEXT("/Script/team_12_desert"),
-	nullptr, 0,
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo),
-=======
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_2247201598(TEXT("/Script/team_12_desert"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillSelecteRow_h_Statics::ScriptStructInfo),
->>>>>>> uitemp
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -17,19 +17,11 @@ struct FHitResult;
 #endif
 #define TEAM_12_DESERT_ActiveItemBase_generated_h
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnItemOverlap);
-
-
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnItemOverlap);
 
 
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesAActiveItemBase(); \
 	friend struct Z_Construct_UClass_AActiveItemBase_Statics; \
@@ -39,11 +31,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AActiveItemBase*>(this); }
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AActiveItemBase(AActiveItemBase&&); \
@@ -55,15 +43,6 @@ public: \
 	NO_API virtual ~AActiveItemBase();
 
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_12_PROLOG
-#define FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
-	FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
-=======
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_12_PROLOG
 #define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -71,7 +50,6 @@ public: \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
 	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -79,11 +57,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AActiveItemBase>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h
-=======
 #define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h
->>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

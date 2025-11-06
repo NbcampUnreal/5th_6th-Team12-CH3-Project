@@ -77,23 +77,14 @@ ACreatureMonster::~ACreatureMonster() {}
 // End Class ACreatureMonster
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics
-=======
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics
->>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ACreatureMonster, ACreatureMonster::StaticClass, TEXT("ACreatureMonster"), &Z_Registration_Info_UClass_ACreatureMonster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACreatureMonster), 2992688099U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_3472591041(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics::ClassInfo),
-=======
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_3472591041(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_CreatureMonster_h_Statics::ClassInfo),
->>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

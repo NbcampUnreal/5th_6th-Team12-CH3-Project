@@ -79,23 +79,14 @@ AHot6ActiveItem::~AHot6ActiveItem() {}
 // End Class AHot6ActiveItem
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics
-=======
 struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics
->>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AHot6ActiveItem, AHot6ActiveItem::StaticClass, TEXT("AHot6ActiveItem"), &Z_Registration_Info_UClass_AHot6ActiveItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHot6ActiveItem), 3938489278U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_3989012988(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics::ClassInfo),
-=======
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_3989012988(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Hot6ActiveItem_h_Statics::ClassInfo),
->>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
