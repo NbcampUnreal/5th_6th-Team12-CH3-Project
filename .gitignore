@@ -336,15 +336,15 @@
 # *.msp
 
 # # 251022_mpyi 추가
-# *CrashReportClient.ini
+*CrashReportClient.ini
 
-# *.vs*
-# *Binaries*
-# *Saved*
-# *Intermediate*
+*.vs*
+*Binaries*
+*Saved*
+*Intermediate*
 
-# *team_12_desert*
-# *team_12_desert*
+*team_12_desert*
+*team_12_desert*
 
 
 ### 정원님께 받은거 추가
