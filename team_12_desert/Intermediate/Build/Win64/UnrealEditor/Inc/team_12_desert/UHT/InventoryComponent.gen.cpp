@@ -195,7 +195,11 @@ UInventoryComponent::~UInventoryComponent() {}
 // End Class UInventoryComponent
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics
+>>>>>>> uitemp
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FItemInventory::StaticStruct, Z_Construct_UScriptStruct_FItemInventory_Statics::NewStructOps, TEXT("ItemInventory"), &Z_Registration_Info_UScriptStruct_ItemInventory, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemInventory), 104389310U) },
@@ -204,9 +208,15 @@ struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_Inv
 		{ Z_Construct_UClass_UInventoryComponent, UInventoryComponent::StaticClass, TEXT("UInventoryComponent"), &Z_Registration_Info_UClass_UInventoryComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventoryComponent), 771736588U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_130604866(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_130604866(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_InventoryComponent_h_Statics::ScriptStructInfo),
+>>>>>>> uitemp
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

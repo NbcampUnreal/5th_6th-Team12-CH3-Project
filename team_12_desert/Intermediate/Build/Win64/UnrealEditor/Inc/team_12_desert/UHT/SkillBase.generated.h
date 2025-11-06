@@ -14,7 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_SkillBase_generated_h
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_INCLASS_NO_PURE_DECLS \
+>>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesASkillBase(); \
 	friend struct Z_Construct_UClass_ASkillBase_Statics; \
@@ -23,7 +27,11 @@ public: \
 	DECLARE_SERIALIZER(ASkillBase)
 
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASkillBase(ASkillBase&&); \
@@ -35,12 +43,21 @@ public: \
 	NO_API virtual ~ASkillBase();
 
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_10_PROLOG
 #define FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_INCLASS_NO_PURE_DECLS \
 	FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_10_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +65,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ASkillBase>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_SkillBase_h
+=======
+#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBase_h
+>>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

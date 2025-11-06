@@ -14,13 +14,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_Monster_generated_h
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+>>>>>>> uitemp
 	DECLARE_FUNCTION(execDropItem); \
 	DECLARE_FUNCTION(execAttack); \
 	DECLARE_FUNCTION(execApplyDamage);
 
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_INCLASS_NO_PURE_DECLS \
+>>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesAMonster(); \
 	friend struct Z_Construct_UClass_AMonster_Statics; \
@@ -29,7 +37,11 @@ public: \
 	DECLARE_SERIALIZER(AMonster)
 
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMonster(AMonster&&); \
@@ -41,6 +53,7 @@ public: \
 	NO_API virtual ~AMonster();
 
 
+<<<<<<< HEAD
 #define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_10_PROLOG
 #define FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -48,6 +61,15 @@ public: \
 	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_INCLASS_NO_PURE_DECLS \
 	FID_team_12_desert_Source_team_12_desert_Public_Monster_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_10_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,7 +77,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class AMonster>();
 
 #undef CURRENT_FILE_ID
+<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_Monster_h
+=======
+#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_Monster_h
+>>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

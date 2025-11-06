@@ -5,7 +5,17 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
 				"D:/Unreal Projects/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset"
+=======
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_Portal.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/BP_Portal.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/Level_First.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset"
+>>>>>>> uitemp
 			]
 		}
 	]

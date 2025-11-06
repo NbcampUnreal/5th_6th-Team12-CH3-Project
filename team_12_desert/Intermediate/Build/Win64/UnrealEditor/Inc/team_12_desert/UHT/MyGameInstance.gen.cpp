@@ -137,14 +137,23 @@ UMyGameInstance::~UMyGameInstance() {}
 // End Class UMyGameInstance
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics
+>>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UMyGameInstance, UMyGameInstance::StaticClass, TEXT("UMyGameInstance"), &Z_Registration_Info_UClass_UMyGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyGameInstance), 1125142184U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_3141117216(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_3141117216(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MyGameInstance_h_Statics::ClassInfo),
+>>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

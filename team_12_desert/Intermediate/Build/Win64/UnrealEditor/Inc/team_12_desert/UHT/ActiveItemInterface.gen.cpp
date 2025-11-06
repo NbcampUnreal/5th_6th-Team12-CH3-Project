@@ -76,14 +76,23 @@ UActiveItemInterface::~UActiveItemInterface() {}
 // End Interface UActiveItemInterface
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics
+>>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UActiveItemInterface, UActiveItemInterface::StaticClass, TEXT("UActiveItemInterface"), &Z_Registration_Info_UClass_UActiveItemInterface, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UActiveItemInterface), 989436878U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_147875879(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_147875879(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ActiveItemInterface_h_Statics::ClassInfo),
+>>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

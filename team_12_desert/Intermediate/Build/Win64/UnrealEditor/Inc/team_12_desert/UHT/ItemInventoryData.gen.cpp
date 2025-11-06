@@ -106,15 +106,25 @@ UScriptStruct* Z_Construct_UScriptStruct_FItemInventoryData()
 // End ScriptStruct FItemInventoryData
 
 // Begin Registration
+<<<<<<< HEAD
 struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics
+>>>>>>> uitemp
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FItemInventoryData::StaticStruct, Z_Construct_UScriptStruct_FItemInventoryData_Statics::NewStructOps, TEXT("ItemInventoryData"), &Z_Registration_Info_UScriptStruct_ItemInventoryData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FItemInventoryData), 4047918521U) },
 	};
 };
+<<<<<<< HEAD
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_2743341150(TEXT("/Script/team_12_desert"),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics::ScriptStructInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_2743341150(TEXT("/Script/team_12_desert"),
+	nullptr, 0,
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemInventoryData_h_Statics::ScriptStructInfo),
+>>>>>>> uitemp
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
