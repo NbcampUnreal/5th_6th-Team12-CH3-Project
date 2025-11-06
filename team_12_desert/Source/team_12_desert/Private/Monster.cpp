@@ -7,6 +7,7 @@
 #include "MyGameState.h"
 #include "Components/WidgetComponent.h"
 #include "Components/ProgressBar.h"
+#include "AIController.h"
 
 AMonster::AMonster()
 {
@@ -90,7 +91,8 @@ void AMonster::ApplyDamage(float DamageAmount)
 		// 딜레이 후 Destroy
 		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
 			{
-				Destroy();
+				//Destroy();
+				DeactivateMonster();
 			});
 
 	}
@@ -136,5 +138,79 @@ void AMonster::HpBarDirUpdate()
 		}
 
 	}
+}
+
+void AMonster::ActivateMonster(FVector Location, FRotator Rotation)
+{
+	bIsDeactivated = false;
+
+	// 위치 및 회전 설정
+	SetActorLocation(Location);
+	SetActorRotation(Rotation);
+
+	// 활성화
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	SetActorTickEnabled(true);
+
+	// 스탯 초기화
+	CurrentHealth = MaxHealth;
+
+	// UI 초기화
+	if (OverheadWidget)
+	{
+		OverheadWidget->SetHiddenInGame(false);
+	}
+	HpBarProgress(); // HP바 업데이트 (100%로)
+
+	// AI 시작
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController)
+	{
+		//AIController->RestartLogic();
+	}
+}
+//
+void AMonster::DeactivateMonster()
+{
+	if (bIsDeactivated) return; // 중복 호출 방지
+	bIsDeactivated = true;
+
+	// 비활성화
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
+	SetActorTickEnabled(false);
+
+	// UI 숨기기
+	if (OverheadWidget)
+	{
+		OverheadWidget->SetHiddenInGame(true);
+	}
+
+	// AI 중지
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController)
+	{
+//		AIController->StopLogic(TEXT("Deactivated"));
+	}
+
+	// 드랍 아이템 로직 (필요하다면)
+	DropItem();
+
+	// 풀 매니저에게 반납
+	if (OwningPoolSubsystem)
+	{
+		//OwningPoolSubsystem->ReturnMonster(this);
+	}
+	else
+	{
+		// 풀 시스템이 없다면 그냥 파괴 (안전 장치)
+		Destroy();
+	}
+}
+//
+void AMonster::SetOwningPoolSubsystem(UObjectPoolSubsystem* InSubsystem)
+{
+	OwningPoolSubsystem = InSubsystem;
 }
 

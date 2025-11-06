@@ -46,4 +46,16 @@ public:
     float InfinityRespawnTime = 3.0f;
 
     float time;
+
+protected:
+    UPROPERTY()
+    class UObjectPoolSubsystem* PoolSubsystem;
+
+    // 최대 풀 크기 (데이터 테이블에 정의된 몬스터 수 * 여유분)
+    // 또는 BeginPlay에서 데이터테이블을 읽고 계산할 수 있습니다.
+    // 여기서는 예시로 EditAnywhere로 둡니다.
+    UPROPERTY(EditAnywhere, Category = "Spawning")
+    int32 InitialPoolSize = 20; // 각 몬스터 타입별 초기 풀 크기
+
+    void PrewarmMonsterPools(); // 풀 예열 함수
 };
