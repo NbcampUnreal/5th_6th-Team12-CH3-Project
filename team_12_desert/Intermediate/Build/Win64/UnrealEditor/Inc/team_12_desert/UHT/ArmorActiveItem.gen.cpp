@@ -79,14 +79,23 @@ AArmorActiveItem::~AArmorActiveItem() {}
 // End Class AArmorActiveItem
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics
+<<<<<<< HEAD
+struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics
+=======
+struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics
+>>>>>>> uitemp
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AArmorActiveItem, AArmorActiveItem::StaticClass, TEXT("AArmorActiveItem"), &Z_Registration_Info_UClass_AArmorActiveItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AArmorActiveItem), 377032495U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_2364010860(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo),
+<<<<<<< HEAD
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_2364010860(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo),
+=======
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_2364010860(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ArmorActiveItem_h_Statics::ClassInfo),
+>>>>>>> uitemp
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

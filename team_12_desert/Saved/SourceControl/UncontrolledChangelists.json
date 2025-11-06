@@ -5,12 +5,31 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/Audio/Collapse01.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCY_Level.umap",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_InventoryWidget.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/Inventory/WBP_ItemSoltWidget.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Blueprint/pcy/SpawnTable/DT_ItemDataTable.uasset",
 				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/Level/PCT_Level.umap"
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+				"D:/Unreal Projects/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset"
+=======
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/MonsteSpawner/MonsterSpawnTable.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_Portal.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/bk_test.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/BP_Portal.uasset",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Level/Level_First.umap",
+				"F:/UnrealProject/TeamProject/team_12_desert/Content/Blueprint/BP_MyGameInstance.uasset"
+>>>>>>> uitemp
+=======
+				"D:/Unreal Projects/TeamProject/team_12_desert/Content/StarterContent/Architecture/Floor_400x400.uasset",
+				"D:/Unreal Projects/TeamProject/team_12_desert/Content/Level/Level_First.umap"
+>>>>>>> Level-Design
+>>>>>>> main
 			]
 		}
 	]

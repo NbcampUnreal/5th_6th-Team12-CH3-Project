@@ -17,12 +17,20 @@ struct FHitResult;
 #endif
 #define TEAM_12_DESERT_SkillBook_generated_h
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+<<<<<<< HEAD
+#define FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+>>>>>>> uitemp
 	DECLARE_FUNCTION(execOnItemEndOverlap); \
 	DECLARE_FUNCTION(execOnItemOverlap);
 
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
+<<<<<<< HEAD
+#define FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
+>>>>>>> uitemp
 private: \
 	static void StaticRegisterNativesASkillBook(); \
 	friend struct Z_Construct_UClass_ASkillBook_Statics; \
@@ -32,7 +40,11 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ASkillBook*>(this); }
 
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+<<<<<<< HEAD
+#define FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASkillBook(ASkillBook&&); \
@@ -44,13 +56,23 @@ public: \
 	NO_API virtual ~ASkillBook();
 
 
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_10_PROLOG
-#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_GENERATED_BODY \
+<<<<<<< HEAD
+#define FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_10_PROLOG
+#define FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+	FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
+	FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+=======
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_10_PROLOG
+#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_INCLASS_NO_PURE_DECLS \
+	FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h_13_ENHANCED_CONSTRUCTORS \
+>>>>>>> uitemp
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +80,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UClass* StaticClass<class ASkillBook>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_SkillBook_h
+<<<<<<< HEAD
+#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_SkillBook_h
+=======
+#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_SkillBook_h
+>>>>>>> uitemp
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

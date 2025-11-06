@@ -40,7 +40,7 @@ void ASpawner::Tick(float DeltaTime)
 
 	if (!boss) {
 		time += DeltaTime;
-		UE_LOG(LogTemp, Warning, TEXT("%f"),time);
+		UE_LOG(LogTemp, Warning, TEXT("%f"), time);
 
 		if (time >= InfinityRespawnTime) {
 			SpawnEnemy();
@@ -50,8 +50,9 @@ void ASpawner::Tick(float DeltaTime)
 
 	if (boss && Cast<AMyGameState>(GetWorld()->GetGameState())->IsFinsh()) {
 		if (!bossSpawnd) {
-			SpawnEnemy();
+			
 			bossSpawnd = true;
+			SpawnEnemy();
 		}
 	}
 }
@@ -79,7 +80,82 @@ void ASpawner::SpawnEnemy()
 	static const FString ContextString(TEXT("MonsterSpawnContext"));
 	SpawnDataTable->GetAllRows(ContextString, AllRows);
 
+	UWorld* World = GetWorld();
+	if (!World) return;
+
 	for (FMonsterSpawnRow* Row : AllRows)
+	{
+		for (int i = 0; i < Row->SpawnCount; i++)
+		{
+			FVector SpawnLocation = GetRandomPointInVolume();
+			FRotator SpawnRotation = FRotator::ZeroRotator;
+
+
+			FHitResult HitResult;
+			FVector Start = SpawnLocation;
+			FVector End = Start - FVector(0, 0, 10000);
+
+			FCollisionQueryParams TraceParams(FName(TEXT("GroundTrace")), false, this);
+
+			//아래체크
+			if (World->LineTraceSingleByChannel(
+				HitResult,
+				Start,
+				End,
+				ECC_WorldStatic,
+				TraceParams
+			))
+			{
+				SpawnLocation = HitResult.ImpactPoint;
+			}
+
+			bool bHit = World->LineTraceSingleByChannel(
+				HitResult,
+				Start,
+				End,
+				ECC_WorldStatic,
+				TraceParams
+			);	
+
+			SpawnLocation.Z += 100.0f;
+
+			AActor* Spawned = World->SpawnActor<AActor>(
+				Row->MonsterClass,
+				SpawnLocation,
+				SpawnRotation
+			);
+
+			if (Spawned)
+			{
+				Cast<AMyGameState>(World->GetGameState())->AddMonsterCount(1);
+			}
+
+			//지금 이게 보스냐하면 실행
+			/*if (Isboss) {
+
+			}*/
+		}
+	}
+	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
+	//위 체크
+	/*End = Start + FVector(0, 0, 10000);
+	if (World->LineTraceSingleByChannel(
+		HitResult,
+		Start,
+		End,
+		ECC_WorldStatic,
+		TraceParams
+	))
+	{
+		SpawnLocation = HitResult.ImpactPoint;
+		UE_LOG(LogTemp, Warning, TEXT("Ceiling hit at: %s"), *SpawnLocation.ToString());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No ceiling found above spawn point"));
+	}*/
+
+	/*for (FMonsterSpawnRow* Row : AllRows)
 	{
 		for (int i = 0; i < Row->SpawnCount; i++) {
 			GetWorld()->SpawnActor<AActor>(
@@ -91,7 +167,7 @@ void ASpawner::SpawnEnemy()
 		}
 	}
 
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
+	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();*/
 
 
 }
