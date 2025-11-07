@@ -8,10 +8,10 @@
 // Sets default values
 APortal::APortal()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	Tags.Add(FName("Portal"));	
+	Tags.Add(FName("Portal"));
 
 	Box = CreateDefaultSubobject<UBoxComponent>("Box");
 }
@@ -41,10 +41,18 @@ void APortal::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, 
 
 void APortal::SetPortalActive(bool bActive)
 {
-	SetActorHiddenInGame(!bActive); 
 
-	if (Box)
+	if (IsProlouge) {
+		Box->SetCollisionEnabled(IsProlouge ? ECollisionEnabled::QueryOnly : ECollisionEnabled::NoCollision);
+		SetActorHiddenInGame(!IsProlouge);
+
+	}
+	else if(Box)
 	{
+		SetActorHiddenInGame(!bActive);
+
 		Box->SetCollisionEnabled(bActive ? ECollisionEnabled::QueryOnly : ECollisionEnabled::NoCollision);
 	}
+
+
 }
