@@ -41,6 +41,8 @@ AMonster::AMonster()
 		UUserWidget* damage = damageWidget->GetUserWidgetObject();
 		damageTextInstance = Cast<UDamageText>(damage);
 	}
+
+	Tags.Add(FName("Monster"));
 }
 
 void AMonster::BeginPlay()
