@@ -113,6 +113,8 @@ void UMyGameInstance::PlayerHUDApply()
 		{
 			Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(tempChar->getMaxHP(), tempChar->getCurrentHP());
 			Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(tempChar->getMaxStamina(), tempChar->getCurrentStamina());
+			Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
+
 		}
 	}
 

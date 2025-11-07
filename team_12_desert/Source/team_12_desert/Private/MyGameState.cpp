@@ -26,11 +26,18 @@ void AMyGameState::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
 	CurrentMapName = UGameplayStatics::GetCurrentLevelName(GetWorld());
-	time= Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
 
-	UpdateMonsterCountHud();
+	if (CurrentMapName == "Prologue") {
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::MainMenu);
+
+	}
+	else {
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
+		UpdateMonsterCountHud();
+	}
+	time = Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
+
 
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Portal", Portals);
 
@@ -44,17 +51,17 @@ void AMyGameState::Tick(float DeltaTime)
 	if (Pause) {
 		UpdateHitMarkHud(DeltaTime);
 		UpdateTimeHud();
-		
+
 		//게임 버티기 시간설정
 		time -= DeltaTime;
-		if (time <= 0){
+		if (time <= 0) {
 			time = 0;
 			finish = true;
 		}
 	}
 
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
-	
+	//if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) { PortalsOpen(true); }
 
 }
@@ -73,9 +80,11 @@ void AMyGameState::UpdateMonsterCountHud() {
 			}
 		}
 	}
+	if (!MonsterRemainingText)
+		return;
 
 	if (GetLevel()) {
-		if (CurrentMapName=="Prologue") {
+		if (CurrentMapName == "Prologue") {
 			MonsterRemainingText->SetVisibility(ESlateVisibility::Hidden);
 			return;
 		}
@@ -89,6 +98,10 @@ void AMyGameState::UpdateMonsterCountHud() {
 
 void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
 {
+	/*if (!Cast<UMyGameInstance>(GetGameInstance())->IsHudTurnOn(HudPreset::InGame)) {
+		return;
+	}*/
+
 	if (Staminabar == nullptr) {
 		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
 			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
@@ -97,11 +110,16 @@ void AMyGameState::UpdateStaminaHud(float MaxStamina, float CurrentStamina)
 		}
 	}
 
-	Staminabar->SetPercent(CurrentStamina / MaxStamina);
+	if (Staminabar) {
+		Staminabar->SetPercent(CurrentStamina / MaxStamina);
+	}
 }
 
 void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
 {
+	/*if (!Cast<UMyGameInstance>(GetGameInstance())->IsHudTurnOn(HudPreset::InGame)) {
+		return;
+	}*/
 	if (Hpbar == nullptr) {
 		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
 			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
@@ -109,11 +127,16 @@ void AMyGameState::UpdateHpHud(float MaxHp, float CurrentHp)
 			}
 		}
 	}
-	Hpbar->SetPercent(CurrentHp / MaxHp);
+	if (Hpbar)
+		Hpbar->SetPercent(CurrentHp / MaxHp);
 }
 
 void AMyGameState::UpdateHitMarkHud(float dt)
 {
+	/*if (!Cast<UMyGameInstance>(GetGameInstance())->IsHudTurnOn(HudPreset::InGame)) {
+		return;
+	}*/
+
 	if (HitMarker == nullptr) {
 		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
 			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
@@ -121,6 +144,9 @@ void AMyGameState::UpdateHitMarkHud(float dt)
 			}
 		}
 	}
+
+	if (!HitMarker)
+		return;
 	HitMarker->SetRenderOpacity(HitMarkOpa);
 
 	const float FadeDuration = 0.5f;
@@ -133,6 +159,10 @@ void AMyGameState::UpdateHitMarkHud(float dt)
 
 void AMyGameState::UpdateTimeHud()
 {
+	/*if (!Cast<UMyGameInstance>(GetGameInstance())->IsHudTurnOn(HudPreset::InGame)) {
+		return;
+	}*/
+
 	if (RemainingTime == nullptr) {
 		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
 			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
@@ -140,6 +170,10 @@ void AMyGameState::UpdateTimeHud()
 			}
 		}
 	}
+
+	if (!RemainingTime)
+		return;
+
 	if (CurrentMapName == "Prologue") {
 		RemainingTime->SetVisibility(ESlateVisibility::Hidden);
 		return;
