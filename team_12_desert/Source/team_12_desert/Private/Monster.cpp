@@ -13,6 +13,7 @@
 #include "Components/TextBlock.h"
 #include "DamageText.h"
 #include "DamagePopupActor.h"
+#include "Components/TimelineComponent.h"
 
 AMonster::AMonster()
 {
@@ -41,6 +42,10 @@ AMonster::AMonster()
 		UUserWidget* damage = damageWidget->GetUserWidgetObject();
 		damageTextInstance = Cast<UDamageText>(damage);
 	}
+
+	// 죽을때 사라지는 용도의 타임라인 생성
+	DissolveTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("DissolveTimeline"));
+	DissolveTimeline->bAutoActivate = false;
 }
 
 void AMonster::BeginPlay()
@@ -100,34 +105,7 @@ void AMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMonster::ApplyDamage(float DamageAmount)
 {
-	ShowDamage(DamageAmount);
-	CurrentHealth -= DamageAmount;
-	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
-	if (CurrentHealth <= 0.f)
-	{
-		// GameInstance에서 몬스터 수 감소
-		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1);
-		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
-
-		// 죽을 때 90도 쓰러짐
-		FRotator DeathRotation = GetActorRotation();
-		DeathRotation.Roll += 90.f; // X축으로 옆으로 쓰러짐 (Roll)
-		SetActorRotation(DeathRotation);
-
-		DropItem();
-
-		// 딜레이 후 Destroy
-		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
-			{
-				//Destroy();
-				DeactivateMonster();
-			});
-
-	}
-	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
-	HpBarProgress();
-
-	Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
+	// 자식 클래스로 이동
 }
 
 void AMonster::Attack()
@@ -256,3 +234,25 @@ void AMonster::SetOwningPoolSubsystem(UObjectPoolSubsystem* InSubsystem)
 	OwningPoolSubsystem = InSubsystem;
 }
 
+void AMonster::DamagedLaunch(FVector MC_Vector)
+{
+	// FVector LaunchDirection = -GetActorForwardVector() + FVector(-0.5f, 0.f, 0.5f);
+	FVector LaunchDirection = MC_Vector + FVector(1.0f, 0.f, 1.0f);
+	LaunchCharacter(LaunchDirection * 300.f, true, true);
+}
+
+void AMonster::StartDeathEffect()
+{
+	// 자식 클래스에서 구현
+	UE_LOG(LogTemp, Warning, TEXT("Start Death Effect"));
+}
+
+void AMonster::TimelineUpdate(float TimelineValue)
+{
+	// 자식 클래스에서 구현
+}
+
+void AMonster::TimelineFinished()
+{
+	// 자식 클래스에서 구현
+}

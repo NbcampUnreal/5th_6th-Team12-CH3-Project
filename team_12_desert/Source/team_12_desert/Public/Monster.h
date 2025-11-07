@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/TimelineComponent.h"
+
 #include "Monster.generated.h"
 
 class UWidgetComponent;
@@ -93,4 +95,32 @@ public:
 
 	void SetOwningPoolSubsystem(class UObjectPoolSubsystem* InSubsystem);
 
+
+	// 피격시 삐용 by mpyi
+	UFUNCTION(BlueprintCallable)
+	void DamagedLaunch(FVector MC_Vector);
+
+	// 죽을 때 이펙트용
+	UFUNCTION(BlueprintCallable, Category = "Death_Effect")
+	virtual void StartDeathEffect();
+
+protected:
+	// 2. 타임라인 컴포넌트 선언
+	UPROPERTY()
+	class UTimelineComponent* DissolveTimeline;
+
+	// 3. Dissolve 효과에 사용할 커브 애셋 (BP 에디터에서 설정)
+	UPROPERTY(EditDefaultsOnly, Category = "Death Effect")
+	UCurveFloat* DissolveCurve;
+
+	// 5. 타임라인이 매 프레임 호출할 업데이트 함수 (UFUNCTION 필수)
+	UFUNCTION()
+	virtual void TimelineUpdate(float TimelineValue);
+
+	// 6. 타임라인이 완료될 때 호출될 함수 (선택 사항)
+	UFUNCTION()
+	virtual void TimelineFinished();
+	
+	FOnTimelineFloat UpdateFunctionFloat;
+	FOnTimelineEvent FinishedFunction;
 };

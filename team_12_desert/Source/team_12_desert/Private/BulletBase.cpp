@@ -15,7 +15,7 @@
 ABulletBase::ABulletBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	StaticMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComp"));
 
@@ -42,12 +42,6 @@ void ABulletBase::BeginPlay()
 	Super::BeginPlay();	
 }
 
-// Called every frame
-void ABulletBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
 void ABulletBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
@@ -77,6 +71,8 @@ void ABulletBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 		UE_LOG(LogTemp, Warning, TEXT("Weapon Owner: %s, Damage: %d"), *GunOwner->GetName(), damage);
 
 		HitMonster->ApplyDamage(damage);
+		HitMonster->DamagedLaunch(this->GetActorForwardVector());
+
 		Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
 	}
 
