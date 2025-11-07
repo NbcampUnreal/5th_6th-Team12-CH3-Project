@@ -14,11 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_MyGameState_generated_h
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execLevelTest);
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyGameState(); \
 	friend struct Z_Construct_UClass_AMyGameState_Statics; \
@@ -27,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(AMyGameState)
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMyGameState(AMyGameState&&); \
@@ -39,13 +39,13 @@ public: \
 	NO_API virtual ~AMyGameState();
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_15_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_GENERATED_BODY \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_19_PROLOG
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_18_ENHANCED_CONSTRUCTORS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_INCLASS_NO_PURE_DECLS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_MyGameState_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

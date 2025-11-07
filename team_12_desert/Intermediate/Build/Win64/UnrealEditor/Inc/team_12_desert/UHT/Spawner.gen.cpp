@@ -16,6 +16,7 @@ ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_ASpawner();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_ASpawner_NoRegister();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_UObjectPoolSubsystem_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
 
@@ -96,6 +97,10 @@ struct Z_Construct_UClass_ASpawner_Statics
 		{ "Category", "Spawning" },
 		{ "ModuleRelativePath", "Public/Spawner.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_boss_MetaData[] = {
+		{ "Category", "Spawner" },
+		{ "ModuleRelativePath", "Public/Spawner.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Infinity_MetaData[] = {
 		{ "Category", "Spawner" },
 		{ "ModuleRelativePath", "Public/Spawner.h" },
@@ -104,13 +109,24 @@ struct Z_Construct_UClass_ASpawner_Statics
 		{ "Category", "Spawner" },
 		{ "ModuleRelativePath", "Public/Spawner.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PoolSubsystem_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Spawner.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InitialPoolSize_MetaData[] = {
+		{ "Category", "Spawning" },
+		{ "ModuleRelativePath", "Public/Spawner.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scene;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SpawningBox;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SpawnDataTable;
+	static void NewProp_boss_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_boss;
 	static void NewProp_Infinity_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_Infinity;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_InfinityRespawnTime;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PoolSubsystem;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_InitialPoolSize;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -125,18 +141,28 @@ struct Z_Construct_UClass_ASpawner_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_Scene = { "Scene", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, Scene), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scene_MetaData), NewProp_Scene_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_SpawningBox = { "SpawningBox", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, SpawningBox), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpawningBox_MetaData), NewProp_SpawningBox_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_SpawnDataTable = { "SpawnDataTable", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, SpawnDataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpawnDataTable_MetaData), NewProp_SpawnDataTable_MetaData) };
+void Z_Construct_UClass_ASpawner_Statics::NewProp_boss_SetBit(void* Obj)
+{
+	((ASpawner*)Obj)->boss = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_boss = { "boss", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASpawner), &Z_Construct_UClass_ASpawner_Statics::NewProp_boss_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_boss_MetaData), NewProp_boss_MetaData) };
 void Z_Construct_UClass_ASpawner_Statics::NewProp_Infinity_SetBit(void* Obj)
 {
 	((ASpawner*)Obj)->Infinity = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_Infinity = { "Infinity", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASpawner), &Z_Construct_UClass_ASpawner_Statics::NewProp_Infinity_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Infinity_MetaData), NewProp_Infinity_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_InfinityRespawnTime = { "InfinityRespawnTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, InfinityRespawnTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InfinityRespawnTime_MetaData), NewProp_InfinityRespawnTime_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_PoolSubsystem = { "PoolSubsystem", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, PoolSubsystem), Z_Construct_UClass_UObjectPoolSubsystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PoolSubsystem_MetaData), NewProp_PoolSubsystem_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASpawner_Statics::NewProp_InitialPoolSize = { "InitialPoolSize", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpawner, InitialPoolSize), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InitialPoolSize_MetaData), NewProp_InitialPoolSize_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpawner_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_Scene,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_SpawningBox,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_SpawnDataTable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_boss,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_Infinity,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_InfinityRespawnTime,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_PoolSubsystem,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpawner_Statics::NewProp_InitialPoolSize,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASpawner_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASpawner_Statics::DependentSingletons[])() = {
@@ -179,10 +205,10 @@ ASpawner::~ASpawner() {}
 struct Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASpawner, ASpawner::StaticClass, TEXT("ASpawner"), &Z_Registration_Info_UClass_ASpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpawner), 1689516097U) },
+		{ Z_Construct_UClass_ASpawner, ASpawner::StaticClass, TEXT("ASpawner"), &Z_Registration_Info_UClass_ASpawner, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpawner), 1437497997U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_4190328420(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_2415740553(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_Spawner_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

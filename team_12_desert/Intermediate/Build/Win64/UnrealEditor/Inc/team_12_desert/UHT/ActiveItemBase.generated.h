@@ -9,12 +9,19 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef TEAM_12_DESERT_ActiveItemBase_generated_h
 #error "ActiveItemBase.generated.h already included, missing '#pragma once' in ActiveItemBase.h"
 #endif
 #define TEAM_12_DESERT_ActiveItemBase_generated_h
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnItemOverlap);
+
+
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAActiveItemBase(); \
 	friend struct Z_Construct_UClass_AActiveItemBase_Statics; \
@@ -24,7 +31,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AActiveItemBase*>(this); }
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AActiveItemBase(AActiveItemBase&&); \
@@ -36,12 +43,13 @@ public: \
 	NO_API virtual ~AActiveItemBase();
 
 
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_11_PROLOG
-#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_GENERATED_BODY \
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_12_PROLOG
+#define FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Sourcetree_team_12_desert_Source_team_12_desert_Public_ActiveItemBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
