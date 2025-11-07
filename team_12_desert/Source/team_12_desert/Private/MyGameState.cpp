@@ -28,16 +28,12 @@ void AMyGameState::BeginPlay()
 
 	CurrentMapName = UGameplayStatics::GetCurrentLevelName(GetWorld());
 
-	if (CurrentMapName == "Prologue") {
-		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::MainMenu);
-
-	}
-	else {
+	if (!(CurrentMapName == "Prologue")) {
 		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
 		UpdateMonsterCountHud();
+
 	}
 	time = Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
-
 
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Portal", Portals);
 
