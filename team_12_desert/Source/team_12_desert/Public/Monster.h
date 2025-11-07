@@ -71,8 +71,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	float AttackCooldown;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	TSubclassOf<AActor> DropItemClass;
 
 	UFUNCTION(BlueprintCallable)
 	virtual void ApplyDamage(float DamageAmount);

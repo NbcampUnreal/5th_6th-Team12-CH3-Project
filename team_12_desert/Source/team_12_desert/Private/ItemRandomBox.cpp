@@ -16,6 +16,7 @@ AItemRandomBox::AItemRandomBox()
 TObjectPtr<AActor> AItemRandomBox::SpawnRandomItem(FVector Location)
 {
 	if (!IsValid(ItemDataTable) || !IsValid(ExpUpItem)) return nullptr;
+	UE_LOG(LogTemp, Display, TEXT("dorp"));
 	if (FItemSpawnRow* SelectedRow = GetRandomItem())
 	{
 		if (TObjectPtr<UClass> ActualClass = SelectedRow->ItemClass.Get())
