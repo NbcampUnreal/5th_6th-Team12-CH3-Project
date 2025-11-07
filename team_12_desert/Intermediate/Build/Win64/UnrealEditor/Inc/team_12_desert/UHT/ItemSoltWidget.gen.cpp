@@ -17,9 +17,43 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
 
+// Begin Class UItemSoltWidget Function ItemActive
+struct Z_Construct_UFunction_UItemSoltWidget_ItemActive_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/ItemSoltWidget.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UItemSoltWidget_ItemActive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UItemSoltWidget, nullptr, "ItemActive", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UItemSoltWidget_ItemActive_Statics::Function_MetaDataParams), Z_Construct_UFunction_UItemSoltWidget_ItemActive_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UItemSoltWidget_ItemActive()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UItemSoltWidget_ItemActive_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UItemSoltWidget::execItemActive)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ItemActive();
+	P_NATIVE_END;
+}
+// End Class UItemSoltWidget Function ItemActive
+
 // Begin Class UItemSoltWidget
 void UItemSoltWidget::StaticRegisterNativesUItemSoltWidget()
 {
+	UClass* Class = UItemSoltWidget::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "ItemActive", &UItemSoltWidget::execItemActive },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UItemSoltWidget);
 UClass* Z_Construct_UClass_UItemSoltWidget_NoRegister()
@@ -44,6 +78,10 @@ struct Z_Construct_UClass_UItemSoltWidget_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemDataTable;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UItemSoltWidget_ItemActive, "ItemActive" }, // 3258656153
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UItemSoltWidget>::IsAbstract,
 	};
@@ -64,11 +102,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_UItemSoltWidget_Statics
 	nullptr,
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
+	FuncInfo,
 	Z_Construct_UClass_UItemSoltWidget_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_UItemSoltWidget_Statics::PropPointers),
 	0,
 	0x00B010A0u,
@@ -92,23 +130,14 @@ UItemSoltWidget::~UItemSoltWidget() {}
 // End Class UItemSoltWidget
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics
->>>>>>> uitemp
+struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UItemSoltWidget, UItemSoltWidget::StaticClass, TEXT("UItemSoltWidget"), &Z_Registration_Info_UClass_UItemSoltWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemSoltWidget), 2763925696U) },
+		{ Z_Construct_UClass_UItemSoltWidget, UItemSoltWidget::StaticClass, TEXT("UItemSoltWidget"), &Z_Registration_Info_UClass_UItemSoltWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UItemSoltWidget), 59001960U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_4000170118(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_4000170118(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo),
->>>>>>> uitemp
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_966708587(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSoltWidget_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

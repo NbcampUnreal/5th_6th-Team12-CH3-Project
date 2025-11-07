@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "SkillBookComponent.h"
 #include "MainCharacter.generated.h"
 
 enum ATTACK_TYPE
@@ -46,8 +47,9 @@ public:
 	void setCurrentExperience(int val) { CurrentExperience = val; };
 
 
-	TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
+	//TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
 	TObjectPtr<class UInventoryComponent> getInventoryComponent() const { return InventoryComponent; }
+	TObjectPtr<class USkillBookComponent> getSkillBookComponent() const { return SkillBookComponent; }
 
 	bool getIsDashSkill() const { return bIsDashSkill; }
 	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
@@ -121,13 +123,21 @@ protected:
 	TObjectPtr<class AWeaponBase> RangeWeaponActor;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class AWeaponBase> MeleeWeaponActor;
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<class ASkillBook> mySkillBook;
-	UPROPERTY(VisibleAnywhere)
-	TObjectPtr<class ASkillBook> mySkillBookActor;
+	//UPROPERTY(EditAnywhere)
+	//TSubclassOf<class ASkillBook> mySkillBook;
+	//UPROPERTY(VisibleAnywhere)
+	//TObjectPtr<class ASkillBook> mySkillBookActor;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UInventoryComponent> InventoryComponent;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skill", meta = (AllowPrivateAccess = "Skill"))
+	TObjectPtr<USkillBookComponent> SkillBookComponent;
+
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<class USphereComponent> SkillBookCollision;
 
 	UFUNCTION()
 	void EquipWeapon();
@@ -135,4 +145,18 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MyCharacter")
 	bool bIsDashSkill;
 
+	UFUNCTION()
+	void ActivateSkillBook(UPrimitiveComponent* OverlapPendComp,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void EndActivateSkillBook(
+		UPrimitiveComponent* OverlapPendComp,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex);
 };

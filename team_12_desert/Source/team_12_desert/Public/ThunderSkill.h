@@ -16,6 +16,6 @@ class TEAM_12_DESERT_API AThunderSkill : public ASkillBase
 public:
 	AThunderSkill();
 
-	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location) override;
+	virtual void ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location) override;
 
 };

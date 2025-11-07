@@ -17,10 +17,14 @@ class TEAM_12_DESERT_API UInventoryWidget : public UUserWidget
 	virtual void NativeConstruct() override;
 
 	void UpdateInventory();
+
 public:
 
 	UPROPERTY(EditAnywhere, Category = "InventoryComponent")
 	TSubclassOf<class UInventoryComponent> InventoryComponentClass;
+
+	UPROPERTY(VisibleAnywhere, Category = "MainCharacter")
+	TObjectPtr<class AMainCharacter> MainCharacter;
 
 	UPROPERTY(VisibleAnywhere, Category = "InventoryComponent")
 	TObjectPtr<UInventoryComponent> InventoryComponent;

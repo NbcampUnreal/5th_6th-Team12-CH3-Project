@@ -2,24 +2,24 @@
 
 
 #include "ItemSoltWidget.h"
-#include "InventoryComponent.h"
 #include "Components/TextBlock.h"
 #include "Components/Image.h"
 #include "ItemInventoryData.h"
 #include "Components/Button.h"
 #include "ActiveItemBase.h"
 
-void UItemSoltWidget::NativeOnInitialized()
+
+void UItemSoltWidget::NativePreConstruct()
 {
-	Super::NativeOnInitialized();
+	Super::NativePreConstruct();
 
 	if (ItemDataTable != nullptr)
 	{
-		if (FItemInventoryData* ItemData = GetItemData())
+		if (FItemInventoryData* ItemData = GetItemData(Item))
 		{
 			if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
 			{
-				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT("%d"), Quantity)));
+				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT("%d"), Item.Quantity)));
 			}
 			if (TObjectPtr<UImage> ItemImage = Cast<UImage>(GetWidgetFromName(TEXT("ItemImage"))))
 			{
@@ -38,41 +38,21 @@ void UItemSoltWidget::NativeOnInitialized()
 			}
 		}
 	}
+
 	
 }
 
-void UItemSoltWidget::SetItem(const  FItemInventory& Item)
+void UItemSoltWidget::UpdateItemWidget()
 {
-	ItemID = Item.ItemName;
-	Quantity = Item.Quantity;
-	if (ItemDataTable != nullptr)
-	{
-		if (FItemInventoryData* ItemData = GetItemData())
-		{
-			if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
-			{
-				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT("%d"), Quantity)));
-			}
-			if (TObjectPtr<UImage> ItemImage = Cast<UImage>(GetWidgetFromName(TEXT("ItemImage"))))
-			{
-				ItemImage->SetBrushFromTexture(ItemData->ItemIcon);
-			}
-			if (TObjectPtr<UButton> ActiveButton = Cast<UButton>(GetWidgetFromName(TEXT("Active"))))
-			{
-				ActiveButton->OnClicked.AddDynamic(this, &UItemSoltWidget::ItemActive);
-			}
-		}
-		else
-		{
-			if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
-			{
-				ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));
-			}
-		}
-	}
+
 }
 
-FItemInventoryData* UItemSoltWidget::GetItemData() const
+void UItemSoltWidget::SetItem(const FItemInventory& Items)
+{
+	Item = Items;
+}
+
+FItemInventoryData* UItemSoltWidget::GetItemData(const FItemInventory& Items) const
 {
 	TArray<FItemInventoryData*> AllRows;
 	static const FString ContextString(TEXT("Item Data Table Context"));
@@ -82,7 +62,7 @@ FItemInventoryData* UItemSoltWidget::GetItemData() const
 
 	for(FItemInventoryData* Row : AllRows)
 	{
-		if (Row->ItemName == ItemID)
+		if (Row->ItemName == Items.ItemName)
 		{
 			return Row;
 		}
@@ -92,15 +72,15 @@ FItemInventoryData* UItemSoltWidget::GetItemData() const
 
 void UItemSoltWidget::ItemActive()
 {
-	if (FItemInventoryData* ItemData = GetItemData())
+	if (FItemInventoryData* ItemData = GetItemData(Item))
 	{
 		if (ItemData->ItemInstance)
 		{
 			ItemData->ItemInstance->Active();
-			Quantity--;
-			if (Quantity <= 0)
+			Item.Quantity--;
+			if (Item.Quantity <= 0)
 			{
-				ItemID = NAME_None;
+				Item.ItemName = NAME_None;
 				if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))
 				{
 					ItemQuantity->SetText(FText::FromString(FString::Printf(TEXT(""))));

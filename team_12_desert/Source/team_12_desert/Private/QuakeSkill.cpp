@@ -14,7 +14,7 @@ AQuakeSkill::AQuakeSkill()
 	NiagaraEffect = nullptr;
 }
 
-void AQuakeSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
+void AQuakeSkill::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location)
 {
 	Super::ActionSkill(Actors, time, Location);
 
@@ -34,7 +34,7 @@ void AQuakeSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Locati
 				true                    // 이펙트를 활성화할지 여부
 			);
 		}
-		for (AActor* Actor : Actors)
+		for (TObjectPtr<AActor> Actor : Actors)
 		{
 			if (TObjectPtr<AMonster> MonsterAI = Cast<AMonster>(Actor->GetInstigatorController()))
 			{

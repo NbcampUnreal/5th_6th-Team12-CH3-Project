@@ -7,6 +7,8 @@
 #include "InventoryComponent.h"
 #include "MyGameState.h"
 #include "MyGameInstance.h"
+#include "SkillBookComponent.h"
+#include "Components/SphereComponent.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -27,7 +29,14 @@ AMainCharacter::AMainCharacter() :
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
+
     InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	SkillBookComponent = CreateDefaultSubobject<USkillBookComponent>(TEXT("SkillBookComponent"));
+
+	SkillBookCollision = CreateDefaultSubobject<USphereComponent>(TEXT("SkillBookCollision"));
+    SkillBookCollision->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+    SkillBookCollision->SetupAttachment(RootComponent);
+
 
     // 25.10.27. mpyi _ 찬영님 요청으로 태그 추가(대소문자 주의)
     Tags.Add(FName("Player"));
@@ -51,6 +60,8 @@ void AMainCharacter::BeginPlay()
     Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
 
 
+	SkillBookCollision->OnComponentBeginOverlap.AddDynamic(this, &AMainCharacter::ActivateSkillBook);
+	SkillBookCollision->OnComponentEndOverlap.AddDynamic(this, &AMainCharacter::EndActivateSkillBook);
 }
 
 void AMainCharacter::EquipWeapon()
@@ -79,16 +90,38 @@ void AMainCharacter::EquipWeapon()
         }
     }
 
-    if (IsValid(mySkillBook))
+    //if (IsValid(mySkillBook))
+    //{
+    //    mySkillBookActor = GetWorld()->SpawnActor<ASkillBook>(mySkillBook);
+    //    if (mySkillBook)
+    //    {
+    //        FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
+    //        mySkillBookActor->AttachToComponent(GetMesh(), TransformRules, TEXT("SkillSocket"));
+    //        mySkillBookActor->SetOwner(this);
+    //        mySkillBookActor->SetInstigator(this);
+    //    }
+    //}
+}
+
+void AMainCharacter::ActivateSkillBook(
+    UPrimitiveComponent* OverlapPendComp,
+    AActor* OtherActor,
+    UPrimitiveComponent* OtherComp,
+    int32 OtherBodyIndex,
+    bool bFromSweep,
+    const FHitResult& SweepResult)
+{
+    if(OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
     {
-        mySkillBookActor = GetWorld()->SpawnActor<ASkillBook>(mySkillBook);
-        if (mySkillBook)
-        {
-            FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-            mySkillBookActor->AttachToComponent(GetMesh(), TransformRules, TEXT("SkillSocket"));
-            mySkillBookActor->SetOwner(this);
-            mySkillBookActor->SetInstigator(this);
-        }
+        SkillBookComponent->ActivateItem(OtherActor);
+	}
+}
+
+void AMainCharacter::EndActivateSkillBook(UPrimitiveComponent* OverlapPendComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+    if (OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
+    {
+        SkillBookComponent->DeactivateItem(OtherActor);
     }
 }
 

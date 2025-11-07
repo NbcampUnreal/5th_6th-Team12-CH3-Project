@@ -14,20 +14,7 @@ AHot6ActiveItem::AHot6ActiveItem()
 void AHot6ActiveItem::ActivateItem(TObjectPtr<AActor> Actor)
 {
 	Super::ActivateItem(Actor);
-    UE_LOG(LogTemp, Display, TEXT("AHot6ActiveItemOverlap"));
-    if (Actor->ActorHasTag(TEXT("Player")))
-    {
-        MainCharacter = Cast<AMainCharacter>(Actor);
-        if (MainCharacter)
-        {
-            InventoryComponent = MainCharacter->getInventoryComponent();
-            if (InventoryComponent)
-            {
-                InventoryComponent->AddItem(ItemID);
-                Destroy();
-            }
-        }
-    }
+
 	//if (Actor->ActorHasTag(TEXT("Player")))
 	//{
 	//	MainCharacter = Cast<AMainCharacter>(Actor);

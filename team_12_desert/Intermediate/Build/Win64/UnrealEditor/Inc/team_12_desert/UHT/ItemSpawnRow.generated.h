@@ -14,11 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TEAM_12_DESERT_ItemSpawnRow_generated_h
 
-<<<<<<< HEAD
-#define FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_14_GENERATED_BODY \
-=======
-#define FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_14_GENERATED_BODY \
->>>>>>> uitemp
+#define FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h_14_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FItemSpawnRow_Statics; \
 	TEAM_12_DESERT_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -27,11 +23,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> TEAM_12_DESERT_API UScriptStruct* StaticStruct<struct FItemSpawnRow>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
-#define CURRENT_FILE_ID FID_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h
-=======
-#define CURRENT_FILE_ID FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h
->>>>>>> uitemp
+#define CURRENT_FILE_ID FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_ItemSpawnRow_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

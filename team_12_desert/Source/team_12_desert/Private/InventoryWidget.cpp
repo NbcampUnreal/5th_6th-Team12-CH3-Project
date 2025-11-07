@@ -5,26 +5,27 @@
 #include "InventoryComponent.h"
 #include "ItemSoltWidget.h"
 #include "Components/WrapBox.h"
+#include "MainCharacter.h"
 
 void UInventoryWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 	UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
-	if (InventoryComponentClass)
+	if (IsValid(GetWorld()->GetFirstPlayerController()->GetPawn<AMainCharacter>()))
 	{
-		InventoryComponent = Cast<UInventoryComponent>(GetOwningPlayerPawn()->GetComponentByClass(InventoryComponentClass));
+		MainCharacter = GetWorld()->GetFirstPlayerController()->GetPawn<AMainCharacter>();
 		UpdateInventory();
 	}
 }	
 
 void UInventoryWidget::UpdateInventory()
 {
-	TArray<FItemInventory> *Items = &InventoryComponent->Items;
+	TArray<FItemInventory> Items = MainCharacter->getInventoryComponent()->Items;
 	if (TObjectPtr<UWrapBox> Inven = Cast<UWrapBox>(GetWidgetFromName(TEXT("InventoryCanvas"))))
 	{
 		Inven->ClearChildren();
 		UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
-		for (const FItemInventory& Item : *Items)
+		for (const FItemInventory& Item : Items)
 		{
 			UItemSoltWidget* ItemSlot = CreateWidget<UItemSoltWidget>(GetOwningPlayer(), ItemSlotWidgetClass);
 			if (ItemSlot == nullptr) UE_LOG(LogTemp, Display, TEXT("error null"));
@@ -36,3 +37,4 @@ void UInventoryWidget::UpdateInventory()
 		}
 	}
 }
+ 

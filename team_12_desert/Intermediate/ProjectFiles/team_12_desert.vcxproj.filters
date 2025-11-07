@@ -153,7 +153,7 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBookComponent.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillSelecteRow.cpp">
@@ -300,7 +300,7 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBookComponent.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillSelecteRow.h">

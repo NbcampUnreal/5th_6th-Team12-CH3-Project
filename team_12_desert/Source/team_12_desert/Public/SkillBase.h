@@ -25,7 +25,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Delay")
 	float Delay;
 
-	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location);
+	virtual void ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location);
 	virtual void AttachSkill(TObjectPtr<class AMainCharacter> Character);
 	virtual void DetachSkill(TObjectPtr<class AMainCharacter> Character);
 	FName GetSkillName() const;

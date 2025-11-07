@@ -13,7 +13,7 @@ AThunderSkill::AThunderSkill()
 	NiagaraEffect = nullptr;
 }
 
-void AThunderSkill::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
+void AThunderSkill::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location)
 {
 	Super::ActionSkill(Actors, time, Location);
 	if (FMath::IsNearlyZero(FMath::Fmod(time, Delay), KINDA_SMALL_NUMBER))

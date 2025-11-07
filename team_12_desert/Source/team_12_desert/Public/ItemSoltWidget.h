@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "InventoryComponent.h"
 #include "ItemSoltWidget.generated.h"
 
 /**
@@ -13,21 +14,23 @@ UCLASS()
 class TEAM_12_DESERT_API UItemSoltWidget : public UUserWidget
 {
 	GENERATED_BODY()
-	virtual void NativeOnInitialized() override;
+
+	virtual void NativePreConstruct() override;
+	void UpdateItemWidget();
 public:
 
-	void SetItem(const struct FItemInventory& Item);
+	void SetItem(const FItemInventory& Item);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Inventory|Data")
 	TObjectPtr<UDataTable> ItemDataTable;
+	FItemInventory Item;
 
 private:
 
-	struct FItemInventoryData* GetItemData() const;
+	struct FItemInventoryData* GetItemData(const FItemInventory& Item) const;
 
+	UFUNCTION()
 	void ItemActive();
 
-	FName ItemID;
-	int32 Quantity;
 
 };

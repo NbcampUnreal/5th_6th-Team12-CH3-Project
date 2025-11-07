@@ -16,6 +16,6 @@ class TEAM_12_DESERT_API AQuakeSkill : public ASkillBase
 public:
 	AQuakeSkill();
 
-	virtual void ActionSkill(TArray<AActor*> Actors, float time, FVector Location) override;
+	virtual void ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location) override;
 
 };

@@ -17,7 +17,7 @@ ASkillBase::ASkillBase()
 	MainCharacter = nullptr;
 }
 
-void ASkillBase::ActionSkill(TArray<AActor*> Actors, float time, FVector Location)
+void ASkillBase::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location)
 {
 
 }

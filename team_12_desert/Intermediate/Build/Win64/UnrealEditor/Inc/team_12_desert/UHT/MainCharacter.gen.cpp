@@ -6,19 +6,168 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "team_12_desert/Public/MainCharacter.h"
+#include "Runtime/Engine/Classes/Engine/HitResult.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 
 // Begin Cross Module References
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMainCharacter();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMainCharacter_NoRegister();
-TEAM_12_DESERT_API UClass* Z_Construct_UClass_ASkillBook_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_USkillBookComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_team_12_desert();
 // End Cross Module References
+
+// Begin Class AMainCharacter Function ActivateSkillBook
+struct Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics
+{
+	struct MainCharacter_eventActivateSkillBook_Parms
+	{
+		UPrimitiveComponent* OverlapPendComp;
+		AActor* OtherActor;
+		UPrimitiveComponent* OtherComp;
+		int32 OtherBodyIndex;
+		bool bFromSweep;
+		FHitResult SweepResult;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlapPendComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OtherComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SweepResult_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlapPendComp;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherComp;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_OtherBodyIndex;
+	static void NewProp_bFromSweep_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bFromSweep;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SweepResult;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OverlapPendComp = { "OverlapPendComp", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventActivateSkillBook_Parms, OverlapPendComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlapPendComp_MetaData), NewProp_OverlapPendComp_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventActivateSkillBook_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventActivateSkillBook_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OtherComp_MetaData), NewProp_OtherComp_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherBodyIndex = { "OtherBodyIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventActivateSkillBook_Parms, OtherBodyIndex), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_bFromSweep_SetBit(void* Obj)
+{
+	((MainCharacter_eventActivateSkillBook_Parms*)Obj)->bFromSweep = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_bFromSweep = { "bFromSweep", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MainCharacter_eventActivateSkillBook_Parms), &Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_bFromSweep_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_SweepResult = { "SweepResult", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventActivateSkillBook_Parms, SweepResult), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SweepResult_MetaData), NewProp_SweepResult_MetaData) }; // 4100991306
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OverlapPendComp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherComp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_OtherBodyIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_bFromSweep,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::NewProp_SweepResult,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "ActivateSkillBook", nullptr, nullptr, Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::MainCharacter_eventActivateSkillBook_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00480401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::MainCharacter_eventActivateSkillBook_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMainCharacter_ActivateSkillBook()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMainCharacter_ActivateSkillBook_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMainCharacter::execActivateSkillBook)
+{
+	P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlapPendComp);
+	P_GET_OBJECT(AActor,Z_Param_OtherActor);
+	P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp);
+	P_GET_PROPERTY(FIntProperty,Z_Param_OtherBodyIndex);
+	P_GET_UBOOL(Z_Param_bFromSweep);
+	P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ActivateSkillBook(Z_Param_OverlapPendComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
+	P_NATIVE_END;
+}
+// End Class AMainCharacter Function ActivateSkillBook
+
+// Begin Class AMainCharacter Function EndActivateSkillBook
+struct Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics
+{
+	struct MainCharacter_eventEndActivateSkillBook_Parms
+	{
+		UPrimitiveComponent* OverlapPendComp;
+		AActor* OtherActor;
+		UPrimitiveComponent* OtherComp;
+		int32 OtherBodyIndex;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OverlapPendComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OtherComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverlapPendComp;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherComp;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_OtherBodyIndex;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OverlapPendComp = { "OverlapPendComp", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventEndActivateSkillBook_Parms, OverlapPendComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OverlapPendComp_MetaData), NewProp_OverlapPendComp_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventEndActivateSkillBook_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventEndActivateSkillBook_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OtherComp_MetaData), NewProp_OtherComp_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherBodyIndex = { "OtherBodyIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventEndActivateSkillBook_Parms, OtherBodyIndex), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OverlapPendComp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherComp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::NewProp_OtherBodyIndex,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "EndActivateSkillBook", nullptr, nullptr, Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::MainCharacter_eventEndActivateSkillBook_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::MainCharacter_eventEndActivateSkillBook_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMainCharacter::execEndActivateSkillBook)
+{
+	P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlapPendComp);
+	P_GET_OBJECT(AActor,Z_Param_OtherActor);
+	P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp);
+	P_GET_PROPERTY(FIntProperty,Z_Param_OtherBodyIndex);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->EndActivateSkillBook(Z_Param_OverlapPendComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex);
+	P_NATIVE_END;
+}
+// End Class AMainCharacter Function EndActivateSkillBook
 
 // Begin Class AMainCharacter Function EquipWeapon
 struct Z_Construct_UFunction_AMainCharacter_EquipWeapon_Statics
@@ -138,6 +287,8 @@ void AMainCharacter::StaticRegisterNativesAMainCharacter()
 {
 	UClass* Class = AMainCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "ActivateSkillBook", &AMainCharacter::execActivateSkillBook },
+		{ "EndActivateSkillBook", &AMainCharacter::execEndActivateSkillBook },
 		{ "EquipWeapon", &AMainCharacter::execEquipWeapon },
 		{ "HealHP", &AMainCharacter::execHealHP },
 		{ "HealStamina", &AMainCharacter::execHealStamina },
@@ -235,17 +386,26 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 		{ "Category", "MainCharacter" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_mySkillBook_MetaData[] = {
-		{ "Category", "MainCharacter" },
-		{ "ModuleRelativePath", "Public/MainCharacter.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_mySkillBookActor_MetaData[] = {
-		{ "Category", "MainCharacter" },
-		{ "ModuleRelativePath", "Public/MainCharacter.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InventoryComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Inventory" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//UPROPERTY(EditAnywhere)\n//TSubclassOf<class ASkillBook> mySkillBook;\n//UPROPERTY(VisibleAnywhere)\n//TObjectPtr<class ASkillBook> mySkillBookActor;\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "UPROPERTY(EditAnywhere)\nTSubclassOf<class ASkillBook> mySkillBook;\nUPROPERTY(VisibleAnywhere)\nTObjectPtr<class ASkillBook> mySkillBookActor;" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SkillBookComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "Skill" },
+		{ "Category", "Skill" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SkillBookCollision_MetaData[] = {
+		{ "Category", "MainCharacter" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/MainCharacter.h" },
 	};
@@ -272,14 +432,16 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FClassPropertyParams NewProp_MeleeWeapon;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RangeWeaponActor;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MeleeWeaponActor;
-	static const UECodeGen_Private::FClassPropertyParams NewProp_mySkillBook;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_mySkillBookActor;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InventoryComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillBookComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillBookCollision;
 	static void NewProp_bIsDashSkill_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsDashSkill;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMainCharacter_ActivateSkillBook, "ActivateSkillBook" }, // 2458785302
+		{ &Z_Construct_UFunction_AMainCharacter_EndActivateSkillBook, "EndActivateSkillBook" }, // 662503460
 		{ &Z_Construct_UFunction_AMainCharacter_EquipWeapon, "EquipWeapon" }, // 3913378975
 		{ &Z_Construct_UFunction_AMainCharacter_HealHP, "HealHP" }, // 2501563374
 		{ &Z_Construct_UFunction_AMainCharacter_HealStamina, "HealStamina" }, // 3492705922
@@ -308,9 +470,9 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeapon = { "MeleeWeapon", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeWeapon), Z_Construct_UClass_UClass, Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeWeapon_MetaData), NewProp_MeleeWeapon_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeaponActor = { "RangeWeaponActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, RangeWeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RangeWeaponActor_MetaData), NewProp_RangeWeaponActor_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor = { "MeleeWeaponActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, MeleeWeaponActor), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeleeWeaponActor_MetaData), NewProp_MeleeWeaponActor_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBook = { "mySkillBook", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, mySkillBook), Z_Construct_UClass_UClass, Z_Construct_UClass_ASkillBook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_mySkillBook_MetaData), NewProp_mySkillBook_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBookActor = { "mySkillBookActor", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, mySkillBookActor), Z_Construct_UClass_ASkillBook_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_mySkillBookActor_MetaData), NewProp_mySkillBookActor_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_InventoryComponent = { "InventoryComponent", nullptr, (EPropertyFlags)0x012408000008001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, InventoryComponent), Z_Construct_UClass_UInventoryComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InventoryComponent_MetaData), NewProp_InventoryComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_SkillBookComponent = { "SkillBookComponent", nullptr, (EPropertyFlags)0x012408000008001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, SkillBookComponent), Z_Construct_UClass_USkillBookComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillBookComponent_MetaData), NewProp_SkillBookComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_SkillBookCollision = { "SkillBookCollision", nullptr, (EPropertyFlags)0x012408000008000d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMainCharacter, SkillBookCollision), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SkillBookCollision_MetaData), NewProp_SkillBookCollision_MetaData) };
 void Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsDashSkill_SetBit(void* Obj)
 {
 	((AMainCharacter*)Obj)->bIsDashSkill = 1;
@@ -335,9 +497,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainChar
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeapon,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_RangeWeaponActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MeleeWeaponActor,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBook,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_mySkillBookActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_InventoryComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_SkillBookComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_SkillBookCollision,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_bIsDashSkill,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::PropPointers) < 2048);
@@ -378,23 +540,14 @@ AMainCharacter::~AMainCharacter() {}
 // End Class AMainCharacter
 
 // Begin Registration
-<<<<<<< HEAD
-struct Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics
-=======
-struct Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics
->>>>>>> uitemp
+struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 1750999363U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 2731219062U) },
 	};
 };
-<<<<<<< HEAD
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_1397982543(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo),
-=======
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_1397982543(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProject_TeamProject_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo),
->>>>>>> uitemp
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_88429323(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
