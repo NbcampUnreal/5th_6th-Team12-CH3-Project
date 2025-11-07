@@ -46,4 +46,13 @@ public:
     float InfinityRespawnTime = 3.0f;
 
     float time;
+
+protected:
+    UPROPERTY()
+    class UObjectPoolSubsystem* PoolSubsystem;
+   
+    UPROPERTY(EditAnywhere, Category = "Spawning")
+    int32 InitialPoolSize = 20;
+
+    void PrewarmMonsterPools(); 
 };

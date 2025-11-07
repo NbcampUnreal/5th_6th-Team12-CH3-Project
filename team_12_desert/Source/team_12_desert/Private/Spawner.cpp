@@ -6,7 +6,9 @@
 #include "MyGameState.h"
 #include "MyGameInstance.h"
 #include "Components/BoxComponent.h"
-
+#include "ObjectPoolSubsystem.h" 
+#include "Monster.h"
+#include "Engine/GameInstance.h" 
 // Sets default values
 ASpawner::ASpawner()
 {
@@ -26,6 +28,15 @@ ASpawner::ASpawner()
 void ASpawner::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UGameInstance* GameInstance = GetGameInstance();
+	if (GameInstance)
+	{
+		PoolSubsystem = GameInstance->GetSubsystem<UObjectPoolSubsystem>();
+	}
+
+	// 풀 예열
+	PrewarmMonsterPools();
 
 	if (!boss) {
 		SpawnEnemy();
@@ -72,9 +83,12 @@ FVector ASpawner::GetRandomPointInVolume() const
 }
 
 void ASpawner::SpawnEnemy()
-{
-	//if (!EnemyClass) return;
-
+{	
+	if (!PoolSubsystem)
+	{
+		UE_LOG(LogTemp, Error, TEXT("PoolSubsystem is not valid!"));
+		return;
+	}
 
 	TArray<FMonsterSpawnRow*> AllRows;
 	static const FString ContextString(TEXT("MonsterSpawnContext"));
@@ -85,91 +99,68 @@ void ASpawner::SpawnEnemy()
 
 	for (FMonsterSpawnRow* Row : AllRows)
 	{
+		// AMonster 클래스가 아니면 스킵
+		if (!Row || !Row->MonsterClass || !Row->MonsterClass->IsChildOf(AMonster::StaticClass()))
+		{
+			continue;
+		}
+
+		TSubclassOf<AMonster> MonsterClass = TSubclassOf<AMonster>(*Row->MonsterClass);
+
 		for (int i = 0; i < Row->SpawnCount; i++)
 		{
 			FVector SpawnLocation = GetRandomPointInVolume();
 			FRotator SpawnRotation = FRotator::ZeroRotator;
 
-
 			FHitResult HitResult;
 			FVector Start = SpawnLocation;
 			FVector End = Start - FVector(0, 0, 10000);
-
 			FCollisionQueryParams TraceParams(FName(TEXT("GroundTrace")), false, this);
 
-			//아래체크
-			if (World->LineTraceSingleByChannel(
-				HitResult,
-				Start,
-				End,
-				ECC_WorldStatic,
-				TraceParams
-			))
+			if (World->LineTraceSingleByChannel(HitResult, Start, End, ECC_WorldStatic, TraceParams))
 			{
 				SpawnLocation = HitResult.ImpactPoint;
 			}
+			SpawnLocation.Z += 100.0f; // 지형 위에 살짝 띄우기
 
-			bool bHit = World->LineTraceSingleByChannel(
-				HitResult,
-				Start,
-				End,
-				ECC_WorldStatic,
-				TraceParams
-			);	
-
-			SpawnLocation.Z += 100.0f;
-
-			AActor* Spawned = World->SpawnActor<AActor>(
-				Row->MonsterClass,
+			AMonster* SpawnedMonster = PoolSubsystem->GetMonster(
+				MonsterClass,
 				SpawnLocation,
 				SpawnRotation
 			);
 
-			if (Spawned)
+			if (SpawnedMonster)
 			{
 				Cast<AMyGameState>(World->GetGameState())->AddMonsterCount(1);
 			}
-
-			//지금 이게 보스냐하면 실행
-			/*if (Isboss) {
-
-			}*/
 		}
 	}
 	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
-	//위 체크
-	/*End = Start + FVector(0, 0, 10000);
-	if (World->LineTraceSingleByChannel(
-		HitResult,
-		Start,
-		End,
-		ECC_WorldStatic,
-		TraceParams
-	))
-	{
-		SpawnLocation = HitResult.ImpactPoint;
-		UE_LOG(LogTemp, Warning, TEXT("Ceiling hit at: %s"), *SpawnLocation.ToString());
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("No ceiling found above spawn point"));
-	}*/
 
-	/*for (FMonsterSpawnRow* Row : AllRows)
+}
+
+void ASpawner::PrewarmMonsterPools()
+{
+	if (!PoolSubsystem || !SpawnDataTable) return;
+
+	TArray<FMonsterSpawnRow*> AllRows;
+	static const FString ContextString(TEXT("MonsterSpawnContext"));
+	SpawnDataTable->GetAllRows(ContextString, AllRows);
+
+	for (FMonsterSpawnRow* Row : AllRows)
 	{
-		for (int i = 0; i < Row->SpawnCount; i++) {
-			GetWorld()->SpawnActor<AActor>(
-				Row->MonsterClass,
-				GetRandomPointInVolume(),
-				FRotator::ZeroRotator
-			);
-			Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(1);
+		if (Row && Row->MonsterClass)
+		{
+			if (Row->MonsterClass->IsChildOf(AMonster::StaticClass()))
+			{
+				TSubclassOf<AMonster> MonsterClass = TSubclassOf<AMonster>(*Row->MonsterClass);
+
+				int32 CountToWarm = Infinity ? InitialPoolSize : Row->SpawnCount;
+
+				PoolSubsystem->PrewarmPool(MonsterClass, CountToWarm);
+			}
 		}
 	}
-
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();*/
-
-
 }
 
 

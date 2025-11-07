@@ -21,6 +21,12 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class UBoxComponent> Box; //오버랩을 감지한 콜리전
+	UPROPERTY(EditAnywhere)
+
+	bool IsProlouge=false;
+
+	UPROPERTY(EditAnywhere)
+	float NextLevelTime = 0;
 
 public:	
 	// Called every frame

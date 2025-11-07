@@ -7,6 +7,12 @@
 #include "MyGameState.h"
 #include "Components/WidgetComponent.h"
 #include "Components/ProgressBar.h"
+#include "AIController.h"
+#include "BrainComponent.h"
+#include "ObjectPoolSubsystem.h"
+#include "Components/TextBlock.h"
+#include "DamageText.h"
+#include "DamagePopupActor.h"
 
 AMonster::AMonster()
 {
@@ -26,6 +32,15 @@ AMonster::AMonster()
 	OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
 	OverheadWidget->SetupAttachment(GetMesh());
 	OverheadWidget->SetWidgetSpace(EWidgetSpace::World);
+
+	/*OverheadHp = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadHp"));
+	OverheadHp->SetupAttachment(GetMesh());
+	OverheadHp->SetWidgetSpace(EWidgetSpace::World);*/
+
+	if (damageWidget) {
+		UUserWidget* damage = damageWidget->GetUserWidgetObject();
+		damageTextInstance = Cast<UDamageText>(damage);
+	}
 }
 
 void AMonster::BeginPlay()
@@ -56,6 +71,19 @@ void AMonster::BeginPlay()
 
 	}
 
+	/*if (OverheadHp) {
+		UUserWidget* Widget = Cast<UUserWidget>(OverheadHp->GetUserWidgetObject());
+		if (Widget) {
+			UWidget* temp = Widget->GetWidgetFromName(TEXT("Damage"));
+			if (temp) {
+			}
+			DamageText = Cast<UTextBlock>(temp);
+			HpBarProgress();
+
+		}
+
+	}*/
+
 }
 
 void AMonster::Tick(float DeltaTime)
@@ -72,6 +100,7 @@ void AMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMonster::ApplyDamage(float DamageAmount)
 {
+	ShowDamage(DamageAmount);
 	CurrentHealth -= DamageAmount;
 	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
 	if (CurrentHealth <= 0.f)
@@ -90,10 +119,12 @@ void AMonster::ApplyDamage(float DamageAmount)
 		// 딜레이 후 Destroy
 		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
 			{
-				Destroy();
+				//Destroy();
+				DeactivateMonster();
 			});
 
 	}
+	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
 	HpBarProgress();
 
 	Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
@@ -136,5 +167,92 @@ void AMonster::HpBarDirUpdate()
 		}
 
 	}
+}
+
+void AMonster::ShowDamage(float dmg)
+{
+	if (!damagePopUpActor) {
+		return;
+	}
+
+	FVector spawnLoc = GetActorLocation() + FVector(0, 0, 140);
+	FRotator spawnRot = FRotator::ZeroRotator;
+
+	ADamagePopupActor* popupActor = GetWorld()->SpawnActor<ADamagePopupActor>(damagePopUpActor, spawnLoc, spawnRot);
+
+	if (popupActor)
+	{
+		popupActor->InitDamage(dmg);
+	}
+}
+
+void AMonster::ActivateMonster(FVector Location, FRotator Rotation)
+{
+	bIsDeactivated = false;
+
+	// 위치 및 회전 설정
+	SetActorLocation(Location);
+	SetActorRotation(Rotation);
+
+	// 활성화
+	SetActorHiddenInGame(false);
+	SetActorEnableCollision(true);
+	SetActorTickEnabled(true);
+
+	// 스탯 초기화
+	CurrentHealth = MaxHealth;
+
+	// UI 초기화
+	if (OverheadWidget)
+	{
+		OverheadWidget->SetHiddenInGame(false);
+	}
+	HpBarProgress(); 
+
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController && AIController->GetBrainComponent()) // BrainComponent가 있는지 확인
+	{
+		AIController->GetBrainComponent()->RestartLogic();
+	}
+}
+//
+void AMonster::DeactivateMonster()
+{
+	if (bIsDeactivated) return; // 중복 호출 방지
+	bIsDeactivated = true;
+
+	SetActorHiddenInGame(true);
+	SetActorEnableCollision(false);
+	SetActorTickEnabled(false);
+
+	if (OverheadWidget)
+	{
+		OverheadWidget->SetHiddenInGame(true);
+	}
+
+	AAIController* AIController = Cast<AAIController>(GetController());
+	if (AIController && AIController->GetBrainComponent()) 
+	{
+		AIController->GetBrainComponent()->StopLogic(TEXT("Deactivated"));
+	}
+
+	// 드랍 아이템 로직 (필요하다면)
+	DropItem();
+
+	// 풀 매니저에게 반납
+	if (OwningPoolSubsystem)
+	{
+		OwningPoolSubsystem->ReturnMonster(this);
+	}
+	else
+	{
+		// 풀 시스템이 없다면 그냥 파괴 (안전 장치)
+		Destroy();
+	}
+}
+//
+void AMonster::SetOwningPoolSubsystem(UObjectPoolSubsystem* InSubsystem)
+{
+	OwningPoolSubsystem = InSubsystem;
 }
 
