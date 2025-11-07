@@ -66,6 +66,8 @@ void UMyGameInstance::TurnOffHud(HudPreset off)
 	//HUDWidgetInstance = CreateWidget<UUserWidget>(this, HudWidgetClass[off]);
 	if (HUDWidgetInstance[off]&&HUDWidgetInstance[off]) {
 		HUDWidgetInstance[off]->RemoveFromViewport();
+		HUDWidgetInstance[off]->RemoveFromParent();
+		HUDWidgetInstance[off] = nullptr;
 	}
 }
 
@@ -76,7 +78,7 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 		HUDWidgetInstance.SetNum(HudWidgetClass.Num());
 	}
 
-	if (HUDWidgetInstance.IsValidIndex(on) && HUDWidgetInstance[on])
+	if (HUDWidgetInstance.IsValidIndex(on) && IsValid(HUDWidgetInstance[on]))
 	{
 		HUDWidgetInstance[on]->AddToViewport();
 		if (on == HudPreset::InGame)

@@ -65,6 +65,11 @@ void AMyGameState::Tick(float DeltaTime)
 
 		Inven = !Inven;
 	}
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Pause);
+		UGameplayStatics::SetGamePaused(GetWorld(), true);
+
+	}
 
 }
 
