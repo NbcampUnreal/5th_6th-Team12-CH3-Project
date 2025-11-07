@@ -56,7 +56,15 @@ void AMyGameState::Tick(float DeltaTime)
 		}
 	}
 
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) {
+		if (!Inven) 
+			Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory);
+		
+		else
+			Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::Inventory);
+
+		Inven = !Inven;
+	}
 
 }
 
