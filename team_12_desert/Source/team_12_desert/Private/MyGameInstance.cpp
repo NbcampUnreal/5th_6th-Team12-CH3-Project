@@ -122,13 +122,13 @@ void UMyGameInstance::PlayerHUDApply()
 
 }
 
-void UMyGameInstance::NextLevel()
+void UMyGameInstance::NextLevel(FName nextmapname)
 {
-	CurrentLevelIndex++;
+	//CurrentLevelIndex++;
 	Cast<AMyGameState>(GetWorld()->GetGameState())->SetMonsterCount(0);
 
 	PlayerStatSave();
-	UGameplayStatics::OpenLevel(GetWorld(), LevelMapNames[CurrentLevelIndex]);
+	UGameplayStatics::OpenLevel(GetWorld(), nextmapname);
 
 	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
 		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {

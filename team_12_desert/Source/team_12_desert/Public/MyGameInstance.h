@@ -37,7 +37,7 @@ public:
 	void TurnOnHud(HudPreset on);
 	UUserWidget* GetHUDWidget(HudPreset preset);
 	void PlayerHUDApply();
-	void NextLevel();
+	void NextLevel(FName nextmapname);
 	void TestIns();
 	float GetLevelTime();
 	void SetLevelTime(float time) { LevelTime = time; }
@@ -48,9 +48,7 @@ public:
 	// 전체 레벨의 개수
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level")
 	int32 MaxLevels;
-	// 실제 레벨 맵 이름 배열. 여기 있는 인덱스를 차례대로 연동
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Level")
-	TArray<FName> LevelMapNames;
+
 
 	//void SetLevelMap(TArray<FName> name);
 
