@@ -13,6 +13,7 @@
 #include "Components/TextBlock.h"
 #include "DamageText.h"
 #include "DamagePopupActor.h"
+#include "ItemRandomBox.h"
 
 AMonster::AMonster()
 {
@@ -41,6 +42,8 @@ AMonster::AMonster()
 		UUserWidget* damage = damageWidget->GetUserWidgetObject();
 		damageTextInstance = Cast<UDamageText>(damage);
 	}
+
+	Tags.Add(FName("Monster"));
 }
 
 void AMonster::BeginPlay()
@@ -113,8 +116,9 @@ void AMonster::ApplyDamage(float DamageAmount)
 		FRotator DeathRotation = GetActorRotation();
 		DeathRotation.Roll += 90.f; // XÃàÀ¸·Î ¿·À¸·Î ¾²·¯Áü (Roll)
 		SetActorRotation(DeathRotation);
-
-		DropItem();
+		ItemRandomBoxInstance = GetWorld()->SpawnActor<AItemRandomBox>(ItemRandomBoxActor, GetActorLocation(), FRotator::ZeroRotator);
+		if (ItemRandomBoxInstance) ItemRandomBoxInstance->SpawnRandomItem(GetActorLocation());
+		//DropItem();
 
 		// µô·¹ÀÌ ÈÄ Destroy
 		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()

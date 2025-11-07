@@ -124,6 +124,7 @@ protected:
 	TObjectPtr<class AWeaponBase> RangeWeaponActor;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class AWeaponBase> MeleeWeaponActor;
+
 	//UPROPERTY(EditAnywhere)
 	//TSubclassOf<class ASkillBook> mySkillBook;
 	//UPROPERTY(VisibleAnywhere)

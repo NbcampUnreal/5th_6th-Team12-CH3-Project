@@ -9,7 +9,6 @@ ASpiderMonster::ASpiderMonster()
 	AttackRange = 180.f;
 	AttackCooldown = 2.0f;
 
-	Tags.Add(FName("Monster"));
 }
 
 void ASpiderMonster::BeginPlay()

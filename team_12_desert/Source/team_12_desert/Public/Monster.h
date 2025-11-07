@@ -93,4 +93,10 @@ public:
 
 	void SetOwningPoolSubsystem(class UObjectPoolSubsystem* InSubsystem);
 
+	UPROPERTY(EditAnywhere, Category = "ItemSpawn")
+	TSubclassOf<class AItemRandomBox> ItemRandomBoxActor;
+
+	UPROPERTY(VisibleAnywhere, Category = "ItemSpawn")
+	TObjectPtr<AItemRandomBox> ItemRandomBoxInstance;
+
 };

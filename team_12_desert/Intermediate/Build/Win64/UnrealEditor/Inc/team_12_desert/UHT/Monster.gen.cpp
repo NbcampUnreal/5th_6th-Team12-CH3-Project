@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeMonster() {}
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+TEAM_12_DESERT_API UClass* Z_Construct_UClass_AItemRandomBox_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonster();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonster_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_UObjectPoolSubsystem_NoRegister();
@@ -211,6 +212,14 @@ struct Z_Construct_UClass_AMonster_Statics
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Public/Monster.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemRandomBoxActor_MetaData[] = {
+		{ "Category", "ItemSpawn" },
+		{ "ModuleRelativePath", "Public/Monster.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemRandomBoxInstance_MetaData[] = {
+		{ "Category", "ItemSpawn" },
+		{ "ModuleRelativePath", "Public/Monster.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_OverheadWidget;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_damageWidget;
@@ -225,6 +234,8 @@ struct Z_Construct_UClass_AMonster_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackRange;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackCooldown;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DropItemClass;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemRandomBoxActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemRandomBoxInstance;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -251,6 +262,8 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Static
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_AttackRange = { "AttackRange", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, AttackRange), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackRange_MetaData), NewProp_AttackRange_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_AttackCooldown = { "AttackCooldown", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, AttackCooldown), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackCooldown_MetaData), NewProp_AttackCooldown_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_DropItemClass = { "DropItemClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, DropItemClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DropItemClass_MetaData), NewProp_DropItemClass_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxActor = { "ItemRandomBoxActor", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxActor), Z_Construct_UClass_UClass, Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxActor_MetaData), NewProp_ItemRandomBoxActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxInstance = { "ItemRandomBoxInstance", nullptr, (EPropertyFlags)0x0114000000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxInstance), Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxInstance_MetaData), NewProp_ItemRandomBoxInstance_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonster_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_OverheadWidget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_damageWidget,
@@ -265,6 +278,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonster_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_AttackRange,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_AttackCooldown,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_DropItemClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxInstance,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMonster_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMonster_Statics::DependentSingletons[])() = {
@@ -307,10 +322,10 @@ AMonster::~AMonster() {}
 struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMonster, AMonster::StaticClass, TEXT("AMonster"), &Z_Registration_Info_UClass_AMonster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonster), 2429983241U) },
+		{ Z_Construct_UClass_AMonster, AMonster::StaticClass, TEXT("AMonster"), &Z_Registration_Info_UClass_AMonster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonster), 3676840811U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_1924145720(TEXT("/Script/team_12_desert"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_2540190101(TEXT("/Script/team_12_desert"),
 	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
