@@ -123,12 +123,10 @@ void AMonster::Attack()
 
 void AMonster::DropItem()
 {
-	if (!DropItemClass) return;
-
-	FActorSpawnParameters SpawnParams;
-	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
-
-	GetWorld()->SpawnActor<AActor>(DropItemClass, GetActorLocation(), FRotator::ZeroRotator, SpawnParams);
+	if (!ItemRandomBoxActor) return;
+	
+	ItemRandomBoxInstance = GetWorld()->SpawnActor<AItemRandomBox>(ItemRandomBoxActor, GetActorLocation(), FRotator::ZeroRotator);
+	ItemRandomBoxInstance->SpawnRandomItem(GetActorLocation());
 }
 
 void AMonster::HpBarProgress()
@@ -223,7 +221,6 @@ void AMonster::DeactivateMonster()
 	}
 
 	// 드랍 아이템 로직 (필요하다면)
-	DropItem();
 
 	// 풀 매니저에게 반납
 	if (OwningPoolSubsystem)
@@ -233,6 +230,7 @@ void AMonster::DeactivateMonster()
 	else
 	{
 		// 풀 시스템이 없다면 그냥 파괴 (안전 장치)
+		DropItem();
 		Destroy();
 	}
 }

@@ -78,7 +78,7 @@ void UItemSoltWidget::ItemActive()
 		{
 			ItemData->ItemInstance->Active();
 			Item.Quantity--;
-			if (Item.Quantity <= 0)
+			if (Item.Quantity < 0)
 			{
 				Item.ItemName = NAME_None;
 				if (TObjectPtr<UTextBlock> ItemQuantity = Cast<UTextBlock>(GetWidgetFromName(TEXT("ItemQuantity"))))

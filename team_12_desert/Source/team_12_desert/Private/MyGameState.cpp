@@ -60,7 +60,14 @@ void AMyGameState::Tick(float DeltaTime)
 		}
 	}
 
-	//if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I))
+	{
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); 
+		APlayerController* PC = GetWorld()->GetFirstPlayerController();
+		PC->SetShowMouseCursor(true);
+	}
+
+
 
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) { PortalsOpen(true); }
 
