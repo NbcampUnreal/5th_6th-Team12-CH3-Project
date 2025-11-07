@@ -60,13 +60,8 @@ void AMyGameState::Tick(float DeltaTime)
 		}
 	}
 
-<<<<<<< HEAD
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
-	
-=======
 	//if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
 
->>>>>>> origin/uitemp
 	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) { PortalsOpen(true); }
 
 }
