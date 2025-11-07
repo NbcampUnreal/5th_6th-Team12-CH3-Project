@@ -9,6 +9,7 @@
 #include "MyGameInstance.h"
 #include "SkillBookComponent.h"
 #include "Components/SphereComponent.h"
+#include "Monster.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter() :
@@ -25,7 +26,8 @@ AMainCharacter::AMainCharacter() :
     MeleeAttackCount(0),
     RangeAttackCount(0),
     CharacterName(TEXT("Default Name")),
-    bIsDashSkill(false)
+    bIsDashSkill(false),
+    Distance(0)
 {
     // Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
@@ -37,9 +39,14 @@ AMainCharacter::AMainCharacter() :
     SkillBookCollision->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
     SkillBookCollision->SetupAttachment(RootComponent);
 
-
     // 25.10.27. mpyi _ 찬영님 요청으로 태그 추가(대소문자 주의)
     Tags.Add(FName("Player"));
+
+    SetActorTickEnabled(true);
+    SetActorTickInterval(1.0f); 
+
+    SkillBookCollision->OnComponentBeginOverlap.AddDynamic(this, &AMainCharacter::ActivateSkillBook);
+    SkillBookCollision->OnComponentEndOverlap.AddDynamic(this, &AMainCharacter::EndActivateSkillBook);
 }
 
 // Called when the game starts or when spawned
@@ -58,10 +65,19 @@ void AMainCharacter::BeginPlay()
 
     Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
     Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
+}
 
-
-	SkillBookCollision->OnComponentBeginOverlap.AddDynamic(this, &AMainCharacter::ActivateSkillBook);
-	SkillBookCollision->OnComponentEndOverlap.AddDynamic(this, &AMainCharacter::EndActivateSkillBook);
+void AMainCharacter::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+	Distance += 1;
+    UE_LOG(LogTemp, Display, TEXT("tick in"));
+    if (SkillBookComponent->OverlappedActors.Num() > 0)
+    {
+        UE_LOG(LogTemp, Display, TEXT("tick out"));
+        SkillBookComponent->ActionSkill(SkillBookComponent->OverlappedActors, Distance);
+    }
+    
 }
 
 void AMainCharacter::EquipWeapon()
@@ -113,7 +129,7 @@ void AMainCharacter::ActivateSkillBook(
 {
     if(OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
     {
-        SkillBookComponent->ActivateItem(OtherActor);
+        SkillBookComponent->ActivateItem(Cast<AMonster>(OtherActor));
 	}
 }
 
@@ -121,7 +137,7 @@ void AMainCharacter::EndActivateSkillBook(UPrimitiveComponent* OverlapPendComp, 
 {
     if (OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
     {
-        SkillBookComponent->DeactivateItem(OtherActor);
+        SkillBookComponent->DeactivateItem(Cast<AMonster>(OtherActor));
     }
 }
 

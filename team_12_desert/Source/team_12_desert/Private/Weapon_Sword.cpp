@@ -90,6 +90,7 @@ void AWeapon_Sword::OnMeleeOverlap(UPrimitiveComponent* OverlappedComponent, AAc
                     int32 damage = (weaponOwner->getBaseDamage() + this->WeaponDamage) * weaponOwner->getMulDamage();
 					UE_LOG(LogTemp, Warning, TEXT("Weapon Owner: %s, Damage: %d"), *thisOwner->GetName(), damage);
                     Monster->ApplyDamage(damage);
+                    Monster->DamagedLaunch(this->GetActorForwardVector());
 				}
                 else
                 {

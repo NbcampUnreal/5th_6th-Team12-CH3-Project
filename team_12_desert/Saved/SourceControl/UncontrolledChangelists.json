@@ -1,0 +1,24 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/AI/BP_CreatureMonster.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/AI/BP_CreepMonster.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/AI/BP_DarkMonster.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/AI/BP_SpiderMonster.uasset",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/Level/Prologue.umap",
+				"C:/Unreal_Project/git/team_12_girl_nono/team_12_desert/Content/monster/creep/eyes_Inst.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_CreepMonster.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_CreatureMonster.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_BossMonster.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_DarkMonster.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_SpiderMonster.uasset",
+				"C:/Users/lod21/Documents/Unreal Projects/5th_6th-Team12-CH3-Project/team_12_desert/Content/AI/BP_Monster.uasset"
+			]
+		}
+	]
+}

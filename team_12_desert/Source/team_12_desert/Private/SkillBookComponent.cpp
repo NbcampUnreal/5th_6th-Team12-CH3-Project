@@ -3,6 +3,7 @@
 
 #include "SkillBookComponent.h"
 #include "SkillBase.h"
+#include "Monster.h"
 #include "MainCharacter.h"
 
 // Sets default values for this component's properties
@@ -21,11 +22,9 @@ void USkillBookComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Distance = 0.f;
-	// ...
 }
 
-void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time)
+void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>> Actors, int32 Distance)
 {
 	if (SkillList.Num() > 0)
 	{
@@ -33,27 +32,12 @@ void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float t
 		{
 			if (Skill && IsValid(GetOwner()))
 			{
-				Skill->ActionSkill(Actors, time, GetOwner()->GetActorLocation());
+				Skill->ActionSkill(Actors, Distance, GetOwner());
 			}
 		}
 	}
 }
 
-// Called every frame
-void USkillBookComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	Distance += 1 * DeltaTime;
-
-	if (FMath::IsNearlyZero(FMath::Fmod(Distance, 1.0f), KINDA_SMALL_NUMBER))
-	{
-		if(OverlappedActors.Num() != 0)
-		{
-			ActionSkill(OverlappedActors, Distance);
-		}
-	}
-}
 
 void USkillBookComponent::AddSkill(TObjectPtr<ASkillBase> NewSkill)
 {
@@ -74,12 +58,16 @@ void USkillBookComponent::DeleteSkill(TObjectPtr<ASkillBase> SkillToDelete)
 	}
 }
 
-void USkillBookComponent::ActivateItem(TObjectPtr<AActor> Actor)
+void USkillBookComponent::OnDestroyed(TObjectPtr<AMonster> Actor)
+{
+	OverlappedActors.Remove(Actor);
+}
+void USkillBookComponent::ActivateItem(TObjectPtr<AMonster> Actor)
 {
 	OverlappedActors.Add(Actor);
 }
 
-void USkillBookComponent::DeactivateItem(TObjectPtr<AActor> Actor)
+void USkillBookComponent::DeactivateItem(TObjectPtr<AMonster> Actor)
 {
 	OverlappedActors.Remove(Actor);
 }
