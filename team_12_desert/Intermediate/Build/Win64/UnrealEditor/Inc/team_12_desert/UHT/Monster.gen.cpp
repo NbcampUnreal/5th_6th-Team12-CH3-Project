@@ -11,8 +11,11 @@ void EmptyLinkFunctionForGeneratedCodeMonster() {}
 
 // Begin Cross Module References
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+ENGINE_API UClass* Z_Construct_UClass_UCurveFloat_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UTimelineComponent_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AItemRandomBox_NoRegister();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonster();
 TEAM_12_DESERT_API UClass* Z_Construct_UClass_AMonster_NoRegister();
@@ -93,6 +96,54 @@ DEFINE_FUNCTION(AMonster::execAttack)
 }
 // End Class AMonster Function Attack
 
+// Begin Class AMonster Function DamagedLaunch
+struct Z_Construct_UFunction_AMonster_DamagedLaunch_Statics
+{
+	struct Monster_eventDamagedLaunch_Parms
+	{
+		FVector MC_Vector;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xc7\xb0\xdd\xbd\xef\xbf\xbd \xef\xbf\xbd\xdf\xbf\xef\xbf\xbd by mpyi\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xc7\xb0\xdd\xbd\xef\xbf\xbd \xef\xbf\xbd\xdf\xbf\xef\xbf\xbd by mpyi" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_MC_Vector;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::NewProp_MC_Vector = { "MC_Vector", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Monster_eventDamagedLaunch_Parms, MC_Vector), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::NewProp_MC_Vector,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonster, nullptr, "DamagedLaunch", nullptr, nullptr, Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::Monster_eventDamagedLaunch_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::Monster_eventDamagedLaunch_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMonster_DamagedLaunch()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonster_DamagedLaunch_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMonster::execDamagedLaunch)
+{
+	P_GET_STRUCT(FVector,Z_Param_MC_Vector);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DamagedLaunch(Z_Param_MC_Vector);
+	P_NATIVE_END;
+}
+// End Class AMonster Function DamagedLaunch
+
 // Begin Class AMonster Function DropItem
 struct Z_Construct_UFunction_AMonster_DropItem_Statics
 {
@@ -122,6 +173,125 @@ DEFINE_FUNCTION(AMonster::execDropItem)
 }
 // End Class AMonster Function DropItem
 
+// Begin Class AMonster Function StartDeathEffect
+struct Z_Construct_UFunction_AMonster_StartDeathEffect_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Death_Effect" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonster_StartDeathEffect_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonster, nullptr, "StartDeathEffect", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_StartDeathEffect_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonster_StartDeathEffect_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMonster_StartDeathEffect()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonster_StartDeathEffect_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMonster::execStartDeathEffect)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartDeathEffect();
+	P_NATIVE_END;
+}
+// End Class AMonster Function StartDeathEffect
+
+// Begin Class AMonster Function TimelineFinished
+struct Z_Construct_UFunction_AMonster_TimelineFinished_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// 6. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xcf\xb7\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd (\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "6. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xcf\xb7\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd (\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonster_TimelineFinished_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonster, nullptr, "TimelineFinished", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_TimelineFinished_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonster_TimelineFinished_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMonster_TimelineFinished()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonster_TimelineFinished_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMonster::execTimelineFinished)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->TimelineFinished();
+	P_NATIVE_END;
+}
+// End Class AMonster Function TimelineFinished
+
+// Begin Class AMonster Function TimelineUpdate
+struct Z_Construct_UFunction_AMonster_TimelineUpdate_Statics
+{
+	struct Monster_eventTimelineUpdate_Parms
+	{
+		float TimelineValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// 5. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd (UFUNCTION \xef\xbf\xbd\xca\xbc\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "5. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc8\xa3\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xd4\xbc\xef\xbf\xbd (UFUNCTION \xef\xbf\xbd\xca\xbc\xef\xbf\xbd)" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_TimelineValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::NewProp_TimelineValue = { "TimelineValue", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Monster_eventTimelineUpdate_Parms, TimelineValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::NewProp_TimelineValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMonster, nullptr, "TimelineUpdate", nullptr, nullptr, Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::Monster_eventTimelineUpdate_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::Monster_eventTimelineUpdate_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMonster_TimelineUpdate()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMonster_TimelineUpdate_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMonster::execTimelineUpdate)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param_TimelineValue);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->TimelineUpdate(Z_Param_TimelineValue);
+	P_NATIVE_END;
+}
+// End Class AMonster Function TimelineUpdate
+
 // Begin Class AMonster
 void AMonster::StaticRegisterNativesAMonster()
 {
@@ -129,7 +299,11 @@ void AMonster::StaticRegisterNativesAMonster()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "ApplyDamage", &AMonster::execApplyDamage },
 		{ "Attack", &AMonster::execAttack },
+		{ "DamagedLaunch", &AMonster::execDamagedLaunch },
 		{ "DropItem", &AMonster::execDropItem },
+		{ "StartDeathEffect", &AMonster::execStartDeathEffect },
+		{ "TimelineFinished", &AMonster::execTimelineFinished },
+		{ "TimelineUpdate", &AMonster::execTimelineUpdate },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -212,9 +386,35 @@ struct Z_Construct_UClass_AMonster_Statics
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Public/Monster.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DissolveTimeline_MetaData[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// 2. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\n" },
+#endif
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "2. \xc5\xb8\xef\xbf\xbd\xd3\xb6\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xc6\xae \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DissolveCurve_MetaData[] = {
+		{ "Category", "Death Effect" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// 3. Dissolve \xc8\xbf\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc4\xbf\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xd6\xbc\xef\xbf\xbd (BP \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcd\xbf\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "3. Dissolve \xc8\xbf\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xc4\xbf\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xd6\xbc\xef\xbf\xbd (BP \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xcd\xbf\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd \xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd\xef\xbf\xbd)" },
+#endif
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemRandomBoxActor_MetaData[] = {
 		{ "Category", "ItemSpawn" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// add_pcy\n" },
+#endif
 		{ "ModuleRelativePath", "Public/Monster.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "add_pcy" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemRandomBoxInstance_MetaData[] = {
 		{ "Category", "ItemSpawn" },
@@ -234,6 +434,8 @@ struct Z_Construct_UClass_AMonster_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackRange;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_AttackCooldown;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_DropItemClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DissolveTimeline;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DissolveCurve;
 	static const UECodeGen_Private::FClassPropertyParams NewProp_ItemRandomBoxActor;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemRandomBoxInstance;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -241,7 +443,11 @@ struct Z_Construct_UClass_AMonster_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMonster_ApplyDamage, "ApplyDamage" }, // 3637755731
 		{ &Z_Construct_UFunction_AMonster_Attack, "Attack" }, // 742490803
+		{ &Z_Construct_UFunction_AMonster_DamagedLaunch, "DamagedLaunch" }, // 955360693
 		{ &Z_Construct_UFunction_AMonster_DropItem, "DropItem" }, // 4181832233
+		{ &Z_Construct_UFunction_AMonster_StartDeathEffect, "StartDeathEffect" }, // 1743577003
+		{ &Z_Construct_UFunction_AMonster_TimelineFinished, "TimelineFinished" }, // 879252946
+		{ &Z_Construct_UFunction_AMonster_TimelineUpdate, "TimelineUpdate" }, // 3577038532
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -262,8 +468,10 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Static
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_AttackRange = { "AttackRange", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, AttackRange), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackRange_MetaData), NewProp_AttackRange_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_AttackCooldown = { "AttackCooldown", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, AttackCooldown), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackCooldown_MetaData), NewProp_AttackCooldown_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_DropItemClass = { "DropItemClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, DropItemClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DropItemClass_MetaData), NewProp_DropItemClass_MetaData) };
-const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxActor = { "ItemRandomBoxActor", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxActor), Z_Construct_UClass_UClass, Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxActor_MetaData), NewProp_ItemRandomBoxActor_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxInstance = { "ItemRandomBoxInstance", nullptr, (EPropertyFlags)0x0114000000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxInstance), Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxInstance_MetaData), NewProp_ItemRandomBoxInstance_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_DissolveTimeline = { "DissolveTimeline", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, DissolveTimeline), Z_Construct_UClass_UTimelineComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DissolveTimeline_MetaData), NewProp_DissolveTimeline_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_DissolveCurve = { "DissolveCurve", nullptr, (EPropertyFlags)0x0020080000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, DissolveCurve), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DissolveCurve_MetaData), NewProp_DissolveCurve_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxActor = { "ItemRandomBoxActor", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxActor), Z_Construct_UClass_UClass, Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxActor_MetaData), NewProp_ItemRandomBoxActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxInstance = { "ItemRandomBoxInstance", nullptr, (EPropertyFlags)0x0124080000020001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMonster, ItemRandomBoxInstance), Z_Construct_UClass_AItemRandomBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemRandomBoxInstance_MetaData), NewProp_ItemRandomBoxInstance_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonster_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_OverheadWidget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_damageWidget,
@@ -278,6 +486,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMonster_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_AttackRange,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_AttackCooldown,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_DropItemClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_DissolveTimeline,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_DissolveCurve,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMonster_Statics::NewProp_ItemRandomBoxInstance,
 };
@@ -319,14 +529,14 @@ AMonster::~AMonster() {}
 // End Class AMonster
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics
+struct Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMonster, AMonster::StaticClass, TEXT("AMonster"), &Z_Registration_Info_UClass_AMonster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonster), 3676840811U) },
+		{ Z_Construct_UClass_AMonster, AMonster::StaticClass, TEXT("AMonster"), &Z_Registration_Info_UClass_AMonster, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMonster), 1867190103U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_2540190101(TEXT("/Script/team_12_desert"),
-	Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_lod21_Documents_Unreal_Projects_5th_6th_Team12_CH3_Project_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Monster_h_3891680791(TEXT("/Script/team_12_desert"),
+	Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Unreal_Project_git_team_12_girl_nono_team_12_desert_Source_team_12_desert_Public_Monster_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

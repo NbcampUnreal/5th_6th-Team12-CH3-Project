@@ -95,7 +95,6 @@ public:
 
 	void SetOwningPoolSubsystem(class UObjectPoolSubsystem* InSubsystem);
 
-<<<<<<< HEAD
 
 	// ÇÇ°Ý½Ã »ß¿ë by mpyi
 	UFUNCTION(BlueprintCallable)
@@ -124,12 +123,12 @@ protected:
 	
 	FOnTimelineFloat UpdateFunctionFloat;
 	FOnTimelineEvent FinishedFunction;
-=======
+
+	// add_pcy
 	UPROPERTY(EditAnywhere, Category = "ItemSpawn")
 	TSubclassOf<class AItemRandomBox> ItemRandomBoxActor;
 
 	UPROPERTY(VisibleAnywhere, Category = "ItemSpawn")
 	TObjectPtr<AItemRandomBox> ItemRandomBoxInstance;
 
->>>>>>> Item_pcy
 };
