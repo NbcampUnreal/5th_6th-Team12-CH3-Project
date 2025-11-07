@@ -80,6 +80,8 @@ void AMyGameState::UpdateMonsterCountHud() {
 			}
 		}
 	}
+	if (!MonsterRemainingText)
+		return;
 
 	if (GetLevel()) {
 		if (CurrentMapName == "Prologue") {
