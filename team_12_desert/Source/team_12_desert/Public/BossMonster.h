@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -21,9 +19,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	virtual void Attack() override; // 공격 커스터마이징
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
+	UAnimMontage* UniqueAttackMontage;
 
-	virtual void ApplyDamage(float DamageAmount);
+	virtual void Attack() override; // 공격 커스터마이징
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Boss")
 	bool bIsBoss;

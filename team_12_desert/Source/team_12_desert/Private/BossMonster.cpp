@@ -1,6 +1,7 @@
 #include "BossMonster.h"
-#include "MyGameInstance.h"
-#include "MyGameState.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Animation/AnimInstance.h"
 ABossMonster::ABossMonster()
 {
 	//(개별 몬스터 설정)
@@ -9,6 +10,8 @@ ABossMonster::ABossMonster()
 	AttackDamage = 25.f;
 	AttackRange = 180.f;
 	AttackCooldown = 2.0f;
+
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
 void ABossMonster::BeginPlay()
@@ -18,34 +21,23 @@ void ABossMonster::BeginPlay()
 
 void ABossMonster::Attack()
 {
+	Super::Attack();
 
-}
-
-void ABossMonster::ApplyDamage(float DamageAmount)
-{
-	ShowDamage(DamageAmount);
-	CurrentHealth -= DamageAmount;
-	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
-	if (CurrentHealth <= 0.f)
+	// 개별 몬스터 전용 공격 애니메이션
+	if (UniqueAttackMontage)
 	{
-		// GameInstance에서 몬스터 수 감소
-		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1);
-		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
-
-		// 죽을 때 90도 쓰러짐
-		FRotator DeathRotation = GetActorRotation();
-		DeathRotation.Roll += 90.f; // X축으로 옆으로 쓰러짐 (Roll)
-		SetActorRotation(DeathRotation);
-
-		DropItem();
-
-		// 딜레이 후 Destroy
-		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
-			{
-				//Destroy();
-				DeactivateMonster();
-			});
-		Cast<AMyGameState>(GetWorld()->GetGameState())->PortalsOpen(true);
-
+		float Duration = PlayAnimMontage(UniqueAttackMontage);
+		if (Duration > 0.f)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s is attacking with unique montage!"), *GetName());
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Failed to play unique montage for %s"), *GetName());
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("UniqueAttackMontage not set for %s"), *GetName());
 	}
 }
