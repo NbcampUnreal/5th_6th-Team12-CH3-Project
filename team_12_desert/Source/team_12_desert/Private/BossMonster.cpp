@@ -46,4 +46,5 @@ void ABossMonster::ApplyDamage(float DamageAmount)
 				DeactivateMonster();
 			});
 		Cast<AMyGameState>(GetWorld()->GetGameState())->PortalsOpen(true);
+	}
 }
