@@ -141,6 +141,6 @@ void UMyGameInstance::TestIns()
 
 float UMyGameInstance::GetLevelTime()
 {
-	return LevelTime[CurrentLevelIndex];
+	return LevelTime;
 }
 

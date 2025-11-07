@@ -35,6 +35,8 @@ void APortal::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, 
 {
 	if (OtherActor && OtherActor->ActorHasTag(FName("Player")))
 	{
+		Cast<UMyGameInstance>(GetGameInstance())->SetLevelTime(NextLevelTime);
+
 		Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
 	}
 }
