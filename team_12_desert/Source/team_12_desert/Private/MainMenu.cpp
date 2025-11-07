@@ -4,6 +4,8 @@
 #include "MainMenu.h"
 #include "Components/Button.h"
 #include "MyGameInstance.h"
+#include "Kismet/KismetSystemLibrary.h"
+
 
 void UMainMenu::NativeConstruct()
 {
@@ -18,6 +20,11 @@ void UMainMenu::NativeConstruct()
     if (GameStart)
     {
         GameStart->OnClicked.AddDynamic(this, &UMainMenu::StartButtonClick);
+    }
+
+    if (GameExit)
+    {
+        GameExit->OnClicked.AddDynamic(this, &UMainMenu::ExitButtonClick);
     }
 }
 
@@ -36,4 +43,11 @@ void UMainMenu::StartButtonClick()
     }
 
     RemoveFromParent();
+}
+
+void UMainMenu::ExitButtonClick()
+{
+    UWorld* currentWorld = GetWorld();
+    UKismetSystemLibrary::QuitGame(currentWorld, currentWorld->GetFirstPlayerController(),
+        EQuitPreference::Quit, false);
 }

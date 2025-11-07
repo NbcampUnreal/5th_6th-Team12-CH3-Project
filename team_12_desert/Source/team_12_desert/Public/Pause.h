@@ -4,27 +4,29 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "MainMenu.generated.h"
+#include "Pause.generated.h"
 
 class UButton;
 /**
  * 
  */
 UCLASS()
-class TEAM_12_DESERT_API UMainMenu : public UUserWidget
+class TEAM_12_DESERT_API UPause : public UUserWidget
 {
 	GENERATED_BODY()
-public:
 	virtual void NativeConstruct() override;
 
-	UPROPERTY(meta=(BindWidget))
-	UButton* GameStart;
+public:
+
+	UPROPERTY(meta = (BindWidget))
+	UButton* Resume;
 
 	UPROPERTY(meta = (BindWidget))
 	UButton* GameExit;
 
 	UFUNCTION()
-	void StartButtonClick();
+	void ResumeButtonClick();
 	UFUNCTION()
-	void ExitButtonClick();
+	void PauseExitButtonClick();
+	
 };

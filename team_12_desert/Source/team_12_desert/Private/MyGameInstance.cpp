@@ -66,6 +66,8 @@ void UMyGameInstance::TurnOffHud(HudPreset off)
 	//HUDWidgetInstance = CreateWidget<UUserWidget>(this, HudWidgetClass[off]);
 	if (HUDWidgetInstance[off]&&HUDWidgetInstance[off]) {
 		HUDWidgetInstance[off]->RemoveFromViewport();
+		HUDWidgetInstance[off]->RemoveFromParent();
+		HUDWidgetInstance[off] = nullptr;
 	}
 }
 
@@ -76,7 +78,7 @@ void UMyGameInstance::TurnOnHud(HudPreset on)
 		HUDWidgetInstance.SetNum(HudWidgetClass.Num());
 	}
 
-	if (HUDWidgetInstance.IsValidIndex(on) && HUDWidgetInstance[on])
+	if (HUDWidgetInstance.IsValidIndex(on) && IsValid(HUDWidgetInstance[on]))
 	{
 		HUDWidgetInstance[on]->AddToViewport();
 		if (on == HudPreset::InGame)
@@ -120,13 +122,13 @@ void UMyGameInstance::PlayerHUDApply()
 
 }
 
-void UMyGameInstance::NextLevel()
+void UMyGameInstance::NextLevel(FName nextmapname)
 {
-	CurrentLevelIndex++;
+	//CurrentLevelIndex++;
 	Cast<AMyGameState>(GetWorld()->GetGameState())->SetMonsterCount(0);
 
 	PlayerStatSave();
-	UGameplayStatics::OpenLevel(GetWorld(), LevelMapNames[CurrentLevelIndex]);
+	UGameplayStatics::OpenLevel(GetWorld(), nextmapname);
 
 	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
 		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {

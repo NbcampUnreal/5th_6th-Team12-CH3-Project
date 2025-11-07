@@ -28,6 +28,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float NextLevelTime = 0;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Level")
+	TSoftObjectPtr<UWorld> NextLevel;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

@@ -3,6 +3,7 @@
 
 #include "MainMenuCamera.h"
 #include "Camera/CameraComponent.h"
+#include "MyGameInstance.h"
 // Sets default values
 AMainMenuCamera::AMainMenuCamera()
 {
@@ -11,7 +12,6 @@ AMainMenuCamera::AMainMenuCamera()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	RootComponent = Camera;
-
 	Tags.Add(FName("Cam"));
 
 }
@@ -26,6 +26,8 @@ void AMainMenuCamera::BeginPlay()
 	{
 		PC->SetViewTarget(this);
 	}
+	Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::MainMenu);
+
 
 }
 

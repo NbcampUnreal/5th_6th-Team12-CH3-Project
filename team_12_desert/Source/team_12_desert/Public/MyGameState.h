@@ -71,6 +71,8 @@ protected:
 
 	bool Pause = true;
 
+	bool Inven = false;
+
 	FString CurrentMapName;
 
 	TArray<AActor*> Portals;

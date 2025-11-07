@@ -37,7 +37,7 @@ void APortal::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, 
 	{
 		Cast<UMyGameInstance>(GetGameInstance())->SetLevelTime(NextLevelTime);
 
-		Cast<UMyGameInstance>(GetGameInstance())->NextLevel();
+		Cast<UMyGameInstance>(GetGameInstance())->NextLevel(NextLevel->GetFName());
 	}
 }
 

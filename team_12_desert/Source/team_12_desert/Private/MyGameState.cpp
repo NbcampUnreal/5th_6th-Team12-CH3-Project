@@ -28,16 +28,12 @@ void AMyGameState::BeginPlay()
 
 	CurrentMapName = UGameplayStatics::GetCurrentLevelName(GetWorld());
 
-	if (CurrentMapName == "Prologue") {
-		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::MainMenu);
-
-	}
-	else {
+	if (!(CurrentMapName == "Prologue")) {
 		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
 		UpdateMonsterCountHud();
+
 	}
 	time = Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
-
 
 	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Portal", Portals);
 
@@ -60,9 +56,20 @@ void AMyGameState::Tick(float DeltaTime)
 		}
 	}
 
-	//if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) { Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory); }
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) {
+		if (!Inven) 
+			Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory);
+		
+		else
+			Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::Inventory);
 
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) { PortalsOpen(true); }
+		Inven = !Inven;
+	}
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::P)) {
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Pause);
+		UGameplayStatics::SetGamePaused(GetWorld(), true);
+
+	}
 
 }
 
