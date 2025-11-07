@@ -20,7 +20,11 @@ public:
 	UPROPERTY(meta=(BindWidget))
 	UButton* GameStart;
 
+	UPROPERTY(meta = (BindWidget))
+	UButton* GameExit;
+
 	UFUNCTION()
 	void StartButtonClick();
-	
+	UFUNCTION()
+	void ExitButtonClick();
 };
