@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\ArmorActiveItem.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\BossMonster.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\BulletBase.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -64,6 +67,12 @@
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\CreepMonster.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\DamagePopupActor.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\DamageText.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\DarkMonster.cpp">
@@ -144,6 +153,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Private\MyGameState.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\ObjectPoolSubsystem.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\Portal.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
@@ -151,6 +163,9 @@
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBase.cpp">
+      <Filter>Source\team_12_desert\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBook.cpp">
       <Filter>Source\team_12_desert\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Private\SkillBookComponent.cpp">
@@ -204,6 +219,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\ArmorActiveItem.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\BossMonster.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\BulletBase.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -211,6 +229,12 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\CreepMonster.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\DamagePopupActor.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\DamageText.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\DarkMonster.h">
@@ -291,6 +315,9 @@
     <ClCompile Include="..\..\Source\team_12_desert\Public\MyGameState.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\ObjectPoolSubsystem.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\Portal.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
@@ -298,6 +325,9 @@
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBase.h">
+      <Filter>Source\team_12_desert\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBook.h">
       <Filter>Source\team_12_desert\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\team_12_desert\Public\SkillBookComponent.h">
