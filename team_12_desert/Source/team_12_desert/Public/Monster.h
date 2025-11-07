@@ -93,4 +93,8 @@ public:
 
 	void SetOwningPoolSubsystem(class UObjectPoolSubsystem* InSubsystem);
 
+
+	// ÇÇ°Ý½Ã »ß¿ë by mpyi
+	UFUNCTION(BlueprintCallable)
+	void DamagedLaunch(FVector MC_Vector);
 };

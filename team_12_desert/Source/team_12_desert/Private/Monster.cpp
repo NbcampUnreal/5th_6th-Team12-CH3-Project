@@ -256,3 +256,9 @@ void AMonster::SetOwningPoolSubsystem(UObjectPoolSubsystem* InSubsystem)
 	OwningPoolSubsystem = InSubsystem;
 }
 
+void AMonster::DamagedLaunch(FVector MC_Vector)
+{
+	// FVector LaunchDirection = -GetActorForwardVector() + FVector(-0.5f, 0.f, 0.5f);
+	FVector LaunchDirection = MC_Vector + FVector(1.0f, 0.f, 1.0f);
+	LaunchCharacter(LaunchDirection * 300.f, true, true);
+}
