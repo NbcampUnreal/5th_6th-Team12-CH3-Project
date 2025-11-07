@@ -11,7 +11,8 @@ UInventoryComponent::UInventoryComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
-
+	FItemInventory emptyItem;
+	Items.Init(emptyItem, InventorySize);
 }
 
 
@@ -19,8 +20,7 @@ UInventoryComponent::UInventoryComponent()
 void UInventoryComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	FItemInventory emptyItem;
-	Items.Init(emptyItem, InventorySize);
+	
 }
 
 void UInventoryComponent::AddItem(FName ItemID)
@@ -42,23 +42,18 @@ void UInventoryComponent::AddItem(FName ItemID)
 		// 비어있는 칸이 있는지 찾습니다.
 		if (Items[i].ItemName == NAME_None)
 		{
+			UE_LOG(LogTemp, Display, TEXT("addItem"));
 			FItemInventory temp;
 			temp.ItemName = ItemID;
 			temp.Quantity = 1;
 			Items.Insert(temp, i);
-
-			if (GEngine)
-			{
-				FString const Msg = FString::Printf(TEXT("아이템 저장! [ %d번 ] 슬롯에 [ %s ] 저장!"), i, *ItemID.ToString());
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Msg);
-			}
 
 			return;
 		}
 	}
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("인벤토리가 모두 찼습니다!"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("Inven Full"));
 	}
 }
 

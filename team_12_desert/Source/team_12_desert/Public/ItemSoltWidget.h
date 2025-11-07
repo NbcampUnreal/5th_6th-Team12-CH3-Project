@@ -25,8 +25,9 @@ private:
 
 	struct FItemInventoryData* GetItemData() const;
 
+	void ItemActive();
+
 	FName ItemID;
 	int32 Quantity;
 
-	FItemInventoryData* ItemData;
 };

@@ -29,13 +29,10 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	TArray<FItemInventory> Items; // 아이템슬롯을 TArray배열로 만들어서 여러 슬롯을 가진 아이템 배열 완성
+
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<UDataTable> InvenDataTable;
-
-	TArray<FItemInventory> getItems() const { return Items; }
+	TArray<FItemInventory> Items; // 아이템슬롯을 TArray배열로 만들어서 여러 슬롯을 가진 아이템 배열 완성
 
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Inventory")

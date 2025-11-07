@@ -26,17 +26,18 @@ void UMyGameInstance::PlayerStatSave()
 			Stamina = tempChar->getCurrentStamina();
 			MaxStamina = tempChar->getMaxStamina();
 			Level = tempChar->getCurrentLevel();
-			CharacterDamage = tempChar->getCharacterDamage();
+			CharacterDamage = tempChar->getBaseDamage();
+			MulDamage = tempChar->getMulDamage();
 			CharacterArmor = tempChar->getCharacterArmor();
+			MulArmor = tempChar->getMulArmor();
 			Exp = tempChar->getCurrentExperience();
 		}
 	}
 }
 
-//AMainCharacterHunter나 MainCharacter에서 set필요
 void UMyGameInstance::PlayerStatLoad()
 {
-	if (Hp == 0) {
+	if (MaxHp == 0) {
 		return;
 	}
 	APlayerController* PC = GetWorld()->GetFirstPlayerController();
@@ -45,14 +46,16 @@ void UMyGameInstance::PlayerStatLoad()
 		AMainCharacterHunter* tempChar = Cast<AMainCharacterHunter>(PC->GetPawn());
 		if (tempChar)
 		{
-		/*	tempChar->setCurrentHP(Hp);
+			tempChar->setCurrentHP(Hp);
 			tempChar->setMaxHP(MaxHp);
 			tempChar->setCurrentStamina(Stamina);
 			tempChar->setMaxStamina(MaxStamina);
 			tempChar->setCurrentLevel(Level);
-			tempChar->setCharacterDamage(CharacterDamage);
-			tempChar->setCharacterArmor(CharacterArmor);
-			tempChar->setCurrentExperience(Exp);*/
+			tempChar->setBaseDamage(CharacterDamage);
+			tempChar->setBaseArmor(CharacterArmor);
+			tempChar->setCurrentExperience(Exp);
+			tempChar->setMulDamage(MulDamage);
+			tempChar->setMulArmor(MulArmor);
 		}
 	}
 
@@ -61,7 +64,7 @@ void UMyGameInstance::PlayerStatLoad()
 void UMyGameInstance::TurnOffHud(HudPreset off)
 {
 	//HUDWidgetInstance = CreateWidget<UUserWidget>(this, HudWidgetClass[off]);
-	if (HUDWidgetInstance[off]) {
+	if (HUDWidgetInstance[off]&&HUDWidgetInstance[off]) {
 		HUDWidgetInstance[off]->RemoveFromViewport();
 	}
 }
@@ -123,10 +126,21 @@ void UMyGameInstance::NextLevel()
 	PlayerStatSave();
 	UGameplayStatics::OpenLevel(GetWorld(), LevelMapNames[CurrentLevelIndex]);
 
+	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
+		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
+			HUDWidgetInstance[i]->RemoveFromViewport();			
+		}
+	}
+	HUDWidgetInstance.Empty();
 }
 
 void UMyGameInstance::TestIns()
 {
 
+}
+
+float UMyGameInstance::GetLevelTime()
+{
+	return LevelTime[CurrentLevelIndex];
 }
 

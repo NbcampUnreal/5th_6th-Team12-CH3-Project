@@ -8,7 +8,7 @@
 #include "SkillSelecteRow.h"
 #include "SkillBook.h"
 #include "MainCharacter.h"
-
+#include "MyGameInstance.h"
 
 void USkillSelectWidget::NativeOnInitialized()
 {
@@ -178,4 +178,7 @@ void USkillSelectWidget::SelectSkill(int32 Index)
 {
 	if (!SkillBookClass) return;
 	SkillBookClass->AddSkill(Rowlist[Index]->Skill);
+	APlayerController* PC = GetWorld()->GetFirstPlayerController();
+	PC->SetShowMouseCursor(true);
+	Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::SkillUp);
 }

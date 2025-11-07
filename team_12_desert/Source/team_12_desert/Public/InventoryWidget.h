@@ -14,7 +14,7 @@ class TEAM_12_DESERT_API UInventoryWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
-	virtual void NativeOnInitialized() override;
+	virtual void NativeConstruct() override;
 
 	void UpdateInventory();
 public:
@@ -25,6 +25,7 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "InventoryComponent")
 	TObjectPtr<UInventoryComponent> InventoryComponent;
 
-	class UItemSoltWidget* ItemSoltWidgetClass;
+	UPROPERTY(EditDefaultsOnly, Category = "Inventory")
+	TSubclassOf<class UItemSoltWidget> ItemSlotWidgetClass;
 
 };

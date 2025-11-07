@@ -6,25 +6,28 @@
 #include "ItemSoltWidget.h"
 #include "Components/WrapBox.h"
 
-void UInventoryWidget::NativeOnInitialized()
+void UInventoryWidget::NativeConstruct()
 {
-	Super::NativeOnInitialized();
+	Super::NativeConstruct();
+	UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
 	if (InventoryComponentClass)
 	{
 		InventoryComponent = Cast<UInventoryComponent>(GetOwningPlayerPawn()->GetComponentByClass(InventoryComponentClass));
+		UpdateInventory();
 	}
-	UpdateInventory();
-}
+}	
 
 void UInventoryWidget::UpdateInventory()
 {
-	TArray<FItemInventory> Items = InventoryComponent->getItems();
+	TArray<FItemInventory> *Items = &InventoryComponent->Items;
 	if (TObjectPtr<UWrapBox> Inven = Cast<UWrapBox>(GetWidgetFromName(TEXT("InventoryCanvas"))))
 	{
 		Inven->ClearChildren();
-		for (const FItemInventory Item : Items)
+		UE_LOG(LogTemp, Display, TEXT("InvenUpdate"));
+		for (const FItemInventory& Item : *Items)
 		{
-			UItemSoltWidget* ItemSlot = CreateWidget<UItemSoltWidget>(Inven);
+			UItemSoltWidget* ItemSlot = CreateWidget<UItemSoltWidget>(GetOwningPlayer(), ItemSlotWidgetClass);
+			if (ItemSlot == nullptr) UE_LOG(LogTemp, Display, TEXT("error null"));
 			if (ItemSlot)
 			{
 				ItemSlot->SetItem(Item);
