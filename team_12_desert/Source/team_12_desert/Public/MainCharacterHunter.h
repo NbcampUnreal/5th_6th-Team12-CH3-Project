@@ -83,7 +83,7 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Combat")
 	void ShootProjectile();
 	UFUNCTION(BlueprintCallable, Category = "Combat")
-	void SlashSword();
+	void SwordSlashEnd();
 
 private:
 	float DefaultDashSpeed = 1.f;

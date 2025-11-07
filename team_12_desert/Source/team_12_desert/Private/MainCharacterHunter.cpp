@@ -234,10 +234,11 @@ void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, b
 	// 몽타주 재생이 끝났으므로, 공격 가능 상태로 리셋
 	bIsAttacking = false;
 
-	if (IsValid(MeleeWeaponActor))
-	{
-		MeleeWeaponActor->AttackEnd();
-	}
+	/// 콜리전 없애는건 중간에 notify로 처리
+	//if (IsValid(MeleeWeaponActor))
+	//{
+	//	MeleeWeaponActor->AttackEnd();
+	//}
 
 	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
 }
@@ -247,11 +248,15 @@ void AMainCharacterHunter::ShootProjectile()
 	this->RangeAttack();
 	if (IsValid(RangeWeaponActor))
 		RangeWeaponActor->Attack();
-
 }
 
-void AMainCharacterHunter::SlashSword()
+void AMainCharacterHunter::SwordSlashEnd()
 {
+	// 휘두르기 끝날 때 콜리전 없애기
+	if (IsValid(MeleeWeaponActor))
+	{
+		MeleeWeaponActor->AttackEnd();
+	}
 }
 
 
