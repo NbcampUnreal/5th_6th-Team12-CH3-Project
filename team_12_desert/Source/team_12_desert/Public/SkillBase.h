@@ -23,9 +23,10 @@ public:
 	TObjectPtr<class UNiagaraSystem> NiagaraEffect;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Delay")
-	float Delay;
+	int32 Delay;
 
-	virtual void ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location);
+	virtual void ActionSkill(TArray<TObjectPtr<class AMonster>> Actors, int32 time, TObjectPtr<AActor> owner);
+
 	virtual void AttachSkill(TObjectPtr<class AMainCharacter> Character);
 	virtual void DetachSkill(TObjectPtr<class AMainCharacter> Character);
 	FName GetSkillName() const;

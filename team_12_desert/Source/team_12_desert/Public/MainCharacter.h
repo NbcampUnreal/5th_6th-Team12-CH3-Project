@@ -73,6 +73,7 @@ public:
 	void HealStamina(int32 HealAmount);
 protected:
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	// 변수모음
 public:
@@ -123,6 +124,7 @@ protected:
 	TObjectPtr<class AWeaponBase> RangeWeaponActor;
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<class AWeaponBase> MeleeWeaponActor;
+
 	//UPROPERTY(EditAnywhere)
 	//TSubclassOf<class ASkillBook> mySkillBook;
 	//UPROPERTY(VisibleAnywhere)
@@ -133,7 +135,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skill", meta = (AllowPrivateAccess = "Skill"))
 	TObjectPtr<USkillBookComponent> SkillBookComponent;
-
+	int32 Distance;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -159,4 +161,6 @@ protected:
 		AActor* OtherActor,
 		UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex);
+
+
 };

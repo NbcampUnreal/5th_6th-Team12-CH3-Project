@@ -13,7 +13,11 @@
 #include "Components/TextBlock.h"
 #include "DamageText.h"
 #include "DamagePopupActor.h"
+<<<<<<< HEAD
 #include "Components/TimelineComponent.h"
+=======
+#include "ItemRandomBox.h"
+>>>>>>> Item_pcy
 
 AMonster::AMonster()
 {
@@ -43,9 +47,13 @@ AMonster::AMonster()
 		damageTextInstance = Cast<UDamageText>(damage);
 	}
 
+<<<<<<< HEAD
 	// 죽을때 사라지는 용도의 타임라인 생성
 	DissolveTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("DissolveTimeline"));
 	DissolveTimeline->bAutoActivate = false;
+=======
+	Tags.Add(FName("Monster"));
+>>>>>>> Item_pcy
 }
 
 void AMonster::BeginPlay()
@@ -105,7 +113,39 @@ void AMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AMonster::ApplyDamage(float DamageAmount)
 {
+<<<<<<< HEAD
 	// 자식 클래스로 이동
+=======
+	ShowDamage(DamageAmount);
+	CurrentHealth -= DamageAmount;
+	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
+	if (CurrentHealth <= 0.f)
+	{
+		// GameInstance에서 몬스터 수 감소
+		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1);
+		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
+
+		// 죽을 때 90도 쓰러짐
+		FRotator DeathRotation = GetActorRotation();
+		DeathRotation.Roll += 90.f; // X축으로 옆으로 쓰러짐 (Roll)
+		SetActorRotation(DeathRotation);
+		ItemRandomBoxInstance = GetWorld()->SpawnActor<AItemRandomBox>(ItemRandomBoxActor, GetActorLocation(), FRotator::ZeroRotator);
+		if (ItemRandomBoxInstance) ItemRandomBoxInstance->SpawnRandomItem(GetActorLocation());
+		//DropItem();
+
+		// 딜레이 후 Destroy
+		GetWorld()->GetTimerManager().SetTimerForNextTick([this]()
+			{
+				//Destroy();
+				DeactivateMonster();
+			});
+
+	}
+	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
+	HpBarProgress();
+
+	Cast<AMyGameState>(GetWorld()->GetGameState())->ResetHitMark();
+>>>>>>> Item_pcy
 }
 
 void AMonster::Attack()
