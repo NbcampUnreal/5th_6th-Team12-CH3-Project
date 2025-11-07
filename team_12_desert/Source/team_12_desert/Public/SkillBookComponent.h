@@ -22,23 +22,17 @@ protected:
 
 	TArray<TObjectPtr<class ASkillBase>> SkillList;
 
-	float Distance;
-
-	void ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time);
-
-
-	TArray<TObjectPtr<AActor>> OverlappedActors;
-
 public:	
+	void ActionSkill(TArray<TObjectPtr<class AMonster>> Actors, int32 Distance);
 
-	void ActivateItem(TObjectPtr<AActor> Actor);
-	void DeactivateItem(TObjectPtr<AActor> Actor);
+	TArray<TObjectPtr<AMonster>> OverlappedActors;
+	void ActivateItem(TObjectPtr<AMonster> Actor);
+	void DeactivateItem(TObjectPtr<AMonster> Actor);
 
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	void AddSkill(TObjectPtr<class ASkillBase> NewSkill);
 
 	void DeleteSkill(TObjectPtr<class ASkillBase> SkillToDelete);
 
+	void OnDestroyed(TObjectPtr<AMonster> Actor);
 };

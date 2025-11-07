@@ -73,6 +73,7 @@ public:
 	void HealStamina(int32 HealAmount);
 protected:
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	// 변수모음
 public:
@@ -133,7 +134,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skill", meta = (AllowPrivateAccess = "Skill"))
 	TObjectPtr<USkillBookComponent> SkillBookComponent;
-
+	int32 Distance;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -159,4 +160,6 @@ protected:
 		AActor* OtherActor,
 		UPrimitiveComponent* OtherComp,
 		int32 OtherBodyIndex);
+
+
 };

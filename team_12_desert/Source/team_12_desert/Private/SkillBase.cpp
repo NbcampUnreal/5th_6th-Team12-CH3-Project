@@ -3,6 +3,7 @@
 
 #include "SkillBase.h"
 #include "MainCharacter.h"
+#include "Monster.h"
 
 // Sets default values
 ASkillBase::ASkillBase()
@@ -17,7 +18,7 @@ ASkillBase::ASkillBase()
 	MainCharacter = nullptr;
 }
 
-void ASkillBase::ActionSkill(TArray<TObjectPtr<AActor>> Actors, float time, FVector Location)
+void ASkillBase::ActionSkill(TArray<TObjectPtr<AMonster>> Actors, int32 time, TObjectPtr<AActor> owner)
 {
 
 }
