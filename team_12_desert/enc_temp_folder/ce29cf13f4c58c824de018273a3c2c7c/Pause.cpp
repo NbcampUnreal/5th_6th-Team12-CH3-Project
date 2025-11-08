@@ -32,14 +32,8 @@ void UPause::NativeConstruct()
 		KillCount->SetText(FText::AsNumber(Cast<AMyGameState>(GetWorld()->GetGameState())->GetMonsterCount()));		
 	}
 
-
 	if (Time) {
-		float Remain = Cast<AMyGameState>(GetWorld()->GetGameState())->GetReamingTime();
-
-		FNumberFormattingOptions NumberFormat;
-		NumberFormat.MinimumFractionalDigits = 1; 
-		NumberFormat.MaximumFractionalDigits = 1; 
-		Time->SetText(FText::AsNumber(Remain, &NumberFormat));
+		Time->SetText(FText::AsNumber(Cast<AMyGameState>(GetWorld()->GetGameState())->GetReamingTime()));
 	}
 
 }
