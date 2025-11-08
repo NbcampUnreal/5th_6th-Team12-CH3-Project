@@ -30,7 +30,7 @@ void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>>& Actors, int3
 	{
 		for (TObjectPtr<ASkillBase>& Skill : SkillList)
 		{
-			if (Skill && IsValid(GetOwner()))
+			if (Skill != nullptr && IsValid(GetOwner()))
 			{
 				Skill->ActionSkill(Actors, Distance, GetOwner());
 			}
@@ -41,7 +41,7 @@ void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>>& Actors, int3
 
 void USkillBookComponent::AddSkill(TObjectPtr<ASkillBase> NewSkill)
 {
-	SkillList.Add(NewSkill);
+	SkillList.Emplace(NewSkill);
 	if (IsValid(GetOwner()))
 	{
 		NewSkill->AttachSkill(Cast<AMainCharacter>(GetOwner()));

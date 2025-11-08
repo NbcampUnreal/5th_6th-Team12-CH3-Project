@@ -20,6 +20,7 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UPROPERTY(VisibleAnywhere)
 	TArray<TObjectPtr<class ASkillBase>> SkillList;
 
 public:	

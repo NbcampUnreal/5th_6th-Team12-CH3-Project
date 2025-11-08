@@ -129,7 +129,7 @@ void AMainCharacter::ActivateSkillBook(
     {
         if (AMonster* monster = Cast<AMonster>(OtherActor))
         {
-            OverlappedActors.Add(monster);
+            OverlappedActors.Emplace(monster);
         }
 	}
 }
