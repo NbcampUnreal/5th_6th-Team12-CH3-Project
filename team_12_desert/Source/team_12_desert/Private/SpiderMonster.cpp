@@ -35,8 +35,8 @@ void ASpiderMonster::ApplyDamage(float DamageAmount)
 	if (CurrentHealth <= 0.f)
 	{
 		// GameInstance에서 몬스터 수 감소
-		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(-1);
-		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
+		Cast<AMyGameState>(GetWorld()->GetGameState())->AddMonsterCount(1);
+		Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterKillCountHud();
 
 		// 죽을 때 90도 쓰러짐
 		FRotator DeathRotation = GetActorRotation();

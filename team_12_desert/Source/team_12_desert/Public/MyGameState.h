@@ -28,7 +28,7 @@ public:
 	void AddMonsterCount(int32 a) { MonsterCount += a; }
 	int32 GetMonsterCount() { return MonsterCount; }
 	void SetMonsterCount(int32 a) { MonsterCount = a; }
-	void UpdateMonsterCountHud();
+	void UpdateMonsterKillCountHud();
 	void UpdateStaminaHud(float MaxStamina, float CurrentStamina);
 	void UpdateHpHud(float MaxHp, float CurrentHp);
 	void UpdateHitMarkHud(float DeltaTime);

@@ -30,8 +30,6 @@ void AMyGameState::BeginPlay()
 
 	if (!(CurrentMapName == "Prologue")) {
 		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::InGame);
-		UpdateMonsterCountHud();
-
 	}
 	time = Cast<UMyGameInstance>(GetGameInstance())->GetLevelTime();
 
@@ -71,6 +69,10 @@ void AMyGameState::Tick(float DeltaTime)
 
 	}
 
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::K)) {
+		PortalsOpen(true);
+	}
+
 }
 
 void AMyGameState::StartLevel()
@@ -79,7 +81,7 @@ void AMyGameState::StartLevel()
 
 }
 
-void AMyGameState::UpdateMonsterCountHud() {
+void AMyGameState::UpdateMonsterKillCountHud() {
 	if (MonsterRemainingText == nullptr) {
 		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
 			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
@@ -99,7 +101,7 @@ void AMyGameState::UpdateMonsterCountHud() {
 
 	if (MonsterRemainingText) {
 		MonsterRemainingText->SetVisibility(ESlateVisibility::Visible);
-		MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("Count: %d"), MonsterCount)));
+		MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("%d"), MonsterCount)));
 	}
 }
 
@@ -186,7 +188,7 @@ void AMyGameState::UpdateTimeHud()
 		return;
 	}
 	RemainingTime->SetVisibility(ESlateVisibility::Visible);
-	RemainingTime->SetText(FText::FromString(FString::Printf(TEXT("Time: %.2f"), time)));
+	RemainingTime->SetText(FText::FromString(FString::Printf(TEXT("%.1f"), time)));
 }
 
 

@@ -51,8 +51,6 @@ void ASpawner::Tick(float DeltaTime)
 
 	if (!boss) {
 		time += DeltaTime;
-		UE_LOG(LogTemp, Warning, TEXT("%f"), time);
-
 		if (time >= InfinityRespawnTime) {
 			SpawnEnemy();
 			time = 0;
@@ -61,7 +59,7 @@ void ASpawner::Tick(float DeltaTime)
 
 	if (boss && Cast<AMyGameState>(GetWorld()->GetGameState())->IsFinsh()) {
 		if (!bossSpawnd) {
-			
+
 			bossSpawnd = true;
 			SpawnEnemy();
 		}
@@ -83,7 +81,7 @@ FVector ASpawner::GetRandomPointInVolume() const
 }
 
 void ASpawner::SpawnEnemy()
-{	
+{
 	if (!PoolSubsystem)
 	{
 		UE_LOG(LogTemp, Error, TEXT("PoolSubsystem is not valid!"));
@@ -129,14 +127,8 @@ void ASpawner::SpawnEnemy()
 				SpawnRotation
 			);
 
-			if (SpawnedMonster)
-			{
-				Cast<AMyGameState>(World->GetGameState())->AddMonsterCount(1);
-			}
 		}
 	}
-	Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateMonsterCountHud();
-
 }
 
 void ASpawner::PrewarmMonsterPools()

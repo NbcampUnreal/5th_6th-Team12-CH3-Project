@@ -29,15 +29,37 @@ void APortal::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	//UE_LOG(LogTemp, Warning, TEXT("%s "),*temp);
+
 }
 
 void APortal::OnComponentBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (OtherActor && OtherActor->ActorHasTag(FName("Player")))
 	{
-		Cast<UMyGameInstance>(GetGameInstance())->SetLevelTime(NextLevelTime);
+		auto GI = Cast<UMyGameInstance>(GetGameInstance());
+		GI->SetLevelTime(NextLevelTime);
 
-		Cast<UMyGameInstance>(GetGameInstance())->NextLevel(NextLevel->GetFName());
+		FName LevelName = NAME_None;
+
+		if (NextLevel.IsValid())
+		{
+			LevelName = NextLevel->GetFName();
+		}
+		else
+		{
+			FStringAssetReference Ref = NextLevel.ToSoftObjectPath();
+			LevelName = FName(*Ref.GetAssetName());
+		}
+
+		if (LevelName != NAME_None)
+		{
+			GI->NextLevel(LevelName);
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("NextLevel is invalid in APortal!"));
+		}
 	}
 }
 
