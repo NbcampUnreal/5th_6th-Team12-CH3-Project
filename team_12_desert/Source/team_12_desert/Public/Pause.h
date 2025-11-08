@@ -7,6 +7,7 @@
 #include "Pause.generated.h"
 
 class UButton;
+class UTextBlock;
 /**
  * 
  */
@@ -23,6 +24,13 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	UButton* GameExit;
+
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* KillCount;
+
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* Time;
+
 
 	UFUNCTION()
 	void ResumeButtonClick();
