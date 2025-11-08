@@ -24,7 +24,7 @@ void USkillBookComponent::BeginPlay()
 
 }
 
-void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>> Actors, int32 Distance)
+void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>>& Actors, int32 Distance)
 {
 	if (SkillList.Num() > 0)
 	{
