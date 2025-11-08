@@ -4,6 +4,8 @@
 #include "Monster.h"
 #include "BossMonster.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnBossHPChanged, float, NewHPPercent);
+
 /**
  * 
  */
@@ -26,4 +28,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Boss")
 	bool bIsBoss;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnBossHPChanged OnHPChanged; // 체력 변경 시 알림용
 };

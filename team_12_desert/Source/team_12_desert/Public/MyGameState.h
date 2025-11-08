@@ -42,6 +42,8 @@ public:
 
 	float GetReamingTime() { return time; }
 
+	void BossSpawn();
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")

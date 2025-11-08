@@ -2,6 +2,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Animation/AnimInstance.h"
+
 ABossMonster::ABossMonster()
 {
 	//(개별 몬스터 설정)
@@ -12,11 +13,13 @@ ABossMonster::ABossMonster()
 	AttackCooldown = 2.0f;
 
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+
 }
 
 void ABossMonster::BeginPlay()
 {
 	Super::BeginPlay();
+	Tags.Add(FName("Boss"));
 }
 
 void ABossMonster::Attack()
@@ -40,4 +43,7 @@ void ABossMonster::Attack()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("UniqueAttackMontage not set for %s"), *GetName());
 	}
+
+
 }
+

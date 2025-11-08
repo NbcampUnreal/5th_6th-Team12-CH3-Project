@@ -13,6 +13,8 @@
 #include "Blueprint/UserWidget.h"
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
+#include "BossMonster.h"
+#include "BossHp.h"
 
 AMyGameState::AMyGameState()
 {
@@ -202,6 +204,32 @@ void AMyGameState::PortalsOpen(bool val)
 		if (APortal* Portal = Cast<APortal>(Portals[i]))
 		{
 			Portal->SetPortalActive(val);
+		}
+	}
+}
+
+void AMyGameState::BossSpawn()
+{
+	TArray<AActor*> BossActors;
+	
+	UGameplayStatics::GetAllActorsWithTag(GetWorld(), "Boss", BossActors);
+
+
+	if (BossActors.Num() > 0)
+	{
+		ABossMonster* Boss = Cast<ABossMonster>(BossActors[0]);
+		if (Boss)
+		{		
+			UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance());
+			GI->TurnOnHud(HudPreset::BossHp);
+			if (UUserWidget* BossHud = GI->GetHUDWidget(HudPreset::BossHp))
+			{
+				UBossHp* BossHpWidget = Cast<UBossHp>(BossHud);
+				if (BossHpWidget)
+				{
+					Boss->OnHPChanged.AddDynamic(BossHpWidget, &UBossHp::OnBossHPChanged);
+				}
+			}
 		}
 	}
 }
