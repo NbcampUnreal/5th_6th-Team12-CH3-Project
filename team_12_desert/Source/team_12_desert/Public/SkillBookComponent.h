@@ -23,7 +23,7 @@ protected:
 	TArray<TObjectPtr<class ASkillBase>> SkillList;
 
 public:	
-	void ActionSkill(TArray<TObjectPtr<class AMonster>> Actors, int32 Distance);
+	void ActionSkill(TArray<TObjectPtr<class AMonster>>& Actors, int32 Distance);
 
 
 
