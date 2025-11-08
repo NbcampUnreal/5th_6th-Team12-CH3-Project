@@ -25,14 +25,10 @@ protected:
 public:	
 	void ActionSkill(TArray<TObjectPtr<class AMonster>> Actors, int32 Distance);
 
-	TArray<TObjectPtr<AMonster>> OverlappedActors;
-	void ActivateItem(TObjectPtr<AMonster> Actor);
-	void DeactivateItem(TObjectPtr<AMonster> Actor);
 
 
 	void AddSkill(TObjectPtr<class ASkillBase> NewSkill);
 
 	void DeleteSkill(TObjectPtr<class ASkillBase> SkillToDelete);
 
-	void OnDestroyed(TObjectPtr<AMonster> Actor);
 };

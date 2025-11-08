@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "SkillBookComponent.h"
+#include "InventoryComponent.h"
 #include "MainCharacter.generated.h"
 
 enum ATTACK_TYPE
@@ -48,8 +49,8 @@ public:
 
 
 	//TObjectPtr<class ASkillBook> getSkillBook() const { return mySkillBookActor; }
-	TObjectPtr<class UInventoryComponent> getInventoryComponent() const { return InventoryComponent; }
-	TObjectPtr<class USkillBookComponent> getSkillBookComponent() const { return SkillBookComponent; }
+	TObjectPtr<UInventoryComponent> getInventoryComponent() const { return InventoryComponent; }
+	TObjectPtr<USkillBookComponent> getSkillBookComponent() const { return SkillBookComponent; }
 
 	bool getIsDashSkill() const { return bIsDashSkill; }
 	void setIsDashSkill(bool bDash) { bIsDashSkill = bDash; }
@@ -131,10 +132,13 @@ protected:
 	//TObjectPtr<class ASkillBook> mySkillBookActor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<class UInventoryComponent> InventoryComponent;
+	TObjectPtr<UInventoryComponent> InventoryComponent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skill", meta = (AllowPrivateAccess = "Skill"))
 	TObjectPtr<USkillBookComponent> SkillBookComponent;
+
+	TArray<TObjectPtr<AMonster>> OverlappedActors;
+
 	int32 Distance;
 
 

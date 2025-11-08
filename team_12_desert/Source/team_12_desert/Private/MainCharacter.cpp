@@ -4,10 +4,8 @@
 #include "MainCharacter.h"
 #include "WeaponBase.h"
 #include "SkillBook.h"
-#include "InventoryComponent.h"
 #include "MyGameState.h"
 #include "MyGameInstance.h"
-#include "SkillBookComponent.h"
 #include "Components/SphereComponent.h"
 #include "Monster.h"
 
@@ -72,10 +70,10 @@ void AMainCharacter::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 	Distance += 1;
     UE_LOG(LogTemp, Display, TEXT("tick in"));
-    if (SkillBookComponent->OverlappedActors.Num() > 0)
+    if (OverlappedActors.Num() > 0)
     {
         UE_LOG(LogTemp, Display, TEXT("tick out"));
-        SkillBookComponent->ActionSkill(SkillBookComponent->OverlappedActors, Distance);
+        SkillBookComponent->ActionSkill(OverlappedActors, Distance);
     }
     
 }
@@ -129,15 +127,21 @@ void AMainCharacter::ActivateSkillBook(
 {
     if(OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
     {
-        SkillBookComponent->ActivateItem(Cast<AMonster>(OtherActor));
+        if (AMonster* monster = Cast<AMonster>(OtherActor))
+        {
+            OverlappedActors.Add(monster);
+        }
 	}
 }
 
 void AMainCharacter::EndActivateSkillBook(UPrimitiveComponent* OverlapPendComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-    if (OtherActor && OtherActor->ActorHasTag(TEXT("Monster")))
+    if (OtherActor->ActorHasTag(TEXT("Monster")))
     {
-        SkillBookComponent->DeactivateItem(Cast<AMonster>(OtherActor));
+        if (AMonster* monster = Cast<AMonster>(OtherActor))
+        {
+            OverlappedActors.Remove(monster);
+        }
     }
 }
 
@@ -200,9 +204,9 @@ void AMainCharacter::IncreaseExperience(int32 Experience)
     {
         CurrentLevel++;
         CurrentExperience = 0;
+        Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::SkillUp);
         APlayerController* PC = GetWorld()->GetFirstPlayerController();
         PC->SetShowMouseCursor(true);
-        Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::SkillUp);
     }
 }
 

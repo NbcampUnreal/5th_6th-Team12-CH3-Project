@@ -58,16 +58,3 @@ void USkillBookComponent::DeleteSkill(TObjectPtr<ASkillBase> SkillToDelete)
 	}
 }
 
-void USkillBookComponent::OnDestroyed(TObjectPtr<AMonster> Actor)
-{
-	OverlappedActors.Remove(Actor);
-}
-void USkillBookComponent::ActivateItem(TObjectPtr<AMonster> Actor)
-{
-	OverlappedActors.Add(Actor);
-}
-
-void USkillBookComponent::DeactivateItem(TObjectPtr<AMonster> Actor)
-{
-	OverlappedActors.Remove(Actor);
-}
