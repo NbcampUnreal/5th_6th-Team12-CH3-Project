@@ -62,6 +62,7 @@ void ASpawner::Tick(float DeltaTime)
 
 			bossSpawnd = true;
 			SpawnEnemy();
+			Cast<AMyGameState>(GetWorld()->GetGameState())->BossSpawn();
 		}
 	}
 }

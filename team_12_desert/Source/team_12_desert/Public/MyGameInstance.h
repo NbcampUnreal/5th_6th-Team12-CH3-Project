@@ -18,7 +18,9 @@ enum HudPreset
 	Inventory,
 	Pause,
 	Die,
+	BossHp,
 };
+
 UCLASS()
 class TEAM_12_DESERT_API UMyGameInstance : public UGameInstance
 {
