@@ -65,7 +65,7 @@ protected:
 	UTextBlock* RemainingTime = nullptr;
 	UTextBlock* MonsterRemainingText = nullptr;
 	UProgressBar* BossHpbarmain = nullptr;
-	UProgressBar* BossHpbarsub=nullptr
+	UProgressBar* BossHpbarsub = nullptr;
 
 	float HitMarkOpa = 0.f;
 	
