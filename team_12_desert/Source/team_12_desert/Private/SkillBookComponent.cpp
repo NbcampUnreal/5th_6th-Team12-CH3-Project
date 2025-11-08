@@ -28,7 +28,7 @@ void USkillBookComponent::ActionSkill(TArray<TObjectPtr<AMonster>>& Actors, int3
 {
 	if (SkillList.Num() > 0)
 	{
-		for (TObjectPtr<ASkillBase> Skill : SkillList)
+		for (TObjectPtr<ASkillBase>& Skill : SkillList)
 		{
 			if (Skill && IsValid(GetOwner()))
 			{
