@@ -63,6 +63,8 @@ void AMainCharacter::BeginPlay()
 
     Cast<UMyGameInstance>(GetGameInstance())->PlayerStatLoad();
     Cast<UMyGameInstance>(GetGameInstance())->PlayerHUDApply();
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateArmorHud(BaseArmor* MulArmor);
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateAttackHud(BaseDamage * MulDamage);
 }
 
 void AMainCharacter::Tick(float DeltaTime)
@@ -143,6 +145,31 @@ void AMainCharacter::EndActivateSkillBook(UPrimitiveComponent* OverlapPendComp, 
             OverlappedActors.Remove(monster);
         }
     }
+}
+
+void AMainCharacter::setBaseDamage(int32 Damage)
+{
+    BaseDamage = Damage;
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateAttackHud(BaseDamage * MulDamage);
+}
+
+void AMainCharacter::setMulDamage(float Damage)
+{
+    MulDamage = Damage;
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateAttackHud(BaseDamage * MulDamage);
+}
+
+void AMainCharacter::setBaseArmor(int32 Armor)
+{
+    BaseArmor = Armor;
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateArmorHud(BaseArmor * MulArmor);
+}
+
+void AMainCharacter::setMulArmor(float Armor)
+{
+    MulArmor = Armor;
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateArmorHud(BaseArmor * MulArmor);
+
 }
 
 //외부에서 체력 회복시킬 때

@@ -33,6 +33,8 @@ public:
 	void UpdateHpHud(float MaxHp, float CurrentHp);
 	void UpdateHitMarkHud(float DeltaTime);
 	void UpdateTimeHud();
+	void UpdateAttackHud(int Attack);
+	void UpdateArmorHud(int Defence);
 	void ResetHitMark() { HitMarkOpa = 1; }
 	float GetTime() { return time; }
 
@@ -66,6 +68,8 @@ protected:
 	UImage* HitMarker = nullptr;
 	UTextBlock* RemainingTime = nullptr;
 	UTextBlock* MonsterRemainingText = nullptr;
+	UTextBlock* AttackText = nullptr;
+	UTextBlock* ArmorText = nullptr;
 	UProgressBar* BossHpbarmain = nullptr;
 	UProgressBar* BossHpbarsub = nullptr;
 

@@ -193,6 +193,40 @@ void AMyGameState::UpdateTimeHud()
 	RemainingTime->SetText(FText::FromString(FString::Printf(TEXT("%.1f"), time)));
 }
 
+void AMyGameState::UpdateAttackHud(int Attack)
+{
+	if (AttackText == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				AttackText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("Attack")));
+			}
+		}
+	}
+
+	if (!AttackText)
+		return;
+
+	AttackText->SetVisibility(ESlateVisibility::Visible);
+	AttackText->SetText(FText::FromString(FString::Printf(TEXT("%d"), Attack)));
+}
+
+void AMyGameState::UpdateArmorHud(int Defence)
+{
+	if (ArmorText == nullptr) {
+		if (UMyGameInstance* GI = Cast<UMyGameInstance>(GetGameInstance())) {
+			if (UUserWidget* HUDWidget = GI->GetHUDWidget(HudPreset::InGame)) {
+				ArmorText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName(TEXT("Shield")));
+			}
+		}
+	}
+
+	if (!ArmorText)
+		return;
+
+	ArmorText->SetVisibility(ESlateVisibility::Visible);
+	ArmorText->SetText(FText::FromString(FString::Printf(TEXT("%d"), Defence)));
+}
+
 
 void AMyGameState::OnLevelTimeUp()
 {
