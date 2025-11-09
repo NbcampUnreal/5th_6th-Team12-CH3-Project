@@ -1,16 +1,18 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Pause.h"
+#include "DieUi.h"
 #include "Components/Button.h"
 #include "Components/TextBlock.h"
 #include "MyGameState.h"
 #include "MyGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 
-void UPause::NativeConstruct()
+void UDieUi::NativeConstruct()
 {
 	Super::NativeConstruct();
+
+	UGameplayStatics::SetGamePaused(GetWorld(), true);
 
 	APlayerController* PC = GetWorld()->GetFirstPlayerController();
 	if (PC)
@@ -18,18 +20,18 @@ void UPause::NativeConstruct()
 		PC->bShowMouseCursor = true;
 	}
 
-	if (Resume)
+	if (ReStart)
 	{
-		Resume->OnClicked.AddDynamic(this, &UPause::ResumeButtonClick);
+		ReStart->OnClicked.AddDynamic(this, &UDieUi::RestartButton);
 	}
 
 	if (GameExit)
 	{
-		GameExit->OnClicked.AddDynamic(this, &UPause::PauseExitButtonClick);
+		GameExit->OnClicked.AddDynamic(this, &UDieUi::ExitButton);
 	}
 
 	if (KillCount) {
-		KillCount->SetText(FText::AsNumber(Cast<AMyGameState>(GetWorld()->GetGameState())->GetMonsterCount()));		
+		KillCount->SetText(FText::AsNumber(Cast<AMyGameState>(GetWorld()->GetGameState())->GetMonsterCount()));
 	}
 
 
@@ -37,16 +39,13 @@ void UPause::NativeConstruct()
 		float Remain = Cast<AMyGameState>(GetWorld()->GetGameState())->GetReamingTime();
 
 		FNumberFormattingOptions NumberFormat;
-		NumberFormat.MinimumFractionalDigits = 1; 
-		NumberFormat.MaximumFractionalDigits = 1; 
+		NumberFormat.MinimumFractionalDigits = 1;
+		NumberFormat.MaximumFractionalDigits = 1;
 		Time->SetText(FText::AsNumber(Remain, &NumberFormat));
 	}
-
 }
 
-
-
-void UPause::ResumeButtonClick()
+void UDieUi::RestartButton()
 {
 	UGameplayStatics::SetGamePaused(GetWorld(), false);
 	APlayerController* PC = GetWorld()->GetFirstPlayerController();
@@ -54,11 +53,13 @@ void UPause::ResumeButtonClick()
 	if (PC) {
 		PC->SetInputMode(FInputModeGameOnly());
 		PC->bShowMouseCursor = false;
-	}	
-	Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::Pause);
+	}
+	Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::Die);
+
+	Cast<UMyGameInstance>(GetGameInstance())->RestartLev();
 }
 
-void UPause::PauseExitButtonClick()
+void UDieUi::ExitButton()
 {
 	UWorld* currentWorld = GetWorld();
 	UKismetSystemLibrary::QuitGame(currentWorld, currentWorld->GetFirstPlayerController(),

@@ -61,18 +61,47 @@ AMonster* UObjectPoolSubsystem::GetMonster(TSubclassOf<AMonster> MonsterClass, F
     if (!MonsterClass) return nullptr;
 
     TArray<AMonster*>* Pool = PooledMonsters.Find(MonsterClass);
+    AMonster* Monster = nullptr;
+
 
     if (Pool && Pool->Num() > 0)
     {
-        AMonster* Monster = Pool->Pop(); // Ç®¿¡¼­ ÇÏ³ª ²¨³¿
-        Monster->ActivateMonster(Location, Rotation); // È°¼ºÈ­
+    
+        for (int32 i = Pool->Num() - 1; i >= 0; --i)
+        {
+            AMonster* PotentialMonster = (*Pool)[i];
+
+           
+            if (!IsValid(PotentialMonster))
+            {
+                Pool->RemoveAt(i); 
+                continue;
+            }
+
+           
+            if (!AllSpawnedMonsters.Contains(PotentialMonster))
+            {
+                Pool->RemoveAt(i); 
+                continue;
+            }
+
+            Monster = PotentialMonster; 
+            Pool->RemoveAt(i);       
+            break;                   
+        }
+    }
+
+    
+    if (Monster)    {
+       
+        Monster->ActivateMonster(Location, Rotation);
         return Monster;
     }
-   
+
     UWorld* World = GetWorld();
     if (!World) return nullptr;
 
-   // UE_LOG(LogTemp, Warning, TEXT("Pool for %s is empty. Spawning new monster."), *MonsterClass->GetName());
+    UE_LOG(LogTemp, Warning, TEXT("Pool for %s is empty. Spawning new monster."), *MonsterClass->GetName());
 
     FActorSpawnParameters SpawnParams;
     SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -80,8 +109,7 @@ AMonster* UObjectPoolSubsystem::GetMonster(TSubclassOf<AMonster> MonsterClass, F
     AMonster* NewMonster = World->SpawnActor<AMonster>(MonsterClass, Location, Rotation, SpawnParams);
     if (NewMonster)
     {
-        NewMonster->SetOwningPoolSubsystem(this);        
-
+        NewMonster->SetOwningPoolSubsystem(this);
         AllSpawnedMonsters.Add(NewMonster); 
         return NewMonster;
     }

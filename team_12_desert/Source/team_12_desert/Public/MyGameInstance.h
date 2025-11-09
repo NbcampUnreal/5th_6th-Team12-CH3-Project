@@ -40,6 +40,7 @@ public:
 	UUserWidget* GetHUDWidget(HudPreset preset);
 	void PlayerHUDApply();
 	void NextLevel(FName nextmapname);
+	void RestartLev();
 	void TestIns();
 	float GetLevelTime();
 	void SetLevelTime(float time) { LevelTime = time; }
@@ -79,4 +80,5 @@ private:
 
 	float LevelTime;
 
+	FName Currnetmapname;
 };

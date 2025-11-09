@@ -75,6 +75,10 @@ void AMyGameState::Tick(float DeltaTime)
 		PortalsOpen(true);
 	}
 
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::F)) {
+		Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Die);
+	}
+
 }
 
 void AMyGameState::StartLevel()

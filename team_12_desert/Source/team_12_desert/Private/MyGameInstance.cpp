@@ -130,11 +130,26 @@ void UMyGameInstance::NextLevel(FName nextmapname)
 	Cast<AMyGameState>(GetWorld()->GetGameState())->SetMonsterCount(0);
 
 	PlayerStatSave();
-	UGameplayStatics::OpenLevel(GetWorld(), nextmapname);
+	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
+		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
+			HUDWidgetInstance[i]->RemoveFromViewport();
+		}
+	}
+	HUDWidgetInstance.Empty();
+	Currnetmapname = nextmapname;
+
+	UGameplayStatics::OpenLevel(GetWorld(), nextmapname);	
+}
+
+void UMyGameInstance::RestartLev()
+{
+	Cast<AMyGameState>(GetWorld()->GetGameState())->SetMonsterCount(0);
+
+	UGameplayStatics::OpenLevel(GetWorld(), Currnetmapname);
 
 	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
 		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
-			HUDWidgetInstance[i]->RemoveFromViewport();			
+			HUDWidgetInstance[i]->RemoveFromViewport();
 		}
 	}
 	HUDWidgetInstance.Empty();

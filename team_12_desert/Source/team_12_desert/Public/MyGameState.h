@@ -51,6 +51,7 @@ public:
 
 	bool ReachMonsterCountLimit();
 
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")
@@ -69,7 +70,7 @@ protected:
 
 	int MonsterKillCount = 0;
 	int MonsterCount=0;
-	int MonsterLimit = 10;
+	int MonsterLimit = 100;
 
 	//UI
 	UProgressBar* Hpbar = nullptr;
