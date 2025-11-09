@@ -60,10 +60,10 @@ public:
 	int32 getBaseArmor() const { return BaseArmor; }
 	int32 getMulArmor() const { return MulArmor; }
 
-	void setBaseDamage(int32 Damage) { BaseDamage = Damage; }
-	void setMulDamage(float Damage) { MulDamage = Damage; }
-	void setBaseArmor(int32 Armor) { BaseArmor = Armor; }
-	void setMulArmor(float Armor) { MulArmor = Armor; }
+	void setBaseDamage(int32 Damage); //{ BaseDamage = Damage; }
+	void setMulDamage(float Damage); //{ MulDamage = Damage; }
+	void setBaseArmor(int32 Armor); //{ BaseArmor = Armor; }
+	void setMulArmor(float Armor);//{ MulArmor = Armor; }
 
 	void setMeleeAttackCount(int32 Count) { MeleeAttackCount = Count; }
 	void setRangeAttackCount(int32 Count) { RangeAttackCount = Count; }

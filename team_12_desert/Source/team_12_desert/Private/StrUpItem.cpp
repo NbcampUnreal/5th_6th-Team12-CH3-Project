@@ -3,6 +3,7 @@
 
 #include "StrUpItem.h"
 #include "MainCharacter.h"
+#include "MyGameState.h"
 
 AStrUpItem::AStrUpItem()
 {
@@ -49,9 +50,10 @@ void AStrUpItem::BackUpStr()
 		// 필요시 베이스 대미지가 아니라 mulDamage 수정으로 바꿔야 할 가능성 있음
 		// PlayerCharacter->CharacterDamage -= StrUpAmount;
 		PlayerCharacter->setBaseDamage(PlayerCharacter->getBaseDamage() - StrUpAmount);
-		UE_LOG(LogTemp, Display, TEXT("PlayerDamage After BackUp : %d"), PlayerCharacter->getCharacterDamage());
+		UE_LOG(LogTemp, Display, TEXT("PlayerDamage After BackUp : %d"), PlayerCharacter->getCharacterDamage());	
 	}
 	Destroy();
+
 }
 
 AStrUpItem::~AStrUpItem()
