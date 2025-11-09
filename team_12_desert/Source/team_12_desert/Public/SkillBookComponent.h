@@ -20,16 +20,20 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly)
 	TArray<TObjectPtr<class ASkillBase>> SkillList;
 
 public:	
+
+	UFUNCTION()
 	void ActionSkill(TArray<TObjectPtr<class AMonster>>& Actors, int32 Distance);
 
 
 
+	UFUNCTION()
 	void AddSkill(TObjectPtr<class ASkillBase> NewSkill);
 
+	UFUNCTION()
 	void DeleteSkill(TObjectPtr<class ASkillBase> SkillToDelete);
 
 };
