@@ -25,15 +25,15 @@ protected:
 
 public:	
 
-	UFUNCTION()
+	//UFUNCTION(BlueprintCallable)
 	void ActionSkill(TArray<TObjectPtr<class AMonster>>& Actors, int32 Distance);
 
 
 
-	UFUNCTION()
+	//UFUNCTION(BlueprintCallable)
 	void AddSkill(TObjectPtr<class ASkillBase> NewSkill);
 
-	UFUNCTION()
+	//UFUNCTION(BlueprintCallable)
 	void DeleteSkill(TObjectPtr<class ASkillBase> SkillToDelete);
 
 };
