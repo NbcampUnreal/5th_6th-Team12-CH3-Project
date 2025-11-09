@@ -103,7 +103,7 @@ void AMyGameState::UpdateMonsterKillCountHud() {
 
 	if (MonsterRemainingText) {
 		MonsterRemainingText->SetVisibility(ESlateVisibility::Visible);
-		MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("%d"), MonsterCount)));
+		MonsterRemainingText->SetText(FText::FromString(FString::Printf(TEXT("%d"), MonsterKillCount)));
 	}
 }
 
@@ -266,6 +266,23 @@ void AMyGameState::BossSpawn()
 			}
 		}
 	}
+}
+
+void AMyGameState::AddCurrentMonsterCount(int num)
+{
+	MonsterCount += num; 	
+	if (MonsterCount < 0  ) {
+		MonsterCount = 0;
+	}
+	UE_LOG(LogTemp, Warning, TEXT("state class now= %d"), MonsterCount);
+}
+
+bool AMyGameState::ReachMonsterCountLimit()
+{
+	if (MonsterCount+1 > MonsterLimit) {
+		return true;
+	}
+	return false;
 }
 
 void AMyGameState::LevelTest()

@@ -71,10 +71,10 @@ void AMainCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 	Distance += 1;
-    UE_LOG(LogTemp, Display, TEXT("tick in"));
+    //UE_LOG(LogTemp, Display, TEXT("tick in"));
     if (OverlappedActors.Num() > 0)
     {
-        UE_LOG(LogTemp, Display, TEXT("tick out"));
+        //UE_LOG(LogTemp, Display, TEXT("tick out"));
         SkillBookComponent->ActionSkill(OverlappedActors, Distance);
     }
     

@@ -72,7 +72,7 @@ AMonster* UObjectPoolSubsystem::GetMonster(TSubclassOf<AMonster> MonsterClass, F
     UWorld* World = GetWorld();
     if (!World) return nullptr;
 
-    UE_LOG(LogTemp, Warning, TEXT("Pool for %s is empty. Spawning new monster."), *MonsterClass->GetName());
+   // UE_LOG(LogTemp, Warning, TEXT("Pool for %s is empty. Spawning new monster."), *MonsterClass->GetName());
 
     FActorSpawnParameters SpawnParams;
     SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;

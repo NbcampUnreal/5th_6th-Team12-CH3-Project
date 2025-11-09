@@ -108,6 +108,10 @@ void ASpawner::SpawnEnemy()
 
 		for (int i = 0; i < Row->SpawnCount; i++)
 		{
+			if (Cast<AMyGameState>(GetWorld()->GetGameState())->ReachMonsterCountLimit()) {
+				Row->SpawnCount;
+				return;
+			}
 			FVector SpawnLocation = GetRandomPointInVolume();
 			FRotator SpawnRotation = FRotator::ZeroRotator;
 
@@ -126,7 +130,12 @@ void ASpawner::SpawnEnemy()
 				MonsterClass,
 				SpawnLocation,
 				SpawnRotation
-			);
+			);	
+
+			if (SpawnedMonster) {
+				Cast<AMyGameState>(GetWorld()->GetGameState())->AddCurrentMonsterCount(1);
+				UE_LOG(LogTemp, Warning, TEXT("spawer class add=%d"), Cast<AMyGameState>(GetWorld()->GetGameState())->GetCurrentMonsterCount());
+			}
 
 		}
 	}

@@ -52,6 +52,6 @@ void AActiveItemBase::ActivateItem(TObjectPtr<AActor> OtherActor)
 
 void AActiveItemBase::Active()
 {
-    UE_LOG(LogTemp, Display, TEXT("actives!"));
+  //  UE_LOG(LogTemp, Display, TEXT("actives!"));
 }
 

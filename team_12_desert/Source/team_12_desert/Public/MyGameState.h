@@ -25,9 +25,9 @@ public:
 	AMyGameState();
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
-	void AddMonsterCount(int32 a) { MonsterCount += a; }
-	int32 GetMonsterCount() { return MonsterCount; }
-	void SetMonsterCount(int32 a) { MonsterCount = a; }
+	void AddMonsterCount(int32 a) { MonsterKillCount += a; }
+	int32 GetMonsterCount() { return MonsterKillCount; }
+	void SetMonsterCount(int32 a) { MonsterKillCount = a; }
 	void UpdateMonsterKillCountHud();
 	void UpdateStaminaHud(float MaxStamina, float CurrentStamina);
 	void UpdateHpHud(float MaxHp, float CurrentHp);
@@ -46,6 +46,11 @@ public:
 
 	void BossSpawn();
 
+	void AddCurrentMonsterCount(int num);
+	int GetCurrentMonsterCount() { return MonsterCount; }
+
+	bool ReachMonsterCountLimit();
+
 protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Level")
@@ -58,9 +63,13 @@ protected:
 
 	void NextLevel();
 
+	
+
 	TArray<FName> LevelMapNames;
 
-	int MonsterCount = 0;
+	int MonsterKillCount = 0;
+	int MonsterCount=0;
+	int MonsterLimit = 10;
 
 	//UI
 	UProgressBar* Hpbar = nullptr;

@@ -53,7 +53,7 @@ void ADarkMonster::ApplyDamage(float DamageAmount)
 	// 죽음 처리를 나누기 위해 자식 클래스로 이동
 	ShowDamage(DamageAmount);
 	CurrentHealth -= DamageAmount;
-	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
+	//UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
 	if (CurrentHealth <= 0.f)
 	{
 		// GameInstance에서 몬스터 수 감소
@@ -67,8 +67,10 @@ void ADarkMonster::ApplyDamage(float DamageAmount)
 
 		DropItem();
 
-		// 죽는 이펙트, 래그돌 및 사라지는 효과
+		//죽는 이펙트, 래그돌 및 사라지는 효과
 		StartDeathEffect();
+		Cast<AMyGameState>(GetWorld()->GetGameState())->AddCurrentMonsterCount(-1);
+		UE_LOG(LogTemp, Warning, TEXT("dark monster class , daed=%d"), Cast<AMyGameState>(GetWorld()->GetGameState())->GetCurrentMonsterCount());
 
 	}
 	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);

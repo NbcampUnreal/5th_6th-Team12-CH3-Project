@@ -40,7 +40,7 @@ void AWeapon_Sword::Attack()
 {
 	Super::Attack();
 
-	UE_LOG(LogTemp, Warning, TEXT("Default Sword Attack"));
+	//UE_LOG(LogTemp, Warning, TEXT("Default Sword Attack"));
 
 	MeleeCollisionBox->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	HitMonsters.Empty();
@@ -52,7 +52,7 @@ void AWeapon_Sword::AttackEnd()
 
     Super::AttackEnd();
 
-	UE_LOG(LogTemp, Warning, TEXT("Default Sword Attack End"));
+	//UE_LOG(LogTemp, Warning, TEXT("Default Sword Attack End"));
     // 공격이 끝나면 콜리전 없앰
     MeleeCollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }

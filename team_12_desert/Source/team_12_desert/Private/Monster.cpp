@@ -118,7 +118,7 @@ void AMonster::ApplyDamage(float DamageAmount)
 
 void AMonster::Attack()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Monster attack!"));
+	//UE_LOG(LogTemp, Warning, TEXT("Monster attack!"));
 }
 
 void AMonster::DropItem()
@@ -219,6 +219,7 @@ void AMonster::DeactivateMonster()
 	{
 		AIController->GetBrainComponent()->StopLogic(TEXT("Deactivated"));
 	}
+	
 
 	// 드랍 아이템 로직 (필요하다면)
 
@@ -250,7 +251,7 @@ void AMonster::DamagedLaunch(FVector MC_Vector)
 void AMonster::StartDeathEffect()
 {
 	// 자식 클래스에서 구현
-	UE_LOG(LogTemp, Warning, TEXT("Start Death Effect"));
+	//UE_LOG(LogTemp, Warning, TEXT("Start Death Effect"));
 }
 
 void AMonster::TimelineUpdate(float TimelineValue)

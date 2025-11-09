@@ -131,7 +131,7 @@ void AMainCharacterHunter::DashStartAction(const FInputActionValue& Value)
 		return;
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("Dash Start"));
+	//UE_LOG(LogTemp, Warning, TEXT("Dash Start"));
 	MovementComponent->MaxWalkSpeed = DefaultDashSpeed * MaxDashSpeed;
 	
 	isDash = true;
@@ -139,7 +139,7 @@ void AMainCharacterHunter::DashStartAction(const FInputActionValue& Value)
 
 void AMainCharacterHunter::DashEndAction(const FInputActionValue& Value)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Dash End"));
+	//UE_LOG(LogTemp, Warning, TEXT("Dash End"));
 	MovementComponent->MaxWalkSpeed = DefaultDashSpeed;
 
 	isDash = false;
@@ -167,7 +167,7 @@ void AMainCharacterHunter::MeleeAttackAction(const FInputActionValue& Value)
 		if (IsValid(AnimInstance))
 		{
 			float Duration = AnimInstance->Montage_Play(MeleeAttackMontage, 1.0f); // 2.0f로 해서 속도 두배 빠르게
-			UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
+			//UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
 			if (Duration > 0.0f)
 			{
 				bIsAttacking = true; // 공격 시작, 플래그 설정
@@ -208,7 +208,7 @@ void AMainCharacterHunter::RangeAttackAction(const FInputActionValue& Value)
 		if (IsValid(AnimInstance))
 		{
 			float Duration = AnimInstance->Montage_Play(RangeAttackMontage, 2.0f); // 2.0f로 해서 속도 두배 빠르게
-			UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
+			//UE_LOG(LogTemp, Warning, TEXT("Attack Montage Played. Duration: %f"), Duration);
 			if (Duration > 0.0f)
 			{
 				bIsAttacking = true; // 공격 시작, 플래그 설정
@@ -226,7 +226,7 @@ void AMainCharacterHunter::OnRangeAttackMontageFinished(UAnimMontage* Montage, b
 {
 	// 몽타주 재생이 끝났으므로, 공격 가능 상태로 리셋
 	bIsAttacking = false;
-	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
+	//UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
 }
 
 void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, bool bInterrupted)
@@ -240,7 +240,7 @@ void AMainCharacterHunter::OnMeleeAttackMontageFinished(UAnimMontage* Montage, b
 	//	MeleeWeaponActor->AttackEnd();
 	//}
 
-	UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
+	//UE_LOG(LogTemp, Warning, TEXT("Attack Montage Finished."));
 }
 
 void AMainCharacterHunter::ShootProjectile()

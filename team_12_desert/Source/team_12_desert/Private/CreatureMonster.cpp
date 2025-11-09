@@ -129,5 +129,6 @@ void ACreatureMonster::TimelineFinished()
 		{
 			//Destroy();
 			DeactivateMonster();
+
 		});
 }
