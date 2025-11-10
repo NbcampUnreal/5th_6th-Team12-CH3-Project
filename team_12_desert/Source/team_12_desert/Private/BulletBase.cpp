@@ -67,6 +67,9 @@ void ABulletBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	}
 	if (IsValid(HitMonster))
 	{
+		/// 이미 죽고 있는 몬스터라면 리턴
+		if (HitMonster->getIsDeath()) return;
+
 		int32 damage = (GunOwner->getBaseDamage() + Gun->WeaponDamage) * GunOwner->getMulDamage();
 		UE_LOG(LogTemp, Warning, TEXT("Weapon Owner: %s, Damage: %d"), *GunOwner->GetName(), damage);
 

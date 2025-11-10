@@ -68,6 +68,9 @@ void AWeapon_Sword::OnMeleeOverlap(UPrimitiveComponent* OverlappedComponent, AAc
         // 3. 캐스팅 성공 (즉, 몬스터 클래스인 경우)
         if (Monster)
         {
+            /// 이미 죽고 있는 몬스터라면 리턴
+            if (Monster->getIsDeath()) return;
+
             // UE_LOG(LogTemp, Warning, TEXT("Sword Overlap Detected"));
 
             // 4. 이미 이 공격에서 감지된 몬스터인지 확인 (중복 타격 방지)

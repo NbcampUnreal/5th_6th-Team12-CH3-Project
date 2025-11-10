@@ -251,6 +251,7 @@ void AMonster::StartDeathEffect()
 {
 	// 자식 클래스에서 구현
 	UE_LOG(LogTemp, Warning, TEXT("Start Death Effect"));
+	isDeath = true;
 }
 
 void AMonster::TimelineUpdate(float TimelineValue)
@@ -261,4 +262,5 @@ void AMonster::TimelineUpdate(float TimelineValue)
 void AMonster::TimelineFinished()
 {
 	// 자식 클래스에서 구현
+	isDeath = false;	
 }

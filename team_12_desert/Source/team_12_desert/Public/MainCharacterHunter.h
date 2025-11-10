@@ -57,6 +57,7 @@ private:
 	TObjectPtr<class UInputMappingContext> InputMappingContext;
 
 	void MoveAction(const FInputActionValue& Value);
+	void MoveActionEnd(const FInputActionValue& Value);
 	void LookAction(const FInputActionValue& Value);
 	void JumpAction(const FInputActionValue& Value);
 	void DashStartAction(const FInputActionValue& Value);
@@ -97,4 +98,5 @@ private:
 	void StartStaminaDrainTimer();
 
 	bool isDash = false;
+	bool isMove = false;
 };

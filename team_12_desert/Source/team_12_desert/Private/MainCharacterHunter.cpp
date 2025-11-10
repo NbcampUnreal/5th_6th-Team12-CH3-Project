@@ -73,6 +73,7 @@ void AMainCharacterHunter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(MoveInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::MoveAction);
+		EnhancedInputComponent->BindAction(MoveInput, ETriggerEvent::Completed, this, &AMainCharacterHunter::MoveActionEnd);
 		EnhancedInputComponent->BindAction(LookInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::LookAction);
 		EnhancedInputComponent->BindAction(JumpInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::JumpAction);
 		EnhancedInputComponent->BindAction(MeleeInput, ETriggerEvent::Triggered, this, &AMainCharacterHunter::MeleeAttackAction);
@@ -99,12 +100,18 @@ void AMainCharacterHunter::Hit(int32 Damage, AActor* ByWho)
 // 기본 wasd 이동
 void AMainCharacterHunter::MoveAction(const FInputActionValue& Value)
 {
+	isMove = true;
 	FVector2D MovementVector = Value.Get<FVector2D>();
 	if (Controller != nullptr)
 	{
 		AddMovementInput(GetActorForwardVector(), MovementVector.X);
 		AddMovementInput(GetActorRightVector(), MovementVector.Y);
 	}
+}
+
+void AMainCharacterHunter::MoveActionEnd(const FInputActionValue& Value)
+{
+	isMove = false;
 }
 
 // 기본 mouse 시점 이동, 상하각은 clamp로 제한 걸지 말지 차후 결정
@@ -264,7 +271,7 @@ void AMainCharacterHunter::SwordSlashEnd()
 void AMainCharacterHunter::ManageStamina()
 {
 	// UE_LOG(LogTemp, Warning, TEXT("Managing Stamina. isDash: %s, CurrentStamina: %d"), isDash ? TEXT("true") : TEXT("false"), CurrentStamina);
-	if (isDash)
+	if (isDash && isMove)
 	{
 		/// 대시 스킬사용중이 아닐때만 -8씩 감소
 		if(!getIsDashSkill()){
