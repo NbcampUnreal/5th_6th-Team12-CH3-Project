@@ -14,9 +14,11 @@ ASpiderMonster::ASpiderMonster()
 	MaxHealth = 130.f;
 	WalkSpeed = 500.f;
 	AttackDamage = 5.f;
-	AttackRange = 80.f;
+	AttackRange = 130.f;
 	AttackCooldown = 1.0f;
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+	float Radius = GetCapsuleComponent()->GetUnscaledCapsuleRadius();
+	AttackRange += Radius + 80;
 }
 
 void ASpiderMonster::BeginPlay()
@@ -43,10 +45,7 @@ void ASpiderMonster::Attack()
 	if (!PlayerPawn)
 		return;
 
-	// 거리 계산
-	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
-
-	if (Distance <= AttackRange)
+	if (Dis <= AttackRange)
 	{
 		float CurrentTime = World->GetTimeSeconds();
 		if (CurrentTime - LastAttackTime >= AttackCooldown)

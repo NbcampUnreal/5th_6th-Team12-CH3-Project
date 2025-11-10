@@ -19,6 +19,8 @@ AMonsterAICharacter::AMonsterAICharacter()
 
 	// 움직임 관련 설정
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+	float Radius = GetCapsuleComponent()->GetUnscaledCapsuleRadius();
+	AttackRange += Radius + 10;
 }
 
 void AMonsterAICharacter::BeginPlay()
@@ -56,10 +58,7 @@ void AMonsterAICharacter::Attack()
 	if (!PlayerPawn)
 		return;
 
-	// 거리 계산
-	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
-
-	if (Distance <= AttackRange)
+	if (Dis <= AttackRange)
 	{
 		float CurrentTime = World->GetTimeSeconds();
 		if (CurrentTime - LastAttackTime >= AttackCooldown)
