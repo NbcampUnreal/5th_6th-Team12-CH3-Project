@@ -56,12 +56,20 @@ void AMyGameState::Tick(float DeltaTime)
 		}
 	}
 
-	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) {
-		if (!Inven) 
+	if (GetWorld()->GetFirstPlayerController()->WasInputKeyJustPressed(EKeys::I)) 
+	{
+		//인벤토리 마우스
+		APlayerController* PC = GetWorld()->GetFirstPlayerController();
+
+		if (!Inven) {
 			Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Inventory);
-		
-		else
+			PC->bShowMouseCursor = true;
+
+		}
+		else {
 			Cast<UMyGameInstance>(GetGameInstance())->TurnOffHud(HudPreset::Inventory);
+			PC->bShowMouseCursor = false;
+		}
 
 		Inven = !Inven;
 	}
