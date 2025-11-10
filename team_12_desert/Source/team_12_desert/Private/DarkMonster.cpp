@@ -5,6 +5,7 @@
 #include "MyGameState.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/CapsuleComponent.h"
 
 ADarkMonster::ADarkMonster()
 {
@@ -19,6 +20,13 @@ ADarkMonster::ADarkMonster()
 void ADarkMonster::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (USkeletalMeshComponent* MyMesh = GetMesh())
+	{
+		BaseMeshRelativeLocation = MyMesh->GetRelativeLocation();
+		BaseMeshRelativeRotation = MyMesh->GetRelativeRotation();
+		BaseCollisionProfileName = MyMesh->GetCollisionProfileName();
+	}
 }
 
 void ADarkMonster::Attack()
@@ -156,6 +164,22 @@ void ADarkMonster::TimelineFinished()
 
 	DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), -0.6);
 	DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), -0.6);
+
+	FRotator ResetRotation = GetActorRotation();
+	ResetRotation.Pitch = 0.0f;
+	ResetRotation.Roll = 0.0f;
+	SetActorRotation(ResetRotation);
+	USkeletalMeshComponent* MyMesh = GetMesh();
+	if (!MyMesh) return;
+
+	MyMesh->SetSimulatePhysics(false);
+
+	MyMesh->SetCollisionProfileName(BaseCollisionProfileName);
+
+
+	MyMesh->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+
+	MyMesh->SetRelativeLocationAndRotation(BaseMeshRelativeLocation, BaseMeshRelativeRotation);
 
 	/// 사망처리 여기로 이동
 	// 딜레이 후 Destroy

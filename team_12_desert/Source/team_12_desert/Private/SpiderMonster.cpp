@@ -2,6 +2,7 @@
 #include "MyGameState.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/CapsuleComponent.h"
 
 ASpiderMonster::ASpiderMonster()
 {
@@ -17,6 +18,12 @@ ASpiderMonster::ASpiderMonster()
 void ASpiderMonster::BeginPlay()
 {
 	Super::BeginPlay();
+	if (USkeletalMeshComponent* MyMesh = GetMesh())
+	{
+		BaseMeshRelativeLocation = MyMesh->GetRelativeLocation();
+		BaseMeshRelativeRotation = MyMesh->GetRelativeRotation();
+		BaseCollisionProfileName = MyMesh->GetCollisionProfileName();
+	}
 }
 
 void ASpiderMonster::Attack()
@@ -123,6 +130,23 @@ void ASpiderMonster::TimelineFinished()
 {
 	Super::TimelineFinished();
 	UE_LOG(LogTemp, Warning, TEXT("Dissolve Effect Finished!"));
+	DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), -0.6);
+
+	FRotator ResetRotation = GetActorRotation();
+	ResetRotation.Pitch = 0.0f;
+	ResetRotation.Roll = 0.0f;
+	SetActorRotation(ResetRotation);
+	USkeletalMeshComponent* MyMesh = GetMesh();
+	if (!MyMesh) return;
+
+	MyMesh->SetSimulatePhysics(false);
+
+	MyMesh->SetCollisionProfileName(BaseCollisionProfileName);
+
+
+	MyMesh->AttachToComponent(GetCapsuleComponent(), FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+
+	MyMesh->SetRelativeLocationAndRotation(BaseMeshRelativeLocation, BaseMeshRelativeRotation);
 
 	DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), -0.6);
 

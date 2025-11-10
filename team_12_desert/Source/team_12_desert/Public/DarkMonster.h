@@ -26,7 +26,7 @@ protected:
 	virtual void TimelineUpdate(float TimelineValue) override;
 	virtual void TimelineFinished() override;
 
-
+		
 	/// <summary>
 	/// 각 메쉬가 가진 갯수만큼 생성
 	/// </summary>
@@ -34,4 +34,11 @@ protected:
 	UMaterialInstanceDynamic* DissolveMaterialInstance0;
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance1;
+
+
+	UPROPERTY()
+	FVector BaseMeshRelativeLocation;
+	FRotator BaseMeshRelativeRotation;
+
+	FName BaseCollisionProfileName;
 };

@@ -19,6 +19,8 @@ ACreepMonster::ACreepMonster()
 void ACreepMonster::BeginPlay()
 {
 	Super::BeginPlay();
+
+
 }
 
 void ACreepMonster::Attack()
@@ -170,6 +172,18 @@ void ACreepMonster::TimelineFinished()
 	DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), -0.6);
 	DissolveMaterialInstance2->SetScalarParameterValue(FName("Dissolve"), -0.6);
 	DissolveMaterialInstance3->SetScalarParameterValue(FName("Dissolve"), -0.6);
+
+	FRotator ResetRotation = GetActorRotation();
+	ResetRotation.Pitch = 0.0f;
+	ResetRotation.Roll = 0.0f;
+	SetActorRotation(ResetRotation);
+	USkeletalMeshComponent* MyMesh = GetMesh();
+	if (!MyMesh) return;
+
+	MyMesh->SetSimulatePhysics(false);
+
+	MyMesh->SetCollisionProfileName(BaseCollisionProfileName);
+
 
 	/// 사망처리 여기로 이동
 	// 딜레이 후 Destroy
