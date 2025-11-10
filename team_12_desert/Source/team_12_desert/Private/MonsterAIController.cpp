@@ -44,9 +44,7 @@ void AMonsterAIController::Tick(float DeltaTime)
     FVector Pos = Monster->GetActorLocation();
     float CapsuleHalfHeight = 100.f;
     float CapsuleRadius = 50.f;
-    UE_LOG(LogTemp, Warning, TEXT("contrlool=== %f.2"), Dist);
-    UE_LOG(LogTemp, Warning, TEXT("attackrange=== %f.2"), Monster->AttackRange);
-
+   
     if (Dist > Monster->AttackRange)
     {
         // 이미 이동 중인지 확인 후 MoveToActor 호출

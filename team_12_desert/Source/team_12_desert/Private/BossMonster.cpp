@@ -82,9 +82,13 @@ void ABossMonster::ApplyDamage(float DamageAmount)
 {
 	Super::ApplyDamage(DamageAmount);
 
+
+	
 	// 죽음 처리를 나누기 위해 자식 클래스로 이동
 	ShowDamage(DamageAmount);
 	CurrentHealth -= DamageAmount;
+	float Percent = CurrentHealth / MaxHealth;
+	OnHPChanged.Broadcast(Percent);
 	//UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
 	if (CurrentHealth <= 0.f)
 	{
@@ -103,6 +107,8 @@ void ABossMonster::ApplyDamage(float DamageAmount)
 		StartDeathEffect();
 		Cast<AMyGameState>(GetWorld()->GetGameState())->AddCurrentMonsterCount(-1);
 		UE_LOG(LogTemp, Warning, TEXT("Boss monster class , daed=%d"), Cast<AMyGameState>(GetWorld()->GetGameState())->GetCurrentMonsterCount());
+
+		Cast<AMyGameState>(GetWorld()->GetGameState())->PortalsOpen(true);
 
 	}
 	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
