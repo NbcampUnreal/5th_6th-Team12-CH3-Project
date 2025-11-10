@@ -41,6 +41,12 @@ public:
 	UMaterialInstanceDynamic* DissolveMaterialInstance0;
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance1;
+	UPROPERTY()
+	UMaterialInstanceDynamic* DissolveMaterialInstance2;
+	UPROPERTY()
+	UMaterialInstanceDynamic* DissolveMaterialInstance3;
+	UPROPERTY()
+	UMaterialInstanceDynamic* DissolveMaterialInstance4;
 
 	UPROPERTY()
 	FVector BaseMeshRelativeLocation;

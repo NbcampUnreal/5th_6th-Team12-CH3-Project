@@ -172,18 +172,30 @@ void ABossMonster::TimelineUpdate(float TimelineValue)
 {
 	Super::TimelineUpdate(TimelineValue);
 
-	const float StartDissolve = -0.6f;
-	const float EndDissolve = 0.7f;
+	const float StartDissolve = 0.0f;
+	const float EndDissolve = 1.0f;
 
 	float NewDissolveValue = FMath::Lerp(StartDissolve, EndDissolve, TimelineValue);
 
 	if (DissolveMaterialInstance0)
 	{
-		DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), NewDissolveValue);
+		DissolveMaterialInstance0->SetScalarParameterValue(FName("FadeOut"), NewDissolveValue);
 	}
 	if (DissolveMaterialInstance1)
 	{
-		DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), NewDissolveValue);
+		DissolveMaterialInstance1->SetScalarParameterValue(FName("FadeOut"), NewDissolveValue);
+	}
+	if (DissolveMaterialInstance2)
+	{
+		DissolveMaterialInstance2->SetScalarParameterValue(FName("FadeOut"), NewDissolveValue);
+	}
+	if (DissolveMaterialInstance3)
+	{
+		DissolveMaterialInstance3->SetScalarParameterValue(FName("FadeOut"), NewDissolveValue);
+	}
+	if (DissolveMaterialInstance4)
+	{
+		DissolveMaterialInstance4->SetScalarParameterValue(FName("FadeOut"), NewDissolveValue);
 	}
 }
 
@@ -192,8 +204,8 @@ void ABossMonster::TimelineFinished()
 	Super::TimelineFinished();
 	UE_LOG(LogTemp, Warning, TEXT("Dissolve Effect Finished!"));
 
-	DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), -0.6);
-	DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), -0.6);
+	DissolveMaterialInstance0->SetScalarParameterValue(FName("FadeOut"), 0.0);
+	DissolveMaterialInstance1->SetScalarParameterValue(FName("FadeOut"), 0.0);
 
 	FRotator ResetRotation = GetActorRotation();
 	ResetRotation.Pitch = 0.0f;
