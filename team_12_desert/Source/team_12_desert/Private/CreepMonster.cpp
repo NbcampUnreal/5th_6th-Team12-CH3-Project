@@ -19,6 +19,8 @@ ACreepMonster::ACreepMonster()
 void ACreepMonster::BeginPlay()
 {
 	Super::BeginPlay();
+
+
 }
 
 void ACreepMonster::Attack()
@@ -166,6 +168,18 @@ void ACreepMonster::TimelineFinished()
 {
 	Super::TimelineFinished();
 	UE_LOG(LogTemp, Warning, TEXT("Dissolve Effect Finished!"));
+
+	FRotator ResetRotation = GetActorRotation();
+	ResetRotation.Pitch = 0.0f;
+	ResetRotation.Roll = 0.0f;
+	SetActorRotation(ResetRotation);
+	USkeletalMeshComponent* MyMesh = GetMesh();
+	if (!MyMesh) return;
+
+	MyMesh->SetSimulatePhysics(false);
+
+	MyMesh->SetCollisionProfileName(BaseCollisionProfileName);
+
 
 	/// 사망처리 여기로 이동
 	// 딜레이 후 Destroy

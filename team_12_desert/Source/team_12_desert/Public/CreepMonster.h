@@ -42,4 +42,10 @@ protected:
 
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance3;
+
+	UPROPERTY()
+	FVector BaseMeshRelativeLocation;
+	FRotator BaseMeshRelativeRotation;
+
+	FName BaseCollisionProfileName;
 };

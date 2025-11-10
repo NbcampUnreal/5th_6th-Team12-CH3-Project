@@ -31,4 +31,10 @@ protected:
 	/// </summary>
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance0;
+
+	UPROPERTY()
+	FVector BaseMeshRelativeLocation;
+	FRotator BaseMeshRelativeRotation;
+
+	FName BaseCollisionProfileName;
 };
