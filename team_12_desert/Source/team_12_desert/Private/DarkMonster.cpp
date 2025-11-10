@@ -91,6 +91,7 @@ void ADarkMonster::StartDeathEffect()
 {
 	Super::StartDeathEffect();
 
+	
 	// 1. 머티리얼을 다이내믹 인스턴스로 변환
 	USkeletalMeshComponent* MyMesh = GetMesh(); // ACharacter의 GetMesh() 사용
 
@@ -155,6 +156,8 @@ void ADarkMonster::TimelineUpdate(float TimelineValue)
 	{
 		DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), NewDissolveValue);
 	}
+
+	
 }
 
 void ADarkMonster::TimelineFinished()

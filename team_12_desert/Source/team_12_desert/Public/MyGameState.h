@@ -70,7 +70,7 @@ protected:
 
 	int MonsterKillCount = 0;
 	int MonsterCount=0;
-	int MonsterLimit = 100;
+	int MonsterLimit = 40;
 
 	//UI
 	UProgressBar* Hpbar = nullptr;

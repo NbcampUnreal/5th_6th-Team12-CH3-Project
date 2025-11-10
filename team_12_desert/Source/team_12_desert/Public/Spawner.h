@@ -5,7 +5,10 @@
 #include "CoreMinimal.h"
 #include"MonsterSpawnRow.h"
 #include "GameFramework/Actor.h"
+#include "Engine/DataTable.h"        // DataTable 헤더 포함
+#include "ObjectPoolSubsystem.h"   // Subsystem 헤더 포함
 #include "Spawner.generated.h"
+
 
 class AMonsterAICharacter;
 class UBoxComponent;

@@ -148,7 +148,7 @@ void UMyGameInstance::RestartLev()
 	UGameplayStatics::OpenLevel(GetWorld(), Currnetmapname);
 
 	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
-		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
+		if (IsValid(HUDWidgetInstance[i])) {
 			HUDWidgetInstance[i]->RemoveFromViewport();
 		}
 	}

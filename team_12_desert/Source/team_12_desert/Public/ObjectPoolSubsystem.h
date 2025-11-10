@@ -8,6 +8,14 @@
 
 class AMonster;
 
+USTRUCT()
+struct FMonsterPool
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+    TArray<TObjectPtr<AMonster>> Pool; // TObjectPtr 사용 권장
+};
 /**
  * 
  */
@@ -27,8 +35,9 @@ public:
     void ReturnMonster(AMonster* Monster);
 
 private:
-    TMap<TSubclassOf<AMonster>, TArray<AMonster*>> PooledMonsters;
     UPROPERTY()
-    TArray<AMonster*> AllSpawnedMonsters;
+    TMap<TSubclassOf<AMonster>, FMonsterPool> PooledMonsters;
+    UPROPERTY()
+    TArray<TObjectPtr<AMonster>> AllSpawnedMonsters;
 	
 };

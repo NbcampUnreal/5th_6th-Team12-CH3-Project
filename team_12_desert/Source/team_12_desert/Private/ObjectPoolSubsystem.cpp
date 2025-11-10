@@ -13,9 +13,9 @@ void UObjectPoolSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 
 void UObjectPoolSubsystem::Deinitialize()
 {
-    for (AMonster* Monster : AllSpawnedMonsters)
+    for (AMonster* Monster : AllSpawnedMonsters) 
     {
-        if (Monster && IsValid(Monster))
+        if (IsValid(Monster))
         {
             Monster->Destroy();
         }
@@ -35,10 +35,10 @@ void UObjectPoolSubsystem::PrewarmPool(TSubclassOf<AMonster> MonsterClass, int32
 
     if (!PooledMonsters.Contains(MonsterClass))
     {
-        PooledMonsters.Add(MonsterClass, TArray<AMonster*>());
+        PooledMonsters.Add(MonsterClass, FMonsterPool());
     }
 
-    TArray<AMonster*>& Pool = PooledMonsters[MonsterClass];
+    TArray<TObjectPtr<AMonster>>& Pool = PooledMonsters[MonsterClass].Pool;
 
     for (int32 i = 0; i < Count; i++)
     {
@@ -49,9 +49,9 @@ void UObjectPoolSubsystem::PrewarmPool(TSubclassOf<AMonster> MonsterClass, int32
 
         if (NewMonster)
         {
-            NewMonster->SetOwningPoolSubsystem(this); 
-            NewMonster->DeactivateMonster(); 
-            AllSpawnedMonsters.Add(NewMonster);
+            NewMonster->SetOwningPoolSubsystem(this);
+            NewMonster->DeactivateMonster();
+            AllSpawnedMonsters.Add(NewMonster); // TObjectPtr 배열에 AMonster*를 추가
         }
     }
 }
@@ -59,41 +59,38 @@ void UObjectPoolSubsystem::PrewarmPool(TSubclassOf<AMonster> MonsterClass, int32
 AMonster* UObjectPoolSubsystem::GetMonster(TSubclassOf<AMonster> MonsterClass, FVector Location, FRotator Rotation)
 {
     if (!MonsterClass) return nullptr;
-
-    TArray<AMonster*>* Pool = PooledMonsters.Find(MonsterClass);
+    FMonsterPool* PoolStruct = PooledMonsters.Find(MonsterClass);
     AMonster* Monster = nullptr;
 
 
-    if (Pool && Pool->Num() > 0)
+    if (PoolStruct && PoolStruct->Pool.Num() > 0)
     {
-    
-        for (int32 i = Pool->Num() - 1; i >= 0; --i)
-        {
-            AMonster* PotentialMonster = (*Pool)[i];
+        TArray<TObjectPtr<AMonster>>& Pool = PoolStruct->Pool;
 
-           
+        for (int32 i = Pool.Num() - 1; i >= 0; --i)
+        {
+            AMonster* PotentialMonster = Pool[i]; // TObjectPtr에서 AMonster*로 암시적 변환
+
             if (!IsValid(PotentialMonster))
             {
-                Pool->RemoveAt(i); 
+                Pool.RemoveAt(i);
                 continue;
             }
 
-           
             if (!AllSpawnedMonsters.Contains(PotentialMonster))
             {
-                Pool->RemoveAt(i); 
+                Pool.RemoveAt(i);
                 continue;
             }
 
-            Monster = PotentialMonster; 
-            Pool->RemoveAt(i);       
-            break;                   
+            Monster = PotentialMonster;
+            Pool.RemoveAt(i);
+            break;
         }
     }
 
-    
-    if (Monster)    {
-       
+    if (Monster)
+    {
         Monster->ActivateMonster(Location, Rotation);
         return Monster;
     }
@@ -125,8 +122,8 @@ void UObjectPoolSubsystem::ReturnMonster(AMonster* Monster)
 
     if (!PooledMonsters.Contains(MonsterClass))
     {
-        PooledMonsters.Add(MonsterClass, TArray<AMonster*>());
+        PooledMonsters.Add(MonsterClass, FMonsterPool());
     }
 
-    PooledMonsters[MonsterClass].Add(Monster);
+    PooledMonsters[MonsterClass].Pool.Add(Monster);
 }

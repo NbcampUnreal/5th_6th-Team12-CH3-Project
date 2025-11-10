@@ -108,11 +108,11 @@ void ASpawner::SpawnEnemy()
 
 		for (int i = 0; i < Row->SpawnCount; i++)
 		{
-			if (Cast<AMyGameState>(GetWorld()->GetGameState())->ReachMonsterCountLimit()) {
+			if (Cast<AMyGameState>(GetWorld()->GetGameState())->ReachMonsterCountLimit()&&!boss) {
 				Row->SpawnCount;
 				return;
 			}
-			FVector SpawnLocation = GetRandomPointInVolume();
+		FVector SpawnLocation = GetRandomPointInVolume();
 			FRotator SpawnRotation = FRotator::ZeroRotator;
 
 			FHitResult HitResult;
