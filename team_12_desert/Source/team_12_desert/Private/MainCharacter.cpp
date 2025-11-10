@@ -88,7 +88,7 @@ void AMainCharacter::EquipWeapon()
         if (RangeWeapon)
         {
             FAttachmentTransformRules TransformRules(EAttachmentRule::SnapToTarget, true);
-            RangeWeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("WeaponSocket"));
+            RangeWeaponActor->AttachToComponent(GetMesh(), TransformRules, TEXT("RangeWeaponSocket"));
             RangeWeaponActor->SetOwner(this);
             RangeWeaponActor->SetInstigator(this);
         }
