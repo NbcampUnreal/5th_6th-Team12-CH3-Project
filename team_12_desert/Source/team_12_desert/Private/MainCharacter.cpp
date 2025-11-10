@@ -13,7 +13,7 @@
 AMainCharacter::AMainCharacter() :
     CurrentLevel(1),
     MaxHP(100),
-    BaseDamage(10),
+    BaseDamage(50),
     BaseArmor(0),
     MulDamage(1.0f),
     MulArmor(1.0f),
@@ -192,6 +192,16 @@ void AMainCharacter::HealStamina(int32 HealAmount)
         CurrentStamina = MaxStamina;
     }
     Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateStaminaHud(MaxStamina,CurrentStamina);
+}
+void AMainCharacter::GetDamaged(int32 DamageAmount)
+{
+    this->CurrentHP -= DamageAmount;
+    if (CurrentHP <= 0)
+    {
+        CurrentHP = 0;
+        Cast<UMyGameInstance>(GetGameInstance())->TurnOnHud(HudPreset::Die);
+    }
+    Cast<AMyGameState>(GetWorld()->GetGameState())->UpdateHpHud(MaxHP, CurrentHP);
 }
 
 void AMainCharacter::MeleeAttack()

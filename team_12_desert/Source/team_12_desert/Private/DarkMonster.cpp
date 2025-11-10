@@ -1,4 +1,5 @@
 #include "DarkMonster.h"
+#include "MainCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Animation/AnimInstance.h"
@@ -10,11 +11,13 @@
 ADarkMonster::ADarkMonster()
 {
 	//(개별 몬스터 설정)
-	MaxHealth = 200.f;
-	WalkSpeed = 300.f;
-	AttackDamage = 25.f;
-	AttackRange = 180.f;
+	MaxHealth = 280.f;
+	WalkSpeed = 250.f;
+	AttackDamage = 10.f;
+	AttackRange = 100.f;
 	AttackCooldown = 2.0f;
+
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
 void ADarkMonster::BeginPlay()
@@ -50,6 +53,29 @@ void ADarkMonster::Attack()
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("UniqueAttackMontage not set for %s"), *GetName());
+	}
+
+	UWorld* World = GetWorld();
+	if (!World || isDeath || bIsDeactivated)
+		return;
+
+	APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(World, 0);
+	if (!PlayerPawn)
+		return;
+
+	// 거리 계산
+	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
+
+	if (Distance <= AttackRange)
+	{
+		float CurrentTime = World->GetTimeSeconds();
+		if (CurrentTime - LastAttackTime >= AttackCooldown)
+		{
+			LastAttackTime = CurrentTime;
+			AMainCharacter* PlayerCharacter = Cast<AMainCharacter>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
+			PlayerCharacter->GetDamaged(AttackDamage);
+
+		}
 	}
 }
 

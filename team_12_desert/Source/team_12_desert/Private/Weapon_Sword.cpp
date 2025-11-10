@@ -23,7 +23,7 @@ AWeapon_Sword::AWeapon_Sword()
 	MeleeCollisionBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap); // Pawn 채널과 오버랩 감지
 
     /// 무기 대미지 개발 중엔 200으로 설정
-    this->WeaponDamage = 200;
+    this->WeaponDamage = 100;
 }
 
 void AWeapon_Sword::BeginPlay()
