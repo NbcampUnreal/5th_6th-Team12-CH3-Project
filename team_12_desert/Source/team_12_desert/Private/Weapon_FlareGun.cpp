@@ -23,7 +23,7 @@ AWeapon_FlareGun::AWeapon_FlareGun()
 	MuzzleLocation->SetupAttachment(SceneComp);
 
 	/// 무기 대미지 개발 중엔 200으로 설정
-	this->WeaponDamage = 200;
+	this->WeaponDamage = 80;
 }
 
 void AWeapon_FlareGun::Attack()

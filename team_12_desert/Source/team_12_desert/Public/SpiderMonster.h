@@ -30,12 +30,13 @@ protected:
 	/// </summary>
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance0;
-
+	UPROPERTY()
+	UMaterialInstanceDynamic* DissolveMaterialInstance1;
 
 	UPROPERTY()
 	FVector BaseMeshRelativeLocation;
 	FRotator BaseMeshRelativeRotation;
 
 	FName BaseCollisionProfileName;
-
+	float LastAttackTime = -FLT_MAX;
 };

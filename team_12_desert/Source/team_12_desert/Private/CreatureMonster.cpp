@@ -1,4 +1,8 @@
 #include "CreatureMonster.h"
+#include "MainCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Animation/AnimInstance.h"
 #include "MyGameState.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Components/SkeletalMeshComponent.h"
@@ -8,10 +12,12 @@ ACreatureMonster::ACreatureMonster()
 {
 	//(개별 몬스터 설정)
 	MaxHealth = 200.f;
-	WalkSpeed = 300.f;
-	AttackDamage = 25.f;
-	AttackRange = 180.f;
-	AttackCooldown = 2.0f;
+	WalkSpeed = 500.f;
+	AttackDamage = 5.f;
+	AttackRange = 80.f;
+	AttackCooldown = 1.0f;
+
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
 void ACreatureMonster::BeginPlay()
@@ -28,7 +34,33 @@ void ACreatureMonster::BeginPlay()
 
 void ACreatureMonster::Attack()
 {
+	// 부모의 Attack 호출 (기본 공격 로직 유지)
+	Super::Attack();
 
+
+
+	UWorld* World = GetWorld();
+	if (!World || isDeath || bIsDeactivated)
+		return;
+
+	APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(World, 0);
+	if (!PlayerPawn)
+		return;
+
+	// 거리 계산
+	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
+
+	if (Distance <= AttackRange)
+	{
+		float CurrentTime = World->GetTimeSeconds();
+		if (CurrentTime - LastAttackTime >= AttackCooldown)
+		{
+			LastAttackTime = CurrentTime;
+			AMainCharacter* PlayerCharacter = Cast<AMainCharacter>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
+			PlayerCharacter->GetDamaged(AttackDamage);
+
+		}
+	}
 }
 
 void ACreatureMonster::ApplyDamage(float DamageAmount)
@@ -38,7 +70,7 @@ void ACreatureMonster::ApplyDamage(float DamageAmount)
 	// 죽음 처리를 나누기 위해 자식 클래스로 이동
 	ShowDamage(DamageAmount);
 	CurrentHealth -= DamageAmount;
-	UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
+	//UE_LOG(LogTemp, Warning, TEXT("Monster took %f damage, current health: %f"), DamageAmount, CurrentHealth);
 	if (CurrentHealth <= 0.f)
 	{
 		// GameInstance에서 몬스터 수 감소
@@ -54,7 +86,14 @@ void ACreatureMonster::ApplyDamage(float DamageAmount)
 
 		// 죽는 이펙트, 래그돌 및 사라지는 효과
 		StartDeathEffect();
-
+		Cast<AMyGameState>(GetWorld()->GetGameState())->AddCurrentMonsterCount(-1);
+		UE_LOG(LogTemp, Warning, TEXT("creature monster class , daed=%d"), Cast<AMyGameState>(GetWorld()->GetGameState())->GetCurrentMonsterCount());
+		AController* MyController = GetController();
+		if (MyController)
+		{
+			MyController->StopMovement();
+			MyController->UnPossess(); // 선택 사항 (AI 완전 해제)
+		}
 	}
 	FVector SpawnLocation = GetActorLocation() + FVector(0, 0, 120.0f);
 	HpBarProgress();
@@ -81,6 +120,10 @@ void ACreatureMonster::StartDeathEffect()
 	if (MyMesh->GetMaterial(0))
 	{
 		DissolveMaterialInstance0 = MyMesh->CreateAndSetMaterialInstanceDynamicFromMaterial(0, MyMesh->GetMaterial(0));
+	}
+	if (MyMesh->GetMaterial(1))
+	{
+		DissolveMaterialInstance1 = MyMesh->CreateAndSetMaterialInstanceDynamicFromMaterial(1, MyMesh->GetMaterial(1));
 	}
 
 
@@ -123,6 +166,10 @@ void ACreatureMonster::TimelineUpdate(float TimelineValue)
 	if (DissolveMaterialInstance0)
 	{
 		DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), NewDissolveValue);
+	}
+	if (DissolveMaterialInstance1)
+	{
+		DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), NewDissolveValue);
 	}
 }
 

@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "SkillBookComponent.h"
 #include "InventoryComponent.h"
+#include "Monster.h"
 #include "MainCharacter.generated.h"
 
 enum ATTACK_TYPE
@@ -72,6 +73,8 @@ public:
 	void HealHP(int32 HealAmount);
 	UFUNCTION()
 	void HealStamina(int32 HealAmount);
+	UFUNCTION()
+	void GetDamaged(int32 DamageAmount);
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;

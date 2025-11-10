@@ -1,5 +1,6 @@
 #pragma once
 
+#include "CoreMinimal.h"
 #include "Monster.h"  
 #include "DarkMonster.generated.h"
 
@@ -41,4 +42,5 @@ protected:
 	FRotator BaseMeshRelativeRotation;
 
 	FName BaseCollisionProfileName;
+	float LastAttackTime = -FLT_MAX;
 };

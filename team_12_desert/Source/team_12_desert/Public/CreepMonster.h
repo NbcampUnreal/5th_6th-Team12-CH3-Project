@@ -48,5 +48,5 @@ protected:
 	FRotator BaseMeshRelativeRotation;
 
 	FName BaseCollisionProfileName;
-
+	float LastAttackTime = -FLT_MAX;
 };
