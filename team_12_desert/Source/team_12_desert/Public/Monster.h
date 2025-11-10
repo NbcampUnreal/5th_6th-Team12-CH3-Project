@@ -132,7 +132,9 @@ protected:
 protected:
 	bool isDeath = false;
 
+	float Dis;
 public:
 	bool getIsDeath() const { return isDeath; }
-
+	float GetDis() { return Dis; }
+	void SetDis(float val) { Dis = val; }
 };

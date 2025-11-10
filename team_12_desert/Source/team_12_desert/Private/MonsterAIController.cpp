@@ -38,8 +38,15 @@ void AMonsterAIController::Tick(float DeltaTime)
 
     // 플레이어와 몬스터 거리 계산
     float Dist = FVector::Dist(PlayerPawn->GetActorLocation(), Monster->GetActorLocation());
+    Dist -= 10;
+    Monster->SetDis(Dist);
 
-    // 공격 범위 밖이면 이동
+    FVector Pos = Monster->GetActorLocation();
+    float CapsuleHalfHeight = 100.f;
+    float CapsuleRadius = 50.f;
+    UE_LOG(LogTemp, Warning, TEXT("contrlool=== %f.2"), Dist);
+    UE_LOG(LogTemp, Warning, TEXT("attackrange=== %f.2"), Monster->AttackRange);
+
     if (Dist > Monster->AttackRange)
     {
         // 이미 이동 중인지 확인 후 MoveToActor 호출

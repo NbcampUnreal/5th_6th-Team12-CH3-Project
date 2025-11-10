@@ -17,7 +17,10 @@ ACreatureMonster::ACreatureMonster()
 	AttackRange = 80.f;
 	AttackCooldown = 1.0f;
 
+
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+	float Radius = GetCapsuleComponent()->GetUnscaledCapsuleRadius();
+	AttackRange += Radius + 50;
 }
 
 void ACreatureMonster::BeginPlay()
@@ -47,10 +50,7 @@ void ACreatureMonster::Attack()
 	if (!PlayerPawn)
 		return;
 
-	// 거리 계산
-	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
-
-	if (Distance <= AttackRange)
+	if (Dis <= AttackRange)
 	{
 		float CurrentTime = World->GetTimeSeconds();
 		if (CurrentTime - LastAttackTime >= AttackCooldown)

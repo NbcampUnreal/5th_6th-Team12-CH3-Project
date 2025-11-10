@@ -18,7 +18,8 @@ ABossMonster::ABossMonster()
 	AttackCooldown = 2.0f;
 
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-
+	float Radius = GetCapsuleComponent()->GetUnscaledCapsuleRadius();
+	AttackRange += Radius + 10;
 }
 
 void ABossMonster::BeginPlay()
@@ -64,10 +65,7 @@ void ABossMonster::Attack()
 	if (!PlayerPawn)
 		return;
 
-	// 거리 계산
-	float Distance = FVector::Dist(PlayerPawn->GetActorLocation(), GetActorLocation());
-
-	if (Distance <= AttackRange)
+	if (Dis <= AttackRange)
 	{
 		float CurrentTime = World->GetTimeSeconds();
 		if (CurrentTime - LastAttackTime >= AttackCooldown)
