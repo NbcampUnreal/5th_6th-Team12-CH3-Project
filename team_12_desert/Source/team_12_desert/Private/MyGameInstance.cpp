@@ -131,7 +131,7 @@ void UMyGameInstance::NextLevel(FName nextmapname)
 
 	PlayerStatSave();
 	for (int i = 0; i < HUDWidgetInstance.Num(); i++) {
-		if (HUDWidgetInstance[i] && HUDWidgetInstance[i]) {
+		if (IsValid(HUDWidgetInstance[i])){
 			HUDWidgetInstance[i]->RemoveFromViewport();
 		}
 	}
