@@ -129,4 +129,10 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "ItemSpawn")
 	TObjectPtr<AItemRandomBox> ItemRandomBoxInstance;
 
+protected:
+	bool isDeath = false;
+
+public:
+	bool getIsDeath() const { return isDeath; }
+
 };

@@ -30,4 +30,5 @@ protected:
 	/// </summary>
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance0;
+
 };

@@ -42,4 +42,5 @@ protected:
 
 	UPROPERTY()
 	UMaterialInstanceDynamic* DissolveMaterialInstance3;
+
 };

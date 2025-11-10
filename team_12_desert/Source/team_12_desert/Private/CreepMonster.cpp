@@ -166,6 +166,10 @@ void ACreepMonster::TimelineFinished()
 {
 	Super::TimelineFinished();
 	UE_LOG(LogTemp, Warning, TEXT("Dissolve Effect Finished!"));
+	DissolveMaterialInstance0->SetScalarParameterValue(FName("Dissolve"), -0.6);
+	DissolveMaterialInstance1->SetScalarParameterValue(FName("Dissolve"), -0.6);
+	DissolveMaterialInstance2->SetScalarParameterValue(FName("Dissolve"), -0.6);
+	DissolveMaterialInstance3->SetScalarParameterValue(FName("Dissolve"), -0.6);
 
 	/// 사망처리 여기로 이동
 	// 딜레이 후 Destroy
